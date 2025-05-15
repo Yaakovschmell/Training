@@ -271,6 +271,14 @@
           <button class="dropdown-link" onclick="showTab('resources')">Resource List</button>
         </div>
       </li>
+      <li class="tab-item">
+  <button class="tab-link" data-tab="crosssale" onclick="showTab('crosssale')">
+    <i class="fa-solid fa-retweet"></i> Cross Sale ▾
+  </button>
+  <div class="dropdown-content">
+    <button class="dropdown-link" onclick="showTab('crosssale')">Cross Sale Script</button>
+  </div>
+</li>
     </ul>
   </nav>
   <main>
@@ -462,6 +470,32 @@
       So, by making these adjustments-higher property damage limits, smart deductibles for collision and comprehensive, and adding helpful coverages like roadside, rental, and PIP-you’re making sure you have the protection you need, without overpaying. Does that all make sense? Do you have any questions about any of these coverages?
     </span>
   </div>
+  <div class="step-title"><i class="fa-solid fa-6"></i> Step 6: Experience Recap Close</div>
+<div class="script-block agent">
+  <span class="script-role"><i class="fa-solid fa-user-tie"></i> Agent:</span>
+  <span class="script-response">
+    While my system is calculating your rate, let me tell you a little bit about our agency.<br><br>
+
+    First, we’re a local agency. That means if you ever have questions or problems, you won’t be stuck in a call center or waiting on hold. You’ll speak directly to the same few people every time-real people who know you and your policy.<br><br>
+
+    We pride ourselves on clear communication. You’ll get my office number and email, plus my personal cell phone number for after-hours questions or emergencies. So, anytime you need help, you have direct access to us.<br><br>
+
+    Also, unlike companies like GEICO, Progressive, and Liberty Mutual, we don’t do teaser rates. Many big companies start you off with a low rate but can legally raise it at any time after you sign up. Here, we’ve already run all your underwriting reports, so your rate is locked in. Plus, 45 days before your renewal, our customer service team will call you to review your policy, ensure you’re getting all your discounts, and make sure you always have the best rate possible.<br><br>
+
+    So, (Prospect), when we started, I asked how much you would want your insurance to cover if you got into an accident and were found at fault. You said all of it-is that still right?<br><br>
+
+    Right now, with GEICO, you’re only covered for the first $15,000. If you hit that Ford F-150 we talked about, you’d be responsible for the remaining $45,000-and you told me that’s something you want to avoid, right?<br><br>
+
+    That’s why we provided you with $300,000 in coverage-to make sure you’re properly protected in case of any accident.<br><br>
+
+    So, your monthly payment for this full protection will be ($).<br><br>
+
+    A couple more questions and we’ll wrap this up:<br>
+    Who is the vehicle financed through?<br>
+    And what card would you like to use for today’s payment?
+  </span>
+</div>
+
 </section>
 
     <!-- OBJECTION SCRIPT -->
@@ -583,6 +617,7 @@
       <h2><i class="fa-solid fa-book-open"></i> Resources</h2>
       <ul class="resource-list">
         <li><i class="fa-solid fa-link"></i><a href="https://schmell.ricochet.me" target="_blank">Ricochet</a></li>
+        <li><i class="fa-solid fa-link"></i><a href=https://slack.com/signin#/signin/"target="_blank">Slack (for the telemarketers)</a></li>
         <li><i class="fa-solid fa-link"></i><a href="https://app.agencyzoom.com/login" target="_blank">Agency Zoom</a></li>
         <li><i class="fa-solid fa-link"></i><a href="https://www.mycoverageinfo.com/agent" target="_blank">MyCoverageInfo (for home insurance lookup)</a></li>
         <li><i class="fa-solid fa-link"></i><a href="https://www.edmunds.com/appraisal/" target="_blank">Edmunds Appraisal (VIN lookup)</a></li>
@@ -591,6 +626,76 @@
         <li><i class="fa-solid fa-link"></i><a href="https://www.usecanopy.com/" target="_blank">Canopy (get declaration pages from other companies)</a></li>
       </ul>
     </section>
+    <section id="crosssale" class="tab-content">
+  <h2><i class="fa-solid fa-retweet"></i> Cross Sale</h2>
+  <ul style="margin-bottom:1.2em;">
+    <li><strong>Auto → Home</strong></li>
+    <li><strong>Home → Auto</strong></li>
+    <li><strong>Auto → Renters</strong></li>
+  </ul>
+  <p>The goal is to keep it natural, assume the customer will be interested, and link coverage value, not just price.</p>
+  <hr style="margin:2em 0;">
+  <h3 style="color:#2563eb; margin-top:2em;"><i class="fa-solid fa-retweet"></i> Cross-Selling Training Script: Auto ↔ Home ↔ Renters</h3>
+  <hr>
+  <div style="margin-bottom:2em;">
+    <h4 style="color:#2563eb;">🔹 1. Auto Quote → Home Quote</h4>
+    <p><em>Scenario: You’re finishing an auto quote and want to transition into quoting their home.</em></p>
+    <strong>Agent:</strong><br>
+    <blockquote style="background:#f8fafc; border-left:4px solid #2563eb; padding:1em; border-radius:6px;">
+      “Okay, great - so my system is going to include a home quote as well, when was the last time you had the roof replaced?”
+    </blockquote>
+    <strong>Agent (if they hesitate or object):</strong><br>
+    <blockquote style="background:#f8fafc; border-left:4px solid #38bdf8; padding:1em; border-radius:6px;">
+      “The reason I’m pulling this up is because most people qualify for a pretty big multi-policy discount when we combine auto and home. I just want to make sure you’re not missing out on savings - plus we can see what kind of coverage we can improve for your home as well. My system is going to make me run through it but I can remove it at the end if you want”
+    </blockquote>
+  </div>
+  <div style="margin-bottom:2em;">
+    <h4 style="color:#2563eb;">🔹 2. Home Quote → Auto Quote</h4>
+    <p><em>Scenario: You’re working on a homeowners quote and want to pivot to their auto insurance.</em></p>
+    <strong>Agent:</strong><br>
+    <blockquote style="background:#f8fafc; border-left:4px solid #2563eb; padding:1em; border-radius:6px;">
+      “Now that we’ve got your homeowners policy squared away, I’m going to go ahead and pull up your auto insurance too so we can bundle them and unlock the multi-policy savings.”<br>
+      <span style="font-style:italic;">(Smooth, confident - not asking for permission.)</span><br>
+      “Who do you currently have your vehicles insured with?”<br>
+      <span style="font-style:italic;">(Begin quote input...)</span>
+    </blockquote>
+    <strong>Agent (if they say they’re happy with their current auto provider):</strong><br>
+    <blockquote style="background:#f8fafc; border-left:4px solid #38bdf8; padding:1em; border-radius:6px;">
+      “Totally understand - a lot of people say that, but when they see the bundle savings and realize they’re often underinsured on their auto policy, it makes sense to take a look. Let’s at least see what we can do for you. What vehicles do you currently drive?”
+    </blockquote>
+  </div>
+  <div style="margin-bottom:2em;">
+    <h4 style="color:#2563eb;">🔹 3. Auto Quote → Renters Quote</h4>
+    <p><em>Scenario: The customer doesn’t own a home, but you want to cross-sell renters insurance.</em></p>
+    <strong>Agent:</strong><br>
+    <blockquote style="background:#f8fafc; border-left:4px solid #2563eb; padding:1em; border-radius:6px;">
+      “Alright, we’ve got your auto quote looking solid. Since you’re currently renting, I’m going to go ahead and add renters insurance so we can bundle that too and apply the multi-policy discount.”<br>
+      <span style="font-style:italic;">(Move confidently into the next part without asking.)</span>
+    </blockquote>
+    <strong>Agent (if they hesitate or say they don’t need it):</strong><br>
+    <blockquote style="background:#f8fafc; border-left:4px solid #38bdf8; padding:1em; border-radius:6px;">
+      “I totally get it - a lot of people assume their landlord’s policy covers them, but it actually doesn’t protect your stuff or liability. And honestly, renters coverage is super affordable - most people add it for around $15 and generally the discount it provides on the auto is higher than that so its saving you more money overall. It’s a smart move.”
+    </blockquote>
+  </div>
+  <hr>
+  <h4 style="color:#16a34a;">✅ Assumptive Selling Tips for Agents</h4>
+  <ul>
+    <li>Don’t ask if they want the other quote - assume they’ll benefit from it.</li>
+    <li>Use phrases like:
+      <ul>
+        <li>“I’m going to go ahead and pull that up now.”</li>
+        <li>“We’ll bundle this in to maximize your discounts.”</li>
+      </ul>
+    </li>
+    <li>Link every cross-sell to either:
+      <ul>
+        <li>Savings</li>
+        <li>Better protection</li>
+        <li>One-stop convenience</li>
+      </ul>
+    </li>
+  </ul>
+</section>
    </main>
   <script>
     function showTab(tabId) {

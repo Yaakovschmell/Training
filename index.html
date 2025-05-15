@@ -3,36 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Insurance Training</title>
+  <title>Insurance Agent Training</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f9f9f9;
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
     }
     .tabs {
       display: flex;
       justify-content: center;
-      background: #333;
+      background: #1f1f1f;
     }
     .tab-button {
       flex: 1;
       padding: 15px;
       cursor: pointer;
-      text-align: center;
-      background: #333;
+      background: #1f1f1f;
       color: white;
       border: none;
       font-size: 16px;
+      transition: background 0.3s;
     }
+    .tab-button:hover,
     .tab-button.active {
-      background: #555;
+      background: #4a4a4a;
     }
     .tab-content {
       display: none;
       padding: 20px;
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
     }
     .tab-content.active {
@@ -40,22 +40,36 @@
     }
     .section {
       margin-bottom: 20px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      background: white;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
     .section-header {
       padding: 15px;
-      background: #eee;
+      background: #007bff;
+      color: white;
       cursor: pointer;
+      border-radius: 8px 8px 0 0;
       font-weight: bold;
     }
     .section-content {
       display: none;
       padding: 15px;
+      border-top: 1px solid #ccc;
     }
     .section-content.active {
       display: block;
+    }
+    .resource-item {
+      padding: 10px;
+      background: #f7f7f7;
+      margin-bottom: 8px;
+      border-radius: 6px;
+    }
+    .resource-item a {
+      color: #007bff;
+      font-weight: bold;
+      text-decoration: none;
     }
   </style>
 </head>
@@ -63,184 +77,76 @@
   <div class="tabs">
     <button class="tab-button active" onclick="showTab('coverage')">Coverage</button>
     <button class="tab-button" onclick="showTab('objections')">Objections</button>
+    <button class="tab-button" onclick="showTab('resources')">Resources</button>
   </div>
 
   <div id="coverage" class="tab-content active">
     <div class="section">
-      <div class="section-header" onclick="toggleSection(this)">Full Auto Coverage Script</div>
+      <div class="section-header" onclick="toggleSection(this)">Property Damage Question and Coverage Script</div>
       <div class="section-content">
-        <!-- Insert full expanded coverage script content here -->
-        [Full coverage script goes here — content provided above]
+        <h3>Auto Insurance Sales Agent Training Script</h3>
+        <p><strong>Agent:</strong> Hello [Customer Name], this is [Your Name] from [Agency Name]...</p>
+        <p><strong>Agent:</strong> If you were found at fault in a large accident...</p>
+        <p><strong>Customer:</strong> All of it.</p>
+        <p><strong>Agent:</strong> Absolutely, and that’s why we have insurance...</p>
+        <h4>Tips for New Agents:</h4>
+        <ul>
+          <li>Always ask the key question about expectations in a major accident.</li>
+          <li>Walk the client through the math.</li>
+          <li>Stay empathetic and confident.</li>
+          <li>Highlight your agency’s unique service.</li>
+          <li>Recap and close clearly.</li>
+        </ul>
       </div>
     </div>
   </div>
 
-  <div id="objections" class="tab-content" style="display:none; padding: 20px; font-family: Arial, sans-serif;">
-
-  <h2>Objections Handling Script</h2>
-
-  <!-- Objection 1 -->
-  <button class="accordion">❌ Objection 1: “I’ll pay later / Call me back / Not ready yet”</button>
-  <div class="panel">
-    <p>
-      "I totally understand. As we talked about, you told me you wanted to be protected, right? Currently with (insurance company) you only have $15,000 in property damage, which as we discussed, is not enough. In the example we went over with that F-150, you would be stuck paying out of pocket, which you said you didn’t want, right? That’s why we gave you the $300,000 to make sure you never have to pay out of pocket.<br><br>
-      So let’s make sure you never have to worry about that. What card would you like to use for today’s payment?"
-    </p>
+  <div id="objections" class="tab-content">
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">Objection 1: “I’ll pay later / Call me back”</div>
+      <div class="section-content">
+        <p>I totally understand. As we talked about...</p>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">Objection 2: “That’s too expensive”</div>
+      <div class="section-content">
+        <p>Totally fair — but let’s break it down...</p>
+      </div>
+    </div>
+    <!-- Add more objection sections similarly -->
   </div>
 
-  <!-- Objection 2 -->
-  <button class="accordion">💵 Objection 2: “It’s more than I was paying” / “That’s too expensive”</button>
-  <div class="panel">
-    <p>
-      "Totally fair — but let’s break it down. You were paying less because you were getting less. $15,000 in coverage doesn’t cut it. Most of my clients can find the extra ($20, $40, $60), but none of them have an extra $45,000 sitting around. We’re giving you $300,000 so you don’t have to take a $45,000 hit after an accident.<br><br>
-      Peace of mind costs a little more — but not protecting yourself could cost everything. Let’s get this set up now — what card works best?"
-    </p>
+  <div id="resources" class="tab-content">
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">Resource Links</div>
+      <div class="section-content">
+        <div class="resource-item">
+          <a href="https://naic.org" target="_blank">NAIC - National Association of Insurance Commissioners</a>
+          <p>Official U.S. insurance regulator portal with tools and consumer information.</p>
+        </div>
+        <div class="resource-item">
+          <a href="https://insurancejournal.com" target="_blank">Insurance Journal</a>
+          <p>News and trends in the insurance industry.</p>
+        </div>
+        <!-- Add more resources as needed -->
+      </div>
+    </div>
   </div>
 
-  <!-- Objection 3 -->
-  <button class="accordion">📅 Objection 3: “I just made a payment” / “I want to wait until my renewal date”</button>
-  <div class="panel">
-    <p>
-      "I totally understand. We have two options: Option one, which I recommend, is to get this policy started now and then you can get a refund of whatever premium you haven’t used at your current company. If that doesn’t work for you, option two is to lock in this upgraded protection now and schedule the first payment for then. You don’t pay anything today, and you’re covered moving forward.<br><br>
-      Which option works better for you?"
-    </p>
-    <p>
-      (If they choose option two) "Which card would you like to use to hold the policy for that date?"
-    </p>
-  </div>
+  <script>
+    function showTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
 
-  <!-- Objection 4 -->
-  <button class="accordion">🛍️ Objection 4: “I want to shop around”</button>
-  <div class="panel">
-    <p>
-      "Totally understandable — but as we talked about, you said you wanted to be protected and every other company is trying to get you the lowest rates, which means they’re going to give you the lowest coverages possible — which you said you didn’t want. That’s why over here we gave you the $300,000 to make sure you don’t have to worry about paying anything out of pocket.<br><br>
-      No need to waste time. We’ve already solved the problem. Let’s lock it in — what card would you like to use?"
-    </p>
-  </div>
-
-  <!-- Objection 5 -->
-  <button class="accordion">👥 Objection 5: “I need to talk to my spouse/partner first”</button>
-  <div class="panel">
-    <p>
-      "Of course — let me ask you, do you think they’d be more concerned about the price or the coverages?" (this response will often get them to give up the real objection)<br><br>
-      Let’s get this taken care of. If your partner has questions, we can make changes later — but waiting leaves you vulnerable. What card works best to secure the coverage now?"
-    </p>
-  </div>
-
-  <!-- Objection 6 -->
-  <button class="accordion">📧 Objection 6: “Just email me the quote and I’ll call you if I like it”</button>
-  <div class="panel">
-    <p>
-      "Absolutely, I can email it and send it over via text — but email doesn’t protect you. You told me you want your insurance to protect you fully and right now, you have $15,000 in property damage which in the event we went over with the F-150 would leave you paying $45,000 out of pocket. Over here we gave you the $300,000 to make sure you don’t have to worry about that.<br><br>
-      So let’s get this policy locked in for you. What card would you like to use?"
-    </p>
-  </div>
-
-  <!-- Objection 8 -->
-  <button class="accordion">🧼 Objection 8: “I’ve never had an accident / I’m a safe driver”</button>
-  <div class="panel">
-    <p>
-      "That’s great — but even the safest drivers make mistakes and that’s why we have insurance. Let’s set this up and keep you covered — what’s the best card to use?"
-    </p>
-  </div>
-
-  <!-- Objection 9 -->
-  <button class="accordion">Objection 9: “I want to look at it/compare your quote to my current policy”</button>
-  <div class="panel">
-    <p>
-      "I completely understand, I just sent you a text with the quote in it. Do me a favor, click on the link and make sure it works correctly. Let’s go through line by line to make sure you understand what we’re giving you."
-    </p>
-  </div>
-
-  <!-- Closing the Sale -->
-  <h3>💬 Closing the Sale (Short & Clear)</h3>
-  <p>
-    "You’re going from minimum protection to full protection — and that’s the whole point of insurance.<br><br>
-    What card works best to lock this in today?"
-  </p>
-
-  <!-- Future Start Date -->
-  <h3>🗓️ Future Start Date (If They Insist on Waiting)</h3>
-  <p>
-    "No problem. I’ll match your current schedule. You pay nothing today — but your better coverage is secured." GET THE PAYMENT INFORMATION.
-  </p>
-
-</div>
-
-<style>
-  /* Accordion Styles */
-  .accordion {
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    padding: 15px 20px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    margin: 5px 0;
-    font-size: 1.1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  .accordion:hover {
-    background-color: #0056b3;
-  }
-  .accordion.active {
-    background-color: #004085;
-  }
-  .panel {
-    padding: 0 20px 15px 20px;
-    background-color: #f1f1f1;
-    display: none;
-    overflow: hidden;
-    border-radius: 0 0 5px 5px;
-  }
-</style>
-
-<script>
-  document.querySelectorAll('.accordion').forEach(button => {
-    button.addEventListener('click', () => {
-      button.classList.toggle('active');
-      const panel = button.nextElementSibling;
-      if (panel.style.display === "block") {
-        panel.style.display = "none";
-      } else {
-        panel.style.display = "block";
-      }
-    });
-  });
-</script>
-
-  function showTab(tabId) {
-    var tabs = document.getElementsByClassName('tab-content');
-    for (var i = 0; i < tabs.length; i++) {
-      tabs[i].style.display = 'none';
+      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
     }
-    document.getElementById(tabId).style.display = 'block';
 
-    var buttons = document.getElementsByClassName('tab-button');
-    for (var i = 0; i < buttons.length; i++) {
-      buttons[i].classList.remove('active');
+    function toggleSection(header) {
+      const content = header.nextElementSibling;
+      content.classList.toggle('active');
     }
-    event.target.classList.add('active');
-  }
-
-  // Accordion logic
-  document.addEventListener('DOMContentLoaded', function () {
-    const buttons = document.querySelectorAll('.accordion-button');
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        const content = button.nextElementSibling;
-        button.classList.toggle('active');
-        if (content.style.maxHeight) {
-          content.style.maxHeight = null;
-        } else {
-          content.style.maxHeight = content.scrollHeight + "px";
-        }
-      });
-    });
-  });
-</script>
+  </script>
 </body>
 </html>

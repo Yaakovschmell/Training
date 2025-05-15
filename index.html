@@ -1,1 +1,119 @@
-Index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insurance Agent Training</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      background-color: #eee;
+      overflow-x: auto;
+    }
+    nav button {
+      flex: 1;
+      padding: 1rem;
+      cursor: pointer;
+      border: none;
+      background-color: #eee;
+      transition: background-color 0.3s;
+    }
+    nav button.active {
+      background-color: #ddd;
+      font-weight: bold;
+    }
+    section {
+      display: none;
+      padding: 2rem;
+    }
+    section.active {
+      display: block;
+    }
+    .script-block {
+      background: #fff;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-left: 5px solid #003366;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .script-block strong {
+      color: #003366;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Insurance Agent Training Scripts</h1>
+  </header>
+  <nav>
+    <button class="tab-button active" data-tab="property-damage">Property Damage Liability</button>
+    <button class="tab-button" data-tab="new-topic">+ Add New Area</button>
+  </nav>
+
+  <section id="property-damage" class="active">
+    <h2>Property Damage Liability</h2>
+    <div class="script-block">
+      <p><strong>Objective:</strong> Help the client understand what Property Damage Liability is, why state minimums are risky, and how increased coverage better protects them.</p>
+    </div>
+    <div class="script-block">
+      <p><strong>Agent:</strong> So, (Name), I’m going to pull up your current coverages so I can see what you have. I see you’re currently with (Insurance Company). How’s your overall experience been with them—rates, customer service, support?</p>
+    </div>
+    <div class="script-block">
+      <p><strong>Agent:</strong> While I’m pulling that up, I always like to ask this question: Let’s say you’re driving and you get into an accident where you’re at fault and there’s a large damage bill—how much would you expect your insurance company to cover?</p>
+      <p><strong>Customer:</strong> All of it.</p>
+      <p><strong>Agent:</strong> Right—that’s exactly what insurance is for. So now let’s look at what you actually have with GEICO.</p>
+    </div>
+    <div class="script-block">
+      <p><strong>Agent:</strong> You currently have 30/60 for Bodily Injury Liability—that’s how much your insurance would pay for the other driver’s medical bills if you’re at fault. We’ll match that here.</p>
+    </div>
+    <div class="script-block">
+      <p><strong>Agent:</strong> You also have Uninsured Motorist coverage, which protects you if the person who hits you doesn’t have insurance, not enough insurance, or if it’s a hit-and-run. It matches your Bodily Injury limits: 30/60.</p>
+    </div>
+    <div class="script-block">
+      <p><strong>Agent:</strong> Now here’s the part that really concerns me: Property Damage Liability. This covers what your insurance pays for someone else’s car or property if you’re at fault.</p>
+      <p><strong>Agent:</strong> Right now, you're set at $15,000—the state minimum. That means anything above that comes out of your pocket.</p>
+      <p><strong>Agent:</strong> For example, are you familiar with the Ford F-150?</p>
+      <p><strong>Customer:</strong> Yes.</p>
+      <p><strong>Agent:</strong> Know about how much they cost?</p>
+      <p><strong>Customer:</strong> Around $60,000.</p>
+      <p><strong>Agent:</strong> Exactly. So if you total an F-150, GEICO gives you $15,000. How much are you paying out of pocket?</p>
+      <p><strong>Customer:</strong> $45,000.</p>
+      <p><strong>Agent:</strong> And how does that sound?</p>
+      <p><strong>Customer:</strong> Horrible.</p>
+      <p><strong>Agent:</strong> Right—that’s why we recommend $300,000 in Property Damage Liability to make sure you’re protected. Make sense?</p>
+    </div>
+  </section>
+
+  <section id="new-topic">
+    <h2>Add New Training Area</h2>
+    <p>To add a new training script, duplicate the HTML structure inside a new <code>&lt;section&gt;</code> with a matching tab button above. Label the new topic, write your script, and it will be accessible via the tab interface.</p>
+  </section>
+
+  <script>
+    const buttons = document.querySelectorAll('.tab-button');
+    const sections = document.querySelectorAll('section');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        buttons.forEach(btn => btn.classList.remove('active'));
+        sections.forEach(sec => sec.classList.remove('active'));
+
+        button.classList.add('active');
+        document.getElementById(button.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -59,7 +59,6 @@
       background: #e7ecef;
       color: #1a2636;
     }
-    /* Dropdown Styles */
     .dropdown-content {
       display: none;
       position: absolute;
@@ -99,7 +98,6 @@
       background: #e7ecef;
       color: #1a2636;
     }
-    /* Tab Content */
     .tab-content {
       max-width: 820px;
       margin: 40px auto;
@@ -134,6 +132,31 @@
       color: #184e77;
       margin-top: 0;
     }
+    .script-block {
+      margin-bottom: 2rem;
+      border-left: 4px solid #184e77;
+      padding-left: 1rem;
+      background: #f1f6fa;
+      border-radius: 6px;
+    }
+    .script-role {
+      font-weight: bold;
+      color: #184e77;
+      margin-bottom: 0.3rem;
+      display: block;
+    }
+    .script-response {
+      margin-bottom: 0.5rem;
+      font-size: 1.05rem;
+      white-space: pre-line;
+    }
+    .closing-block {
+      background: #e7ecef;
+      padding: 1rem;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
     .objection-block {
       margin-bottom: 2rem;
       border-left: 4px solid #184e77;
@@ -149,13 +172,6 @@
     .objection-response {
       margin-bottom: 0.5rem;
       font-size: 1.05rem;
-    }
-    .closing-block {
-      background: #e7ecef;
-      padding: 1rem;
-      border-radius: 6px;
-      margin-bottom: 1rem;
-      font-style: italic;
     }
   </style>
 </head>
@@ -188,10 +204,108 @@
   <main>
     <section id="coverage" class="tab-content active">
       <h2>Coverage Script</h2>
-      <!-- Replace the below with your actual script if needed -->
-      <p>
-        [Paste your full coverage script here. If you already posted it, insert it here. If you want me to format it, please paste it in your next message.]
-      </p>
+      <div class="script-block">
+        <span class="script-role">Agent:</span>
+        <span class="script-response">Good morning/afternoon (Prospect), like she said my name is (your name) and I’ll be the licensed agent assisting you with those savings today. How’s your day been so far?
+        <br><br>
+        I’m going to confirm your information so we can make sure we’re giving you the best possible rate. (Confirm name, DOB, address, own or rent, marital status, drivers and vehicles)</span>
+      </div>
+      <div class="script-block">
+        <span class="script-role">Agent:</span>
+        <span class="script-response">So, (name), I’m going to pull up your reports which will show me any accidents or claims in the last couple of years and where you’re currently insured. I see you’re currently with (Insurance Company). How’s your overall experience been with them-the rates, customer service, things like that?</span>
+      </div>
+      <div class="script-block">
+        <span class="script-role">Agent:</span>
+        <span class="script-response">While I pull up your coverages with GEICO, I always like to ask my customers this question: Let’s say you’re driving down the road and you get into an accident where you’re found at fault, and there’s a large damage bill-how much of that bill would you expect your insurance company to cover?</span>
+      </div>
+      <div class="script-block">
+        <span class="script-role">Customer:</span>
+        <span class="script-response">All of it.</span>
+      </div>
+      <div class="script-block">
+        <span class="script-role">Agent:</span>
+        <span class="script-response">Absolutely, I agree-and that’s exactly why we have insurance. So now I’m going to go over what you currently have with GEICO so you understand the coverages you actually have.</span>
+      </div>
+      <div class="script-block">
+        <span class="script-role">Agent:</span>
+        <span class="script-response">The first coverage is bodily injury liability. This covers how much your insurance will pay for the other person’s medical bills if you get into an accident and are found at fault. Right now, you have 30/60, so I’m going to match that coverage the same way.</span>
+      </div>
+      <div class="script-block">
+        <span class="script-role">Agent:</span>
+        <span class="script-response">The same would apply to your uninsured motorist coverage. This is what protects you and your passengers if you’re ever in an accident and the person who hits you either doesn’t have any insurance, doesn’t have enough insurance, or if it’s a hit-and-run situation. If you or someone in your vehicle is injured, your policy would step in and pay for your medical bills-again, up to the same limits you have for bodily injury: 30/60.</span>
+      </div>
+      <div class="script-block">
+        <span class="script-role">Agent:</span>
+        <span class="script-response">Now, the next coverage is the one that really concerns me-and here’s why. It’s called property damage liability, and this covers how much your insurance will pay for the other person’s vehicle or property if you're found at fault in an accident.
+        <br><br>
+        Currently, you're set at $15,000, which is the state minimum. That means anything over that amount comes out of your pocket.
+        <br><br>
+        Just as an example-are you familiar with the Ford F-150?</span>
+      </div>
+      <div class="script-block">
+        <span class="script-role">Customer:</span>
+        <span class="script-response">Yes.</span>
+      </div>
+      <div class="script-block">
+        <span class="script-role">Agent:</span>
+        <span class="script-response">Do you know around how much they cost?</span>
+      </div>
+      <div class="script-block">
+        <span class="script-role">Customer:</span>
+        <span class="script-response">About $60,000.</span>
+      </div>
+      <div class="script-block">
+        <span class="script-role">Agent:</span>
+        <span class="script-response">So let’s say you're driving down the road and hit a brand-new F-150, and it gets totaled. With your current policy, GEICO would come to you and say, “You've been a great customer-here’s a check for $15,000.”
+        <br><br>
+        Now, the problem is: if it’s a $60,000 truck and they only give you $15,000, how much are you left paying out of pocket? (MAKE THEM DO THE MATH)</span>
+      </div>
+      <div class="script-block">
+        <span class="script-role">Customer:</span>
+        <span class="script-response">$45,000.</span>
+      </div>
+      <div class="script-block">
+        <span class="script-role">Agent:</span>
+        <span class="script-response">And how does that sound?</span>
+      </div>
+      <div class="script-block">
+        <span class="script-role">Customer:</span>
+        <span class="script-response">Horrible.</span>
+      </div>
+      <div class="script-block">
+        <span class="script-role">Agent:</span>
+        <span class="script-response">Exactly! That’s why here, we always give our customers $300,000 in property damage liability, to make sure you’re fully protected in the event of any claim. Does that make sense why we do that?</span>
+      </div>
+      <div class="script-block">
+        <span class="script-role">Agent:</span>
+        <span class="script-response">The next important coverage is Collision. Collision covers the damage to your own vehicle if you’re in an accident, regardless of who’s at fault-so whether you hit another car, a tree, or even a pole, this is the coverage that helps get your car repaired or replaced.
+        <br><br>
+        For collision, I recommend a $1,000 deductible. Here’s why:
+        <br>
+        A higher deductible means you’ll be responsible for the first $1,000 of any damage, but it also lowers your monthly premium significantly. Most people don’t get into accidents very often, so choosing a $1,000 deductible is a smart way to keep your insurance affordable while still protecting you from those big, unexpected repair bills. If you ever need to use it, you’ll be glad you have it.</span>
+      </div>
+      <div class="script-block">
+        <span class="script-role">Agent:</span>
+        <span class="script-response">Next is Comprehensive coverage. This protects your vehicle from things that aren’t collision-related-like theft, vandalism, fire, hail, or even hitting an animal. Basically, if something happens to your car that isn’t a crash, comprehensive is what helps you out.
+        <br><br>
+        For comprehensive, I recommend a $250 deductible. The reason is, comprehensive claims are usually less expensive and more common-like if a rock cracks your windshield or a storm causes damage. A lower deductible means you’ll pay less out of pocket if something like that happens, and the difference in premium is usually pretty small compared to the collision.</span>
+      </div>
+      <div class="script-block">
+        <span class="script-role">Agent:</span>
+        <span class="script-response">Let’s talk about Roadside Assistance. This is an optional coverage, but it’s one a lot of our customers love. If you ever have a flat tire, run out of gas, lock your keys in your car, or your battery dies, roadside assistance sends help right to you, 24/7. The biggest difference between Allstate’s roadside program and any other insurance company is that Allstate goes off of the drivers rather than the vehicles, meaning no matter what car you’re driving, you would have Allstate roadside covering you.</span>
+      </div>
+      <div class="script-block">
+        <span class="script-role">Agent:</span>
+        <span class="script-response">Another helpful option is Rental Car coverage. This is another optional coverage that most of our client opt in for. If your car is ever in the shop because of a covered claim-like an accident-this coverage helps pays for a rental car so you can keep getting to work, school, or wherever you need to go. It’s a great way to avoid being stranded or having to pay out of pocket for a rental while your car is being repaired.</span>
+      </div>
+      <div class="script-block">
+        <span class="script-role">Agent:</span>
+        <span class="script-response">Finally, there’s Personal Injury Protection, or PIP. This coverage helps pay for medical expenses for you and your passengers after an accident, no matter who’s at fault. It can also cover things like lost wages and essential services if you’re unable to work or take care of yourself after an accident. PIP is really valuable because it kicks in quickly and helps cover those immediate costs when you need it most.</span>
+      </div>
+      <div class="script-block">
+        <span class="script-role">Agent:</span>
+        <span class="script-response">So, by making these adjustments-higher property damage limits, smart deductibles for collision and comprehensive, and adding helpful coverages like roadside, rental, and PIP-you’re making sure you have the protection you need, without overpaying. Does that all make sense? Do you have any questions about any of these coverages?</span>
+      </div>
     </section>
     <section id="objections" class="tab-content">
       <h2>Objection Script</h2>

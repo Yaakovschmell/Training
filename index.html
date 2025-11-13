@@ -5,82 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sales Training</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="enhanced-styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-  <style>
-  /* ...existing CSS omitted for brevity - keep your current CSS unchanged... */
-  </style>
 </head>
 <body>
   <header>
     Sales Training
   </header>
-<nav>
-  <ul class="tab-menu">
-    <li class="tab-item">
-      <button class="tab-link active" data-tab="coverage" onclick="showTab('coverage')">
-        <i class="fa-solid fa-shield-halved"></i> Coverage ▾
-      </button>
-      <div class="dropdown-content">
-        <button class="dropdown-link" onclick="showTab('coverage')">Coverage Script</button>
-      </div>
-    </li>
-    <li class="tab-item">
-      <button class="tab-link" data-tab="objections" onclick="showTab('objections')">
-        <i class="fa-solid fa-comments"></i> Objections ▾
-      </button>
-      <div class="dropdown-content">
-        <button class="dropdown-link" onclick="showTab('objections')">Objection Script</button>
-      </div>
-    </li>
-    <li class="tab-item">
-      <button class="tab-link" data-tab="crosssale" onclick="showTab('crosssale')">
-        <i class="fa-solid fa-retweet"></i> Cross Sale ▾
-      </button>
-      <div class="dropdown-content">
-        <button class="dropdown-link" onclick="showTab('crosssale')">Cross Sale Script</button>
-      </div>
-    </li>
-    <li class="tab-item">
-      <button class="tab-link" data-tab="resources" onclick="showTab('resources')">
-        <i class="fa-solid fa-book-open"></i> Resources ▾
-      </button>
-      <div class="dropdown-content">
-        <button class="dropdown-link" onclick="showTab('resources')">Resource List</button>
-      </div>
-    </li>
-    <li class="tab-item">
-      <button class="tab-link" data-tab="welcome" onclick="showTab('welcome')">
-        <i class="fa-solid fa-handshake"></i> Welcome Text
-      </button>
-      <div class="dropdown-content">
-        <button class="dropdown-link" onclick="showTab('welcome')">Welcome Text</button>
-      </div>
-    </li>
-  </ul>
-</nav>
+  <nav>
+    <ul class="tab-menu">
+      <li class="tab-item">
+        <button class="tab-link active" data-tab="coverage" onclick="showTab('coverage')">
+          <i class="fa-solid fa-shield-halved"></i> Coverage ▾
+        </button>
+        <div class="dropdown-content">
+          <button class="dropdown-link" onclick="showTab('coverage')">Coverage Script</button>
+        </div>
+      </li>
+      <li class="tab-item">
+        <button class="tab-link" data-tab="objections" onclick="showTab('objections')">
+          <i class="fa-solid fa-comments"></i> Objections ▾
+        </button>
+        <div class="dropdown-content">
+          <button class="dropdown-link" onclick="showTab('objections')">Objection Script</button>
+        </div>
+      </li>
+      <li class="tab-item">
+        <button class="tab-link" data-tab="crosssale" onclick="showTab('crosssale')">
+          <i class="fa-solid fa-retweet"></i> Cross Sale ▾
+        </button>
+        <div class="dropdown-content">
+          <button class="dropdown-link" onclick="showTab('crosssale')">Cross Sale Script</button>
+        </div>
+      </li>
+      <li class="tab-item">
+        <button class="tab-link" data-tab="resources" onclick="showTab('resources')">
+          <i class="fa-solid fa-book-open"></i> Resources ▾
+        </button>
+        <div class="dropdown-content">
+          <button class="dropdown-link" onclick="showTab('resources')">Resource List</button>
+        </div>
+      </li>
+      <li class="tab-item">
+        <a class="tab-link" href="welcome-text.html" target="_blank">
+          <i class="fa-solid fa-handshake"></i> Welcome Text
+        </a>
+      </li>
+    </ul>
+  </nav>
   <main>
-    <!-- Existing tab sections here (coverage, objections, crosssale, resources) -->
-    <!-- Welcome Text Section -->
-    <section id="welcome" class="tab-content">
-      <h2><i class="fa-solid fa-handshake"></i> Welcome to Allstate!</h2>
-      <div style="background:#e0e7ff; border-left: 6px solid #2563eb; padding: 1em; margin-bottom: 1.2em; border-radius: 8px;">
-        For customer service please call&nbsp;&nbsp;&nbsp;(410) 665-3602<br><br>
-        Please be on the look out for an email / text, asking you to log in/download the app to sign off on these policies, be sure to enroll in Ebill/Epolicy.
-      </div>
-      <h3>Auto</h3>
-      <p>Your policy number is “____”. Each month going forward we have your payment set to come out of your bank. You can make changes at any time on the Allstate app or on Allstate.com.</p>
-      <p>Be sure to set up Drivewise. Drivewise is a wonderful discount which you get 10% discount now and at renewal anywhere from 10%-15% so please take advantage.</p>
-      <p><strong>ALL DRIVERS ON POLICY NEED TO PARTICIPATE TO BE ELIGIBLE TO EARN MAX DISCOUNT.</strong></p>
-      <p>Please send me a copy of registration- as car needs to be owned/ co owned.</p>
-      <p>Be sure to take advantage of our referral program! For every person you refer to me to get a quote, as long as they qualify for Allstate, you'll receive a $20 amazon gift card per person I quote regardless of if they purchase a policy or not!</p>
-      <h3>Renters</h3>
-      <p>Your policy number is “____” and each month moving forward we have your payment set up to come from your bank on the “date”.</p>
-      <h3>Escrow Home</h3>
-      <p>Your policy number is “___” We are going to be sending the invoice to your mortgage company for them to pay. An inspector may come to make sure we are insuring your house properly, as well as to check on any liabilities that may need to be fixed.</p>
-      <h3>Self-pay Home</h3>
-      <p>Your policy number is “___” An inspector may come to make sure we are insuring your house properly, as well as to check on any liabilities that may need to be fixed.</p>
-    </section>
-    <!-- Existing tab sections follow ... -->
+    <!-- All your original tab-content sections, unchanged. -->
+    <!-- The Welcome Text page will open in a new tab using welcome-text.html. -->
   </main>
   <script>
     function showTab(tabId) {
@@ -89,7 +64,6 @@
       document.querySelector('[data-tab="' + tabId + '"]').classList.add('active');
       document.getElementById(tabId).classList.add('active');
     }
-    // Objection dropdowns
     document.querySelectorAll('.objection-toggle').forEach(function(btn) {
       btn.addEventListener('click', function() {
         var parent = btn.parentElement;

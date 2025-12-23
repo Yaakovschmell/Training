@@ -125,36 +125,6 @@
       align-items: center;
       gap: 0.5em;
     }
-
-    /* Important highlight styles (used for Property Damage and now Step 2) */
-    .step-title.important {
-      color: #d97706;
-      font-weight: 800;
-      font-size: 1.3rem;
-    }
-    .important-badge {
-      background:#fde68a;
-      color:#92400e;
-      padding:4px 12px;
-      border-radius:6px;
-      font-size:1rem;
-      font-weight:700;
-      margin-left:12px;
-      display: inline-block;
-    }
-    .important-script {
-      background:#fff7ed;
-      border-left: 6px solid #d97706;
-      box-shadow: 0 4px 12px rgba(217,119,6,0.12);
-      padding: 1.1rem 1rem;
-      border-radius: 10px;
-      margin-bottom: 1.5rem;
-    }
-    .important-script .script-role {
-      color: #d97706;
-      font-weight: 700;
-    }
-
     .script-block {
       display: flex;
       gap: 1em;
@@ -333,15 +303,7 @@
       <div style="background:#fef9c3; border-left: 6px solid #f59e42; padding: 1em; margin-bottom: 1.2em; border-radius: 8px;">
         <strong><i class="fa-solid fa-handshake"></i> Rapport Reminder:</strong>
         <br>
-        Before you get into coverage details, be sure to build some rapport! Find a natural moment to connect-ask about their day, comment on something local, or just chat for a moment. Rapport helps [...]
-      </div>
-
-      <div class="step-title important"><i class="fa-solid fa-2"></i> Step 2: Experience & Expectations</div>
-      <div class="script-block agent important-script">
-        <span class="script-role"><i class="fa-solid fa-user-tie"></i> Agent:</span>
-        <span class="script-response">
-          So, (name), I'm going to pull up your reports which will show me any accidents or claims in the last couple of years and where you're currently insured. I see you're currently with (Insurance Company). How's your overall experience been with them-the rates, customer service, things like that? (DIG TO FIND OUT MORE ABOUT BAD EXPERIENCES TO USE LATER SUCH AS GEICO BEING A CALL CENTER, NOT HAVING POLICY REVIEWS ETC.)
-        </span>
+        Before you get into coverage details, be sure to build some rapport! Find a natural moment to connect-ask about their day, comment on something local, or just chat for a moment. Rapport helps set a positive tone for the entire call.
       </div>
 
       <div class="step-title"><i class="fa-solid fa-1"></i> Step 1: Introduction & Info Confirmation</div>
@@ -354,25 +316,68 @@
         </span>
       </div>
 
+      <div class="step-title"><i class="fa-solid fa-2"></i> Step 2: Experience & Expectations</div>
+      <div class="script-block agent">
+        <span class="script-role"><i class="fa-solid fa-user-tie"></i> Agent:</span>
+        <span class="script-response">
+          So, (name), I'm going to pull up your reports which will show me any accidents or claims in the last couple of years and where you're currently insured. I see you're currently with (Insurance Company). How's your overall experience been with them-the rates, customer service, things like that? (Dig to find out more about bad experiences to use later such as Geico being a call center, not having policy reviews etc.)
+        </span>
+      </div>
+      <div class="step-title" style="color:#d97706; font-weight: 800; font-size: 1.3rem;">
+        <i class="fa-solid fa-question-circle" style="color:#d97706; margin-right: 8px;"></i>
+        Key Question: What Do You Expect Your Insurance to Cover?
+        <span style="background:#fde68a; color:#92400e; padding:4px 12px; border-radius:6px; font-size:1rem; font-weight:700; margin-left:12px;">
+          This shapes the entire conversation!
+        </span>
+      </div>
+      <div class="script-block agent" style="background:#fff7ed; border-left: 6px solid #d97706; box-shadow: 0 4px 12px rgba(217,119,6,0.12);">
+        <span class="script-role" style="color:#d97706;">
+          <i class="fa-solid fa-user-tie"></i> Agent:
+        </span>
+        <span class="script-response" style="font-weight: 600;">
+          While I pull up your coverages, I always like to ask my customers this question:<br><br>
+          <span style="background:#fde68a; color:#92400e; padding: 6px 12px; border-radius: 6px; font-weight: 700; display: inline-block;">
+            "Let's say you're driving down the road and you get into an accident where you're found at fault, and there's a large damage bill-how much of that bill would you expect your insurance company to cover?"
+          </span>
+        </span>
+      </div>
+      <div class="script-block customer">
+        <span class="script-role"><i class="fa-solid fa-user"></i> Customer:</span>
+        <span class="script-response" style="font-weight: 600;">
+          All of it.
+        </span>
+      </div>
+      <div class="script-block agent">
+        <span class="script-role"><i class="fa-solid fa-user-tie"></i> Agent:</span>
+        <span class="script-response">
+          Absolutely, I agree-and that's exactly why we make sure our customers always have enough coverage to protect them. So now I'm going to go over what you currently have with GEICO so you understand the coverages you actually have.
+        </span>
+      </div>
+
       <div class="step-title"><i class="fa-solid fa-3"></i> Step 3: Explaining Coverages</div>
       <div class="script-block agent">
         <span class="script-role"><i class="fa-solid fa-user-tie"></i> Agent:</span>
         <span class="script-response">
-          The first coverage is bodily injury liability. This covers how much your insurance will pay for the other person's medical bills if you get into an accident and are found at fault. Right now[...]
+          The first coverage is bodily injury liability. This covers how much your insurance will pay for the other person's medical bills if you get into an accident and are found at fault. Right now, you have 30/60, so I'm going to match that coverage the same way.
         </span>
       </div>
-
-      <div class="step-title important">
+      <div class="script-block agent">
+        <span class="script-role"><i class="fa-solid fa-user-tie"></i> Agent:</span>
+        <span class="script-response">
+          The same would apply to your uninsured motorist coverage. This is what protects you and your passengers if you're ever in an accident and the person who hits you either doesn't have any insurance, doesn't have enough insurance, or if it's a hit-and-run situation. If you or someone in your vehicle is injured, your policy would step in and pay for your medical bills-again, up to the same limits you have for bodily injury: 30/60.
+        </span>
+      </div>
+      <div class="step-title" style="color:#d97706; font-weight: 800; font-size: 1.3rem;">
         <i class="fa-solid fa-exclamation-triangle" style="color:#d97706; margin-right: 8px;"></i>
         Property Damage Liability (Most Important Coverage)
       </div>
 
-      <div class="script-block agent important-script">
-        <span class="script-role">
+      <div class="script-block agent" style="background:#fff7ed; border-left: 6px solid #d97706; box-shadow: 0 4px 12px rgba(217,119,6,0.12);">
+        <span class="script-role" style="color:#d97706;">
           <i class="fa-solid fa-shield-halved"></i> Agent:
         </span>
         <span class="script-response" style="font-weight: 600;">
-          Now, the next coverage is the one that really concerns me-and here's why. It's called property damage liability, and this covers how much your insurance will pay for the other person's vehic[...]
+          Now, the next coverage is the one that really concerns me-and here's why. It's called property damage liability, and this covers how much your insurance will pay for the other person's vehicle or property if you're found at fault in an accident.<br><br>
           Currently, you're set at $15,000, which is the state minimum. That means anything over that amount comes out of your pocket.<br><br>
           Just as an example-are you familiar with the Ford F-150?
         </span>
@@ -385,7 +390,7 @@
         </span>
       </div>
 
-      <div class="script-block agent important-script">
+      <div class="script-block agent" style="background:#fff7ed; border-left: 6px solid #d97706;">
         <span class="script-role" style="color:#d97706;">
           <i class="fa-solid fa-user-tie"></i> Agent:
         </span>
@@ -401,12 +406,12 @@
         </span>
       </div>
 
-      <div class="script-block agent important-script">
+      <div class="script-block agent" style="background:#fff7ed; border-left: 6px solid #d97706;">
         <span class="script-role" style="color:#d97706;">
           <i class="fa-solid fa-user-tie"></i> Agent:
         </span>
         <span class="script-response" style="font-weight: 600;">
-          So let's say you're driving down the road and hit a brand-new F-150, and it gets totaled. With your current policy, GEICO would come to you and say, "You've been a great customer-here's a ch[...] 
+          So let's say you're driving down the road and hit a brand-new F-150, and it gets totaled. With your current policy, GEICO would come to you and say, "You've been a great customer-here's a check for $15,000."<br><br>
           Now, the problem is: if it's a $60,000 truck and they only give you $15,000, how much are you left paying out of pocket? <strong>(MAKE THEM DO THE MATH)</strong>
         </span>
       </div>
@@ -418,7 +423,7 @@
         </span>
       </div>
 
-      <div class="script-block agent important-script">
+      <div class="script-block agent" style="background:#fff7ed; border-left: 6px solid #d97706;">
         <span class="script-role" style="color:#d97706;">
           <i class="fa-solid fa-user-tie"></i> Agent:
         </span>
@@ -434,7 +439,7 @@
         </span>
       </div>
 
-      <div class="script-block agent important-script">
+      <div class="script-block agent" style="background:#fff7ed; border-left: 6px solid #d97706;">
         <span class="script-role" style="color:#d97706;">
           <i class="fa-solid fa-shield-halved"></i> Agent:
         </span>
@@ -447,34 +452,34 @@
       <div class="script-block agent">
         <span class="script-role"><i class="fa-solid fa-user-tie"></i> Agent:</span>
         <span class="script-response">
-          The next important coverage is Collision. Collision covers the damage to your own vehicle if you're in an accident, regardless of who's at fault-so whether you hit another car, a tree, or ev[...]
+          The next important coverage is Collision. Collision covers the damage to your own vehicle if you're in an accident, regardless of who's at fault-so whether you hit another car, a tree, or even a pole, this is the coverage that helps get your car repaired or replaced.<br><br>
           For collision, I recommend a $1,000 deductible. (if they object you can say) here's why:<br>
-          A higher deductible means you'll be responsible for the first $1,000 of any damage, but it also lowers your monthly premium significantly. Most people don't get into accidents very often, so[...]
+          A higher deductible means you'll be responsible for the first $1,000 of any damage, but it also lowers your monthly premium significantly. Most people don't get into accidents very often, so choosing a $1,000 deductible is a smart way to keep your insurance affordable while still protecting you from those big, unexpected repair bills. If you ever need to use it, you'll be glad you have it.
         </span>
       </div>
       <div class="script-block agent">
         <span class="script-role"><i class="fa-solid fa-user-tie"></i> Agent:</span>
         <span class="script-response">
-          Next is Comprehensive coverage. This protects your vehicle from things that aren't collision-related-like theft, vandalism, fire, hail, or even if a deer runs into your car. Basically, if so[...]
-          For comprehensive, I recommend a $250 deductible. The reason is, comprehensive claims are usually less expensive and more common-like if a rock cracks your windshield or a storm causes damag[...]
+          Next is Comprehensive coverage. This protects your vehicle from things that aren't collision-related-like theft, vandalism, fire, hail, or even if a deer runs into your car. Basically, if something happens to your car that isn't a crash, comprehensive is what helps you out.<br><br>
+          For comprehensive, I recommend a $250 deductible. The reason is, comprehensive claims are usually less expensive and more common-like if a rock cracks your windshield or a storm causes damage. A lower deductible means you'll pay less out of pocket if something like that happens, and the difference in premium is usually pretty small compared to the collision.
         </span>
       </div>
       <div class="script-block agent">
         <span class="script-role"><i class="fa-solid fa-user-tie"></i> Agent:</span>
         <span class="script-response">
-          Do you have roadside with your current company or do you use a third party like triple A? (if they have it with their current insurance) If you ever have a flat tire, run out of gas, lock yo[...]
+          Do you have roadside with your current company or do you use a third party like triple A? (if they have it with their current insurance) If you ever have a flat tire, run out of gas, lock your keys in your car, or your battery dies, roadside assistance sends help right to you, 24/7. The biggest difference between Allstate's roadside program and any other insurance company is that Allstate goes off of the drivers rather than the vehicles, meaning no matter what car you're driving, you would have Allstate roadside covering you.
         </span>
       </div>
       <div class="script-block agent">
         <span class="script-role"><i class="fa-solid fa-user-tie"></i> Agent:</span>
         <span class="script-response">
-          Next up is Rental Car coverage. This is another optional coverage that most of our clients opt in for. If your car is ever in the shop because of a covered claim-like an accident-this covera[...]
+          Next up is Rental Car coverage. This is another optional coverage that most of our clients opt in for. If your car is ever in the shop because of a covered claim-like an accident-this coverage helps pays for a rental car so you can keep getting to work, school, or wherever you need to go. It's a great way to avoid being stranded or having to pay out of pocket for a rental while your car is being repaired.
         </span>
       </div>
       <div class="script-block agent">
         <span class="script-role"><i class="fa-solid fa-user-tie"></i> Agent:</span>
         <span class="script-response">
-          Finally, there's Personal Injury Protection, or PIP. This coverage helps pay for medical expenses for you and your passengers after an accident, no matter who's at fault. It can also cover t[...]
+          Finally, there's Personal Injury Protection, or PIP. This coverage helps pay for medical expenses for you and your passengers after an accident, no matter who's at fault. It can also cover things like lost wages and essential services if you're unable to work or take care of yourself after an accident. PIP is really valuable because it kicks in quickly and helps cover those immediate costs when you need it most.
         </span>
       </div>
 
@@ -482,27 +487,27 @@
       <div class="script-block agent">
         <span class="script-role"><i class="fa-solid fa-user-tie"></i> Agent:</span>
         <span class="script-response">
-          So, by making these adjustments-higher property damage limits, smart deductibles for collision and comprehensive, and adding helpful coverages like roadside, rental, and PIP-you're making su[...]
+          So, by making these adjustments-higher property damage limits, smart deductibles for collision and comprehensive, and adding helpful coverages like roadside, rental, and PIP-you're making sure you have the protection you need, without overpaying. Does that all make sense? Do you have any questions about any of these coverages?
         </span>
       </div>
-      <div class="step-title important">
+      <div class="step-title" style="color:#d97706; font-weight: 800; font-size: 1.3rem;">
         <i class="fa-solid fa-handshake" style="color:#d97706; margin-right: 8px;"></i>
         Step 6: Experience Recap Close
-        <span class="important-badge">
+        <span style="background:#fde68a; color:#92400e; padding:4px 12px; border-radius:6px; font-size:1rem; font-weight:700; margin-left:12px;">
           Just as important as Property Damage!
         </span>
       </div>
-      <div class="script-block agent important-script">
+      <div class="script-block agent" style="background:#fff7ed; border-left: 6px solid #d97706; box-shadow: 0 4px 12px rgba(217,119,6,0.12);">
         <span class="script-role" style="color:#d97706;">
           <i class="fa-solid fa-user-tie"></i> Agent:
         </span>
         <span class="script-response">
           While my system is calculating the rate for your policy, let me tell you a little bit about how it works once we get you set up over here..<br><br>
-          First, we're a local agency. That means if you ever have questions or problems, you won't be stuck in a call center or waiting on hold. You'll speak directly to the same few people every tim[...]
-          We pride ourselves on clear communication. You'll get my office number and email, plus my personal cell phone number for after-hours questions or emergencies. So, anytime you need help, you [...]
-          Also, unlike companies like GEICO, Progressive, and Liberty Mutual, we don't do teaser rates. Many big companies start you off with a low rate but can legally raise it at any time after you [...]
+          First, we're a local agency. That means if you ever have questions or problems, you won't be stuck in a call center or waiting on hold. You'll speak directly to the same few people every time-real people who know you and your policy.<br><br>
+          We pride ourselves on clear communication. You'll get my office number and email, plus my personal cell phone number for after-hours questions or emergencies. So, anytime you need help, you have direct access to us.<br><br>
+          Also, unlike companies like GEICO, Progressive, and Liberty Mutual, we don't do teaser rates. Many big companies start you off with a low rate but can legally raise it at any time after you sign up. Here, we've already run all your underwriting reports, so your rate is locked in. Plus, 45 days before your renewal, our customer service team will call you to review your policy, ensure you're getting all your discounts, and make sure you always have the best rate possible.<br><br>
           So, (Prospect), when we started, I asked how much you would want your insurance to cover if you got into an accident and were found at fault. You said all of it-is that still right?<br><br>
-          Right now, with GEICO, you're only covered for the first $15,000. If you hit that Ford F-150 we talked about, you'd be responsible for the remaining $45,000-and you told me that's something [...]
+          Right now, with GEICO, you're only covered for the first $15,000. If you hit that Ford F-150 we talked about, you'd be responsible for the remaining $45,000-and you told me that's something you want to avoid, right?<br><br>
           That's why we provided you with $300,000 in coverage-to make sure you're properly protected in case of any accident.<br><br>
           So, your monthly payment for this full protection will be ($).<br><br>
           A couple more questions and we'll wrap this up:<br>
@@ -525,7 +530,7 @@
       <div class="objection-dropdown">
         <button class="objection-toggle">Objection 1: "I'll pay later / Call me back / Not ready yet" <i class="fa fa-chevron-down"></i></button>
         <div class="objection-response-dropdown">
-          "I totally understand, As we talked about, you told me you wanted to be protected right? Currently with (insurance company) you only have $15,000 in property damage which as we talked about [...]
+          "I totally understand, As we talked about, you told me you wanted to be protected right? Currently with (insurance company) you only have $15,000 in property damage which as we talked about is not enough and in the example we went over with that F-150, you would be stuck paying out of pocket which you said you didn't want, right? Which is why we gave you the $300,000 to make sure you never have to pay out of pocket.<br>
           So let's make sure you never have to worry about that. What's the most convenient day for you to make that payment?
         </div>
       </div>
@@ -533,14 +538,14 @@
       <div class="objection-dropdown">
         <button class="objection-toggle">Objection 2: "It's more than I was paying" / "That's too expensive" <i class="fa fa-chevron-down"></i></button>
         <div class="objection-response-dropdown">
-          "Totally fair - but let's break it down. You were paying less because you were getting less. $15,000 in coverage doesn't cut it. Most of my clients can find the extra ($20,$40,$60) but none [...]
+          "Totally fair - but let's break it down. You were paying less because you were getting less. $15,000 in coverage doesn't cut it. Most of my clients can find the extra ($20,$40,$60) but none of them have an extra $45,000 sitting around.That's why we're giving you $300,000 so you don't have to take a $45,000 hit after an accident so let me ask you, what's the most convenient day for you to make that payment?"
         </div>
       </div>
 
       <div class="objection-dropdown">
         <button class="objection-toggle">Objection 3: "I just made a payment" / "I want to wait until my renewal date" <i class="fa fa-chevron-down"></i></button>
         <div class="objection-response-dropdown">
-          "I totally understand- we have two options, option one which is what I recommend is, lets get this policy started and then we can get you a refund of whatever premium you haven't used at you[...]
+          "I totally understand- we have two options, option one which is what I recommend is, lets get this policy started and then we can get you a refund of whatever premium you haven't used at your current company and if that doesn't work for you, option two is let's lock in this upgraded protection now and schedule the first payment for then. You don't pay anything today, and your rate is locked in for the renewal."<br>
           "Which option works better for you?"<br>
           (If they choose option two) Which card would you like to use to hold the policy for that date?"
         </div>
@@ -549,7 +554,7 @@
       <div class="objection-dropdown">
         <button class="objection-toggle">Objection 4: "I want to shop around" <i class="fa fa-chevron-down"></i></button>
         <div class="objection-response-dropdown">
-          "Totally understandable - but as we talked about, you said you wanted to be protected and every other company is trying to get you the lowest rates which means they're going to give you the [...]
+          "Totally understandable - but as we talked about, you said you wanted to be protected and every other company is trying to get you the lowest rates which means they're going to give you the lowest coverages possible which you said you didn't want. That's why over here we gave you the $300,000 to make sure you don't have to worry about paying anything out of pocket so let me ask you like this, what would be the most convenient day for you to pay for the policy?."
         </div>
       </div>
 
@@ -564,7 +569,7 @@
       <div class="objection-dropdown">
         <button class="objection-toggle">Objection 6: "Just email me the quote and I'll call you if I like it" <i class="fa fa-chevron-down"></i></button>
         <div class="objection-response-dropdown">
-          "Absolutely, I can email it and text it to you now but you told me you want your insurance to protect you fully, right? Currently you only have $15,000 in property damage which in the event [...]
+          "Absolutely, I can email it and text it to you now but you told me you want your insurance to protect you fully, right? Currently you only have $15,000 in property damage which in the event we went over with the F-150 would leave you paying $45,000 out of pocket. Over here we gave you the $300,000 to make sure you don't have to worry about that so let me ask you, what's the most convenient day for you to make that first payment?"
         </div>
       </div>
 
@@ -578,7 +583,7 @@
       <div class="objection-dropdown">
         <button class="objection-toggle">Objection 8: "I want to look at it/compare your quote to my current policy" <i class="fa fa-chevron-down"></i></button>
         <div class="objection-response-dropdown">
-          "I completely understand, I just sent you a text with the quote in it. Do me a favor, click on the link and make sure it works correctly. Let's go through line by line to make sure you under[...]
+          "I completely understand, I just sent you a text with the quote in it. Do me a favor, click on the link and make sure it works correctly. Let's go through line by line to make sure you understand what we're giving you."
         </div>
       </div>
 
@@ -617,7 +622,7 @@
         </blockquote>
         <strong>Agent (if they hesitate or object):</strong><br />
         <blockquote style="background:#f8fafc; border-left:4px solid #38bdf8; padding:1em; border-radius:6px;">
-          "I totally get that, my system is going to make me run through it but I can remove it at the end but this way you can see what the rate would look like if you ever were to bundle it together[...]
+          "I totally get that, my system is going to make me run through it but I can remove it at the end but this way you can see what the rate would look like if you ever were to bundle it together. It also gives you the multiple policy discount which is the biggest discount you can get oon the auto insurance."
         </blockquote>
       </div>
       <div style="margin-bottom:2em;">
@@ -632,7 +637,7 @@
         </blockquote>
         <strong>Agent (if they say they're happy with their current auto provider):</strong><br />
         <blockquote style="background:#f8fafc; border-left:4px solid #38bdf8; padding:1em; border-radius:6px;">
-          "Totally understand - a lot of people say that, but when they see the bundle savings and realize they're often underinsured on their auto policy, it makes sense to take a look. Let's at leas[...]
+          "Totally understand - a lot of people say that, but when they see the bundle savings and realize they're often underinsured on their auto policy, it makes sense to take a look. Let's at least see what we can do for you. What vehicles do you currently drive?"
         </blockquote>
       </div>
       <div style="margin-bottom:2em;">
@@ -640,12 +645,12 @@
         <p><em>Scenario: The customer doesn't own a home, but you want to cross-sell renters insurance.</em></p>
         <strong>Agent:</strong><br />
         <blockquote style="background:#f8fafc; border-left:4px solid #2563eb; padding:1em; border-radius:6px;">
-          "Alright, we've got your auto quote looking solid. Since you're currently renting, I'm going to go ahead and add renters insurance so we can bundle that too and apply the multi-policy discou[...]
+          "Alright, we've got your auto quote looking solid. Since you're currently renting, I'm going to go ahead and add renters insurance so we can bundle that too and apply the multi-policy discount."<br />
           <span style="font-style:italic;">(Move confidently into the next part without asking.)</span>
         </blockquote>
         <strong>Agent (if they hesitate or say they don't need it):</strong><br />
         <blockquote style="background:#f8fafc; border-left:4px solid #38bdf8; padding:1em; border-radius:6px;">
-          "I totally get it - a lot of people assume their landlord's policy covers them, but it actually doesn't protect your stuff or liability. And honestly, renters coverage is super affordable - [...]
+          "I totally get it - a lot of people assume their landlord's policy covers them, but it actually doesn't protect your stuff or liability. And honestly, renters coverage is super affordable - most people add it for around $15 and generally the discount it provides on the auto is higher than that so its saving you more money overall. It's a smart move."
         </blockquote>
       </div>
     </section>
@@ -655,7 +660,7 @@
       <h2><i class="fa-solid fa-book-open"></i> Resources</h2>
       <ul class="resource-list">
                 <li><i class="fa-solid fa-link"></i><a href="https://app.ringcentral.com" target="_blank">Ring Central Web Browser</a></li>
-        <li><i class="fa-solid fa-link"></i><a href="httpss://dashboard.sellmethispen.ai/"_blank">Sales AI tool </a></li>
+        <li><i class="fa-solid fa-link"></i><a href="https://dashboard.sellmethispen.ai/"_blank">Sales AI tool </a></li>
         <li><i class="fa-solid fa-link"></i><a href="https://schmell.ricochet.me" target="_blank">Ricochet</a></li>
         <li><i class="fa-solid fa-link"></i><a href="https://slack.com/signin#/signin/" target="_blank">Slack (for the telemarketers)</a></li>
         <li><i class="fa-solid fa-link"></i><a href="https://app.agencyzoom.com/login" target="_blank">Agency Zoom</a></li>
@@ -677,11 +682,11 @@
       <p>Be sure to set up Drivewise. Drivewise is a wonderful discount which you get 10% discount now and at renewal anywhere from 10%-15% so please take advantage.</p>
       <p><strong>ALL DRIVERS ON POLICY NEED TO PARTICIPATE TO BE ELIGIBLE TO EARN MAX DISCOUNT.</strong></p>
       <p>Please send me a copy of registration- as car needs to be owned/ co owned.</p>
-      <p>Be sure to take advantage of our referral program! For every person you refer to me to get a quote, as long as they qualify for Allstate, you will receive a $20 amazon gift card per person I [...]
+      <p>Be sure to take advantage of our referral program! For every person you refer to me to get a quote, as long as they qualify for Allstate, you will receive a $20 amazon gift card per person I quote regardless of if they purchase a policy or not!</p>
       <h3>Renters</h3>
       <p>Your policy number is "____" and each month moving forward we have your payment set up to come from your bank on the "date".</p>
       <h3>Escrow home</h3>
-      <p>Your policy number is "___" We are going to be sending the invoice to your mortgage company for them to pay. An inspector may come to make sure we are insuring your house properly, as well as[...]
+      <p>Your policy number is "___" We are going to be sending the invoice to your mortgage company for them to pay. An inspector may come to make sure we are insuring your house properly, as well as to check on any liabilities that may need to be fixed.</p>
       <h3>Self-pay home</h3>
       <p>Your policy number is "___" An inspector may come to make sure we are insuring your house properly, as well as to check on any liabilities that may need to be fixed.</p>
     </section>

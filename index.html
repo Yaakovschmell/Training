@@ -125,6 +125,36 @@
       align-items: center;
       gap: 0.5em;
     }
+
+    /* Important highlight styles (used for Property Damage and now Step 2) */
+    .step-title.important {
+      color: #d97706;
+      font-weight: 800;
+      font-size: 1.3rem;
+    }
+    .important-badge {
+      background:#fde68a;
+      color:#92400e;
+      padding:4px 12px;
+      border-radius:6px;
+      font-size:1rem;
+      font-weight:700;
+      margin-left:12px;
+      display: inline-block;
+    }
+    .important-script {
+      background:#fff7ed;
+      border-left: 6px solid #d97706;
+      box-shadow: 0 4px 12px rgba(217,119,6,0.12);
+      padding: 1.1rem 1rem;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+    }
+    .important-script .script-role {
+      color: #d97706;
+      font-weight: 700;
+    }
+
     .script-block {
       display: flex;
       gap: 1em;
@@ -306,6 +336,14 @@
         Before you get into coverage details, be sure to build some rapport! Find a natural moment to connect-ask about their day, comment on something local, or just chat for a moment. Rapport helps [...]
       </div>
 
+      <div class="step-title important"><i class="fa-solid fa-2"></i> Step 2: Experience & Expectations</div>
+      <div class="script-block agent important-script">
+        <span class="script-role"><i class="fa-solid fa-user-tie"></i> Agent:</span>
+        <span class="script-response">
+          So, (name), I'm going to pull up your reports which will show me any accidents or claims in the last couple of years and where you're currently insured. I see you're currently with (Insurance Company). How's your overall experience been with them-the rates, customer service, things like that? (DIG TO FIND OUT MORE ABOUT BAD EXPERIENCES TO USE LATER SUCH AS GEICO BEING A CALL CENTER, NOT HAVING POLICY REVIEWS ETC.)
+        </span>
+      </div>
+
       <div class="step-title"><i class="fa-solid fa-1"></i> Step 1: Introduction & Info Confirmation</div>
       <div class="script-block agent">
         <span class="script-role"><i class="fa-solid fa-user-tie"></i> Agent:</span>
@@ -316,14 +354,6 @@
         </span>
       </div>
 
-      <div class="step-title"><i class="fa-solid fa-2"></i> Step 2: Experience & Expectations</div>
-      <div class="script-block agent">
-        <span class="script-role"><i class="fa-solid fa-user-tie"></i> Agent:</span>
-        <span class="script-response">
-          So, (name), I'm going to pull up your reports which will show me any accidents or claims in the last couple of years and where you're currently insured. I see you're currently with (Insurance Company). How's your overall experience been with them-the rates, customer service, things like that? (Dig to find out more about bad experiences to use later such as Geico being a call center, not having policy reviews etc.)
-        </span>
-      </div>
-
       <div class="step-title"><i class="fa-solid fa-3"></i> Step 3: Explaining Coverages</div>
       <div class="script-block agent">
         <span class="script-role"><i class="fa-solid fa-user-tie"></i> Agent:</span>
@@ -331,19 +361,14 @@
           The first coverage is bodily injury liability. This covers how much your insurance will pay for the other person's medical bills if you get into an accident and are found at fault. Right now[...]
         </span>
       </div>
-      <div class="script-block agent">
-        <span class="script-role"><i class="fa-solid fa-user-tie"></i> Agent:</span>
-        <span class="script-response">
-          The same would apply to your uninsured motorist coverage. This is what protects you and your passengers if you're ever in an accident and the person who hits you either doesn't have any insu[...]
-        </span>
-      </div>
-      <div class="step-title" style="color:#d97706; font-weight: 800; font-size: 1.3rem;">
+
+      <div class="step-title important">
         <i class="fa-solid fa-exclamation-triangle" style="color:#d97706; margin-right: 8px;"></i>
         Property Damage Liability (Most Important Coverage)
       </div>
 
-      <div class="script-block agent" style="background:#fff7ed; border-left: 6px solid #d97706; box-shadow: 0 4px 12px rgba(217,119,6,0.12);">
-        <span class="script-role" style="color:#d97706;">
+      <div class="script-block agent important-script">
+        <span class="script-role">
           <i class="fa-solid fa-shield-halved"></i> Agent:
         </span>
         <span class="script-response" style="font-weight: 600;">
@@ -360,7 +385,7 @@
         </span>
       </div>
 
-      <div class="script-block agent" style="background:#fff7ed; border-left: 6px solid #d97706;">
+      <div class="script-block agent important-script">
         <span class="script-role" style="color:#d97706;">
           <i class="fa-solid fa-user-tie"></i> Agent:
         </span>
@@ -376,12 +401,12 @@
         </span>
       </div>
 
-      <div class="script-block agent" style="background:#fff7ed; border-left: 6px solid #d97706;">
+      <div class="script-block agent important-script">
         <span class="script-role" style="color:#d97706;">
           <i class="fa-solid fa-user-tie"></i> Agent:
         </span>
         <span class="script-response" style="font-weight: 600;">
-          So let's say you're driving down the road and hit a brand-new F-150, and it gets totaled. With your current policy, GEICO would come to you and say, "You've been a great customer-here's a ch[...]
+          So let's say you're driving down the road and hit a brand-new F-150, and it gets totaled. With your current policy, GEICO would come to you and say, "You've been a great customer-here's a ch[...] 
           Now, the problem is: if it's a $60,000 truck and they only give you $15,000, how much are you left paying out of pocket? <strong>(MAKE THEM DO THE MATH)</strong>
         </span>
       </div>
@@ -393,7 +418,7 @@
         </span>
       </div>
 
-      <div class="script-block agent" style="background:#fff7ed; border-left: 6px solid #d97706;">
+      <div class="script-block agent important-script">
         <span class="script-role" style="color:#d97706;">
           <i class="fa-solid fa-user-tie"></i> Agent:
         </span>
@@ -409,7 +434,7 @@
         </span>
       </div>
 
-      <div class="script-block agent" style="background:#fff7ed; border-left: 6px solid #d97706;">
+      <div class="script-block agent important-script">
         <span class="script-role" style="color:#d97706;">
           <i class="fa-solid fa-shield-halved"></i> Agent:
         </span>
@@ -460,14 +485,14 @@
           So, by making these adjustments-higher property damage limits, smart deductibles for collision and comprehensive, and adding helpful coverages like roadside, rental, and PIP-you're making su[...]
         </span>
       </div>
-      <div class="step-title" style="color:#d97706; font-weight: 800; font-size: 1.3rem;">
+      <div class="step-title important">
         <i class="fa-solid fa-handshake" style="color:#d97706; margin-right: 8px;"></i>
         Step 6: Experience Recap Close
-        <span style="background:#fde68a; color:#92400e; padding:4px 12px; border-radius:6px; font-size:1rem; font-weight:700; margin-left:12px;">
+        <span class="important-badge">
           Just as important as Property Damage!
         </span>
       </div>
-      <div class="script-block agent" style="background:#fff7ed; border-left: 6px solid #d97706; box-shadow: 0 4px 12px rgba(217,119,6,0.12);">
+      <div class="script-block agent important-script">
         <span class="script-role" style="color:#d97706;">
           <i class="fa-solid fa-user-tie"></i> Agent:
         </span>
@@ -620,7 +645,7 @@
         </blockquote>
         <strong>Agent (if they hesitate or say they don't need it):</strong><br />
         <blockquote style="background:#f8fafc; border-left:4px solid #38bdf8; padding:1em; border-radius:6px;">
-          "I totally get it - a lot of people assume their landlord's policy covers them, but it actually doesn't protect your stuff or liability. And honestly, renters coverage is super affordable -[...]
+          "I totally get it - a lot of people assume their landlord's policy covers them, but it actually doesn't protect your stuff or liability. And honestly, renters coverage is super affordable - [...]
         </blockquote>
       </div>
     </section>
@@ -630,7 +655,7 @@
       <h2><i class="fa-solid fa-book-open"></i> Resources</h2>
       <ul class="resource-list">
                 <li><i class="fa-solid fa-link"></i><a href="https://app.ringcentral.com" target="_blank">Ring Central Web Browser</a></li>
-        <li><i class="fa-solid fa-link"></i><a href="https://dashboard.sellmethispen.ai/"_blank">Sales AI tool </a></li>
+        <li><i class="fa-solid fa-link"></i><a href="httpss://dashboard.sellmethispen.ai/"_blank">Sales AI tool </a></li>
         <li><i class="fa-solid fa-link"></i><a href="https://schmell.ricochet.me" target="_blank">Ricochet</a></li>
         <li><i class="fa-solid fa-link"></i><a href="https://slack.com/signin#/signin/" target="_blank">Slack (for the telemarketers)</a></li>
         <li><i class="fa-solid fa-link"></i><a href="https://app.agencyzoom.com/login" target="_blank">Agency Zoom</a></li>

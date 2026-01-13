@@ -40,9 +40,7 @@
       margin: 0;
       list-style: none;
     }
-    .tab-item {
-      position: relative;
-    }
+    .tab-item { position: relative; }
     .tab-link {
       display: flex;
       align-items: center;
@@ -50,12 +48,10 @@
       padding: 1rem 2rem;
       font-size: 1.1rem;
       color: #2563eb;
-      text-decoration: none;
       font-weight: 500;
       border: none;
       background: none;
       cursor: pointer;
-      transition: background 0.2s, color 0.2s;
       border-radius: 8px 8px 0 0;
     }
     .tab-link.active,
@@ -76,27 +72,16 @@
       padding: 0.5rem 0;
       border-top: 2px solid #2563eb;
     }
-    .tab-item:hover .dropdown-content,
-    .tab-item:focus-within .dropdown-content {
-      display: block;
-      animation: fadeIn 0.2s;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-8px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    .tab-item:hover .dropdown-content { display: block; }
     .dropdown-link {
       display: block;
       padding: 0.75rem 1.5rem;
       color: #2563eb;
-      text-decoration: none;
-      font-size: 1rem;
       background: none;
       border: none;
       width: 100%;
       text-align: left;
       cursor: pointer;
-      transition: background 0.2s, color 0.2s;
     }
     .dropdown-link:hover {
       background: #e0e7ff;
@@ -110,193 +95,92 @@
       box-shadow: 0 6px 32px rgba(37,99,235,0.08);
       padding: 2.5rem 2rem;
       display: none;
-      animation: fadeIn 0.4s;
       min-height: 300px;
     }
-    .tab-content.active {
-      display: block;
-    }
-    .step-title {
-      font-size: 1.3rem;
-      color: #2563eb;
-      margin: 2rem 0 0.5rem 0;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 0.5em;
-    }
-    .script-block {
-      display: flex;
-      gap: 1em;
-      align-items: flex-start;
-      margin-bottom: 1.5rem;
-      padding: 1.1rem 1rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(37,99,235,0.06);
-      background: #f8fafc;
-    }
-    .script-block.agent {
-      border-left: 5px solid #2563eb;
-    }
-    .script-block.customer {
-      border-left: 5px solid #38bdf8;
-      background: #f0f9ff;
-    }
-    .script-role {
-      font-weight: bold;
-      min-width: 80px;
-      color: #2563eb;
-    }
-    .script-block.customer .script-role {
-      color: #0ea5e9;
-    }
-    .script-response {
-      font-size: 1.07rem;
-    }
-    ul.resource-list {
-      list-style: none;
-      padding-left: 0;
-    }
-    ul.resource-list li {
-      margin-bottom: 0.9em;
-      font-size: 1.1rem;
-    }
-    ul.resource-list a {
-      color: #2563eb;
-      text-decoration: none;
-    }
-    ul.resource-list a:hover {
-      text-decoration: underline;
-    }
-    ul.resource-list i {
-      color: #2563eb;
-      margin-right: 0.5em;
-    }
-    .closing-block {
-      background: #e0e7ff;
-      padding: 1rem;
-      border-radius: 6px;
-      margin-bottom: 1rem;
-      font-style: italic;
-    }
-    .objection-dropdown {
-      margin-bottom: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(37,99,235,0.06);
-      background: #f8fafc;
-    }
+    .tab-content.active { display: block; }
+    .script-block { margin-bottom: 1.5rem; padding: 1.1rem; border-radius: 10px; background: #f8fafc; }
+    .script-block.agent { border-left: 5px solid #2563eb; }
+    .script-block.customer { border-left: 5px solid #38bdf8; background: #f0f9ff; }
+    .script-role { font-weight: bold; min-width: 80px; }
+    .objection-dropdown { margin-bottom: 1rem; }
     .objection-toggle {
       width: 100%;
-      text-align: left;
       background: #e0e7ff;
-      color: #2563eb;
       border: none;
-      font-size: 1.08rem;
+      padding: 1rem;
       font-weight: 600;
-      padding: 1rem 1.5rem;
-      border-radius: 8px;
       cursor: pointer;
-      outline: none;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      transition: background 0.2s;
     }
-    .objection-toggle:hover, .objection-toggle.active {
-      background: #2563eb;
-      color: #fff;
-    }
-    .objection-response-dropdown {
-      display: none;
-      padding: 1rem 2rem 1rem 2.5rem;
-      font-size: 1.04rem;
-      color: #222;
-      background: #f1f6fa;
-      border-radius: 0 0 8px 8px;
-      border-top: 1px solid #e0e7ff;
-    }
-    .objection-dropdown.open .objection-response-dropdown {
-      display: block;
-    }
-    .objection-dropdown .fa-chevron-down {
-      transition: transform 0.2s;
-    }
-    .objection-dropdown.open .fa-chevron-down {
-      transform: rotate(180deg);
-    }
-    h2 {
-      color: #2563eb;
-      margin-top: 0;
-    }
-    h3 {
-      color: #2563eb;
-      margin-top: 1.5em;
-    }
-    @media (max-width: 700px) {
-      header {
-        font-size: 1.5rem;
-        padding: 18px 0 12px 0;
-      }
-      .tab-menu {
-        gap: 0.5rem;
-      }
-      .tab-link {
-        padding: 0.7rem 0.8rem;
-        font-size: 1rem;
-      }
-      .tab-content {
-        padding: 1.2rem 0.5rem;
-      }
-      .step-title { font-size: 1.05rem; }
-    }
+    .objection-response-dropdown { display: none; padding: 1rem 2rem; background: #f1f6fa; }
+    .objection-dropdown.open .objection-response-dropdown { display: block; }
   </style>
 </head>
+
 <body>
-  <header>
-    Sales Training
-  </header>
-  <nav>
-    <ul class="tab-menu">
-      <li class="tab-item">
-        <button class="tab-link active" data-tab="coverage" onclick="showTab('coverage')">
-          <i class="fa-solid fa-shield-halved"></i> Coverage ▾
-        </button>
-        <div class="dropdown-content">
-          <button class="dropdown-link" onclick="showTab('coverage')">Coverage Script</button>
-        </div>
-      </li>
-      <li class="tab-item">
-        <button class="tab-link" data-tab="objections" onclick="showTab('objections')">
-          <i class="fa-solid fa-comments"></i> Objections ▾
-        </button>
-        <div class="dropdown-content">
-          <button class="dropdown-link" onclick="showTab('objections')">Objection Script</button>
-        </div>
-      </li>
-      <li class="tab-item">
-        <button class="tab-link" data-tab="crosssale" onclick="showTab('crosssale')">
-          <i class="fa-solid fa-retweet"></i> Cross Sale ▾
-        </button>
-        <div class="dropdown-content">
-          <button class="dropdown-link" onclick="showTab('crosssale')">Cross Sale Script</button>
-        </div>
-      </li>
-      <li class="tab-item">
-        <button class="tab-link" data-tab="resources" onclick="showTab('resources')">
-          <i class="fa-solid fa-book-open"></i> Resources ▾
-        </button>
-        <div class="dropdown-content">
-          <button class="dropdown-link" onclick="showTab('resources')">Resource List</button>
-        </div>
-      </li>
-      <li class="tab-item">
-        <button class="tab-link" data-tab="welcome" onclick="showTab('welcome')">
-          <i class="fa-solid fa-handshake"></i> Welcome Text
-        </button>
-      </li>
-    </ul>
-  </nav>
-  <main>
+<header>Sales Training</header>
+
+<nav>
+  <ul class="tab-menu">
+    <li class="tab-item">
+      <button class="tab-link active" data-tab="coverage" onclick="showTab('coverage')">
+        <i class="fa-solid fa-shield-halved"></i> Coverage ▾
+      </button>
+      <div class="dropdown-content">
+        <button class="dropdown-link" onclick="showTab('coverage')">Coverage Script</button>
+      </div>
+    </li>
+    <li class="tab-item">
+      <button class="tab-link" data-tab="objections" onclick="showTab('objections')">
+        <i class="fa-solid fa-comments"></i> Objections ▾
+      </button>
+      <div class="dropdown-content">
+        <button class="dropdown-link" onclick="showTab('objections')">Objection Script</button>
+      </div>
+    </li>
+    <li class="tab-item">
+      <button class="tab-link" data-tab="crosssale" onclick="showTab('crosssale')">
+        <i class="fa-solid fa-retweet"></i> Cross Sale ▾
+      </button>
+      <div class="dropdown-content">
+        <button class="dropdown-link" onclick="showTab('crosssale')">Cross Sale Script</button>
+      </div>
+    </li>
+    <li class="tab-item">
+      <button class="tab-link" data-tab="resources" onclick="showTab('resources')">
+        <i class="fa-solid fa-book-open"></i> Resources ▾
+      </button>
+      <div class="dropdown-content">
+        <button class="dropdown-link" onclick="showTab('resources')">Resource List</button>
+      </div>
+    </li>
+    <li class="tab-item">
+      <button class="tab-link" data-tab="welcome" onclick="showTab('welcome')">
+        <i class="fa-solid fa-handshake"></i> Welcome Text
+      </button>
+    </li>
+  </ul>
+</nav>
+
+<main>
+<!-- COVERAGE -->
+<section id="coverage" class="tab-content active">
+
+  <div class="coverage-header">
+    <div class="coverage-steps">
+      <strong style="color:#2563eb;">Coverage - Quick Steps</strong>
+      <ol>
+        <li>Step 1: Introduction & Info Confirmation</li>
+        <li>Step 2: Experience & Expectations</li>
+        <li>Step 3: Explaining Coverages</li>
+        <li>Step 4: Other Important Coverages</li>
+        <li>Step 6: Experience Recap Close</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="step-title"><span class="step-badge">1</span> Step 1: Introduction & Info Confirmat
     
  <!-- COVERAGE SCRIPT -->
     <section id="coverage" class="tab-content active">

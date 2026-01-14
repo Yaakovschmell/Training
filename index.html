@@ -112,6 +112,7 @@
       display: none;
       animation: fadeIn 0.4s;
       min-height: 300px;
+      overflow: visible; /* Ensure no clipping */
     }
     .tab-content.active {
       display: block;
@@ -264,38 +265,77 @@
       min-width: 0; /* Allow shrinking if needed */
     }
 
-    /* Sticky Sidebar */
+    /* Sticky Sidebar - Enhanced Styling */
     #coverage .sticky-sidebar {
       position: sticky;
-      top: 20px;
+      top: 140px; /* Adjusted to clear sticky nav (~80px) + margin */
       align-self: flex-start;
       width: 250px;
       flex-shrink: 0; /* Prevent sidebar from shrinking */
-      background: #ffffff;
-      border: 1px solid #e0e0e0;
-      border-radius: 8px;
-      padding: 16px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+      border: 1px solid #dbeafe;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
       height: fit-content;
+      z-index: 50; /* Ensure it stays above content */
     }
 
-    /* Steps List Styling */
+    #coverage .sticky-sidebar h3 {
+      margin: 0 0 16px 0;
+      color: #2563eb;
+      font-size: 1.2rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+
+    /* Steps List Styling - Improved */
     #coverage .steps-list {
       list-style: none;
       padding: 0;
-      margin: 0 0 0 0;
+      margin: 0;
     }
 
     #coverage .steps-list li {
       font-size: 14px;
-      line-height: 1.4;
-      color: #333;
-      padding: 4px 0;
-      border-bottom: 1px solid #f0f0f0;
+      line-height: 1.5;
+      color: #1e293b;
+      padding: 8px 12px;
+      margin-bottom: 8px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.8);
+      border-left: 3px solid #2563eb;
+      transition: background 0.2s, transform 0.2s;
+      font-weight: 500;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    #coverage .steps-list li::before {
+      content: attr(data-step);
+      font-weight: 700;
+      color: #2563eb;
+      font-size: 12px;
+      background: #e0e7ff;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #coverage .steps-list li:hover {
+      background: rgba(37, 99, 235, 0.1);
+      transform: translateX(4px);
     }
 
     #coverage .steps-list li:last-child {
-      border-bottom: none;
+      margin-bottom: 0;
     }
 
     /* Responsive: Stack on small screens */
@@ -310,6 +350,7 @@
         width: 100%;
         order: 2;
         margin-top: 2rem;
+        top: auto; /* Disable sticky on mobile */
       }
     }
   </style>
@@ -563,13 +604,13 @@
        
        <!-- Sticky Steps Sidebar -->
        <aside class="sticky-sidebar">
-         <h3 style="margin: 0 0 12px 0; color: #2563eb; font-size: 1.1rem; font-weight: 600;">Application Steps</h3>
+         <h3><i class="fa-solid fa-list-ol"></i> Application Steps</h3>
          <ul class="steps-list">
-           <li>Step 1: Introduction & Info Confirmation</li>
-           <li style="margin-bottom:6px;">Step 2: Experience & Expectations</li>
-           <li style="margin-bottom:6px;">Step 3: Explaining Coverages</li>
-           <li style="margin-bottom:6px;">Step 4: Other Important Coverages</li>
-           <li style="margin-bottom:0;">Step 6: Experience Recap Close</li>
+           <li data-step="1">Step 1: Introduction & Info Confirmation</li>
+           <li data-step="2" style="margin-bottom:6px;">Step 2: Experience & Expectations</li>
+           <li data-step="3" style="margin-bottom:6px;">Step 3: Explaining Coverages</li>
+           <li data-step="4" style="margin-bottom:6px;">Step 4: Other Important Coverages</li>
+           <li data-step="6" style="margin-bottom:0;">Step 6: Experience Recap Close</li>
          </ul>
        </aside>
      </div>

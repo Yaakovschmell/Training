@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,6 @@
   <title>Sales Training</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-
   <style>
     body {
       margin: 0;
@@ -249,6 +249,66 @@
       }
       .step-title { font-size: 1.05rem; }
     }
+
+    /* Coverage Page Layout (Flex for Main + Sidebar) */
+    #coverage .page-container {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    /* Main Content Area */
+    #coverage .main-content {
+      flex: 1;
+      min-width: 600px;
+    }
+
+    /* Sticky Sidebar */
+    #coverage .sticky-sidebar {
+      position: sticky;
+      top: 20px;
+      align-self: flex-start;
+      width: 250px;
+      background: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      height: fit-content;
+    }
+
+    /* Steps List Styling */
+    #coverage .steps-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 0 0;
+    }
+
+    #coverage .steps-list li {
+      font-size: 14px;
+      line-height: 1.4;
+      color: #333;
+      padding: 4px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    #coverage .steps-list li:last-child {
+      border-bottom: none;
+    }
+
+    /* Responsive: Stack on small screens */
+    @media (max-width: 768px) {
+      #coverage .page-container {
+        flex-direction: column;
+      }
+      
+      #coverage .sticky-sidebar {
+        position: static;
+        width: 100%;
+        order: 2;
+      }
+    }
   </style>
 </head>
 <body>
@@ -299,17 +359,14 @@
   <main>
    <section id="coverage" class="tab-content active">
   <h2><i class="fa-solid fa-shield-halved"></i> Coverage Script</h2>
-
-  <div style="display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;">
-
+  <div class="page-container">
     <!-- Main script content -->
-    <div style="flex: 1; min-width: 600px;">
+    <div class="main-content">
       <div style="background:#fef9c3; border-left: 6px solid #f59e42; padding: 1em; margin-bottom: 1.2em; border-radius: 8px;">
         <strong><i class="fa-solid fa-handshake"></i> Rapport Reminder:</strong>
         <br>
         Before you get into coverage details, be sure to build some rapport! Find a natural moment to connect-ask about their day, comment on something local, or just chat for a moment. Rapport helps set a positive tone for the entire call.
       </div>
-
       <div class="step-title"><i class="fa-solid fa-1"></i> Step 1: Introduction & Info Confirmation</div>
       <div class="script-block agent">
         <span class="script-role"><i class="fa-solid fa-user-tie"></i> Agent:</span>
@@ -349,7 +406,6 @@
           Absolutely, I agree-and that's exactly why we make sure our customers always have enough coverage to protect them. So now I'm going to go over what you currently have with GEICO so you understand the coverages you actually have.
         </span>
       </div>
-
       <div class="step-title"><i class="fa-solid fa-3"></i> Step 3: Explaining Coverages</div>
       <div class="script-block agent">
         <span class="script-role"><i class="fa-solid fa-user-tie"></i> Agent:</span>
@@ -367,7 +423,6 @@
         <i class="fa-solid fa-exclamation-triangle" style="color:#d97706; margin-right: 8px;"></i>
         Property Damage Liability (Most Important Coverage)
       </div>
-
       <div class="script-block agent" style="background:#fff7ed; border-left: 6px solid #d97706; box-shadow: 0 4px 12px rgba(217,119,6,0.12);">
         <span class="script-role" style="color:#d97706;">
           <i class="fa-solid fa-shield-halved"></i> Agent:
@@ -378,14 +433,12 @@
           Just as an example-are you familiar with the Ford F-150?
         </span>
       </div>
-
       <div class="script-block customer">
         <span class="script-role"><i class="fa-solid fa-user"></i> Customer:</span>
         <span class="script-response" style="font-weight: 600;">
           Yes.
         </span>
       </div>
-
       <div class="script-block agent" style="background:#fff7ed; border-left: 6px solid #d97706;">
         <span class="script-role" style="color:#d97706;">
           <i class="fa-solid fa-user-tie"></i> Agent:
@@ -394,14 +447,12 @@
           Do you know around how much they cost?
         </span>
       </div>
-
       <div class="script-block customer">
         <span class="script-role"><i class="fa-solid fa-user"></i> Customer:</span>
         <span class="script-response" style="font-weight: 600;">
           About $60,000.
         </span>
       </div>
-
       <div class="script-block agent" style="background:#fff7ed; border-left: 6px solid #d97706;">
         <span class="script-role" style="color:#d97706;">
           <i class="fa-solid fa-user-tie"></i> Agent:
@@ -411,14 +462,12 @@
           Now, the problem is: if it's a $60,000 truck and they only give you $15,000, how much are you left paying out of pocket? <strong>(MAKE THEM DO THE MATH)</strong>
         </span>
       </div>
-
       <div class="script-block customer">
         <span class="script-role"><i class="fa-solid fa-user"></i> Customer:</span>
         <span class="script-response" style="font-weight: 600;">
           $45,000.
         </span>
       </div>
-
       <div class="script-block agent" style="background:#fff7ed; border-left: 6px solid #d97706;">
         <span class="script-role" style="color:#d97706;">
           <i class="fa-solid fa-user-tie"></i> Agent:
@@ -427,14 +476,12 @@
           And how does that sound?
         </span>
       </div>
-
       <div class="script-block customer">
         <span class="script-role"><i class="fa-solid fa-user"></i> Customer:</span>
         <span class="script-response" style="font-weight: 600;">
           Horrible.
         </span>
       </div>
-
       <div class="script-block agent" style="background:#fff7ed; border-left: 6px solid #d97706;">
         <span class="script-role" style="color:#d97706;">
           <i class="fa-solid fa-shield-halved"></i> Agent:
@@ -443,7 +490,6 @@
           Exactly! That's why I'm going to give you $300,000 for property damage on your policy, to make sure you're fully protected in the event of any claim. Does it make sense why we do that?
         </span>
       </div>
-
       <div class="step-title"><i class="fa-solid fa-4"></i> Step 4: Other Important Coverages</div>
       <div class="script-block agent">
         <span class="script-role"><i class="fa-solid fa-user-tie"></i> Agent:</span>
@@ -478,7 +524,6 @@
           Finally, there's Personal Injury Protection, or PIP. This coverage helps pay for medical expenses for you and your passengers after an accident, no matter who's at fault. It can also cover things like lost wages and essential services if you're unable to work or take care of yourself after an accident. PIP is really valuable because it kicks in quickly and helps cover those immediate costs when you need it most.
         </span>
       </div>
-
       <div class="step-title"><i class="fa-solid fa-5"></i> Step 5: Wrap-Up</div>
       <div class="script-block agent">
         <span class="script-role"><i class="fa-solid fa-user-tie"></i> Agent:</span>
@@ -511,8 +556,21 @@
           And what card would you like to use for today's payment?
         </span>
       </div>
-    </section>
-
+    </div>
+    
+    <!-- Sticky Steps Sidebar -->
+    <aside class="sticky-sidebar">
+      <h3 style="margin: 0 0 12px 0; color: #2563eb; font-size: 1.1rem; font-weight: 600;">Application Steps</h3>
+      <ul class="steps-list">
+        <li>Step 1: Introduction & Info Confirmation</li>
+        <li style="margin-bottom:6px;">Step 2: Experience & Expectations</li>
+        <li style="margin-bottom:6px;">Step 3: Explaining Coverages</li>
+        <li style="margin-bottom:6px;">Step 4: Other Important Coverages</li>
+        <li style="margin-bottom:0;">Step 6: Experience Recap Close</li>
+      </ul>
+    </aside>
+  </div>
+  </section>
     <!-- OBJECTION SCRIPT -->
     <section id="objections" class="tab-content">
       <h2><i class="fa-solid fa-comments"></i> Objection Script</h2>
@@ -522,7 +580,6 @@
         <em>You don't have enough coverage right now - and we're fixing that.</em><br />
         The goal: minimize delays, eliminate follow-ups, and close confidently.
       </div>
-
       <div class="objection-dropdown">
         <button class="objection-toggle">Objection 1: "I'll pay later / Call me back / Not ready yet" <i class="fa fa-chevron-down"></i></button>
         <div class="objection-response-dropdown">
@@ -530,14 +587,12 @@
           So let's make sure you never have to worry about that. What's the most convenient day for you to make that payment?
         </div>
       </div>
-
       <div class="objection-dropdown">
         <button class="objection-toggle">Objection 2: "It's more than I was paying" / "That's too expensive" <i class="fa fa-chevron-down"></i></button>
         <div class="objection-response-dropdown">
           "Totally fair - but let's break it down. You were paying less because you were getting less. $15,000 in coverage doesn't cut it. Most of my clients can find the extra ($20,$40,$60) but none of them have an extra $45,000 sitting around.That's why we're giving you $300,000 so you don't have to take a $45,000 hit after an accident so let me ask you, what's the most convenient day for you to make that payment?"
         </div>
       </div>
-
       <div class="objection-dropdown">
         <button class="objection-toggle">Objection 3: "I just made a payment" / "I want to wait until my renewal date" <i class="fa fa-chevron-down"></i></button>
         <div class="objection-response-dropdown">
@@ -546,14 +601,12 @@
           (If they choose option two) Which card would you like to use to hold the policy for that date?"
         </div>
       </div>
-
       <div class="objection-dropdown">
         <button class="objection-toggle">Objection 4: "I want to shop around" <i class="fa fa-chevron-down"></i></button>
         <div class="objection-response-dropdown">
           "Totally understandable - but as we talked about, you said you wanted to be protected and every other company is trying to get you the lowest rates which means they're going to give you the lowest coverages possible which you said you didn't want. That's why over here we gave you the $300,000 to make sure you don't have to worry about paying anything out of pocket so let me ask you like this, what would be the most convenient day for you to pay for the policy?."
         </div>
       </div>
-
       <div class="objection-dropdown">
         <button class="objection-toggle">Objection 5: "I need to talk to my spouse/partner first" <i class="fa fa-chevron-down"></i></button>
         <div class="objection-response-dropdown">
@@ -561,42 +614,36 @@
           Let's get this taken care of. If your partner has questions, we can make changes later - but waiting leaves you vulnerable. What card works best to secure the coverage now?"
         </div>
       </div>
-
       <div class="objection-dropdown">
         <button class="objection-toggle">Objection 6: "Just email me the quote and I'll call you if I like it" <i class="fa fa-chevron-down"></i></button>
         <div class="objection-response-dropdown">
           "Absolutely, I can email it and text it to you now but you told me you want your insurance to protect you fully, right? Currently you only have $15,000 in property damage which in the event we went over with the F-150 would leave you paying $45,000 out of pocket. Over here we gave you the $300,000 to make sure you don't have to worry about that so let me ask you, what's the most convenient day for you to make that first payment?"
         </div>
       </div>
-
       <div class="objection-dropdown">
         <button class="objection-toggle">Objection 7: "I've never had an accident / I'm a safe driver" <i class="fa fa-chevron-down"></i></button>
         <div class="objection-response-dropdown">
           "That's great - but even the safest drivers make mistakes and that's why we have insurance. Let's set this up and keep you covered - what's the best card to use?"
         </div>
       </div>
-
       <div class="objection-dropdown">
         <button class="objection-toggle">Objection 8: "I want to look at it/compare your quote to my current policy" <i class="fa fa-chevron-down"></i></button>
         <div class="objection-response-dropdown">
           "I completely understand, I just sent you a text with the quote in it. Do me a favor, click on the link and make sure it works correctly. Let's go through line by line to make sure you understand what we're giving you."
         </div>
       </div>
-
       <div class="objection-dropdown">
         <button class="objection-toggle">Future Start Date (If They Insist on Waiting) <i class="fa fa-chevron-down"></i></button>
         <div class="objection-response-dropdown">
           "No problem. I'll match your current schedule. You pay nothing today - but your better coverage is secured." <strong>GET THE PAYMENT INFORMATION.</strong>
         </div>
       </div>
-
       <div class="closing-block">
         <strong>Closing the Sale (Short & Clear):</strong><br />
         "You're going from minimum protection to full protection - and that's the whole point of insurance."<br />
         "What card works best to lock this in today?"
       </div>
     </section>
-
     <!-- CROSS SALE SCRIPT -->
     <section id="crosssale" class="tab-content">
       <h2><i class="fa-solid fa-retweet"></i> Cross Sale</h2>
@@ -650,7 +697,6 @@
         </blockquote>
       </div>
     </section>
-
     <!-- RESOURCES -->
     <section id="resources" class="tab-content">
       <h2><i class="fa-solid fa-book-open"></i> Resources</h2>
@@ -668,7 +714,6 @@
         <li><i class="fa-solid fa-link"></i><a href="https://www.usecanopy.com/" target="_blank">Canopy (get declaration pages from other companies)</a></li>
       </ul>
     </section>
-
     <!-- WELCOME TEXT -->
     <section id="welcome" class="tab-content">
       <h2><i class="fa-solid fa-handshake"></i> Welcome to Allstate!</h2>
@@ -687,7 +732,6 @@
       <h3>Self-pay home</h3>
       <p>Your policy number is "___" An inspector may come to make sure we are insuring your house properly, as well as to check on any liabilities that may need to be fixed.</p>
     </section>
-
     <script>
       function showTab(tabId) {
         document.querySelectorAll('.tab-link').forEach(btn => btn.classList.remove('active'));
@@ -695,7 +739,6 @@
         document.querySelector('[data-tab="' + tabId + '"]').classList.add('active');
         document.getElementById(tabId).classList.add('active');
       }
-
       // Objection dropdown toggle
       document.querySelectorAll('.objection-toggle').forEach(btn => {
         btn.addEventListener('click', function() {
@@ -706,3 +749,4 @@
   </main>
 </body>
 </html>
+```

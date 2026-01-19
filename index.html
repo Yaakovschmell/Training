@@ -1,3 +1,6 @@
+Here is the **complete, fully expanded version** of your Sales Training page with **all objections** included (exactly as in your original code, but styled with the modern improvements). I've also expanded the Coverage script to include **all original steps** (no abbreviations), added the remaining cross-sale details, and ensured everything is self-contained—no additions needed from you.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -116,6 +119,12 @@
       gap: 0.8rem;
     }
 
+    h3 {
+      font-size: 1.6rem;
+      color: var(--primary);
+      margin: 2.5rem 0 1.2rem;
+    }
+
     /* Coverage Layout */
     #coverage .page-container {
       display: flex;
@@ -164,7 +173,6 @@
       gap: 0.8rem;
     }
 
-    .steps-list li.active,
     .steps-list li:hover {
       background: #eff6ff;
       border-left-color: var(--primary);
@@ -369,17 +377,15 @@
 
   <main>
 
-    <!-- COVERAGE -->
+    <!-- COVERAGE (Fully expanded with all original steps) -->
     <section id="coverage" class="tab-content active">
       <div class="page-container">
-
         <div class="main-content">
-
           <h2><i class="fa-solid fa-shield-halved"></i> Coverage Script</h2>
 
           <div class="rapport-reminder">
             <strong><i class="fa-solid fa-handshake"></i> Rapport Reminder:</strong><br>
-            Before diving into coverage — build rapport! Ask about their day, comment on something local, family, weekend plans, etc. A positive connection makes the whole conversation smoother.
+            Before you get into coverage details, be sure to build some rapport! Find a natural moment to connect—ask about their day, comment on something local, or just chat for a moment. Rapport helps set a positive tone for the entire call.
           </div>
 
           <div class="step-title"><i class="fa-solid fa-1"></i> Step 1: Introduction & Info Confirmation</div>
@@ -387,11 +393,9 @@
             <div class="script-avatar">A</div>
             <div class="script-content">
               <span class="script-role">Agent</span>
-              Good morning/afternoon [Prospect], this is [Your Name] — I'll be your licensed agent assisting you with those savings today.<br><br>
-              How's your day been so far?<br><br>
-              <em>[Pause for rapport: “How’s your week going?” “You from around here?” “Any fun plans coming up?” etc.]</em><br><br>
-              I’m going to confirm your information real quick so we can make sure you're getting the best possible rate.<br>
-              <strong>(CONFIRM — don't make them repeat everything)</strong>
+              Good morning/afternoon (Prospect), like she said my name is (your name) and I'll be the licensed agent assisting you with those savings today. How's your day been so far?<br><br>
+              <em>[Pause to chat: "How's your week going?" or "Are you from around here?" You can also ask them about their family, career, upcoming vacations etc.]</em><br><br>
+              I'm going to confirm your information so we can make sure we're giving you the best possible rate. (Confirm name, DOB, address, own or rent, marital status, drivers and vehicles) <strong>CONFIRM THE INFORMATION RATHER THAN ASKING THEM TO PROVIDE IT</strong>
             </div>
           </div>
 
@@ -400,16 +404,14 @@
             <div class="script-avatar">A</div>
             <div class="script-content">
               <span class="script-role">Agent</span>
-              So [Name], I'm pulling up your reports — that'll show me any claims or accidents in the last few years and where you're currently insured.<br><br>
-              Looks like you're with [Current Carrier]. How has your overall experience been with them — rates, customer service, claims handling?<br>
-              <strong>(Dig for pain points: call center, rate increases, no policy reviews…)</strong>
+              So, (name), I'm going to pull up your reports which will show me any accidents or claims in the last couple of years and where you're currently insured. I see you're currently with (Insurance Company). <strong> How's your overall experience been with them — the rates, customer service, things like that?(Dig to find out more about bad experiences to use later such as Geico being a call center, not having policy reviews etc.)</strong>
             </div>
           </div>
 
           <div class="highlight-block">
             <div class="highlight-title"><i class="fa-solid fa-circle-question"></i> Key Question</div>
-            While I pull your coverages up, I always like to ask my customers this:<br><br>
-            <strong>“Let's say you're driving and get into an at-fault accident with large damage — how much of that bill would you expect your insurance company to cover?”</strong>
+            While I pull up your coverages, I always like to ask my customers this question:<br><br>
+            <strong>"Let's say you're driving down the road and you get into an accident where you're found at fault, and there's a large damage bill—how much of that bill would you expect your insurance company to cover?"</strong>
           </div>
 
           <div class="script-block customer">
@@ -424,7 +426,7 @@
             <div class="script-avatar">A</div>
             <div class="script-content">
               <span class="script-role">Agent</span>
-              Exactly — and that's why we always make sure our customers have strong coverage. Let's go over what you currently have with [Current Carrier] so you know exactly what you're protected for.
+              Absolutely, I agree—and that's exactly why we make sure our customers always have enough coverage to protect them. So now I'm going to go over what you currently have with GEICO so you understand the coverages you actually have.
             </div>
           </div>
 
@@ -433,24 +435,29 @@
             <div class="script-avatar">A</div>
             <div class="script-content">
               <span class="script-role">Agent</span>
-              First we have Bodily Injury Liability — this pays for the other person's medical bills if you're at fault.<br><br>
-              Right now you have 30/60 — we'll match that.<br><br>
-              Same thing with Uninsured Motorist coverage — it protects you and your passengers if the other driver has no insurance, not enough, or it's a hit-and-run.
+              The first coverage is bodily injury liability. This covers how much your insurance will pay for the other person's medical bills if you get into an accident and are found at fault. Right now, you have 30/60, so I'm going to match that coverage the same way.
             </div>
           </div>
 
-          <div class="step-title highlight-title" style="color:var(--warning); margin:3.5rem 0 1.6rem;">
-            <i class="fa-solid fa-exclamation-triangle"></i> Property Damage Liability (Most Important!)
+          <div class="script-block agent">
+            <div class="script-avatar">A</div>
+            <div class="script-content">
+              <span class="script-role">Agent</span>
+              The same would apply to your uninsured motorist coverage. This is what protects you and your passengers if you're ever in an accident and the person who hits you either doesn't have any insurance, doesn't have enough insurance, or if it's a hit-and-run situation. If you or someone in your vehicle is injured, your policy would step in and pay for your medical bills—again, up to the same limits you have for bodily injury: 30/60.
+            </div>
+          </div>
+
+          <div class="step-title" style="color:var(--warning);">
+            <i class="fa-solid fa-exclamation-triangle"></i> Property Damage Liability (Most Important Coverage)
           </div>
 
           <div class="script-block agent" style="background:#fffbeb; border-left:6px solid var(--warning);">
             <div class="script-avatar" style="background:var(--warning);">A</div>
             <div class="script-content">
               <span class="script-role" style="color:var(--warning);">Agent</span>
-              Now this is the coverage that really concerns me.<br><br>
-              Property Damage Liability pays for the other person's vehicle/property if you're at fault.<br><br>
-              You're currently at the state minimum — $15,000. Anything over that comes out of your pocket.<br><br>
-              Quick example — are you familiar with a Ford F-150?
+              Now, the next coverage is the one that really concerns me—and here's why. It's called property damage liability, and this covers how much your insurance will pay for the other person's vehicle or property if you're found at fault in an accident.<br><br>
+              Currently, you're set at $15,000, which is the state minimum. That means anything over that amount comes out of your pocket.<br><br>
+              Just as an example—are you familiar with the Ford F-150?
             </div>
           </div>
 
@@ -458,7 +465,7 @@
             <div class="script-avatar">C</div>
             <div class="script-content">
               <span class="script-role">Customer</span>
-              Yeah.
+              Yes.
             </div>
           </div>
 
@@ -466,7 +473,7 @@
             <div class="script-avatar" style="background:var(--warning);">A</div>
             <div class="script-content">
               <span class="script-role" style="color:var(--warning);">Agent</span>
-              Do you know roughly how much a new one costs these days?
+              Do you know around how much they cost?
             </div>
           </div>
 
@@ -474,7 +481,7 @@
             <div class="script-avatar">C</div>
             <div class="script-content">
               <span class="script-role">Customer</span>
-              Around $60,000.
+              About $60,000.
             </div>
           </div>
 
@@ -482,9 +489,8 @@
             <div class="script-avatar" style="background:var(--warning);">A</div>
             <div class="script-content">
               <span class="script-role" style="color:var(--warning);">Agent</span>
-              Exactly. So if you hit a brand new F-150 and total it, your current policy would pay $15,000…<br><br>
-              …and you'd be responsible for the rest.<br><br>
-              <strong>How much would that be out of pocket?</strong>
+              So let's say you're driving down the road and hit a brand-new F-150, and it gets totaled. With your current policy, GEICO would come to you and say, "You've been a great customer—here's a check for $15,000."<br><br>
+              Now, the problem is: if it's a $60,000 truck and they only give you $15,000, how much are you left paying out of pocket? <strong>(MAKE THEM DO THE MATH)</strong>
             </div>
           </div>
 
@@ -500,7 +506,7 @@
             <div class="script-avatar" style="background:var(--warning);">A</div>
             <div class="script-content">
               <span class="script-role" style="color:var(--warning);">Agent</span>
-              Right — and how does that sound to you?
+              And how does that sound?
             </div>
           </div>
 
@@ -516,8 +522,7 @@
             <div class="script-avatar" style="background:var(--warning);">A</div>
             <div class="script-content">
               <span class="script-role" style="color:var(--warning);">Agent</span>
-              Exactly! That's why I'm putting you at $300,000 in property damage — so you're fully protected.<br><br>
-              Makes sense why we do that, right?
+              Exactly! That's why I'm going to give you $300,000 for property damage on your policy, to make sure you're fully protected in the event of any claim. Does it make sense why we do that?
             </div>
           </div>
 
@@ -526,8 +531,9 @@
             <div class="script-avatar">A</div>
             <div class="script-content">
               <span class="script-role">Agent</span>
-              Next is Collision — covers damage to your own vehicle no matter who's at fault.<br><br>
-              I recommend a $1,000 deductible — higher deductible = much lower premium, and most people don't file small claims anyway.
+              The next important coverage is Collision. Collision covers the damage to your own vehicle if you're in an accident, regardless of who's at fault—so whether you hit another car, a tree, or even a pole, this is the coverage that helps get your car repaired or replaced.<br><br>
+              For collision, I recommend a $1,000 deductible. (if they object you can say) here's why:<br>
+              A higher deductible means you'll be responsible for the first $1,000 of any damage, but it also lowers your monthly premium significantly. Most people don't get into accidents very often, so choosing a $1,000 deductible is a smart way to keep your insurance affordable while still protecting you from those big, unexpected repair bills. If you ever need to use it, you'll be glad you have it.
             </div>
           </div>
 
@@ -535,12 +541,34 @@
             <div class="script-avatar">A</div>
             <div class="script-content">
               <span class="script-role">Agent</span>
-              Comprehensive covers non-collision damage — theft, vandalism, fire, hail, deer, etc.<br><br>
-              $250 deductible is usually best here — these claims tend to be more frequent and smaller.
+              Next is Comprehensive coverage. This protects your vehicle from things that aren't collision-related—like theft, vandalism, fire, hail, or even if a deer runs into your car. Basically, if something happens to your car that isn't a crash, comprehensive is what helps you out.<br><br>
+              For comprehensive, I recommend a $250 deductible. The reason is, comprehensive claims are usually less expensive and more common—like if a rock cracks your windshield or a storm causes damage. A lower deductible means you'll pay less out of pocket if something like that happens, and the difference in premium is usually pretty small compared to the collision.
             </div>
           </div>
 
-          <!-- Add remaining coverages (Roadside, Rental, PIP) following the same pattern if desired -->
+          <div class="script-block agent">
+            <div class="script-avatar">A</div>
+            <div class="script-content">
+              <span class="script-role">Agent</span>
+              Do you have roadside with your current company or do you use a third party like triple A? (if they have it with their current insurance) If you ever have a flat tire, run out of gas, lock your keys in your car, or your battery dies, roadside assistance sends help right to you, 24/7. The biggest difference between Allstate's roadside program and any other insurance company is that Allstate goes off of the drivers rather than the vehicles, meaning no matter what car you're driving, you would have Allstate roadside covering you.
+            </div>
+          </div>
+
+          <div class="script-block agent">
+            <div class="script-avatar">A</div>
+            <div class="script-content">
+              <span class="script-role">Agent</span>
+              Next up is Rental Car coverage. This is another optional coverage that most of our clients opt in for. If your car is ever in the shop because of a covered claim—like an accident—this coverage helps pays for a rental car so you can keep getting to work, school, or wherever you need to go. It's a great way to avoid being stranded or having to pay out of pocket for a rental while your car is being repaired.
+            </div>
+          </div>
+
+          <div class="script-block agent">
+            <div class="script-avatar">A</div>
+            <div class="script-content">
+              <span class="script-role">Agent</span>
+              Finally, there's Personal Injury Protection, or PIP. This coverage helps pay for medical expenses for you and your passengers after an accident, no matter who's at fault. It can also cover things like lost wages and essential services if you're unable to work or take care of yourself after an accident. PIP is really valuable because it kicks in quickly and helps cover those immediate costs when you need it most.
+            </div>
+          </div>
 
           <div class="step-title" style="color:var(--warning);">
             <i class="fa-solid fa-handshake"></i> Step 5: Experience Recap Close
@@ -550,22 +578,22 @@
             <div class="script-avatar" style="background:var(--success);">A</div>
             <div class="script-content">
               <span class="script-role" style="color:var(--success);">Agent</span>
-              While the rate is calculating, let me explain how things work once you're set up with us…<br><br>
-              We're a local agency — no call centers. You get direct access to me and our team.<br><br>
-              We give you my cell for after-hours questions.<br><br>
-              No teaser rates — your rate is locked based on full underwriting.<br><br>
-              We review your policy 45 days before renewal to make sure you're always getting the best rate and discounts.<br><br>
-              You said you want full protection — right now you're only covered to $15,000…<br><br>
-              With us you're getting $300,000 — so you're never left with a $45,000 bill.<br><br>
-              Your monthly payment for this full protection is $[amount].<br><br>
-              Quick last questions: Who is the vehicle financed through?<br>
+              While my system is calculating the rate for your policy, let me tell you a little bit about how it works once we get you set up over here..<br><br>
+              First, we're a local agency. That means if you ever have questions or problems, you won't be stuck in a call center or waiting on hold. You'll speak directly to the same few people every time<br><br>
+              We pride ourselves on clear communication. You'll get my office number and email, plus my personal cell phone number for after-hours questions or emergencies. So, anytime you need help, you have direct access to us.<br><br>
+              Also, unlike companies like GEICO, Progressive, and Liberty Mutual, we don't do teaser rates. Many big companies start you off with a low rate but can legally raise it at any time after you sign up. Here, we've already run all your underwriting reports, so your rate is locked in. Plus, 45 days before your renewal, our customer service team will call you to review your policy, ensure you're getting all your discounts, and make sure you always have the best rate possible.<br><br>
+              So, (Prospect), when we started, I asked how much you would want your insurance to cover if you got into an accident and were found at fault. You said all of it—is that still right?<br><br>
+              Right now, with GEICO, you're only covered for the first $15,000. If you hit that Ford F-150 we talked about, you'd be responsible for the remaining $45,000—and you told me that's something you want to avoid, right?<br><br>
+              That's why we provided you with $300,000 in coverage—to make sure you're properly protected in case of any accident.<br><br>
+              So, your monthly payment for this full protection will be ($).<br><br>
+              A couple more questions and we'll wrap this up:<br>
+              Who is the vehicle financed through?<br>
               And what card would you like to use for today's payment?
             </div>
           </div>
-
         </div>
 
-        <!-- Sticky Sidebar -->
+        <!-- Sidebar -->
         <aside class="sticky-sidebar">
           <h3><i class="fa-solid fa-list-ol"></i> Application Steps</h3>
           <ul class="steps-list">
@@ -576,80 +604,158 @@
             <li data-step="5">Experience Recap Close</li>
           </ul>
         </aside>
-
       </div>
     </section>
 
-    <!-- OBJECTIONS -->
+    <!-- OBJECTIONS (All original ones fully included) -->
     <section id="objections" class="tab-content">
-      <h2><i class="fa-solid fa-comments"></i> Objection Handling</h2>
-
+      <h2><i class="fa-solid fa-comments"></i> Objection Script</h2>
       <div class="rapport-reminder" style="background:#f0fdfa; border-left:6px solid var(--success);">
-        <strong>Core Principle:</strong> Every objection loops back to — <em>You don't have enough coverage right now… and we're fixing that.</em>
+        <strong>Summary:</strong> Close Faster, Protect Better<br />
+        Every objection gets redirected to this core truth:<br />
+        <em>You don't have enough coverage right now - and we're fixing that.</em><br />
+        The goal: minimize delays, eliminate follow-ups, and close confidently.
       </div>
 
       <div class="objection-dropdown">
-        <button class="objection-toggle">
-          "I'll pay later / Call me back / Not ready yet" <i class="fa fa-chevron-down"></i>
-        </button>
+        <button class="objection-toggle">Objection 1: "I'll pay later / Call me back / Not ready yet" <i class="fa fa-chevron-down"></i></button>
         <div class="objection-response-dropdown">
-          I totally understand. You told me you wanted full protection, right?<br><br>
-          Right now with [Current Carrier] you're only covered for $15,000 in property damage — we talked about the F-150 example where you'd be stuck paying $45,000 out of pocket… which you said you wanted to avoid.<br><br>
-          That's why we set you up with $300,000.<br><br>
-          So let's make sure you're never in that position. What's the most convenient day for you to make that payment?
+          "I totally understand, As we talked about, you told me you wanted to be protected right? Currently with (insurance company) you only have $15,000 in property damage which as we talked about is not enough and in the example we went over with that F-150, you would be stuck paying out of pocket which you said you didn't want, right? Which is why we gave you the $300,000 to make sure you never have to pay out of pocket.<br>
+          So let's make sure you never have to worry about that. What's the most convenient day for you to make that payment?
         </div>
       </div>
 
       <div class="objection-dropdown">
-        <button class="objection-toggle">
-          "It's more than I was paying" / "Too expensive" <i class="fa fa-chevron-down"></i>
-        </button>
+        <button class="objection-toggle">Objection 2: "It's more than I was paying" / "That's too expensive" <i class="fa fa-chevron-down"></i></button>
         <div class="objection-response-dropdown">
-          Totally fair. You were paying less because you were getting less — only $15,000 in coverage.<br><br>
-          Most people can find the extra $20–$60/month, but almost nobody has an extra $45,000 sitting around after an accident.<br><br>
-          That's why we're giving you $300,000 in protection.<br><br>
-          What's the most convenient day to make that payment?
+          "Totally fair - but let's break it down. You were paying less because you were getting less. $15,000 in coverage doesn't cut it. Most of my clients can find the extra ($20,$40,$60) but none of them have an extra $45,000 sitting around.That's why we're giving you $300,000 so you don't have to take a $45,000 hit after an accident so let me ask you, what's the most convenient day for you to make that payment?"
         </div>
       </div>
 
-      <!-- You can add the other 6–8 objections following the same pattern -->
+      <div class="objection-dropdown">
+        <button class="objection-toggle">Objection 3: "I just made a payment" / "I want to wait until my renewal date" <i class="fa fa-chevron-down"></i></button>
+        <div class="objection-response-dropdown">
+          "I totally understand- we have two options, option one which is what I recommend is, lets get this policy started and then we can get you a refund of whatever premium you haven't used at your current company and if that doesn't work for you, option two is let's lock in this upgraded protection now and schedule the first payment for then. You don't pay anything today, and your rate is locked in for the renewal."<br>
+          "Which option works better for you?"<br>
+          (If they choose option two) Which card would you like to use to hold the policy for that date?"
+        </div>
+      </div>
+
+      <div class="objection-dropdown">
+        <button class="objection-toggle">Objection 4: "I want to shop around" <i class="fa fa-chevron-down"></i></button>
+        <div class="objection-response-dropdown">
+          "Totally understandable - but as we talked about, you said you wanted to be protected and every other company is trying to get you the lowest rates which means they're going to give you the lowest coverages possible which you said you didn't want. That's why over here we gave you the $300,000 to make sure you don't have to worry about paying anything out of pocket so let me ask you like this, what would be the most convenient day for you to pay for the policy?."
+        </div>
+      </div>
+
+      <div class="objection-dropdown">
+        <button class="objection-toggle">Objection 5: "I need to talk to my spouse/partner first" <i class="fa fa-chevron-down"></i></button>
+        <div class="objection-response-dropdown">
+          "Of course - let me ask you, do you think they'd be more concerned about the price or the coverages?" (this response will many times get them to give up the real objection)<br>
+          Let's get this taken care of. If your partner has questions, we can make changes later - but waiting leaves you vulnerable. What card works best to secure the coverage now?"
+        </div>
+      </div>
+
+      <div class="objection-dropdown">
+        <button class="objection-toggle">Objection 6: "Just email me the quote and I'll call you if I like it" <i class="fa fa-chevron-down"></i></button>
+        <div class="objection-response-dropdown">
+          "Absolutely, I can email it and text it to you now but you told me you want your insurance to protect you fully, right? Currently you only have $15,000 in property damage which in the event we went over with the F-150 would leave you paying $45,000 out of pocket. Over here we gave you the $300,000 to make sure you don't have to worry about that so let me ask you, what's the most convenient day for you to make that first payment?"
+        </div>
+      </div>
+
+      <div class="objection-dropdown">
+        <button class="objection-toggle">Objection 7: "I've never had an accident / I'm a safe driver" <i class="fa fa-chevron-down"></i></button>
+        <div class="objection-response-dropdown">
+          "That's great - but even the safest drivers make mistakes and that's why we have insurance. Let's set this up and keep you covered - what's the best card to use?"
+        </div>
+      </div>
+
+      <div class="objection-dropdown">
+        <button class="objection-toggle">Objection 8: "I want to look at it/compare your quote to my current policy" <i class="fa fa-chevron-down"></i></button>
+        <div class="objection-response-dropdown">
+          "I completely understand, I just sent you a text with the quote in it. Do me a favor, click on the link and make sure it works correctly. Let's go through line by line to make sure you understand what we're giving you."
+        </div>
+      </div>
+
+      <div class="objection-dropdown">
+        <button class="objection-toggle">Future Start Date (If They Insist on Waiting) <i class="fa fa-chevron-down"></i></button>
+        <div class="objection-response-dropdown">
+          "No problem. I'll match your current schedule. You pay nothing today - but your better coverage is secured." <strong>GET THE PAYMENT INFORMATION.</strong>
+        </div>
+      </div>
 
       <div style="margin-top:3rem; padding:1.8rem; background:#f0fdfa; border-radius:12px; border-left:5px solid var(--success);">
-        <strong>Final Close (Short & Confident):</strong><br><br>
-        You're moving from minimum coverage to real protection — that's the whole point of insurance.<br><br>
-        <strong>What card works best to lock this in today?</strong>
+        <strong>Closing the Sale (Short & Clear):</strong><br />
+        "You're going from minimum protection to full protection - and that's the whole point of insurance."<br />
+        "What card works best to lock this in today?"
       </div>
     </section>
 
-    <!-- CROSS SALE -->
+    <!-- CROSS SALE (Fully expanded) -->
     <section id="crosssale" class="tab-content">
-      <h2><i class="fa-solid fa-retweet"></i> Cross-Selling</h2>
-      <p style="font-size:1.1rem; margin-bottom:2rem;">Goal: Assume interest. Link to value & discounts — not just price.</p>
+      <h2><i class="fa-solid fa-retweet"></i> Cross Sale</h2>
+      <ul style="margin-bottom:1.2em; font-size:1.1rem;">
+        <li><strong>Auto → Home</strong></li>
+        <li><strong>Home → Auto</strong></li>
+        <li><strong>Auto → Renters</strong></li>
+      </ul>
+      <p style="font-size:1.1rem; margin-bottom:2rem;">The goal is to keep it natural, assume the customer will be interested, and link coverage value, not just price.</p>
 
       <div style="margin-bottom:2.5rem;">
-        <h3 style="color:var(--primary);">Auto → Home</h3>
+        <h3 style="color:var(--primary);">🔹 1. Auto Quote → Home Quote</h3>
         <div class="script-block agent">
           <div class="script-avatar">A</div>
           <div class="script-content">
             <span class="script-role">Agent</span>
-            Okay great — my system is going to run a home quote as well. When was the last time you had the roof replaced?
+            "Okay, great - so my system is going to include a home quote as well, when was the last time you had the roof replaced?"
+          </div>
+        </div>
+        <div class="script-block agent" style="background:#f0f9ff; border-left:5px solid #0ea5e9;">
+          <div class="script-avatar" style="background:#0ea5e9;">A</div>
+          <div class="script-content">
+            <span class="script-role" style="color:#0ea5e9;">Agent (if they hesitate):</span>
+            "I totally get that, my system is going to make me run through it but I can remove it at the end but this way you can see what the rate would look like if you ever were to bundle it together. It also gives you the multiple policy discount which is the biggest discount you can get on the auto insurance."
           </div>
         </div>
       </div>
 
       <div style="margin-bottom:2.5rem;">
-        <h3 style="color:var(--primary);">Home → Auto</h3>
+        <h3 style="color:var(--primary);">🔹 2. Home Quote → Auto Quote</h3>
         <div class="script-block agent">
           <div class="script-avatar">A</div>
           <div class="script-content">
             <span class="script-role">Agent</span>
-            Now that we've got your home squared away, I'm going to pull up your auto too so we can bundle them and unlock the multi-policy discount.<br><br>
-            Who do you currently have your vehicles insured with?
+            "Now that we've got your homeowners policy squared away, I'm going to go ahead and pull up your auto insurance too so we can bundle them and unlock the multi-policy savings."<br />
+            (Smooth, confident - not asking for permission.)<br><br>
+            "Who do you currently have your vehicles insured with?"
+          </div>
+        </div>
+        <div class="script-block agent" style="background:#f0f9ff; border-left:5px solid #0ea5e9;">
+          <div class="script-avatar" style="background:#0ea5e9;">A</div>
+          <div class="script-content">
+            <span class="script-role" style="color:#0ea5e9;">Agent (if happy with current):</span>
+            "Totally understand - a lot of people say that, but when they see the bundle savings and realize they're often underinsured on their auto policy, it makes sense to take a look. Let's at least see what we can do for you. What vehicles do you currently drive?"
           </div>
         </div>
       </div>
 
-      <!-- Add Renters cross-sell if needed -->
+      <div style="margin-bottom:2.5rem;">
+        <h3 style="color:var(--primary);">🔹 3. Auto Quote → Renters Quote</h3>
+        <div class="script-block agent">
+          <div class="script-avatar">A</div>
+          <div class="script-content">
+            <span class="script-role">Agent</span>
+            "Alright, we've got your auto quote looking solid. Since you're currently renting, I'm going to go ahead and add renters insurance so we can bundle that too and apply the multi-policy discount."
+          </div>
+        </div>
+        <div class="script-block agent" style="background:#f0f9ff; border-left:5px solid #0ea5e9;">
+          <div class="script-avatar" style="background:#0ea5e9;">A</div>
+          <div class="script-content">
+            <span class="script-role" style="color:#0ea5e9;">Agent (if hesitate):</span>
+            "I totally get it - a lot of people assume their landlord's policy covers them, but it actually doesn't protect your stuff or liability. And honestly, renters coverage is super affordable - most people add it for around $15 and generally the discount it provides on the auto is higher than that so its saving you more money overall. It's a smart move."
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- RESOURCES -->
@@ -659,35 +765,38 @@
         <li><i class="fa-solid fa-link"></i><a href="https://app.ringcentral.com" target="_blank">Ring Central Web Browser</a></li>
         <li><i class="fa-solid fa-link"></i><a href="https://dashboard.sellmethispen.ai/" target="_blank">Sales AI tool</a></li>
         <li><i class="fa-solid fa-link"></i><a href="https://schmell.ricochet.me" target="_blank">Ricochet</a></li>
-        <li><i class="fa-solid fa-link"></i><a href="https://slack.com/signin#/signin/" target="_blank">Slack (for telemarketers)</a></li>
+        <li><i class="fa-solid fa-link"></i><a href="https://slack.com/signin#/signin/" target="_blank">Slack (for the telemarketers)</a></li>
         <li><i class="fa-solid fa-link"></i><a href="https://app.agencyzoom.com/login" target="_blank">Agency Zoom</a></li>
-        <li><i class="fa-solid fa-link"></i><a href="https://www.mycoverageinfo.com/agent" target="_blank">MyCoverageInfo (home lookup)</a></li>
+        <li><i class="fa-solid fa-link"></i><a href="https://www.mycoverageinfo.com/agent" target="_blank">MyCoverageInfo (for home insurance lookup)</a></li>
         <li><i class="fa-solid fa-link"></i><a href="https://www.edmunds.com/appraisal/" target="_blank">Edmunds Appraisal (VIN lookup)</a></li>
         <li><i class="fa-solid fa-link"></i><a href="https://www.homes.com/" target="_blank">Homes.com (home details)</a></li>
-        <li><i class="fa-solid fa-link"></i><a href="https://sdat.dat.maryland.gov/RealProperty/Pages/default.aspx" target="_blank">Maryland Real Property</a></li>
-        <li><i class="fa-solid fa-link"></i><a href="https://www.mersinc.org/homeowners/mers-servicerid" target="_blank">MERS ServicerID (Mortgage info)</a></li>
-        <li><i class="fa-solid fa-link"></i><a href="https://www.usecanopy.com/" target="_blank">Canopy (declaration pages)</a></li>
+        <li><i class="fa-solid fa-link"></i><a href="https://sdat.dat.maryland.gov/RealProperty/Pages/default.aspx" target="_blank">Maryland Real Property (home ownership lookup)</a></li>
+        <li><i class="fa-solid fa-link"></i><a href="https://www.mersinc.org/homeowners/mers-servicerid" target="_blank">MERS ServicerID (look up Mortgage info)</a></li>
+        <li><i class="fa-solid fa-link"></i><a href="https://www.usecanopy.com/" target="_blank">Canopy (get declaration pages from other companies)</a></li>
       </ul>
     </section>
 
     <!-- WELCOME -->
     <section id="welcome" class="tab-content">
       <h2><i class="fa-solid fa-handshake"></i> Welcome to Allstate!</h2>
+      <p>For customer service, please call (410) 665-3602</p>
+      <p>Please be on the look out for an email / text, asking you to log in/download the app to sign off on these policies, be sure to enroll in Ebill/Epolicy.</p>
 
-      <p style="font-size:1.1rem; margin-bottom:1.5rem;">Customer Service: (410) 665-3602</p>
+      <h3>Auto</h3>
+      <p>Your policy number is "____". Each month going forward we have your payment set to come out of your bank. You can make changes at any time on the Allstate app or on Allstate.com.</p>
+      <p>Be sure to set up Drivewise. Drivewise is a wonderful discount which you get 10% discount now and at renewal anywhere from 10%-15% so please take advantage.</p>
+      <p><strong>ALL DRIVERS ON POLICY NEED TO PARTICIPATE TO BE ELIGIBLE TO EARN MAX DISCOUNT.</strong></p>
+      <p>Please send me a copy of registration- as car needs to be owned/ co owned.</p>
+      <p>Be sure to take advantage of our referral program! For every person you refer to me to get a quote, as long as they qualify for Allstate, you will receive a $20 amazon gift card per person I quote regardless of if they purchase a policy or not!</p>
 
-      <p>Please watch for an email/text asking you to log in/download the Allstate app to sign off on your policy. Be sure to enroll in eBill/ePolicy.</p>
+      <h3>Renters</h3>
+      <p>Your policy number is "____" and each month moving forward we have your payment set up to come from your bank on the "date".</p>
 
-      <h3 style="margin-top:2rem; color:var(--primary);">Auto</h3>
-      <p>Policy #: ____<br>Your payment is set to draft from your bank each month.<br>You can manage everything in the Allstate app or at Allstate.com.</p>
-      <p><strong>Set up Drivewise!</strong> 10% discount today + 10–15% at renewal.<br><strong>All drivers must participate for max discount.</strong></p>
-      <p>Please send a copy of your registration (car must be owned/co-owned).</p>
-      <p>Take advantage of our referral program! $20 Amazon gift card per qualified quote — even if they don't buy!</p>
+      <h3>Escrow home</h3>
+      <p>Your policy number is "___" We are going to be sending the invoice to your mortgage company for them to pay. An inspector may come to make sure we are insuring your house properly, as well as to check on any liabilities that may need to be fixed.</p>
 
-      <h3 style="margin-top:2rem; color:var(--primary);">Renters</h3>
-      <p>Policy #: ____<br>Monthly payment set to draft on [date].</p>
-
-      <!-- Add Home escrow/self-pay if needed -->
+      <h3>Self-pay home</h3>
+      <p>Your policy number is "___" An inspector may come to make sure we are insuring your house properly, as well as to check on any liabilities that may need to be fixed.</p>
     </section>
 
   </main>
@@ -701,10 +810,13 @@
     }
 
     document.querySelectorAll('.objection-toggle').forEach(btn => {
-      btn.addEventListener('click', () => {
-        btn.closest('.objection-dropdown').classList.toggle('open');
+      btn.addEventListener('click', function() {
+        this.closest('.objection-dropdown').classList.toggle('open');
       });
     });
   </script>
 </body>
 </html>
+```
+
+This is now 100% complete with all your original content, modern visuals, and no placeholders. Just copy-paste into a file and open in a browser! If you need any tweaks, let me know. 🚀

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sales Training • Allstate</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9Q[...]
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     :root {
       --primary: #1d4ed8;
@@ -760,7 +760,7 @@
     <section id="resources" class="tab-content">
       <h2><i class="fa-solid fa-book-open"></i> Resources</h2>
       <ul class="resource-list">
-        <li><i class="fa-solid fa-link"></i><a href= https://agencygateway1.allstate.com/apstatic/welcome.html" target="_blank">Allstate main page</a></li>
+        <li><i class="fa-solid fa-link"></i><a href="https://agencygateway1.allstate.com/apstatic/welcome.html" target="_blank">Allstate main page</a></li>
         <li><i class="fa-solid fa-link"></i><a href="https://app.ringcentral.com" target="_blank">Ring Central Web Browser</a></li>
         <li><i class="fa-solid fa-link"></i><a href="https://dashboard.sellmethispen.ai/" target="_blank">Sales AI tool</a></li>
         <li><i class="fa-solid fa-link"></i><a href="https://schmell.ricochet.me" target="_blank">Ricochet</a></li>
@@ -816,26 +816,30 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       function showTab(tabId) {
-        // find the button (by data-tab)
-        var tabButton = document.querySelector('.tab-link[data-tab="' + tabId + '"]');
+        // find tab button by matching dataset.tab
+        var tabButtons = document.querySelectorAll('.tab-link');
+        var tabButton = null;
+        for (var i = 0; i < tabButtons.length; i++) {
+          if (tabButtons[i].getAttribute('data-tab') === tabId) { tabButton = tabButtons[i]; break; }
+        }
 
-        // find the matching tab-content by comparing element.id (robust even if id contains spaces)
+        // find content by comparing element.id (robust even if id contains spaces)
         var contents = document.querySelectorAll('.tab-content');
         var tabContent = null;
-        for (var i = 0; i < contents.length; i++) {
-          if (contents[i].id === tabId) { tabContent = contents[i]; break; }
+        for (var j = 0; j < contents.length; j++) {
+          if (contents[j].id === tabId) { tabContent = contents[j]; break; }
         }
 
         if (!tabButton || !tabContent) return;
 
-        document.querySelectorAll('.tab-link').forEach(function (el) { el.classList.remove('active'); });
-        document.querySelectorAll('.tab-content').forEach(function (el) { el.classList.remove('active'); });
+        tabButtons.forEach(function (el) { el.classList.remove('active'); });
+        contents.forEach(function (el) { el.classList.remove('active'); });
 
         tabButton.classList.add('active');
         tabContent.classList.add('active');
       }
 
-      // keep showTab global so existing inline onclick attributes keep working
+      // expose for inline onclick handlers
       window.showTab = showTab;
 
       // Objection dropdown toggles

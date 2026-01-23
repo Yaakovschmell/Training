@@ -814,16 +814,35 @@
   </main>
 
   <script>
-    function showTab(tabId) {
-      document.querySelectorAll('.tab-link').forEach(el => el.classList.remove('active'));
-      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-      document.querySelector(`[data-tab="${tabId}"]`).classList.add('active');
-      document.getElementById(tabId).classList.add('active');
-    }
+    document.addEventListener('DOMContentLoaded', function () {
+      function showTab(tabId) {
+        // find the button (by data-tab)
+        var tabButton = document.querySelector('.tab-link[data-tab="' + tabId + '"]');
 
-    document.querySelectorAll('.objection-toggle').forEach(btn => {
-      btn.addEventListener('click', function() {
-        this.closest('.objection-dropdown').classList.toggle('open');
+        // find the matching tab-content by comparing element.id (robust even if id contains spaces)
+        var contents = document.querySelectorAll('.tab-content');
+        var tabContent = null;
+        for (var i = 0; i < contents.length; i++) {
+          if (contents[i].id === tabId) { tabContent = contents[i]; break; }
+        }
+
+        if (!tabButton || !tabContent) return;
+
+        document.querySelectorAll('.tab-link').forEach(function (el) { el.classList.remove('active'); });
+        document.querySelectorAll('.tab-content').forEach(function (el) { el.classList.remove('active'); });
+
+        tabButton.classList.add('active');
+        tabContent.classList.add('active');
+      }
+
+      // keep showTab global so existing inline onclick attributes keep working
+      window.showTab = showTab;
+
+      // Objection dropdown toggles
+      document.querySelectorAll('.objection-toggle').forEach(function (btn) {
+        btn.addEventListener('click', function() {
+          this.closest('.objection-dropdown').classList.toggle('open');
+        });
       });
     });
   </script>

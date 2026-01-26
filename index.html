@@ -156,16 +156,17 @@
       display: flex;
       gap: 2.5rem;
       align-items: flex-start;
-      /* keep the two columns on one row when there's space;
-         the responsive media query below will stack on smaller screens */
+      /* prefer side-by-side; mobile media query stacks them */
       flex-wrap: nowrap;
     }
 
-    .main-content { flex: 1; min-width: 0; }
+    /* main column: allow shrinking and take remaining space */
+    .main-content { flex: 1 1 auto; min-width: 0; }
 
+    /* sidebar: fixed width, don't shrink below width */
     .sticky-sidebar {
       width: 260px;
-      flex-shrink: 0;
+      flex: 0 0 260px;
       position: sticky;
       top: 110px;
       background: white;
@@ -392,7 +393,14 @@
       .step-title { font-size: 1.35rem; }
     }
 
-    /* ===== Fixes: Ensure main column children stack vertically and layout stays two-column ===== */
+    /* Defensive wrapping rules so long words/URLs don't force layout to grow */
+    .main-content, .main-content * {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      -webkit-hyphens: auto;
+      hyphens: auto;
+    }
+
     /* Make sure top-level children of the main content take the full width (so steps stack) */
     .main-content > * {
       width: 100%;
@@ -401,9 +409,7 @@
     }
 
     /* Keep script blocks full-width while preserving avatar + content row inside */
-    .script-block {
-      width: 100%;
-    }
+    .script-block { width: 100%; }
 
     /* Ensure highlight/rapport/step-title render full width */
     .rapport-reminder,
@@ -449,7 +455,7 @@
               <span class="script-role">Agent</span>
               Good morning/afternoon (Prospect), like she said my name is (your name) and I'll be the licensed agent assisting you with those savings today. How's your day been so far?<br><br>
               <em>[Pause to chat: "How's your week going?" or "Are you from around here?" You can also ask them about their family, career, upcoming vacations etc.]</em><br><br>
-              I'm going to confirm your information so we can make sure we're giving you the best possible rate. (Confirm name, DOB, address, own or rent, marital status, drivers and vehicles) <strong[...]
+              I'm going to confirm your information so we can make sure we're giving you the best possible rate. (Confirm name, DOB, address, own or rent, marital status, drivers and vehicles) [...]
             </div>
           </div>
 
@@ -458,14 +464,14 @@
             <div class="script-avatar">A</div>
             <div class="script-content">
               <span class="script-role">Agent</span>
-              So, (name), I'm going to pull up your reports which will show me any accidents or claims in the last couple of years and where you're currently insured. I see you're currently with (Insu[...]
+              So, (name), I'm going to pull up your reports which will show me any accidents or claims in the last couple of years and where you're currently insured. I see you're currently with (Insu[...])
             </div>
           </div>
 
           <div class="highlight-block">
             <div class="highlight-title"><i class="fa-solid fa-circle-question"></i> Key Question</div>
             While I pull up your coverages, I always like to ask my customers this question:<br><br>
-            <strong>"Let's say you're driving down the road and you get into an accident where you're found at fault, and there's a large damage bill—how much of that bill would you expect your insu[...]
+            <strong>"Let's say you're driving down the road and you get into an accident where you're found at fault, and there's a large damage bill—how much of that bill would you expect your insu[...]"</strong>
           </div>
 
           <div class="script-block customer">
@@ -636,7 +642,7 @@
               First, we're a local agency. That means if you ever have questions or problems, you won't be stuck in a call center or waiting on hold. You'll speak directly to the same few people every[...]
               We pride ourselves on clear communication. You'll get my office number and email, plus my personal cell phone number for after-hours questions or emergencies. So, anytime you need help, [...]
               Also, unlike companies like GEICO, Progressive, and Liberty Mutual, we don't do teaser rates. Many big companies start you off with a low rate but can legally raise it at any time after [...]
-              So, (Prospect), when we started, I asked how much you would want your insurance to cover if you got into an accident and were found at fault. You said all of it—is that still right?<br[...]
+              So, (Prospect), when we started, I asked how much you would want your insurance to cover if you got into an accident and were found at fault. You said all of it—is that still right?<br>
               Right now, with GEICO, you're only covered for the first $15,000. If you hit that Ford F-150 we talked about, you'd be responsible for the remaining $45,000—and you told me that's some[...]
               That's why we provided you with $300,000 in coverage—to make sure you're properly protected in case of any accident.<br><br>
               So, your monthly payment for this full protection will be ($).<br><br>
@@ -855,13 +861,13 @@
       <p>Be sure to set up Drivewise. Drivewise is a wonderful discount which you get 10% discount now and at renewal anywhere from 10%-15% so please take advantage.</p>
       <p><strong>ALL DRIVERS ON POLICY NEED TO PARTICIPATE TO BE ELIGIBLE TO EARN MAX DISCOUNT.</strong></p>
       <p>Please send me a copy of registration- as car needs to be owned/ co owned.</p>
-      <p>Be sure to take advantage of our referral program! For every person you refer to me to get a quote, as long as they qualify for Allstate, you will receive a $20 amazon gift card per person I [...]
+      <p>Be sure to take advantage of our referral program! For every person you refer to me to get a quote, as long as they qualify for Allstate, you will receive a $20 amazon gift card per person I [...]</p>
 
       <h3>Renters</h3>
       <p>Your policy number is "____" and each month moving forward we have your payment set up to come from your bank on the "date".</p>
 
       <h3>Escrow home</h3>
-      <p>Your policy number is "___" We are going to be sending the invoice to your mortgage company for them to pay. An inspector may come to make sure we are insuring your house properly, as well as[...]
+      <p>Your policy number is "___" We are going to be sending the invoice to your mortgage company for them to pay. An inspector may come to make sure we are insuring your house properly, as well as[...]</p>
 
       <h3>Self-pay home</h3>
       <p>Your policy number is "___" An inspector may come to make sure we are insuring your house properly, as well as to check on any liabilities that may need to be fixed.</p>
@@ -894,7 +900,7 @@
         tabButton.classList.add('active');
         tabContent.classList.add('active');
         // ensure focus so keyboard users get context
-        tabButton.focus({preventScroll: true});
+        try { tabButton.focus({preventScroll: true}); } catch(e) { tabButton.focus(); }
       }
 
       // expose for inline onclick handlers

@@ -156,9 +156,12 @@
       display: flex;
       gap: 2.5rem;
       align-items: flex-start;
+      /* keep the two columns on one row when there's space;
+         the responsive media query below will stack on smaller screens */
+      flex-wrap: nowrap;
     }
 
-    .main-content { flex: 1; }
+    .main-content { flex: 1; min-width: 0; }
 
     .sticky-sidebar {
       width: 260px;
@@ -240,6 +243,9 @@
       background: white;
       box-shadow: 0 2px 12px rgba(0,0,0,0.04);
       transition: all 0.25s ease;
+      width: 100%;
+      flex-direction: row;
+      align-items: flex-start;
     }
 
     .script-block:hover {
@@ -386,28 +392,20 @@
       .step-title { font-size: 1.35rem; }
     }
 
-    /* ===== Fix: force vertical stacking + full-width blocks inside the main content =====
-       This prevents multiple step/script/highlight blocks from lining up side-by-side. */
-    .main-content {
-      /* ensure main column behaves like a normal block column */
-      display: block;
-    }
-
-    /* make sure top-level children of the main content take the full width */
+    /* ===== Fixes: Ensure main column children stack vertically and layout stays two-column ===== */
+    /* Make sure top-level children of the main content take the full width (so steps stack) */
     .main-content > * {
       width: 100%;
       display: block;
+      box-sizing: border-box;
     }
 
-    /* ensure script blocks themselves occupy full width and keep avatar + text inside */
+    /* Keep script blocks full-width while preserving avatar + content row inside */
     .script-block {
       width: 100%;
-      /* keep inner avatar + content as a horizontal row; this doesn't affect stacking of whole blocks */
-      flex-direction: row;
-      align-items: flex-start;
     }
 
-    /* ensure highlight/rapport blocks also are full width and render as blocks */
+    /* Ensure highlight/rapport/step-title render full width */
     .rapport-reminder,
     .highlight-block,
     .step-title {

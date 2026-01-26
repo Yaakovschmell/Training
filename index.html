@@ -385,6 +385,35 @@
       .tab-link { padding: 0.55rem 1rem; font-size: 0.95rem; }
       .step-title { font-size: 1.35rem; }
     }
+
+    /* ===== Fix: force vertical stacking + full-width blocks inside the main content =====
+       This prevents multiple step/script/highlight blocks from lining up side-by-side. */
+    .main-content {
+      /* ensure main column behaves like a normal block column */
+      display: block;
+    }
+
+    /* make sure top-level children of the main content take the full width */
+    .main-content > * {
+      width: 100%;
+      display: block;
+    }
+
+    /* ensure script blocks themselves occupy full width and keep avatar + text inside */
+    .script-block {
+      width: 100%;
+      /* keep inner avatar + content as a horizontal row; this doesn't affect stacking of whole blocks */
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    /* ensure highlight/rapport blocks also are full width and render as blocks */
+    .rapport-reminder,
+    .highlight-block,
+    .step-title {
+      width: 100%;
+      box-sizing: border-box;
+    }
   </style>
 </head>
 <body>

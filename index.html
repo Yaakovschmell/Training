@@ -417,7 +417,7 @@
   grid-template-columns: repeat(2, 1fr);     /* exactly 2 columns – 2 left + 2 right */
   gap: 1.8rem 2rem;
   margin: 2rem auto;
-  max-width: 1280px;                         /* balanced width – not too wide */
+  max-width: 1280px;                         /* balanced width */
   padding: 0 1rem;
   justify-content: center;
 }
@@ -431,7 +431,7 @@
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   display: flex;
   flex-direction: column;
-  height: auto;                              /* content determines height – no stretching */
+  height: auto;
 }
 
 .tip-card:hover {
@@ -477,6 +477,23 @@
 .tip-list ul li {
   margin-bottom: 0.4rem;
   color: #374151;
+}
+
+/* Tighter spacing ONLY for Quoting & Pricing (first card in the grid) */
+.tips-grid > .tip-card:first-child {
+  padding: 1.2rem 1.4rem;                    /* smaller overall padding */
+}
+
+.tips-grid > .tip-card:first-child .tip-list > li {
+  margin-bottom: 0.5rem;                     /* tighter between main bullets */
+}
+
+.tips-grid > .tip-card:first-child .tip-list ul {
+  margin: 0.3rem 0 0.4rem 1.3rem;           /* even tighter nested list */
+}
+
+.tips-grid > .tip-card:first-child .tip-list ul li {
+  margin-bottom: 0.3rem;                     /* tighter nested bullets */
 }
 
 /* Mobile: stack into one column */

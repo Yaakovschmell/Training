@@ -414,10 +414,10 @@
     }
 .tips-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);     /* fixed 2 columns – 2 left / 2 right */
+  grid-template-columns: repeat(2, 1fr);     /* exactly 2 columns – 2 left + 2 right */
   gap: 1.8rem 2rem;
   margin: 2rem auto;
-  max-width: 1300px;                         /* tighter overall width */
+  max-width: 1280px;                         /* balanced width – not too wide */
   padding: 0 1rem;
   justify-content: center;
 }
@@ -425,13 +425,13 @@
 .tip-card {
   background: white;
   border-radius: 14px;
-  padding: 1.4rem 1.6rem;                    /* smaller padding → less internal space */
+  padding: 1.4rem 1.6rem;
   box-shadow: 0 6px 18px rgba(29,78,216,0.08);
   border: 1px solid #e0f2fe;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   display: flex;
   flex-direction: column;
-  height: auto;                              /* natural height – no forced stretching */
+  height: auto;                              /* content determines height – no stretching */
 }
 
 .tip-card:hover {
@@ -440,7 +440,7 @@
 }
 
 .tip-card h3 {
-  margin: 0 0 0.9rem 0;                      /* tighter heading spacing */
+  margin: 0 0 0.9rem 0;
   font-size: 1.35rem;
   color: var(--primary);
   display: flex;
@@ -451,15 +451,14 @@
 .tip-list {
   list-style: none;
   padding-left: 0;
-  margin: 0 0 0.4rem 0;                      /* less bottom margin */
-  flex-grow: 0;                              /* no forced expansion */
+  margin: 0;
 }
 
 .tip-list > li {
-  margin-bottom: 0.6rem;                     /* tighter bullet spacing */
+  margin-bottom: 0.65rem;
   padding-left: 1.3rem;
   position: relative;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 .tip-list > li::before {
@@ -471,26 +470,26 @@
 }
 
 .tip-list ul {
-  margin: 0.4rem 0 0.4rem 1.3rem;
+  margin: 0.4rem 0 0.6rem 1.3rem;
   padding-left: 0;
 }
 
 .tip-list ul li {
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.4rem;
   color: #374151;
 }
 
-/* Mobile: stack vertically */
+/* Mobile: stack into one column */
 @media (max-width: 900px) {
   .tips-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.6rem;
     padding: 0 0.8rem;
-    margin: 1.5rem 0;
+    margin: 1.6rem 0;
   }
 }
 
-/* Tips tab uses full width (minimal side dead space) */
+/* Full-width override for the Tips tab */
 #tips.tab-content {
   max-width: none;
   padding: 0 1rem;
@@ -504,7 +503,7 @@
   width: 100%;
 }
 
-/* Prevent over-stretching on ultra-wide screens */
+/* On very wide screens – keep it reasonable */
 @media (min-width: 1400px) {
   .tips-grid {
     max-width: 1200px;

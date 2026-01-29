@@ -414,9 +414,11 @@
     }
   .tips-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.8rem;
-  margin-top: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.8rem 2rem;               /* row gap / column gap */
+  margin: 1.8rem auto;             /* centers the whole grid horizontally */
+  max-width: 1400px;               /* prevents it from stretching too wide on large screens */
+  padding: 0 1rem;                 /* small breathing room on narrow screens */
 }
 
 .tip-card {
@@ -426,16 +428,17 @@
   box-shadow: 0 6px 18px rgba(29,78,216,0.08);
   border: 1px solid #e0f2fe;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .tip-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 26px rgba(29,78,216,0.12);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(29,78,216,0.14);
 }
 
 .tip-card h3 {
-  margin-top: 0;
-  margin-bottom: 1rem;
+  margin: 0 0 1.1rem 0;
   font-size: 1.35rem;
   color: var(--primary);
   display: flex;
@@ -446,12 +449,15 @@
 .tip-list {
   list-style: none;
   padding-left: 0;
+  margin: 0;
+  flex-grow: 1;                    /* helps cards stretch vertically if needed */
 }
 
 .tip-list > li {
-  margin-bottom: 0.7rem;
-  padding-left: 1.2rem;
+  margin-bottom: 0.75rem;
+  padding-left: 1.3rem;
   position: relative;
+  line-height: 1.45;
 }
 
 .tip-list > li::before {
@@ -463,24 +469,31 @@
 }
 
 .tip-list ul {
-  margin-top: 0.4rem;
-  margin-left: 1.2rem;
+  margin: 0.5rem 0 0.5rem 1.3rem;
+  padding-left: 0;
 }
 
 .tip-list ul li {
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.4rem;
   color: #374151;
 }
 
-/* Sticky sidebar */
+/* Optional - better mobile stacking */
+@media (max-width: 700px) {
+  .tips-grid {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+    padding: 0 0.8rem;
+    margin: 1.4rem 0;
+  }
+}
+
+/* Keep your sticky sidebar if you still want it */
 .sticky-sidebar {
   position: sticky;
   top: 90px;
   align-self: start;
 }
- </style>   
-</head>
-<body>
   <header>Sales Training</header>
   <nav>
     <ul class="tab-menu">

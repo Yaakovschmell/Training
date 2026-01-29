@@ -527,6 +527,36 @@
     gap: 1.6rem 2rem;
   }
 }
+   /* Shrink the tip cards – paste at the VERY END of <style> */
+
+/* Reset card width growth – cap them at a reasonable size */
+.tips-grid {
+  grid-template-columns: repeat(auto-fit, minmax(340px, 380px)); /* narrower min/max */
+  justify-content: center;  /* keeps them centered instead of stretching edge-to-edge */
+  gap: 1.6rem 1.8rem;       /* slightly tighter gaps */
+}
+
+/* Override the wide-screen media query to prevent over-stretching */
+@media (min-width: 1400px) {
+  .tips-grid {
+    grid-template-columns: repeat(auto-fit, minmax(340px, 380px));
+    max-width: 1600px;      /* optional soft cap so it doesn't go infinite on 4K */
+    margin: 2rem auto;      /* re-center with some breathing room */
+  }
+}
+
+/* Make cards less "tall and puffy" – remove forced full height if it's too much */
+.tip-card {
+  height: auto;               /* ← this is the big one: stops forced stretching */
+  min-height: 280px;          /* optional: keeps them from getting tiny if very short */
+  justify-content: flex-start; /* content starts at top, no forced spacing */
+  padding: 1.4rem 1.6rem;     /* slightly smaller internal padding */
+}
+
+/* If you still want equal heights but smaller overall */
+#tips .tips-grid {
+  padding: 0 1rem;            /* bring sides in a bit more */
+} 
  </style>
 </head>
 <body>   

@@ -33,7 +33,6 @@
       background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
       color: var(--text);
       line-height: 1.6;
-      min-height: 100vh;
       overflow-x: hidden;
     }
 
@@ -149,7 +148,6 @@
       gap: 2rem;
       align-items: flex-start;
       flex-wrap: nowrap;
-      min-height: 100vh;
     }
 
     .main-content {
@@ -473,6 +471,19 @@
   margin-bottom: 0.35rem;
   color: #374151;
 }
+    .coverage-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.sticky-sidebar {
+  position: sticky;
+  top: 90px;
+  align-self: start;
+}
+
 
   </style>
 </head>
@@ -491,9 +502,10 @@
   <main>
 
     <!-- COVERAGE (Fully expanded with all original steps) -->
-    <section id="coverage" class="tab-content active">
-      <div class="page-container">
-        <div class="main-content">
+   <section id="coverage" class="tab-content active">
+  <div class="page-container">
+    
+    <div class="main-content">
           <h2><i class="fa-solid fa-shield-halved"></i> Coverage Script</h2>
 
           <div class="rapport-reminder">
@@ -706,19 +718,18 @@
             </div>
         </div>
 
-        <!-- Sidebar -->
-        <aside class="sticky-sidebar">
-          <h3><i class="fa-solid fa-list-ol"></i> Application Steps</h3>
-          <ul class="steps-list">
-            <li data-step="1">Introduction & Info Confirmation</li>
-            <li data-step="2">Experience & Expectations</li>
-            <li data-step="3">Explaining Coverages</li>
-            <li data-step="4">Other Important Coverages</li>
-            <li data-step="5">Experience Recap Close</li>
-          </ul>
-        </aside>
-      </div>
-    </section>
+
+      <aside class="sticky-sidebar">
+      <h3><i class="fa-solid fa-list-ol"></i> Application Steps</h3>
+      <ul class="steps-list">
+        <li data-step="1">Introduction & Info Confirmation</li>
+        <li data-step="2">Experience & Expectations</li>
+        <li data-step="3">Explaining Coverages</li>
+        <li data-step="4">Other Important Coverages</li>
+        <li data-step="5">Experience Recap Close</li>
+      </ul>
+        </div>
+</section>
 
     <!-- OBJECTIONS (All original ones fully included) -->
     <section id="objections" class="tab-content">

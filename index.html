@@ -412,24 +412,27 @@
       width: 100%;
       box-sizing: border-box;
     }
-  .tips-grid {
+ .tips-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.8rem 2rem;               /* row gap / column gap */
-  margin: 1.8rem auto;             /* centers the whole grid horizontally */
-  max-width: 1400px;               /* prevents it from stretching too wide on large screens */
-  padding: 0 1rem;                 /* small breathing room on narrow screens */
+  grid-template-columns: repeat(auto-fit, minmax(340px, 380px));
+  gap: 1.8rem 2rem;
+  margin: 2rem auto;
+  max-width: 1400px;
+  padding: 0 1rem;
+  justify-content: center;
 }
 
 .tip-card {
   background: white;
   border-radius: 14px;
-  padding: 1.6rem 1.8rem;
+  padding: 1.5rem 1.7rem;
   box-shadow: 0 6px 18px rgba(29,78,216,0.08);
   border: 1px solid #e0f2fe;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   display: flex;
   flex-direction: column;
+  height: auto;
+  min-height: 260px;
 }
 
 .tip-card:hover {
@@ -438,7 +441,7 @@
 }
 
 .tip-card h3 {
-  margin: 0 0 1.1rem 0;
+  margin: 0 0 1rem 0;
   font-size: 1.35rem;
   color: var(--primary);
   display: flex;
@@ -450,7 +453,7 @@
   list-style: none;
   padding-left: 0;
   margin: 0;
-  flex-grow: 1;                    /* helps cards stretch vertically if needed */
+  flex-grow: 1;
 }
 
 .tip-list > li {
@@ -478,86 +481,36 @@
   color: #374151;
 }
 
-/* Optional - better mobile stacking */
-@media (max-width: 700px) {
+/* Mobile stacking */
+@media (max-width: 900px) {
   .tips-grid {
     grid-template-columns: 1fr;
-    gap: 1.4rem;
+    gap: 1.6rem;
     padding: 0 0.8rem;
-    margin: 1.4rem 0;
+    margin: 1.6rem 0;
   }
 }
 
-/* Keep your sticky sidebar if you still want it */
-.sticky-sidebar {
-  position: sticky;
-  top: 90px;
-  align-self: start;
-}
-    /* === Improvements for Tips & Tricks layout - paste at END of <style> === */
-
-/* Make this tab use more of the screen width (removes left dead space) */
+/* Tips tab full-width override (removes excess left/right dead space) */
 #tips.tab-content {
-  max-width: none;               /* overrides the 1200px limit just for Tips tab */
-  padding: 0 1rem;               /* small side padding – change to 0.5rem or 0 if you want even less */
+  max-width: none;
+  padding: 0 1rem;
   margin: 1.4rem 0;
 }
 
-/* Let the grid stretch fully within the tab */
 #tips .tips-grid {
   max-width: none;
-  margin: 2rem 0 1rem 0;         /* more vertical breathing room */
-  padding: 0 0.5rem;             /* reduced side padding – tweak this number */
+  margin: 2rem 0 1rem 0;
+  padding: 0 0.5rem;
   width: 100%;
 }
 
-/* Make cards fill their grid cell height evenly (looks much cleaner) */
-.tip-card {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-/* Optional: nicer card spacing on very wide screens */
-@media (min-width: 1400px) {
+/* Cap width on ultra-wide screens so cards don't get ridiculously long */
+@media (min-width: 1600px) {
   .tips-grid {
-    grid-template-columns: repeat(auto-fit, minmax(360px, 420px));
-    justify-content: center;
-    gap: 1.6rem 2rem;
+    max-width: 1500px;
   }
 }
-   /* Shrink the tip cards – paste at the VERY END of <style> */
-
-/* Reset card width growth – cap them at a reasonable size */
-.tips-grid {
-  grid-template-columns: repeat(auto-fit, minmax(340px, 380px)); /* narrower min/max */
-  justify-content: center;  /* keeps them centered instead of stretching edge-to-edge */
-  gap: 1.6rem 1.8rem;       /* slightly tighter gaps */
-}
-
-/* Override the wide-screen media query to prevent over-stretching */
-@media (min-width: 1400px) {
-  .tips-grid {
-    grid-template-columns: repeat(auto-fit, minmax(340px, 380px));
-    max-width: 1600px;      /* optional soft cap so it doesn't go infinite on 4K */
-    margin: 2rem auto;      /* re-center with some breathing room */
-  }
-}
-
-/* Make cards less "tall and puffy" – remove forced full height if it's too much */
-.tip-card {
-  height: auto;               /* ← this is the big one: stops forced stretching */
-  min-height: 280px;          /* optional: keeps them from getting tiny if very short */
-  justify-content: flex-start; /* content starts at top, no forced spacing */
-  padding: 1.4rem 1.6rem;     /* slightly smaller internal padding */
-}
-
-/* If you still want equal heights but smaller overall */
-#tips .tips-grid {
-  padding: 0 1rem;            /* bring sides in a bit more */
-} 
- </style>
 </head>
 <body>   
   <header>Sales Training</header>

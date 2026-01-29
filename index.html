@@ -412,10 +412,9 @@
       width: 100%;
       box-sizing: border-box;
     }
-    /* TIPS & TRICKS STYLES */
-.tips-grid {
+  .tips-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.8rem;
   margin-top: 1.2rem;
 }
@@ -467,23 +466,19 @@
   margin-top: 0.4rem;
   margin-left: 1.2rem;
 }
-    .tip-list ul li {
+
+.tip-list ul li {
   margin-bottom: 0.35rem;
   color: #374151;
 }
-   
-  gap: 2rem;
-  align-items: start;
-}
 
+/* Sticky sidebar */
 .sticky-sidebar {
   position: sticky;
   top: 90px;
   align-self: start;
 }
-
-
-  </style>
+ </style>   
 </head>
 <body>
   <header>Sales Training</header>

@@ -412,12 +412,12 @@
       width: 100%;
       box-sizing: border-box;
     }
- .tips-grid {
+.tips-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 380px));
+  grid-template-columns: repeat(2, 1fr);     /* exactly 2 columns */
   gap: 1.8rem 2rem;
   margin: 2rem auto;
-  max-width: 1400px;
+  max-width: 1400px;                         /* keeps it from going too wide on huge screens */
   padding: 0 1rem;
   justify-content: center;
 }
@@ -431,8 +431,8 @@
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   display: flex;
   flex-direction: column;
-  height: auto;
-  min-height: 260px;
+  height: 100%;                              /* ← makes all cards same height in row */
+  min-height: 340px;                         /* minimum height so short cards aren't tiny */
 }
 
 .tip-card:hover {
@@ -453,7 +453,7 @@
   list-style: none;
   padding-left: 0;
   margin: 0;
-  flex-grow: 1;
+  flex-grow: 1;                              /* content fills available space */
 }
 
 .tip-list > li {
@@ -481,7 +481,7 @@
   color: #374151;
 }
 
-/* Mobile stacking */
+/* Mobile: stack into one column */
 @media (max-width: 900px) {
   .tips-grid {
     grid-template-columns: 1fr;
@@ -491,7 +491,7 @@
   }
 }
 
-/* Tips tab full-width override (removes excess left/right dead space) */
+/* Tips tab takes full width (no big left/right dead space) */
 #tips.tab-content {
   max-width: none;
   padding: 0 1rem;
@@ -505,10 +505,10 @@
   width: 100%;
 }
 
-/* Cap width on ultra-wide screens so cards don't get ridiculously long */
-@media (min-width: 1600px) {
+/* On very wide screens: still 2 columns, but cap overall width */
+@media (min-width: 1400px) {
   .tips-grid {
-    max-width: 1500px;
+    max-width: 1300px;
   }
 }
   </style>  

@@ -414,6 +414,66 @@
       width: 100%;
       box-sizing: border-box;
     }
+    /* TIPS & TRICKS STYLES */
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.8rem;
+  margin-top: 1.2rem;
+}
+
+.tip-card {
+  background: white;
+  border-radius: 14px;
+  padding: 1.6rem 1.8rem;
+  box-shadow: 0 6px 18px rgba(29,78,216,0.08);
+  border: 1px solid #e0f2fe;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tip-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(29,78,216,0.12);
+}
+
+.tip-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.35rem;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.tip-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tip-list > li {
+  margin-bottom: 0.7rem;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.tip-list > li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.tip-list ul {
+  margin-top: 0.4rem;
+  margin-left: 1.2rem;
+}
+    .tip-list ul li {
+  margin-bottom: 0.35rem;
+  color: #374151;
+}
+
   </style>
 </head>
 <body>
@@ -830,73 +890,73 @@
       </ul>
     </section>
 
-   <section id="tips" class="tab-content">
+ <section id="tips" class="tab-content">
   <h2><i class="fa-solid fa-lightbulb"></i> Tips & Tricks</h2>
 
-  <ul style="font-size:1.05rem; line-height:1.7; margin-bottom:1.5rem;">
+  <div class="tips-grid">
 
-    <li>
-      <strong>Run quotes strategically:</strong>
-      If the prospect is married, always run the quote in the spouse’s name to see if the Insurance Score (IS) is lower.
-    </li>
-
-    <li>
-      <strong>RCT drives pricing:</strong>
-      Pricing is based more on RCT than rebuild amount. In RCT, change:
-      <ul>
-        <li>Foundation from concrete to block</li>
-        <li>Plaster to drywall</li>
-        <li>Doors to hollow core (not solid)</li>
+    <!-- QUOTING & PRICING -->
+    <div class="tip-card">
+      <h3><i class="fa-solid fa-calculator"></i> Quoting & Pricing</h3>
+      <ul class="tip-list">
+        <li><strong>Run quotes strategically:</strong> If married, always run the quote in the spouse’s name to see if the Insurance Score (IS) is lower.</li>
+        <li><strong>RCT drives pricing:</strong> Pricing is based more on RCT than rebuild amount.</li>
+        <li><strong>RCT optimizations:</strong>
+          <ul>
+            <li>Foundation: concrete → block</li>
+            <li>Plaster → drywall</li>
+            <li>Doors → hollow core (not solid)</li>
+            <li>HVAC → Central AC/Heat</li>
+          </ul>
+        </li>
+        <li><strong>Market value rejection:</strong> Find the highest supported value (Homes.com works best).</li>
       </ul>
-    </li>
+    </div>
 
-    <li>
-      <strong>Review current coverage:</strong>
-      Use Coverage Info to review deductibles, rebuild amount, and pricing on the existing home policy.
-    </li>
+    <!-- COVERAGE & DISCOUNTS -->
+    <div class="tip-card">
+      <h3><i class="fa-solid fa-shield-halved"></i> Coverage & Discounts</h3>
+      <ul class="tip-list">
+        <li><strong>Review current coverage:</strong> Use MyCoverageInfo to check deductibles, rebuild amount, and pricing.</li>
+        <li><strong>Multi-policy savings:</strong> If they already have auto or home with Allstate, clearly explain how much the rate drops with bundling.</li>
+        <li><strong>Price-driven prospects:</strong> If you’re higher, offer the budget option:
+          <ul>
+            <li>30/60 limits</li>
+            <li>No PIP</li>
+            <li>$2,000 deductibles</li>
+            <li>No roadside or rental</li>
+          </ul>
+        </li>
+        <li><strong>Always offer to cancel:</strong> Never assume the customer will cancel their current insurance on their own.</li>
+      </ul>
+    </div>
 
-    <li>
-      <strong>Use budget options when price-driven:</strong>
-      If you are higher than their current rate, offer a budget option (30/60 limits, no PIP, $2K deductibles, no roadside, no rental).
-    </li>
+    <!-- FOLLOW-UP & PIPELINE -->
+    <div class="tip-card">
+      <h3><i class="fa-solid fa-phone-volume"></i> Follow-Up & Pipeline</h3>
+      <ul class="tip-list">
+        <li><strong>Persistence wins deals:</strong> Do not call or text once and move on. Follow up consistently until they respond.</li>
+        <li><strong>Revive ghosts:</strong> Go back through old texts from months ago and re-engage cold leads.</li>
+        <li><strong>Daily cleanup:</strong> Check your Neglected folder every day for quoted leads.</li>
+        <li><strong>Push for the real objection:</strong> Do not stop until the prospect gives the true reason they won’t bind.</li>
+      </ul>
+    </div>
 
-    <li>
-      <strong>Never quote without required info:</strong>
-      Always confirm a VIN before giving pricing. If a driver’s license number is missing, start a quote in their name or check for a prior Allstate policy.
-    </li>
+    <!-- SYSTEMS & PROCESS -->
+    <div class="tip-card">
+      <h3><i class="fa-solid fa-gears"></i> Systems & Process</h3>
+      <ul class="tip-list">
+        <li><strong>Never quote without required info:</strong> Always confirm a VIN before giving pricing.</li>
+        <li><strong>Missing license numbers:</strong> Start a quote in the driver’s name or check for a prior Allstate policy.</li>
+        <li><strong>Call recordings:</strong> If SMTP doesn’t record, clear cache and retry.</li>
+        <li><strong>DND before calls:</strong> Prevent split recordings by enabling Do Not Disturb.</li>
+        <li><strong>Household rule:</strong> If boyfriend & girlfriend live together, Allstate treats them as married.</li>
+      </ul>
+    </div>
 
-    <li>
-      <strong>Persistence wins deals:</strong>
-      Go back through old texts and re-engage ghosts from months ago. Do not call or text once and move on—follow up consistently until they respond.
-    </li>
-
-    <li>
-      <strong>Push for the real objection:</strong>
-      Do not let up until the prospect gives the true reason they are not binding.
-    </li>
-
-    <li>
-      <strong>Daily cleanup:</strong>
-      Check your Neglected folder every day to make sure no quoted leads are missed.
-    </li>
-
-    <li>
-      <strong>Multi-policy savings:</strong>
-      If the prospect already has auto or home with Allstate, clearly explain how much their rate will drop with the multi-policy discount.
-    </li>
-
-    <li>
-      <strong>Call handling:</strong>
-      If SMTP doesn’t record, clear cache and retry. Always put yourself on DND before calls to avoid split recordings.
-    </li>
-
-    <li>
-      <strong>Household rule:</strong>
-      If a boyfriend and girlfriend live together, Allstate considers them married for quoting purposes.
-    </li>
-
-  </ul>
+  </div>
 </section>
+
  <!-- WELCOME TEXT -->
     <section id="welcome-text" class="tab-content">
       <h2><i class="fa-solid fa-handshake"></i> Welcome to Allstate!</h2>

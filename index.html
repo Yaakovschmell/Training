@@ -4,1180 +4,851 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sales Training • Allstate</title>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
-  
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --primary: #1a3a6b;
-      --primary-mid: #2557a7;
-      --primary-light: #4a7fcb;
-      --accent: #e8a020;
-      --accent-light: #f5c561;
-      --success: #0f7a5a;
-      --success-light: #d1fae8;
-      --sky: #0284c7;
-      --sky-light: #e0f2fe;
-      --bg: #f0f4f9;
-      --card: #ffffff;
-      --text: #0d1b2e;
-      --text-mid: #374151;
-      --text-light: #6b7280;
-      --border: #dde3ed;
-      --nav-h: 64px;
-      --radius: 14px;
-      --radius-sm: 8px;
+      --bg:         #e8ecf4;
+      --surface:    #f2f5fb;
+      --card:       #ffffff;
+      --nav-bg:     #1a2744;
+      --header-bg:  #111c38;
+      --border:     #d0d8ea;
+      --text:       #111827;
+      --text-mid:   #2d3748;
+      --text-dim:   #64748b;
+      --gold:       #c77b00;
+      --gold-bg:    #fff8e6;
+      --gold-bdr:   #f5d080;
+      --blue:       #1d4ed8;
+      --blue-bg:    #eff6ff;
+      --blue-bdr:   #bfdbfe;
+      --blue-dark:  #1e3a8a;
+      --green:      #15803d;
+      --green-bg:   #f0fdf4;
+      --green-bdr:  #86efac;
+      --sky:        #0369a1;
+      --sky-bg:     #f0f9ff;
+      --sky-bdr:    #7dd3fc;
+      --radius:     13px;
+      --radius-sm:  8px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { font-size: 15px; scroll-behavior: smooth; }
+    html { font-size: 16px; scroll-behavior: smooth; }
 
     body {
-      font-family: 'DM Sans', system-ui, sans-serif;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.65;
       overflow-x: hidden;
     }
 
-    /* ═══════════════ HEADER ═══════════════ */
+    /* ── HEADER ── */
     header {
-      background: var(--primary);
-      background-image:
-        radial-gradient(ellipse 80% 60% at 50% -20%, rgba(74,127,203,0.35) 0%, transparent 60%),
-        linear-gradient(160deg, #0f2144 0%, var(--primary) 45%, #1d3a70 100%);
-      color: white;
-      padding: 2.2rem 1rem 2rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    header::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(circle at 15% 50%, rgba(232,160,32,0.12) 0%, transparent 40%),
-                        radial-gradient(circle at 85% 30%, rgba(74,127,203,0.18) 0%, transparent 40%);
-    }
-
-    header .header-inner {
-      position: relative;
-      z-index: 1;
+      background: var(--header-bg);
+      padding: 1.5rem 2rem;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 1rem;
+      gap: 1.1rem;
     }
 
-    header .header-icon {
-      width: 48px;
-      height: 48px;
-      background: rgba(232,160,32,0.18);
-      border: 1.5px solid rgba(232,160,32,0.4);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      color: var(--accent-light);
-      flex-shrink: 0;
+    .header-logo {
+      width: 44px; height: 44px;
+      background: #d97706;
+      border-radius: 11px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.25rem; flex-shrink: 0;
+      box-shadow: 0 2px 10px rgba(217,119,6,0.45);
     }
 
-    header h1 {
-      font-family: 'Syne', sans-serif;
-      font-size: 2.1rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      color: white;
+    .header-text h1 {
+      font-size: 1.5rem; font-weight: 800;
+      color: #ffffff; letter-spacing: -0.3px;
     }
 
-    header .header-badge {
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 1.5px;
+    .header-text span {
+      font-size: 0.71rem; font-weight: 700;
+      color: #fbbf24; letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--accent-light);
-      opacity: 0.9;
-      margin-top: 0.25rem;
     }
 
-    /* ═══════════════ NAV ═══════════════ */
+    /* ── NAV ── */
     nav {
-      background: white;
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 1px 0 var(--border), 0 4px 16px rgba(26,58,107,0.07);
+      background: var(--nav-bg);
+      position: sticky; top: 0; z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.25);
     }
 
     .tab-menu {
-      display: flex;
-      justify-content: center;
-      gap: 0.4rem;
-      padding: 0.8rem 1rem;
-      list-style: none;
-      flex-wrap: wrap;
-      align-items: center;
+      display: flex; list-style: none;
+      padding: 0 1.5rem;
+      overflow-x: auto; scrollbar-width: none;
     }
+    .tab-menu::-webkit-scrollbar { display: none; }
 
     .tab-link {
-      -webkit-appearance: none;
-      appearance: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      padding: 0.5rem 1.05rem;
-      font-family: 'Syne', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--text-mid);
-      text-decoration: none;
-      border-radius: var(--radius-sm);
-      transition: all 0.18s ease;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      position: relative;
+      appearance: none; -webkit-appearance: none;
+      border: none; background: transparent;
+      color: rgba(255,255,255,0.55);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.88rem; font-weight: 600;
+      padding: 0.95rem 1.05rem;
+      cursor: pointer; white-space: nowrap;
+      border-bottom: 3px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+      display: flex; align-items: center; gap: 0.4rem;
     }
+    .tab-link:hover { color: rgba(255,255,255,0.88); }
+    .tab-link.active { color: #fbbf24; border-bottom-color: #fbbf24; }
 
-    .tab-link:hover {
-      background: #f0f4f9;
-      color: var(--primary-mid);
-    }
-
-    .tab-link.active {
-      color: var(--primary-mid);
-      background: #eef3fb;
-    }
-
-    .tab-link.active::after {
-      content: '';
-      position: absolute;
-      bottom: -0.8rem;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60%;
-      height: 2.5px;
-      background: var(--primary-mid);
-      border-radius: 2px;
-    }
-
-    /* ═══════════════ CONTENT ═══════════════ */
+    /* ── MAIN LAYOUT ── */
     .tab-content {
-      max-width: 1180px;
+      max-width: 1160px;
       margin: 2rem auto;
-      padding: 0 1.4rem;
+      padding: 0 1.5rem;
       display: none;
-      animation: fadeUp 0.4s ease-out;
+      animation: fadeUp 0.3s ease;
     }
-
     .tab-content.active { display: block; }
 
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(14px); }
-      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
-    h2 {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.9rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 1.4rem;
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
+    #coverage .page-container {
+      display: flex; gap: 1.8rem; align-items: flex-start;
+    }
+    .main-content { flex: 1 1 0; min-width: 0; }
+
+    /* ── SIDEBAR ── */
+    .sticky-sidebar {
+      width: 218px; flex: 0 0 218px;
+      position: -webkit-sticky; position: sticky;
+      top: 58px; align-self: flex-start;
     }
 
-    h2 i {
-      width: 42px;
-      height: 42px;
-      background: linear-gradient(135deg, var(--primary), var(--primary-mid));
+    .sidebar-label {
+      font-size: 0.68rem; font-weight: 800;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--text-dim); margin-bottom: 0.65rem; padding-left: 0.2rem;
+    }
+
+    .steps-list { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
+
+    .steps-list li {
+      display: flex; align-items: center; gap: 0.7rem;
+      padding: 0.7rem 0.9rem;
+      border-radius: var(--radius-sm);
+      background: var(--card);
+      border: 1px solid var(--border);
+      font-size: 0.88rem; font-weight: 600;
+      color: var(--text-mid);
+      transition: all 0.15s; cursor: default;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .steps-list li:hover {
+      background: var(--blue-bg);
+      border-color: var(--blue-bdr);
+      color: var(--blue-dark);
+    }
+
+    .step-dot {
+      width: 23px; height: 23px; border-radius: 50%;
+      background: var(--blue-dark);
       color: white;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
+      font-size: 0.72rem; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
+    }
+
+    /* ── HEADINGS ── */
+    h2 {
+      font-size: 1.6rem; font-weight: 800;
+      color: var(--text); margin-bottom: 1.3rem;
+      display: flex; align-items: center; gap: 0.55rem;
     }
 
     h3 {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin: 2rem 0 0.9rem;
+      font-size: 1.05rem; font-weight: 700;
+      color: var(--text); margin: 2rem 0 0.8rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--border);
     }
 
-    /* ═══════════════ PAGE LAYOUT ═══════════════ */
-    #coverage .page-container {
-      display: flex;
-      gap: 2rem;
-      align-items: flex-start;
-      flex-wrap: nowrap;
-    }
-
-    .main-content { flex: 1 1 0; min-width: 0; }
-
-    .sticky-sidebar {
-      width: 230px;
-      flex: 0 0 230px;
-      position: -webkit-sticky;
-      position: sticky;
-      top: 80px;
-      align-self: flex-start;
-      background: white;
-      border-radius: var(--radius);
-      padding: 1.3rem;
-      box-shadow: 0 4px 20px rgba(26,58,107,0.08);
+    /* ── STEP TITLES ── */
+    .step-title {
+      display: flex; align-items: center; gap: 0.8rem;
+      margin: 2.5rem 0 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--card);
       border: 1px solid var(--border);
-    }
-
-    .sticky-sidebar h3 {
-      margin: 0 0 1rem;
-      font-size: 1.05rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--primary);
-    }
-
-    .steps-list { list-style: none; }
-
-    .steps-list li {
-      padding: 0.72rem 0.9rem;
-      margin-bottom: 0.45rem;
+      border-left: 4px solid var(--blue);
       border-radius: var(--radius-sm);
-      background: #f7f9fc;
-      border: 1px solid var(--border);
-      font-weight: 500;
-      font-size: 0.9rem;
-      color: var(--text-mid);
-      transition: all 0.18s ease;
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-      cursor: default;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
     }
+    .step-title.gold-step { border-left-color: var(--gold); }
+    .step-title.green-step { border-left-color: var(--green); }
 
-    .steps-list li:hover {
-      background: #eef3fb;
-      border-color: #c5d4ed;
-      color: var(--primary);
+    .step-num-lg {
+      width: 30px; height: 30px; border-radius: 50%;
+      background: var(--blue-dark); color: white;
+      font-size: 0.88rem; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-num-lg.gold  { background: #c77b00; }
+    .step-num-lg.green { background: var(--green); }
+
+    .step-title-text { font-size: 1.05rem; font-weight: 800; color: var(--text); }
+
+    /* ── SCRIPT BLOCKS ── */
+    .script-block {
+      display: flex; gap: 0.9rem;
+      margin-bottom: 0.85rem;
+      padding: 1.05rem 1.15rem;
+      border-radius: var(--radius);
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      align-items: flex-start;
+      transition: box-shadow 0.15s, transform 0.15s;
+    }
+    .script-block:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
       transform: translateX(3px);
     }
 
-    .steps-list li::before {
-      content: attr(data-step);
-      width: 24px;
-      height: 24px;
-      background: var(--primary);
-      color: white;
-      border-radius: 50%;
-      font-weight: 700;
-      font-size: 0.78rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    /* ═══════════════ STEP TITLES ═══════════════ */
-    .step-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin: 2.8rem 0 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      padding-bottom: 0.7rem;
-      border-bottom: 2px solid #e2eaf5;
-    }
-
-    /* ═══════════════ SCRIPT BLOCKS ═══════════════ */
-    .script-block {
-      display: flex;
-      gap: 0.9rem;
-      margin-bottom: 1.3rem;
-      padding: 1.2rem 1.3rem;
-      border-radius: var(--radius);
-      background: white;
-      box-shadow: 0 2px 8px rgba(26,58,107,0.05);
-      border: 1px solid var(--border);
-      transition: box-shadow 0.22s ease, transform 0.22s ease;
-      width: 100%;
-      align-items: flex-start;
-    }
-
-    .script-block:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(26,58,107,0.1);
-    }
-
-    .script-block.agent { border-left: 4px solid var(--primary-mid); }
-    .script-block.customer {
-      border-left: 4px solid var(--sky);
-      background: #f8fbff;
-    }
+    .script-block.agent    { border-left: 4px solid var(--blue); }
+    .script-block.customer { border-left: 4px solid var(--sky); background: var(--sky-bg); border-color: var(--sky-bdr); }
+    .script-block.warning  { border-left: 4px solid var(--gold); background: var(--gold-bg); border-color: var(--gold-bdr); }
+    .script-block.success  { border-left: 4px solid var(--green); background: var(--green-bg); border-color: var(--green-bdr); }
+    .script-block.sky-alt  { border-left: 4px solid var(--sky); background: var(--sky-bg); border-color: var(--sky-bdr); }
 
     .script-avatar {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 1.1rem;
-      flex-shrink: 0;
-      color: white;
+      width: 36px; height: 36px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 0.9rem; flex-shrink: 0; color: white;
     }
-
-    .script-block.agent .script-avatar {
-      background: linear-gradient(135deg, var(--primary), var(--primary-mid));
-    }
-    .script-block.customer .script-avatar {
-      background: linear-gradient(135deg, #0284c7, #38bdf8);
-    }
-
-    .script-content { flex: 1; }
+    .agent    .script-avatar { background: var(--blue); }
+    .customer .script-avatar { background: var(--sky); }
+    .warning  .script-avatar { background: #c77b00; }
+    .success  .script-avatar { background: var(--green); }
+    .sky-alt  .script-avatar { background: var(--sky); }
 
     .script-role {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: 0.8rem;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      color: var(--primary-mid);
-      margin-bottom: 0.4rem;
-      display: block;
+      font-size: 0.68rem; font-weight: 800;
+      letter-spacing: 1.4px; text-transform: uppercase;
+      margin-bottom: 0.3rem; display: block;
     }
+    .agent    .script-role { color: var(--blue); }
+    .customer .script-role { color: var(--sky); }
+    .warning  .script-role { color: #92580a; }
+    .success  .script-role { color: var(--green); }
+    .sky-alt  .script-role { color: var(--sky); }
 
-    .script-block.customer .script-role { color: var(--sky); }
+    .script-content {
+      flex: 1; font-size: 1rem;
+      color: var(--text-mid); line-height: 1.72;
+    }
+    .script-content strong { color: var(--text); font-weight: 700; }
+    .script-content em { color: var(--text-dim); font-style: italic; }
 
-    .script-response { font-size: 1rem; color: var(--text-mid); }
-
-    /* ═══════════════ HIGHLIGHT BLOCKS ═══════════════ */
-    .rapport-reminder,
-    .highlight-block {
-      background: #fffcf0;
-      border: 1px solid #f5d78a;
-      border-left: 5px solid var(--accent);
-      padding: 1.3rem 1.4rem;
+    /* ── CALLOUTS ── */
+    .callout {
+      padding: 1.15rem 1.4rem;
       border-radius: var(--radius);
-      margin: 1.8rem 0;
-      box-shadow: 0 2px 12px rgba(232,160,32,0.08);
+      margin: 1.3rem 0;
+      border: 1px solid;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
     }
+    .callout.gold  { background: var(--gold-bg); border-color: var(--gold-bdr); }
+    .callout.green { background: var(--green-bg); border-color: var(--green-bdr); }
+    .callout.blue  { background: var(--blue-bg); border-color: var(--blue-bdr); }
 
-    .highlight-title {
-      font-family: 'Syne', sans-serif;
-      color: #a16207;
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin: 0 0 0.8rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
+    .callout-title {
+      font-size: 0.72rem; font-weight: 800;
+      letter-spacing: 1.2px; text-transform: uppercase;
+      margin-bottom: 0.6rem;
+      display: flex; align-items: center; gap: 0.4rem;
     }
+    .callout.gold  .callout-title { color: #92580a; }
+    .callout.green .callout-title { color: var(--green); }
+    .callout.blue  .callout-title { color: var(--blue); }
 
-    /* ═══════════════ OBJECTIONS ═══════════════ */
+    .callout p { font-size: 1rem; color: var(--text-mid); line-height: 1.7; }
+    .callout strong { color: var(--text); font-weight: 700; }
+
+    /* ── OBJECTIONS ── */
     .objection-dropdown {
-      margin-bottom: 0.9rem;
+      margin-bottom: 0.55rem;
       border-radius: var(--radius);
       overflow: hidden;
-      box-shadow: 0 2px 8px rgba(26,58,107,0.06);
       border: 1px solid var(--border);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
     }
 
     .objection-toggle {
-      width: 100%;
-      padding: 1.1rem 1.4rem;
-      background: white;
-      border: none;
-      text-align: left;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--primary);
+      width: 100%; padding: 1rem 1.2rem;
+      background: var(--card); border: none; text-align: left;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.97rem; font-weight: 700;
+      color: var(--text);
       cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: all 0.2s;
-      gap: 1rem;
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+      transition: background 0.15s;
     }
+    .objection-toggle:hover { background: var(--blue-bg); }
+    .objection-dropdown.open .objection-toggle { background: var(--blue-dark); color: white; }
 
-    .objection-toggle:hover {
-      background: #f0f4f9;
+    .chevron {
+      display: inline-block; transition: transform 0.25s;
+      font-style: normal; flex-shrink: 0;
+      font-size: 0.8rem; color: var(--text-dim);
     }
-
-    .objection-dropdown.open .objection-toggle {
-      background: var(--primary);
-      color: white;
-    }
+    .objection-dropdown.open .chevron { transform: rotate(180deg); color: white; }
 
     .objection-response-dropdown {
       display: none;
-      padding: 1.4rem 1.8rem;
-      background: #f9fbff;
-      font-size: 1rem;
-      line-height: 1.72;
+      padding: 1.15rem 1.5rem;
+      background: var(--surface);
+      font-size: 0.97rem; line-height: 1.75;
       color: var(--text-mid);
       border-top: 1px solid var(--border);
     }
-
     .objection-dropdown.open .objection-response-dropdown { display: block; }
 
-    .fa-chevron-down { transition: transform 0.28s ease; flex-shrink: 0; display:inline-block; }
-    .objection-dropdown.open .fa-chevron-down { transform: rotate(180deg); }
-
-    /* ═══════════════ RESOURCES ═══════════════ */
-    .resource-list { list-style: none; padding: 0; }
-
-    .resource-list li {
-      margin-bottom: 0;
-      border-bottom: 1px solid var(--border);
+    /* ── RESOURCES ── */
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(258px, 1fr));
+      gap: 0.6rem; margin-top: 0.5rem;
     }
 
-    .resource-list li:last-child { border-bottom: none; }
-
-    .resource-list a {
-      display: flex;
-      align-items: center;
-      gap: 0.9rem;
-      padding: 0.9rem 1.1rem;
-      color: var(--primary-mid);
-      text-decoration: none;
-      font-size: 1rem;
-      font-weight: 500;
-      transition: background 0.15s, color 0.15s, padding-left 0.15s;
-      border-radius: 0;
-    }
-
-    .resource-list a:hover {
-      background: #f0f4f9;
-      color: var(--primary);
-      padding-left: 1.5rem;
-    }
-
-    .resource-list i {
-      width: 32px;
-      height: 32px;
-      background: #eef3fb;
-      color: var(--primary-mid);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.85rem;
-      flex-shrink: 0;
-      transition: background 0.15s;
-    }
-
-    .resource-list a:hover i {
-      background: #dce8f7;
-      color: var(--primary);
-    }
-
-    .resource-card {
-      background: white;
-      border-radius: var(--radius);
-      box-shadow: 0 2px 12px rgba(26,58,107,0.07);
+    .resource-item {
+      display: flex; align-items: center; gap: 0.85rem;
+      padding: 0.85rem 1rem;
+      background: var(--card);
       border: 1px solid var(--border);
-      overflow: hidden;
-      margin-top: 0.5rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      color: var(--text-mid);
+      font-size: 0.95rem; font-weight: 600;
+      transition: all 0.15s;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .resource-item:hover {
+      background: var(--blue-bg);
+      border-color: var(--blue-bdr);
+      color: var(--blue-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
-    /* ═══════════════ TIPS GRID ═══════════════ */
+    .resource-icon {
+      width: 32px; height: 32px;
+      background: var(--blue-bg);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem; flex-shrink: 0;
+    }
+
+    /* ── TIPS ── */
+    #tips.tab-content { max-width: none; }
+
     .tips-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 1.6rem 1.8rem;
-      margin: 2rem auto;
-      max-width: 1180px;
+      gap: 1.1rem;
+      max-width: 1160px; margin: 0 auto;
     }
 
     .tip-card {
-      background: white;
-      border-radius: var(--radius);
-      padding: 1.5rem 1.6rem;
-      box-shadow: 0 2px 12px rgba(26,58,107,0.07);
+      background: var(--card);
       border: 1px solid var(--border);
-      border-top: 4px solid var(--primary-mid);
-      transition: transform 0.22s ease, box-shadow 0.22s ease;
-      display: flex;
-      flex-direction: column;
+      border-top: 4px solid var(--blue);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      transition: transform 0.15s, box-shadow 0.15s, border-top-color 0.2s;
     }
-
     .tip-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(26,58,107,0.12);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.11);
+      border-top-color: var(--gold);
     }
 
     .tip-card h3 {
-      margin: 0 0 1rem 0;
-      font-size: 1.1rem;
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
+      margin: 0 0 0.9rem; font-size: 1rem;
+      color: var(--text);
+      display: flex; align-items: center; gap: 0.45rem;
+      border: none; padding: 0;
     }
 
-    .tip-card h3 i {
-      width: 34px;
-      height: 34px;
-      background: linear-gradient(135deg, var(--primary), var(--primary-mid));
-      color: white;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.85rem;
-      flex-shrink: 0;
-    }
-
-    .tip-list { list-style: none; padding-left: 0; margin: 0; }
+    .tip-list { list-style: none; padding: 0; margin: 0; }
 
     .tip-list > li {
-      margin-bottom: 0.6rem;
-      padding-left: 1.2rem;
+      padding: 0.52rem 0 0.52rem 1.15rem;
       position: relative;
-      line-height: 1.5;
-      font-size: 0.95rem;
-      color: var(--text-mid);
+      font-size: 0.95rem; color: var(--text-mid);
+      border-bottom: 1px solid var(--border);
+      line-height: 1.55;
     }
-
+    .tip-list > li:last-child { border-bottom: none; }
     .tip-list > li::before {
-      content: "▸";
-      position: absolute;
-      left: 0;
-      color: var(--primary-light);
-      font-size: 0.8rem;
-      top: 0.05em;
+      content: '▸'; position: absolute; left: 0;
+      color: var(--blue); font-size: 0.75rem; top: 0.6rem;
     }
+    .tip-list > li strong { color: var(--text); font-weight: 700; }
 
-    .tip-list ul {
-      margin: 0.4rem 0 0.5rem 1.2rem;
-      padding-left: 0;
-    }
+    .tip-list ul { margin: 0.35rem 0 0.2rem 1rem; padding: 0; list-style: none; }
+    .tip-list ul li { font-size: 0.9rem; color: var(--text-dim); padding: 0.18rem 0; }
 
-    .tip-list ul li {
-      margin-bottom: 0.3rem;
-      color: var(--text-light);
-      font-size: 0.9rem;
-    }
-
-    /* ═══════════════ WELCOME TEXT ═══════════════ */
+    /* ── WELCOME ── */
+    #welcome-text p { color: var(--text-mid); margin-bottom: 0.75rem; font-size: 1rem; }
+    #welcome-text strong { color: var(--text); font-weight: 700; }
     #welcome-text h3 {
-      margin-top: 2.2rem;
-      padding: 0.6rem 1rem;
-      background: #eef3fb;
-      border-left: 4px solid var(--primary-mid);
-      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.72rem; font-weight: 800; letter-spacing: 1.6px;
+      text-transform: uppercase; color: var(--gold);
+      margin: 1.8rem 0 0.75rem; padding-bottom: 0.45rem;
+      border-bottom: 2px solid var(--border);
     }
 
-    #welcome-text p {
-      color: var(--text-mid);
-      margin-bottom: 0.8rem;
-      font-size: 1rem;
-    }
+    /* ── CROSS SALE ── */
+    #crosssale ul { padding-left: 1.2rem; margin-bottom: 0.9rem; }
+    #crosssale ul li { font-size: 1rem; margin-bottom: 0.25rem; color: var(--text-mid); font-weight: 600; }
+    #crosssale > p { color: var(--text-mid); margin-bottom: 1.4rem; font-size: 1rem; }
 
-    #welcome-text strong { color: var(--primary); }
-
-    /* ═══════════════ CROSS SALE ═══════════════ */
-    #crosssale ul { margin-bottom: 1rem; padding-left: 1.2rem; }
-    #crosssale ul li { font-size: 1.05rem; margin-bottom: 0.3rem; }
-
-    /* ═══════════════ CLOSING BOX ═══════════════ */
-    .close-box {
-      margin-top: 2.5rem;
-      padding: 1.6rem 1.8rem;
-      background: var(--success-light);
-      border-radius: var(--radius);
-      border-left: 5px solid var(--success);
-      border: 1px solid #a7f3d0;
-    }
-
-    /* ═══════════════ WARNING OVERRIDES ═══════════════ */
-    .script-block[style*="warning"] {
-      background: #fffcf0 !important;
-    }
-
-    /* ═══════════════ RESPONSIVE ═══════════════ */
+    /* ── RESPONSIVE ── */
     @media (max-width: 960px) {
       #coverage .page-container { flex-direction: column; }
-      .sticky-sidebar { position: static; width: 100%; max-width: 540px; margin: 0 auto 2rem; }
+      .sticky-sidebar { position: static; width: 100%; }
       .tips-grid { grid-template-columns: 1fr; }
     }
-
     @media (max-width: 640px) {
-      html { font-size: 14px; }
-      header h1 { font-size: 1.75rem; }
-      .tab-menu { gap: 0.3rem; padding: 0.6rem; }
-      .tab-link { padding: 0.45rem 0.8rem; font-size: 0.85rem; }
-      h2 { font-size: 1.65rem; }
-      .step-title { font-size: 1.2rem; }
+      html { font-size: 15px; }
+      header { padding: 1.1rem 1rem; }
+      .tab-content { padding: 0 1rem; }
     }
 
-    .main-content, .main-content * { overflow-wrap: anywhere; word-break: break-word; }
-
-    /* ═══════════════ TIPS FULL WIDTH ═══════════════ */
-    #tips.tab-content { max-width: none; padding: 0 1.4rem; }
-    #tips .tips-grid { max-width: none; }
+    .main-content * { overflow-wrap: anywhere; word-break: break-word; }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="header-inner">
-      <div class="header-icon"><span style="font-style:normal">🛡️</span></div>
-      <div>
-        <h1>Sales Training</h1>
-        <div class="header-badge">Allstate Insurance Agency</div>
-      </div>
+<header>
+  <div class="header-logo">🛡️</div>
+  <div class="header-text">
+    <h1>Sales Training</h1>
+    <span>Allstate Insurance Agency</span>
+  </div>
+</header>
+
+<nav>
+  <ul class="tab-menu">
+    <li><button class="tab-link active" data-tab="coverage"     onclick="showTab('coverage')">🛡️ Coverage</button></li>
+    <li><button class="tab-link"        data-tab="objections"   onclick="showTab('objections')">💬 Objections</button></li>
+    <li><button class="tab-link"        data-tab="crosssale"    onclick="showTab('crosssale')">🔄 Cross Sale</button></li>
+    <li><button class="tab-link"        data-tab="resources"    onclick="showTab('resources')">📖 Resources</button></li>
+    <li><button class="tab-link"        data-tab="tips"         onclick="showTab('tips')">💡 Tips & Tricks</button></li>
+    <li><button class="tab-link"        data-tab="welcome-text" onclick="showTab('welcome-text')">🤝 Welcome Text</button></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- ══════════ COVERAGE ══════════ -->
+  <section id="coverage" class="tab-content active">
+    <div class="page-container">
+      <div class="main-content">
+
+        <h2>🛡️ Coverage Script</h2>
+
+        <div class="callout gold">
+          <div class="callout-title">🤝 Rapport Reminder</div>
+          <p>Before you get into coverage details, be sure to build some rapport! Find a natural moment to connect—ask about their day, comment on something local, or just chat for a moment. Rapport helps set a positive tone for the entire call.</p>
+        </div>
+
+        <div class="step-title">
+          <div class="step-num-lg">1</div>
+          <div class="step-title-text">Step 1: Introduction & Info Confirmation</div>
+        </div>
+        <div class="script-block agent">
+          <div class="script-avatar">A</div>
+          <div class="script-content">
+            <span class="script-role">Agent</span>
+            Good morning/afternoon (Prospect), like she said my name is (your name) and I'll be the licensed agent assisting you with those savings today. How's your day been so far?<br><br>
+            <em>[Pause to chat: "How's your week going?" or "Are you from around here?" You can also ask them about their family, career, upcoming vacations etc.]</em><br><br>
+            I'm going to confirm your information so we can make sure we're giving you the best possible rate. (Confirm name, DOB, address, own or rent, marital status, drivers and vehicles) <strong>CONFIRM THE INFORMATION RATHER THAN ASKING THEM TO PROVIDE IT</strong>
+          </div>
+        </div>
+
+        <div class="step-title">
+          <div class="step-num-lg">2</div>
+          <div class="step-title-text">Step 2: Experience & Expectations</div>
+        </div>
+        <div class="script-block agent">
+          <div class="script-avatar">A</div>
+          <div class="script-content">
+            <span class="script-role">Agent</span>
+            So, (name), I'm going to pull up your reports which will show me any accidents or claims in the last couple of years and where you're currently insured. I see you're currently with (Insurance Company). <strong>How's your overall experience been with them — the rates, customer service, things like that? (Dig to find out more about bad experiences to use later such as Geico being a call center, not having policy reviews etc.)</strong>
+          </div>
+        </div>
+
+        <div class="callout blue">
+          <div class="callout-title">❓ Key Question</div>
+          <p>While I pull up your coverages, I always like to ask my customers this question:<br><br>
+          <strong>"Let's say you're driving down the road and you get into an accident where you're found at fault, and there's a large damage bill—how much of that bill would you expect your insurance company to cover?"</strong></p>
+        </div>
+
+        <div class="script-block customer">
+          <div class="script-avatar">C</div>
+          <div class="script-content"><span class="script-role">Customer</span>All of it.</div>
+        </div>
+        <div class="script-block agent">
+          <div class="script-avatar">A</div>
+          <div class="script-content">
+            <span class="script-role">Agent</span>
+            Absolutely, I agree—and that's exactly why we make sure our customers always have enough coverage to protect them. So now I'm going to go over what you currently have with GEICO so you understand the coverages you actually have.
+          </div>
+        </div>
+
+        <div class="step-title">
+          <div class="step-num-lg">3</div>
+          <div class="step-title-text">Step 3: Explaining Coverages</div>
+        </div>
+        <div class="script-block agent">
+          <div class="script-avatar">A</div>
+          <div class="script-content">
+            <span class="script-role">Agent</span>
+            The first coverage is bodily injury liability. This covers how much your insurance will pay for the other person's medical bills if you get into an accident and are found at fault. Right now, you have 30/60, so I'm going to match that coverage the same way.
+          </div>
+        </div>
+        <div class="script-block agent">
+          <div class="script-avatar">A</div>
+          <div class="script-content">
+            <span class="script-role">Agent</span>
+            The same would apply to your uninsured motorist coverage. This is what protects you and your passengers if you're ever in an accident and the person who hits you either doesn't have any insurance, doesn't have enough insurance, or if it's a hit-and-run situation. If you or someone in your vehicle is injured, your policy would step in and pay for your medical bills—again, up to the same limits you have for bodily injury: 30/60.
+          </div>
+        </div>
+
+        <div class="step-title gold-step">
+          <div class="step-num-lg gold">⚠️</div>
+          <div class="step-title-text" style="color:var(--gold);">Property Damage Liability — Most Important Coverage</div>
+        </div>
+
+        <div class="script-block warning">
+          <div class="script-avatar">A</div>
+          <div class="script-content">
+            <span class="script-role">Agent</span>
+            Now, the next coverage is the one that really concerns me—and here's why. It's called property damage liability, and this covers how much your insurance will pay for the other person's vehicle or property if you're found at fault in an accident.<br><br>
+            Currently, you're set at $15,000, which is the state minimum. That means anything over that amount comes out of your pocket.<br><br>
+            Just as an example—are you familiar with the Ford F-150?
+          </div>
+        </div>
+        <div class="script-block customer"><div class="script-avatar">C</div><div class="script-content"><span class="script-role">Customer</span>Yes.</div></div>
+        <div class="script-block warning"><div class="script-avatar">A</div><div class="script-content"><span class="script-role">Agent</span>Do you know around how much they cost?</div></div>
+        <div class="script-block customer"><div class="script-avatar">C</div><div class="script-content"><span class="script-role">Customer</span>About $60,000.</div></div>
+        <div class="script-block warning">
+          <div class="script-avatar">A</div>
+          <div class="script-content">
+            <span class="script-role">Agent</span>
+            So let's say you're driving down the road and hit a brand-new F-150, and it gets totaled. With your current policy, GEICO would come to you and say, "You've been a great customer—here's a check for $15,000."<br><br>
+            Now, the problem is: if it's a $60,000 truck and they only give you $15,000, how much are you left paying out of pocket? <strong>(MAKE THEM DO THE MATH)</strong>
+          </div>
+        </div>
+        <div class="script-block customer"><div class="script-avatar">C</div><div class="script-content"><span class="script-role">Customer</span>$45,000.</div></div>
+        <div class="script-block warning"><div class="script-avatar">A</div><div class="script-content"><span class="script-role">Agent</span>And how does that sound?</div></div>
+        <div class="script-block customer"><div class="script-avatar">C</div><div class="script-content"><span class="script-role">Customer</span>Horrible.</div></div>
+        <div class="script-block warning">
+          <div class="script-avatar">A</div>
+          <div class="script-content">
+            <span class="script-role">Agent</span>
+            Exactly! That's why I'm going to give you $300,000 for property damage on your policy, to make sure you're fully protected in the event of any claim. Does it make sense why we do that?
+          </div>
+        </div>
+
+        <div class="step-title">
+          <div class="step-num-lg">4</div>
+          <div class="step-title-text">Step 4: Other Important Coverages</div>
+        </div>
+        <div class="script-block agent">
+          <div class="script-avatar">A</div>
+          <div class="script-content">
+            <span class="script-role">Agent</span>
+            The next important coverage is Collision. Collision covers the damage to your own vehicle if you're in an accident, regardless of who's at fault—so whether you hit another car, a tree, or even a pole, this is the coverage that helps get your car repaired or replaced.<br><br>
+            For collision, I recommend a $1,000 deductible. (if they object you can say) here's why: A higher deductible means you'll be responsible for the first $1,000 of any damage, but it also lowers your monthly premium significantly. Most people don't get into accidents very often, so choosing a $1,000 deductible is a smart way to keep your insurance affordable while still protecting you from those big, unexpected repair bills.
+          </div>
+        </div>
+        <div class="script-block agent">
+          <div class="script-avatar">A</div>
+          <div class="script-content">
+            <span class="script-role">Agent</span>
+            Next is Comprehensive coverage. This protects your vehicle from things that aren't collision-related—like theft, vandalism, fire, hail, or even if a deer runs into your car. For comprehensive, I recommend a $250 deductible. Comprehensive claims are usually less expensive and more common—like if a rock cracks your windshield or a storm causes damage. A lower deductible means you'll pay less out of pocket if something like that happens.
+          </div>
+        </div>
+        <div class="script-block agent">
+          <div class="script-avatar">A</div>
+          <div class="script-content">
+            <span class="script-role">Agent</span>
+            Do you have roadside with your current company or do you use a third party like Triple A? If you ever have a flat tire, run out of gas, lock your keys in your car, or your battery dies, roadside assistance sends help right to you, 24/7. The biggest difference between Allstate's roadside program and any other insurance company is that Allstate goes off of the drivers rather than the vehicles, meaning no matter what car you're driving, you would have Allstate roadside covering you.
+          </div>
+        </div>
+        <div class="script-block agent">
+          <div class="script-avatar">A</div>
+          <div class="script-content">
+            <span class="script-role">Agent</span>
+            Next up is Rental Car coverage. If your car is ever in the shop because of a covered claim—like an accident—this coverage helps pay for a rental car so you can keep getting to work, school, or wherever you need to go. It's a great way to avoid being stranded or having to pay out of pocket for a rental while your car is being repaired.
+          </div>
+        </div>
+        <div class="script-block agent">
+          <div class="script-avatar">A</div>
+          <div class="script-content">
+            <span class="script-role">Agent</span>
+            Finally, there's Personal Injury Protection, or PIP. This coverage helps pay for medical expenses for you and your passengers after an accident, no matter who's at fault. It can also cover things like lost wages and essential services if you're unable to work or take care of yourself after an accident. PIP is really valuable because it kicks in quickly and helps cover those immediate costs when you need it most.
+          </div>
+        </div>
+
+        <div class="step-title green-step">
+          <div class="step-num-lg green">5</div>
+          <div class="step-title-text" style="color:var(--green);">Step 5: Experience Recap Close</div>
+        </div>
+        <div class="script-block success">
+          <div class="script-avatar">A</div>
+          <div class="script-content">
+            <span class="script-role">Agent</span>
+            While my system is calculating the rate for your policy, let me tell you a little bit about how it works once we get you set up over here..<br><br>
+            First, we're a local agency. That means if you ever have questions or problems, you won't be stuck in a call center or waiting on hold. You'll speak directly to the same few people every time.<br><br>
+            We pride ourselves on clear communication. You'll get my office number and email, plus my personal cell phone number for after-hours questions or emergencies. So, anytime you need help, you have direct access to us.<br><br>
+            Also, unlike companies like GEICO, Progressive, and Liberty Mutual, we don't do teaser rates. Many big companies start you off with a low rate but can legally raise it at any time after you sign up. Here, we've already run all your underwriting reports, so your rate is locked in. Plus, 45 days before your renewal, our customer service team will call you to review your policy, ensure you're getting all your discounts, and make sure you always have the best rate possible.<br><br>
+            So, (Prospect), when we started, I asked how much you would want your insurance to cover if you got into an accident and were found at fault. You said all of it—is that still right?<br><br>
+            Right now, with GEICO, you're only covered for the first $15,000. If you hit that Ford F-150 we talked about, you'd be responsible for the remaining $45,000—and you told me that's something you want to avoid, right?<br><br>
+            That's why we provided you with $300,000 in coverage—to make sure you're properly protected in case of any accident.<br><br>
+            So, your monthly payment for this full protection will be ($).<br><br>
+            A couple more questions and we'll wrap this up:<br>
+            Who is the vehicle financed through?<br>
+            And what card would you like to use for today's payment?
+          </div>
+        </div>
+
+      </div><!-- end main-content -->
+
+      <!-- SIDEBAR -->
+      <aside class="sticky-sidebar">
+        <div class="sidebar-label">Application Steps</div>
+        <ul class="steps-list">
+          <li><span class="step-dot">1</span>Introduction & Info Confirmation</li>
+          <li><span class="step-dot">2</span>Experience & Expectations</li>
+          <li><span class="step-dot">3</span>Explaining Coverages</li>
+          <li><span class="step-dot">4</span>Other Important Coverages</li>
+          <li><span class="step-dot">5</span>Experience Recap Close</li>
+        </ul>
+      </aside>
+
     </div>
-  </header>
+  </section>
 
-  <nav>
-    <ul class="tab-menu">
-      <li><button class="tab-link active" data-tab="coverage" onclick="showTab('coverage')"><span style="font-style:normal">🛡️</span> Coverage</button></li>
-      <li><button class="tab-link" data-tab="objections" onclick="showTab('objections')"><span style="font-style:normal">💬</span> Objections</button></li>
-      <li><button class="tab-link" data-tab="crosssale" onclick="showTab('crosssale')"><span style="font-style:normal">🔄</span> Cross Sale</button></li>
-      <li><button class="tab-link" data-tab="resources" onclick="showTab('resources')"><span style="font-style:normal">📖</span> Resources</button></li>
-      <li><button class="tab-link" data-tab="tips" onclick="showTab('tips')"><span style="font-style:normal">💡</span> Tips & Tricks</button></li>
-      <li><button class="tab-link" data-tab="welcome-text" onclick="showTab('welcome-text')"><span style="font-style:normal">🤝</span> Welcome text</button></li>
+  <!-- ══════════ OBJECTIONS ══════════ -->
+  <section id="objections" class="tab-content">
+    <h2>💬 Objection Script</h2>
+    <div class="callout green">
+      <div class="callout-title">✅ Summary: Close Faster, Protect Better</div>
+      <p>Every objection gets redirected to this core truth:<br>
+      <strong>You don't have enough coverage right now — and we're fixing that.</strong><br>
+      The goal: minimize delays, eliminate follow-ups, and close confidently.</p>
+    </div>
+
+    <div class="objection-dropdown">
+      <button class="objection-toggle">Objection 1: "I'll pay later / Call me back / Not ready yet" <span class="chevron">▾</span></button>
+      <div class="objection-response-dropdown">"I totally understand. As we talked about, you told me you wanted to be protected right? Currently with (insurance company) you only have $15,000 in property damage which as we talked about is not enough — in the example we went over with that F-150, you would be stuck paying out of pocket, which you said you didn't want, right? Which is why we gave you the $300,000 to make sure you never have to pay out of pocket.<br><br>So let's make sure you never have to worry about that. What's the most convenient day for you to make that payment?"</div>
+    </div>
+    <div class="objection-dropdown">
+      <button class="objection-toggle">Objection 2: "It's more than I was paying" / "That's too expensive" <span class="chevron">▾</span></button>
+      <div class="objection-response-dropdown">"Totally fair - but let's break it down. You were paying less because you were getting less. $15,000 in coverage doesn't cut it. Most of my clients can find the extra ($20, $40, $60) but none of them have an extra $45,000 sitting around. That's why we're giving you $300,000 so you don't have to take a $45,000 hit after an accident. So let me ask you, what's the most convenient day for you to make that payment?"</div>
+    </div>
+    <div class="objection-dropdown">
+      <button class="objection-toggle">Objection 3: "I just made a payment" / "I want to wait until my renewal date" <span class="chevron">▾</span></button>
+      <div class="objection-response-dropdown">"I totally understand — we have two options. Option one, which is what I recommend: let's get this policy started and then we can get you a refund of whatever premium you haven't used at your current company. If that doesn't work for you, option two is let's lock in this upgraded protection now and schedule the first payment for then. You don't pay anything today, and your rate is locked in for the renewal."<br><br>"Which option works better for you?"<br><br>(If they choose option two) "Which card would you like to use to hold the policy for that date?"</div>
+    </div>
+    <div class="objection-dropdown">
+      <button class="objection-toggle">Objection 4: "I want to shop around" <span class="chevron">▾</span></button>
+      <div class="objection-response-dropdown">"Totally understandable - but as we talked about, you said you wanted to be protected and every other company is trying to get you the lowest rates which means they're going to give you the lowest coverages possible, which you said you didn't want. That's why over here we gave you the $300,000 to make sure you don't have to worry about paying anything out of pocket. So let me ask you, what would be the most convenient day for you to pay for the policy?"</div>
+    </div>
+    <div class="objection-dropdown">
+      <button class="objection-toggle">Objection 5: "I need to talk to my spouse/partner first" <span class="chevron">▾</span></button>
+      <div class="objection-response-dropdown">"Of course - let me ask you, do you think they'd be more concerned about the price or the coverages?" (this response will many times get them to give up the real objection)<br><br>"Let's get this taken care of. If your partner has questions, we can make changes later - but waiting leaves you vulnerable. What card works best to secure the coverage now?"</div>
+    </div>
+    <div class="objection-dropdown">
+      <button class="objection-toggle">Objection 6: "Just email me the quote and I'll call you if I like it" <span class="chevron">▾</span></button>
+      <div class="objection-response-dropdown">"Absolutely, I can email it and text it to you now — but you told me you want your insurance to protect you fully, right? Currently you only have $15,000 in property damage which in the event we went over with the F-150 would leave you paying $45,000 out of pocket. Over here we gave you the $300,000 to make sure you don't have to worry about that. So let me ask you, what's the most convenient day for you to make that first payment?"</div>
+    </div>
+    <div class="objection-dropdown">
+      <button class="objection-toggle">Objection 7: "I've never had an accident / I'm a safe driver" <span class="chevron">▾</span></button>
+      <div class="objection-response-dropdown">"That's great - but even the safest drivers make mistakes and that's why we have insurance. Let's set this up and keep you covered - what's the best card to use?"</div>
+    </div>
+    <div class="objection-dropdown">
+      <button class="objection-toggle">Objection 8: "I want to look at it / compare your quote to my current policy" <span class="chevron">▾</span></button>
+      <div class="objection-response-dropdown">"I completely understand, I just sent you a text with the quote in it. Do me a favor, click on the link and make sure it works correctly. Let's go through line by line to make sure you understand what we're giving you."</div>
+    </div>
+    <div class="objection-dropdown">
+      <button class="objection-toggle">Future Start Date (If They Insist on Waiting) <span class="chevron">▾</span></button>
+      <div class="objection-response-dropdown">"No problem. I'll match your current schedule. You pay nothing today - but your better coverage is secured." <strong>GET THE PAYMENT INFORMATION.</strong></div>
+    </div>
+
+    <div class="callout green" style="margin-top:1.6rem;">
+      <div class="callout-title">🎯 Closing the Sale</div>
+      <p>"You're going from minimum protection to full protection — and that's the whole point of insurance."<br>
+      <strong>"What card works best to lock this in today?"</strong></p>
+    </div>
+  </section>
+
+  <!-- ══════════ CROSS SALE ══════════ -->
+  <section id="crosssale" class="tab-content">
+    <h2>🔄 Cross Sale</h2>
+    <ul>
+      <li><strong>Auto → Home</strong></li>
+      <li><strong>Home → Auto</strong></li>
+      <li><strong>Auto → Renters</strong></li>
     </ul>
-  </nav>
+    <p>The goal is to keep it natural, assume the customer will be interested, and link coverage value, not just price.</p>
 
-  <main>
+    <h3>🔹 1. Auto Quote → Home Quote</h3>
+    <div class="script-block agent">
+      <div class="script-avatar">A</div>
+      <div class="script-content"><span class="script-role">Agent</span>"Okay, great - so my system is going to include a home quote as well, when was the last time you had the roof replaced?"</div>
+    </div>
+    <div class="script-block sky-alt">
+      <div class="script-avatar">A</div>
+      <div class="script-content"><span class="script-role">Agent (if they hesitate)</span>"I totally get that, my system is going to make me run through it but I can remove it at the end — this way you can see what the rate would look like if you ever were to bundle it together. It also gives you the multiple policy discount which is the biggest discount you can get on the auto insurance."</div>
+    </div>
 
-    <!-- COVERAGE -->
-    <section id="coverage" class="tab-content active">
-      <div class="page-container">
-        <div class="main-content">
-          <h2><span style="font-style:normal">🛡️</span> Coverage Script</h2>
+    <h3>🔹 2. Home Quote → Auto Quote</h3>
+    <div class="script-block agent">
+      <div class="script-avatar">A</div>
+      <div class="script-content"><span class="script-role">Agent</span>"Now that we've got your homeowners policy squared away, I'm going to go ahead and pull up your auto insurance too so we can bundle them and unlock the multi-policy savings." (Smooth, confident — not asking for permission.)<br><br>"Who do you currently have your vehicles insured with?"</div>
+    </div>
+    <div class="script-block sky-alt">
+      <div class="script-avatar">A</div>
+      <div class="script-content"><span class="script-role">Agent (if happy with current)</span>"Totally understand — a lot of people say that, but when they see the bundle savings and realize they're often underinsured on their auto policy, it makes sense to take a look. Let's at least see what we can do for you. What vehicles do you currently drive?"</div>
+    </div>
 
-          <div class="rapport-reminder">
-            <strong><span style="font-style:normal">🤝</span> Rapport Reminder:</strong><br>
-            Before you get into coverage details, be sure to build some rapport! Find a natural moment to connect—ask about their day, comment on something local, or just chat for a moment. Rapport helps set a positive tone for the entire call.
-          </div>
+    <h3>🔹 3. Auto Quote → Renters Quote</h3>
+    <div class="script-block agent">
+      <div class="script-avatar">A</div>
+      <div class="script-content"><span class="script-role">Agent</span>"Alright, we've got your auto quote looking solid. Since you're currently renting, I'm going to go ahead and add renters insurance so we can bundle that too and apply the multi-policy discount."</div>
+    </div>
+    <div class="script-block sky-alt">
+      <div class="script-avatar">A</div>
+      <div class="script-content"><span class="script-role">Agent (if hesitate)</span>"I totally get it — a lot of people assume their landlord's policy covers them, but it actually doesn't protect your stuff or liability. Renters coverage is super affordable — most people add it for around $15 and generally the discount it provides on the auto is higher than that, so it's actually saving you more money overall. It's a smart move."</div>
+    </div>
+  </section>
 
-          <div class="step-title"><span style="font-style:normal">1️⃣</span> Step 1: Introduction & Info Confirmation</div>
-          <div class="script-block agent">
-            <div class="script-avatar">A</div>
-            <div class="script-content">
-              <span class="script-role">Agent</span>
-              Good morning/afternoon (Prospect), like she said my name is (your name) and I'll be the licensed agent assisting you with those savings today. How's your day been so far?<br><br>
-              <em>[Pause to chat: "How's your week going?" or "Are you from around here?" You can also ask them about their family, career, upcoming vacations etc.]</em><br><br>
-              I'm going to confirm your information so we can make sure we're giving you the best possible rate. (Confirm name, DOB, address, own or rent, marital status, drivers and vehicles) <strong>CONFIRM THE INFORMATION RATHER THAN ASKING THEM TO PROVIDE IT</strong>
-            </div>
-          </div>
+  <!-- ══════════ RESOURCES ══════════ -->
+  <section id="resources" class="tab-content">
+    <h2>📖 Resources</h2>
+    <div class="resource-grid">
+      <a href="https://agencygateway1.allstate.com/apstatic/welcome.html" target="_blank" class="resource-item"><span class="resource-icon">🏢</span> Allstate main page</a>
+      <a href="https://app.ringcentral.com" target="_blank" class="resource-item"><span class="resource-icon">📞</span> Ring Central Web Browser</a>
+      <a href="https://dashboard.sellmethispen.ai/" target="_blank" class="resource-item"><span class="resource-icon">🤖</span> Sales AI tool</a>
+      <a href="https://schmell.ricochet.me" target="_blank" class="resource-item"><span class="resource-icon">⚡</span> Ricochet</a>
+      <a href="https://slack.com/signin#/signin/" target="_blank" class="resource-item"><span class="resource-icon">💬</span> Slack (for the telemarketers)</a>
+      <a href="https://app.agencyzoom.com/login" target="_blank" class="resource-item"><span class="resource-icon">📈</span> Agency Zoom</a>
+      <a href="https://www.mycoverageinfo.com/agent" target="_blank" class="resource-item"><span class="resource-icon">🔍</span> MyCoverageInfo (home insurance lookup)</a>
+      <a href="https://www.edmunds.com/appraisal/" target="_blank" class="resource-item"><span class="resource-icon">🚗</span> Edmunds Appraisal (VIN lookup)</a>
+      <a href="https://www.homes.com/" target="_blank" class="resource-item"><span class="resource-icon">🏠</span> Homes.com (home details)</a>
+      <a href="https://sdat.dat.maryland.gov/RealProperty/Pages/default.aspx" target="_blank" class="resource-item"><span class="resource-icon">🏛️</span> Maryland Real Property (home ownership lookup)</a>
+      <a href="https://www.mersinc.org/homeowners/mers-servicerid" target="_blank" class="resource-item"><span class="resource-icon">📄</span> MERS ServicerID (Mortgage info)</a>
+      <a href="https://www.usecanopy.com/" target="_blank" class="resource-item"><span class="resource-icon">🌲</span> Canopy (declaration pages)</a>
+    </div>
+  </section>
 
-          <div class="step-title"><span style="font-style:normal">2️⃣</span> Step 2: Experience & Expectations</div>
-          <div class="script-block agent">
-            <div class="script-avatar">A</div>
-            <div class="script-content">
-              <span class="script-role">Agent</span>
-              So, (name), I'm going to pull up your reports which will show me any accidents or claims in the last couple of years and where you're currently insured. I see you're currently with (Insurance Company). <strong>How's your overall experience been with them — the rates, customer service, things like that?(Dig to find out more about bad experiences to use later such as Geico being a call center, not having policy reviews etc.)</strong>
-            </div>
-          </div>
-
-          <div class="highlight-block">
-            <div class="highlight-title"><span style="font-style:normal">❓</span> Key Question</div>
-            While I pull up your coverages, I always like to ask my customers this question:<br><br>
-            <strong>"Let's say you're driving down the road and you get into an accident where you're found at fault, and there's a large damage bill—how much of that bill would you expect your insurance company to cover?"</strong>
-          </div>
-
-          <div class="script-block customer">
-            <div class="script-avatar">C</div>
-            <div class="script-content">
-              <span class="script-role">Customer</span>
-              All of it.
-            </div>
-          </div>
-
-          <div class="script-block agent">
-            <div class="script-avatar">A</div>
-            <div class="script-content">
-              <span class="script-role">Agent</span>
-              Absolutely, I agree—and that's exactly why we make sure our customers always have enough coverage to protect them. So now I'm going to go over what you currently have with GEICO so you understand the coverages you actually have.
-            </div>
-          </div>
-
-          <div class="step-title"><span style="font-style:normal">3️⃣</span> Step 3: Explaining Coverages</div>
-          <div class="script-block agent">
-            <div class="script-avatar">A</div>
-            <div class="script-content">
-              <span class="script-role">Agent</span>
-              The first coverage is bodily injury liability. This covers how much your insurance will pay for the other person's medical bills if you get into an accident and are found at fault. Right now, you have 30/60, so I'm going to match that coverage the same way.
-            </div>
-          </div>
-
-          <div class="script-block agent">
-            <div class="script-avatar">A</div>
-            <div class="script-content">
-              <span class="script-role">Agent</span>
-              The same would apply to your uninsured motorist coverage. This is what protects you and your passengers if you're ever in an accident and the person who hits you either doesn't have any insurance, doesn't have enough insurance, or if it's a hit-and-run situation. If you or someone in your vehicle is injured, your policy would step in and pay for your medical bills—again, up to the same limits you have for bodily injury: 30/60.
-            </div>
-          </div>
-
-          <div class="step-title" style="color:#b45309; border-bottom-color:#fde68a;">
-            <span>⚠️</span> Property Damage Liability (Most Important Coverage)
-          </div>
-
-          <div class="script-block agent" style="background:#fffcf0; border-left:4px solid #d97706; border-color:#f5d78a;">
-            <div class="script-avatar" style="background: linear-gradient(135deg,#d97706,#f59e0b);">A</div>
-            <div class="script-content">
-              <span class="script-role" style="color:#b45309;">Agent</span>
-              Now, the next coverage is the one that really concerns me—and here's why. It's called property damage liability, and this covers how much your insurance will pay for the other person's vehicle or property if you're found at fault in an accident.<br><br>
-              Currently, you're set at $15,000, which is the state minimum. That means anything over that amount comes out of your pocket.<br><br>
-              Just as an example—are you familiar with the Ford F-150?
-            </div>
-          </div>
-
-          <div class="script-block customer">
-            <div class="script-avatar">C</div>
-            <div class="script-content">
-              <span class="script-role">Customer</span>
-              Yes.
-            </div>
-          </div>
-
-          <div class="script-block agent" style="background:#fffcf0; border-left:4px solid #d97706; border-color:#f5d78a;">
-            <div class="script-avatar" style="background: linear-gradient(135deg,#d97706,#f59e0b);">A</div>
-            <div class="script-content">
-              <span class="script-role" style="color:#b45309;">Agent</span>
-              Do you know around how much they cost?
-            </div>
-          </div>
-
-          <div class="script-block customer">
-            <div class="script-avatar">C</div>
-            <div class="script-content">
-              <span class="script-role">Customer</span>
-              About $60,000.
-            </div>
-          </div>
-
-          <div class="script-block agent" style="background:#fffcf0; border-left:4px solid #d97706; border-color:#f5d78a;">
-            <div class="script-avatar" style="background: linear-gradient(135deg,#d97706,#f59e0b);">A</div>
-            <div class="script-content">
-              <span class="script-role" style="color:#b45309;">Agent</span>
-              So let's say you're driving down the road and hit a brand-new F-150, and it gets totaled. With your current policy, GEICO would come to you and say, "You've been a great customer—here's a check for $15,000."<br><br>
-              Now, the problem is: if it's a $60,000 truck and they only give you $15,000, how much are you left paying out of pocket? <strong>(MAKE THEM DO THE MATH)</strong>
-            </div>
-          </div>
-
-          <div class="script-block customer">
-            <div class="script-avatar">C</div>
-            <div class="script-content">
-              <span class="script-role">Customer</span>
-              $45,000.
-            </div>
-          </div>
-
-          <div class="script-block agent" style="background:#fffcf0; border-left:4px solid #d97706; border-color:#f5d78a;">
-            <div class="script-avatar" style="background: linear-gradient(135deg,#d97706,#f59e0b);">A</div>
-            <div class="script-content">
-              <span class="script-role" style="color:#b45309;">Agent</span>
-              And how does that sound?
-            </div>
-          </div>
-
-          <div class="script-block customer">
-            <div class="script-avatar">C</div>
-            <div class="script-content">
-              <span class="script-role">Customer</span>
-              Horrible.
-            </div>
-          </div>
-
-          <div class="script-block agent" style="background:#fffcf0; border-left:4px solid #d97706; border-color:#f5d78a;">
-            <div class="script-avatar" style="background: linear-gradient(135deg,#d97706,#f59e0b);">A</div>
-            <div class="script-content">
-              <span class="script-role" style="color:#b45309;">Agent</span>
-              Exactly! That's why I'm going to give you $300,000 for property damage on your policy, to make sure you're fully protected in the event of any claim. Does it make sense why we do that?
-            </div>
-          </div>
-
-          <div class="step-title"><span style="font-style:normal">4️⃣</span> Step 4: Other Important Coverages</div>
-          <div class="script-block agent">
-            <div class="script-avatar">A</div>
-            <div class="script-content">
-              <span class="script-role">Agent</span>
-              The next important coverage is Collision. Collision covers the damage to your own vehicle if you're in an accident, regardless of who's at fault—so whether you hit another car, a tree, or even a pole, this is the coverage that helps get your car repaired or replaced.<br><br>
-              For collision, I recommend a $1,000 deductible. (if they object you can say) here's why:<br>
-              A higher deductible means you'll be responsible for the first $1,000 of any damage, but it also lowers your monthly premium significantly. Most people don't get into accidents very often, so choosing a $1,000 deductible is a smart way to keep your insurance affordable while still protecting you from those big, unexpected repair bills. If you ever need to use it, you'll be glad you have it.
-            </div>
-          </div>
-
-          <div class="script-block agent">
-            <div class="script-avatar">A</div>
-            <div class="script-content">
-              <span class="script-role">Agent</span>
-              Next is Comprehensive coverage. This protects your vehicle from things that aren't collision-related—like theft, vandalism, fire, hail, or even if a deer runs into your car. Basically, if something happens to your car that isn't a crash, comprehensive is what helps you out.<br><br>
-              For comprehensive, I recommend a $250 deductible. The reason is, comprehensive claims are usually less expensive and more common—like if a rock cracks your windshield or a storm causes damage. A lower deductible means you'll pay less out of pocket if something like that happens, and the difference in premium is usually pretty small compared to the collision.
-            </div>
-          </div>
-
-          <div class="script-block agent">
-            <div class="script-avatar">A</div>
-            <div class="script-content">
-              <span class="script-role">Agent</span>
-              Do you have roadside with your current company or do you use a third party like triple A? (if they have it with their current insurance) If you ever have a flat tire, run out of gas, lock your keys in your car, or your battery dies, roadside assistance sends help right to you, 24/7. The biggest difference between Allstate's roadside program and any other insurance company is that Allstate goes off of the drivers rather than the vehicles, meaning no matter what car you're driving, you would have Allstate roadside covering you.
-            </div>
-          </div>
-
-          <div class="script-block agent">
-            <div class="script-avatar">A</div>
-            <div class="script-content">
-              <span class="script-role">Agent</span>
-              Next up is Rental Car coverage. This is another optional coverage that most of our clients opt in for. If your car is ever in the shop because of a covered claim—like an accident—this coverage helps pays for a rental car so you can keep getting to work, school, or wherever you need to go. It's a great way to avoid being stranded or having to pay out of pocket for a rental while your car is being repaired.
-            </div>
-          </div>
-
-          <div class="script-block agent">
-            <div class="script-avatar">A</div>
-            <div class="script-content">
-              <span class="script-role">Agent</span>
-              Finally, there's Personal Injury Protection, or PIP. This coverage helps pay for medical expenses for you and your passengers after an accident, no matter who's at fault. It can also cover things like lost wages and essential services if you're unable to work or take care of yourself after an accident. PIP is really valuable because it kicks in quickly and helps cover those immediate costs when you need it most.
-            </div>
-          </div>
-
-          <div class="step-title" style="color:var(--success); border-bottom-color:#a7f3d0;">
-            <span>🤝</span> Step 5: Experience Recap Close
-          </div>
-
-          <div class="script-block agent" style="background:#f0fdf6; border-left:4px solid var(--success); border-color:#a7f3d0;">
-            <div class="script-avatar" style="background: linear-gradient(135deg,#0f7a5a,#059669);">A</div>
-            <div class="script-content">
-              <span class="script-role" style="color:var(--success);">Agent</span>
-              While my system is calculating the rate for your policy, let me tell you a little bit about how it works once we get you set up over here..<br><br>
-              First, we're a local agency. That means if you ever have questions or problems, you won't be stuck in a call center or waiting on hold. You'll speak directly to the same few people every time<br><br>
-              We pride ourselves on clear communication. You'll get my office number and email, plus my personal cell phone number for after-hours questions or emergencies. So, anytime you need help, you have direct access to us.<br><br>
-              Also, unlike companies like GEICO, Progressive, and Liberty Mutual, we don't do teaser rates. Many big companies start you off with a low rate but can legally raise it at any time after you sign up. Here, we've already run all your underwriting reports, so your rate is locked in. Plus, 45 days before your renewal, our customer service team will call you to review your policy, ensure you're getting all your discounts, and make sure you always have the best rate possible.<br><br>
-              So, (Prospect), when we started, I asked how much you would want your insurance to cover if you got into an accident and were found at fault. You said all of it—is that still right?<br><br>
-              Right now, with GEICO, you're only covered for the first $15,000. If you hit that Ford F-150 we talked about, you'd be responsible for the remaining $45,000—and you told me that's something you want to avoid, right?<br><br>
-              That's why we provided you with $300,000 in coverage—to make sure you're properly protected in case of any accident.<br><br>
-              So, your monthly payment for this full protection will be ($).<br><br>
-              A couple more questions and we'll wrap this up:<br>
-              Who is the vehicle financed through?<br>
-              And what card would you like to use for today's payment?
-            </div>
-          </div>
-
-        </div>
-
-        <aside class="sticky-sidebar">
-          <h3><span style="font-style:normal">📋</span> Application Steps</h3>
-          <ul class="steps-list">
-            <li data-step="1">Introduction & Info Confirmation</li>
-            <li data-step="2">Experience & Expectations</li>
-            <li data-step="3">Explaining Coverages</li>
-            <li data-step="4">Other Important Coverages</li>
-            <li data-step="5">Experience Recap Close</li>
-          </ul>
-        </aside>
-      </div>
-    </section>
-
-    <!-- OBJECTIONS -->
-    <section id="objections" class="tab-content">
-      <h2><span style="font-style:normal">💬</span> Objection Script</h2>
-      <div class="rapport-reminder" style="background:#f0fdf6; border-color:#a7f3d0; border-left-color:var(--success);">
-        <strong>Summary:</strong> Close Faster, Protect Better<br />
-        Every objection gets redirected to this core truth:<br />
-        <em>You don't have enough coverage right now - and we're fixing that.</em><br />
-        The goal: minimize delays, eliminate follow-ups, and close confidently.
-      </div>
-
-      <div class="objection-dropdown">
-        <button class="objection-toggle">Objection 1: "I'll pay later / Call me back / Not ready yet" <span style="font-style:normal">▾</span></button>
-        <div class="objection-response-dropdown">
-          "I totally understand, As we talked about, you told me you wanted to be protected right? Currently with (insurance company) you only have $15,000 in property damage which as we talked about is not enough and in the example we went over with that F-150, you would be stuck paying out of pocket which you said you didn't want, right? Which is why we gave you the $300,000 to make sure you never have to pay out of pocket.<br>
-          So let's make sure you never have to worry about that. What's the most convenient day for you to make that payment?
-        </div>
-      </div>
-
-      <div class="objection-dropdown">
-        <button class="objection-toggle">Objection 2: "It's more than I was paying" / "That's too expensive" <span style="font-style:normal">▾</span></button>
-        <div class="objection-response-dropdown">
-          "Totally fair - but let's break it down. You were paying less because you were getting less. $15,000 in coverage doesn't cut it. Most of my clients can find the extra ($20,$40,$60) but none of them have an extra $45,000 sitting around. That's why we're giving you $300,000 so you don't have to take a $45,000 hit after an accident so let me ask you, what's the most convenient day for you to make that payment?"
-        </div>
-      </div>
-
-      <div class="objection-dropdown">
-        <button class="objection-toggle">Objection 3: "I just made a payment" / "I want to wait until my renewal date" <span style="font-style:normal">▾</span></button>
-        <div class="objection-response-dropdown">
-          "I totally understand- we have two options, option one which is what I recommend is, lets get this policy started and then we can get you a refund of whatever premium you haven't used at your current company and if that doesn't work for you, option two is let's lock in this upgraded protection now and schedule the first payment for then. You don't pay anything today, and your rate is locked in for the renewal."<br>
-          "Which option works better for you?"<br>
-          (If they choose option two) Which card would you like to use to hold the policy for that date?"
-        </div>
-      </div>
-
-      <div class="objection-dropdown">
-        <button class="objection-toggle">Objection 4: "I want to shop around" <span style="font-style:normal">▾</span></button>
-        <div class="objection-response-dropdown">
-          "Totally understandable - but as we talked about, you said you wanted to be protected and every other company is trying to get you the lowest rates which means they're going to give you the lowest coverages possible which you said you didn't want. That's why over here we gave you the $300,000 to make sure you don't have to worry about paying anything out of pocket so let me ask you like this, what would be the most convenient day for you to pay for the policy?."
-        </div>
-      </div>
-
-      <div class="objection-dropdown">
-        <button class="objection-toggle">Objection 5: "I need to talk to my spouse/partner first" <span style="font-style:normal">▾</span></button>
-        <div class="objection-response-dropdown">
-          "Of course - let me ask you, do you think they'd be more concerned about the price or the coverages?" (this response will many times get them to give up the real objection)<br>
-          Let's get this taken care of. If your partner has questions, we can make changes later - but waiting leaves you vulnerable. What card works best to secure the coverage now?"
-        </div>
-      </div>
-
-      <div class="objection-dropdown">
-        <button class="objection-toggle">Objection 6: "Just email me the quote and I'll call you if I like it" <span style="font-style:normal">▾</span></button>
-        <div class="objection-response-dropdown">
-          "Absolutely, I can email it and text it to you now but you told me you want your insurance to protect you fully, right? Currently you only have $15,000 in property damage which in the event we went over with the F-150 would leave you paying $45,000 out of pocket. Over here we gave you the $300,000 to make sure you don't have to worry about that so let me ask you, what's the most convenient day for you to make that first payment?"
-        </div>
-      </div>
-
-      <div class="objection-dropdown">
-        <button class="objection-toggle">Objection 7: "I've never had an accident / I'm a safe driver" <span style="font-style:normal">▾</span></button>
-        <div class="objection-response-dropdown">
-          "That's great - but even the safest drivers make mistakes and that's why we have insurance. Let's set this up and keep you covered - what's the best card to use?"
-        </div>
-      </div>
-
-      <div class="objection-dropdown">
-        <button class="objection-toggle">Objection 8: "I want to look at it/compare your quote to my current policy" <span style="font-style:normal">▾</span></button>
-        <div class="objection-response-dropdown">
-          "I completely understand, I just sent you a text with the quote in it. Do me a favor, click on the link and make sure it works correctly. Let's go through line by line to make sure you understand what we're giving you."
-        </div>
-      </div>
-
-      <div class="objection-dropdown">
-        <button class="objection-toggle">Future Start Date (If They Insist on Waiting) <span style="font-style:normal">▾</span></button>
-        <div class="objection-response-dropdown">
-          "No problem. I'll match your current schedule. You pay nothing today - but your better coverage is secured." <strong>GET THE PAYMENT INFORMATION.</strong>
-        </div>
-      </div>
-
-      <div class="close-box" style="background:#f0fdf6; border:1px solid #a7f3d0; border-left:5px solid var(--success);">
-        <strong>Closing the Sale (Short & Clear):</strong><br />
-        "You're going from minimum protection to full protection - and that's the whole point of insurance."<br />
-        "What card works best to lock this in today?"
-      </div>
-    </section>
-
-    <!-- CROSS SALE -->
-    <section id="crosssale" class="tab-content">
-      <h2><span style="font-style:normal">🔄</span> Cross Sale</h2>
-      <ul style="margin-bottom:1.2em; font-size:1.1rem;">
-        <li><strong>Auto → Home</strong></li>
-        <li><strong>Home → Auto</strong></li>
-        <li><strong>Auto → Renters</strong></li>
-      </ul>
-      <p style="font-size:1.1rem; margin-bottom:2rem;">The goal is to keep it natural, assume the customer will be interested, and link coverage value, not just price.</p>
-
-      <div style="margin-bottom:2.5rem;">
-        <h3 style="color:var(--primary);">🔹 1. Auto Quote → Home Quote</h3>
-        <div class="script-block agent">
-          <div class="script-avatar">A</div>
-          <div class="script-content">
-            <span class="script-role">Agent</span>
-            "Okay, great - so my system is going to include a home quote as well, when was the last time you had the roof replaced?"
-          </div>
-        </div>
-        <div class="script-block agent" style="background:#f8fbff; border-left:4px solid var(--sky); border-color:var(--border);">
-          <div class="script-avatar" style="background:linear-gradient(135deg,#0284c7,#38bdf8);">A</div>
-          <div class="script-content">
-            <span class="script-role" style="color:var(--sky);">Agent (if they hesitate):</span>
-            "I totally get that, my system is going to make me run through it but I can remove it at the end but this way you can see what the rate would look like if you ever were to bundle it together. It also gives you the multiple policy discount which is the biggest discount you can get on the auto insurance."
-          </div>
-        </div>
-      </div>
-
-      <div style="margin-bottom:2.5rem;">
-        <h3 style="color:var(--primary);">🔹 2. Home Quote → Auto Quote</h3>
-        <div class="script-block agent">
-          <div class="script-avatar">A</div>
-          <div class="script-content">
-            <span class="script-role">Agent</span>
-            "Now that we've got your homeowners policy squared away, I'm going to go ahead and pull up your auto insurance too so we can bundle them and unlock the multi-policy savings."<br />
-            (Smooth, confident - not asking for permission.)<br><br>
-            "Who do you currently have your vehicles insured with?"
-          </div>
-        </div>
-        <div class="script-block agent" style="background:#f8fbff; border-left:4px solid var(--sky); border-color:var(--border);">
-          <div class="script-avatar" style="background:linear-gradient(135deg,#0284c7,#38bdf8);">A</div>
-          <div class="script-content">
-            <span class="script-role" style="color:var(--sky);">Agent (if happy with current):</span>
-            "Totally understand - a lot of people say that, but when they see the bundle savings and realize they're often underinsured on their auto policy, it makes sense to take a look. Let's at least see what we can do for you. What vehicles do you currently drive?"
-          </div>
-        </div>
-      </div>
-
-      <div style="margin-bottom:2.5rem;">
-        <h3 style="color:var(--primary);">🔹 3. Auto Quote → Renters Quote</h3>
-        <div class="script-block agent">
-          <div class="script-avatar">A</div>
-          <div class="script-content">
-            <span class="script-role">Agent</span>
-            "Alright, we've got your auto quote looking solid. Since you're currently renting, I'm going to go ahead and add renters insurance so we can bundle that too and apply the multi-policy discount."
-          </div>
-        </div>
-        <div class="script-block agent" style="background:#f8fbff; border-left:4px solid var(--sky); border-color:var(--border);">
-          <div class="script-avatar" style="background:linear-gradient(135deg,#0284c7,#38bdf8);">A</div>
-          <div class="script-content">
-            <span class="script-role" style="color:var(--sky);">Agent (if hesitate):</span>
-            "I totally get it - a lot of people assume their landlord's policy covers them, but it actually doesn't protect your stuff or liability. And honestly, renters coverage is super affordable - most people add it for around $15 and generally the discount it provides on the auto is higher than that so its saving you more money overall. It's a smart move."
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- RESOURCES -->
-    <section id="resources" class="tab-content">
-      <h2><span style="font-style:normal">📖</span> Resources</h2>
-      <div class="resource-card">
-        <ul class="resource-list">
-          <li><a href="https://agencygateway1.allstate.com/apstatic/welcome.html" target="_blank"><span style="font-style:normal">🔗</span>Allstate main page</a></li>
-          <li><a href="https://app.ringcentral.com" target="_blank"><span style="font-style:normal">📞</span>Ring Central Web Browser</a></li>
-          <li><a href="https://dashboard.sellmethispen.ai/" target="_blank"><span style="font-style:normal">🤖</span>Sales AI tool</a></li>
-          <li><a href="https://schmell.ricochet.me" target="_blank"><span style="font-style:normal">⚡</span>Ricochet</a></li>
-          <li><a href="https://slack.com/signin#/signin/" target="_blank"><span style="font-style:normal">💬</span>Slack (for the telemarketers)</a></li>
-          <li><a href="https://app.agencyzoom.com/login" target="_blank"><span style="font-style:normal">📈</span>Agency Zoom</a></li>
-          <li><a href="https://www.mycoverageinfo.com/agent" target="_blank"><span style="font-style:normal">🔍</span>MyCoverageInfo (for home insurance lookup)</a></li>
-          <li><a href="https://www.edmunds.com/appraisal/" target="_blank"><span style="font-style:normal">🚗</span>Edmunds Appraisal (VIN lookup)</a></li>
-          <li><a href="https://www.homes.com/" target="_blank"><span style="font-style:normal">🏠</span>Homes.com (home details)</a></li>
-          <li><a href="https://sdat.dat.maryland.gov/RealProperty/Pages/default.aspx" target="_blank"><span style="font-style:normal">🏛️</span>Maryland Real Property (home ownership lookup)</a></li>
-          <li><a href="https://www.mersinc.org/homeowners/mers-servicerid" target="_blank"><span style="font-style:normal">📄</span>MERS ServicerID (look up Mortgage info)</a></li>
-          <li><a href="https://www.usecanopy.com/" target="_blank"><span style="font-style:normal">🌲</span>Canopy (get declaration pages from other companies)</a></li>
+  <!-- ══════════ TIPS ══════════ -->
+  <section id="tips" class="tab-content">
+    <h2>💡 Tips & Tricks</h2>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <h3>🧮 Quoting & Pricing</h3>
+        <ul class="tip-list">
+          <li><strong>Run quotes strategically:</strong> If married, always run the quote in the spouse's name to see if the Insurance Score (IS) is lower.</li>
+          <li><strong>RCT drives pricing:</strong> Pricing is based more on RCT than rebuild amount.</li>
+          <li><strong>RCT optimizations:</strong><ul><li>Foundation: concrete → block</li><li>Plaster → drywall</li><li>Doors → hollow core (not solid)</li><li>HVAC → Central AC/Heat</li><li>Vinyl siding instead of aluminum</li><li>Built-in garage: exclude from livable square footage</li></ul></li>
+          <li><strong>Market value rejection:</strong> Find the highest supported value (Homes.com usually works best).</li>
+          <li><strong>Early signing bonus:</strong> Always make sure to have the early signing bonus on the home quote.</li>
         </ul>
       </div>
-    </section>
-
-    <!-- TIPS -->
-    <section id="tips" class="tab-content">
-      <h2><span style="font-style:normal">💡</span> Tips & Tricks</h2>
-      <div class="tips-grid">
-        <div class="tip-card">
-          <h3><span style="font-style:normal">🧮</span> Quoting & Pricing</h3>
-          <ul class="tip-list">
-            <li><strong>Run quotes strategically:</strong> If married, always run the quote in the spouse's name to see if the Insurance Score (IS) is lower.</li>
-            <li><strong>RCT drives pricing:</strong> Pricing is based more on RCT than rebuild amount.</li>
-            <li><strong>RCT optimizations:</strong>
-              <ul>
-                <li>Foundation: concrete → block</li>
-                <li>Plaster → drywall</li>
-                <li>Doors → hollow core (not solid)</li>
-                <li>HVAC → Central AC/Heat</li>
-                <li>Vinyl siding instead of aluminum</li>
-                <li>If there is a built in garage, make sure the square footage is accounting for that since its not livable space</li>
-              </ul>
-            </li>
-            <li><strong>Market value rejection:</strong> Find the highest supported value (Homes.com usually works best).</li>
-            <li><strong>Always make sure to have the early signing bonus on the home quote</li>
-          </ul>
-        </div>
-
-        <div class="tip-card">
-          <h3><span style="font-style:normal">🛡️</span> Coverage & Discounts</h3>
-          <ul class="tip-list">
-            <li><strong>Review current coverage:</strong> Use MyCoverageInfo,com to check deductibles, rebuild amount, and pricing.</li>
-            <li><strong>Multi-policy savings:</strong> If they already have auto or home with Allstate, clearly explain how much the rate drops with bundling.</li>
-            <li><strong>Household rule:</strong> If boyfriend & girlfriend live together, Allstate treats them as married.</li>
-            <li><strong>Price-driven prospects:</strong> If you're higher, offer the budget option:
-              <ul>
-                <li>30/60 limits</li>
-                <li>No PIP</li>
-                <li>$2,000 deductibles</li>
-                <li>No roadside or rental</li>
-              </ul>
-            </li>
-            <li><strong>Always offer to cancel:</strong> Never assume the customer will cancel their current insurance on their own.</li>
-          </ul>
-        </div>
-
-        <div class="tip-card">
-          <h3><span style="font-style:normal">📞</span> Follow-Up & Pipeline</h3>
-          <ul class="tip-list">
-            <li><strong>Persistence wins deals:</strong> Do not call or text once and move on. Follow up consistently until they respond.</li>
-            <li><strong>Revive ghosts:</strong> Go back through old texts from months ago and re-engage cold leads.</li>
-            <li><strong>Daily cleanup:</strong> Check your Neglected folder every day for quoted leads.</li>
-            <li><strong>Push for the real objection:</strong> Do not stop until the prospect gives the true reason they won't bind.</li>
-          </ul>
-        </div>
-
-        <div class="tip-card">
-          <h3><span style="font-style:normal">⚙️</span> Systems & Process</h3>
-          <ul class="tip-list">
-            <li><strong>Never quote without required info:</strong> Always confirm a VIN before giving pricing.</li>
-            <li><strong>Make sure you are in rapport and not just having a transactional coversation. Give them a reason to want to do business with you</li>
-            <li><strong>If your call is over before 10 minutes, there's something that we didn't do correctly  or something that we missed</li>
-            <li><strong>Missing license numbers:</strong> Start a quote in the driver's name or check for a prior Allstate policy.</li>
-            <li><strong>Call recordings:</strong> If SMTP doesn't record, clear cache and retry.</li>
-            <li><strong>DND during calls:</strong> Prevent split recordings by enabling Do Not Disturb.</li>
-          </ul>
-        </div>
+      <div class="tip-card">
+        <h3>🛡️ Coverage & Discounts</h3>
+        <ul class="tip-list">
+          <li><strong>Review current coverage:</strong> Use MyCoverageInfo.com to check deductibles, rebuild amount, and pricing.</li>
+          <li><strong>Multi-policy savings:</strong> If they already have auto or home with Allstate, clearly explain how much the rate drops with bundling.</li>
+          <li><strong>Household rule:</strong> If boyfriend & girlfriend live together, Allstate treats them as married.</li>
+          <li><strong>Price-driven prospects:</strong> If you're higher, offer the budget option:<ul><li>30/60 limits</li><li>No PIP</li><li>$2,000 deductibles</li><li>No roadside or rental</li></ul></li>
+          <li><strong>Always offer to cancel:</strong> Never assume the customer will cancel their current insurance on their own.</li>
+        </ul>
       </div>
-    </section>
+      <div class="tip-card">
+        <h3>📞 Follow-Up & Pipeline</h3>
+        <ul class="tip-list">
+          <li><strong>Persistence wins deals:</strong> Do not call or text once and move on. Follow up consistently until they respond.</li>
+          <li><strong>Revive ghosts:</strong> Go back through old texts from months ago and re-engage cold leads.</li>
+          <li><strong>Daily cleanup:</strong> Check your Neglected folder every day for quoted leads.</li>
+          <li><strong>Push for the real objection:</strong> Do not stop until the prospect gives the true reason they won't bind.</li>
+        </ul>
+      </div>
+      <div class="tip-card">
+        <h3>⚙️ Systems & Process</h3>
+        <ul class="tip-list">
+          <li><strong>Never quote without required info:</strong> Always confirm a VIN before giving pricing.</li>
+          <li><strong>Build rapport:</strong> Make sure you are in rapport and not just having a transactional conversation. Give them a reason to want to do business with you.</li>
+          <li><strong>Call length check:</strong> If your call is over before 10 minutes, there's something we didn't do correctly or missed.</li>
+          <li><strong>Missing license numbers:</strong> Start a quote in the driver's name or check for a prior Allstate policy.</li>
+          <li><strong>Call recordings:</strong> If SMTP doesn't record, clear cache and retry.</li>
+          <li><strong>DND during calls:</strong> Prevent split recordings by enabling Do Not Disturb.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    <!-- WELCOME TEXT -->
-    <section id="welcome-text" class="tab-content">
-      <h2><span style="font-style:normal">🤝</span> Welcome to Allstate!</h2>
-      <p>For customer service, please call (410) 665-3602</p>
-      <p>Please be on the look out for an email / text, asking you to log in/download the app to sign off on these policies, be sure to enroll in Ebill/Epolicy.</p>
+  <!-- ══════════ WELCOME TEXT ══════════ -->
+  <section id="welcome-text" class="tab-content">
+    <h2>🤝 Welcome to Allstate!</h2>
+    <p>For customer service, please call (410) 665-3602</p>
+    <p>Please be on the look out for an email / text, asking you to log in/download the app to sign off on these policies, be sure to enroll in Ebill/Epolicy.</p>
+    <h3>Auto</h3>
+    <p>Your policy number is "____". Each month going forward we have your payment set to come out of your bank. You can make changes at any time on the Allstate app or on Allstate.com.</p>
+    <p>Be sure to set up Drivewise. Drivewise is a wonderful discount which you get 10% discount now and at renewal anywhere from 10%-15% so please take advantage.</p>
+    <p><strong>ALL DRIVERS ON POLICY NEED TO PARTICIPATE TO BE ELIGIBLE TO EARN MAX DISCOUNT.</strong></p>
+    <p>Please send me a copy of registration — as car needs to be owned/co-owned.</p>
+    <p>Be sure to take advantage of our referral program! For every person you refer to me to get a quote, as long as they qualify for Allstate, you will receive a $20 Amazon gift card per person I quote regardless of if they purchase a policy or not!</p>
+    <h3>Renters</h3>
+    <p>Your policy number is "____" and each month moving forward we have your payment set up to come from your bank on the "date".</p>
+    <h3>Escrow Home</h3>
+    <p>Your policy number is "___". We are going to be sending the invoice to your mortgage company for them to pay. An inspector may come to make sure we are insuring your house properly, as well as to check on any liabilities that may need to be fixed.</p>
+    <h3>Self-Pay Home</h3>
+    <p>Your policy number is "___". An inspector may come to make sure we are insuring your house properly, as well as to check on any liabilities that may need to be fixed.</p>
+  </section>
 
-      <h3>Auto</h3>
-      <p>Your policy number is "____". Each month going forward we have your payment set to come out of your bank. You can make changes at any time on the Allstate app or on Allstate.com.</p>
-      <p>Be sure to set up Drivewise. Drivewise is a wonderful discount which you get 10% discount now and at renewal anywhere from 10%-15% so please take advantage.</p>
-      <p><strong>ALL DRIVERS ON POLICY NEED TO PARTICIPATE TO BE ELIGIBLE TO EARN MAX DISCOUNT.</strong></p>
-      <p>Please send me a copy of registration- as car needs to be owned/ co owned.</p>
-      <p>Be sure to take advantage of our referral program! For every person you refer to me to get a quote, as long as they qualify for Allstate, you will receive a $20 amazon gift card per person I quote regardless of if they purchase a policy or not!</p>
+</main>
 
-      <h3>Renters</h3>
-      <p>Your policy number is "____" and each month moving forward we have your payment set up to come from your bank on the "date".</p>
-
-      <h3>Escrow home</h3>
-      <p>Your policy number is "___" We are going to be sending the invoice to your mortgage company for them to pay. An inspector may come to make sure we are insuring your house properly, as well as to check on any liabilities that may need to be fixed.</p>
-
-      <h3>Self-pay home</h3>
-      <p>Your policy number is "___" An inspector may come to make sure we are insuring your house properly, as well as to check on any liabilities that may need to be fixed.</p>
-    </section>
-
-  </main>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      function showTab(tabId) {
-        var tabButtons = document.querySelectorAll('.tab-link');
-        var tabButton = null;
-        for (var i = 0; i < tabButtons.length; i++) {
-          if (tabButtons[i].getAttribute('data-tab') === tabId) { tabButton = tabButtons[i]; break; }
-        }
-        var contents = document.querySelectorAll('.tab-content');
-        var tabContent = null;
-        for (var j = 0; j < contents.length; j++) {
-          if (contents[j].id === tabId) { tabContent = contents[j]; break; }
-        }
-        if (!tabButton || !tabContent) return;
-        tabButtons.forEach(function (el) { el.classList.remove('active'); });
-        contents.forEach(function (el) { el.classList.remove('active'); });
-        tabButton.classList.add('active');
-        tabContent.classList.add('active');
-        try { tabButton.focus({preventScroll: true}); } catch(e) { tabButton.focus(); }
-      }
-      window.showTab = showTab;
-
-      document.querySelectorAll('.objection-toggle').forEach(function (btn) {
-        btn.addEventListener('click', function() {
-          this.closest('.objection-dropdown').classList.toggle('open');
-        });
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    function showTab(tabId) {
+      document.querySelectorAll('.tab-link').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      const btn = document.querySelector('[data-tab="' + tabId + '"]');
+      const section = document.getElementById(tabId);
+      if (btn) btn.classList.add('active');
+      if (section) section.classList.add('active');
+    }
+    window.showTab = showTab;
+    document.querySelectorAll('.objection-toggle').forEach(btn => {
+      btn.addEventListener('click', function () {
+        this.closest('.objection-dropdown').classList.toggle('open');
       });
     });
-  </script>
+  });
+</script>
 </body>
 </html>

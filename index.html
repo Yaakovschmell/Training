@@ -4,81 +4,111 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sales Training • Allstate</title>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg:         #e8ecf4;
-      --surface:    #f2f5fb;
-      --card:       #ffffff;
-      --nav-bg:     #1a2744;
-      --header-bg:  #111c38;
-      --border:     #d0d8ea;
-      --text:       #111827;
-      --text-mid:   #2d3748;
-      --text-dim:   #64748b;
-      --gold:       #c77b00;
-      --gold-bg:    #fff8e6;
-      --gold-bdr:   #f5d080;
-      --blue:       #1d4ed8;
-      --blue-bg:    #eff6ff;
-      --blue-bdr:   #bfdbfe;
-      --blue-dark:  #1e3a8a;
-      --green:      #15803d;
-      --green-bg:   #f0fdf4;
-      --green-bdr:  #86efac;
-      --sky:        #0369a1;
-      --sky-bg:     #f0f9ff;
-      --sky-bdr:    #7dd3fc;
-      --radius:     13px;
-      --radius-sm:  8px;
+      --forest:    #0d2b1e;
+      --forest2:   #143324;
+      --forest3:   #1a3d2b;
+      --cream:     #f5efe3;
+      --cream2:    #ede4d3;
+      --cream3:    #e3d7c4;
+      --gold:      #c9933a;
+      --gold-lt:   #e8b96a;
+      --red:       #c23b2a;
+      --sage:      #5a8a6a;
+      --sage-lt:   #a8c9b4;
+      --text-dark: #0d1a12;
+      --text-mid:  #2d4a38;
+      --text-dim:  #6a8a74;
+      --white:     #fdfaf5;
+      --display:   'Fraunces', Georgia, serif;
+      --body:      'DM Sans', system-ui, sans-serif;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { font-size: 16px; scroll-behavior: smooth; }
+    html { font-size: 15px; scroll-behavior: smooth; }
 
     body {
-      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      font-family: var(--body);
+      background: var(--cream);
+      color: var(--text-dark);
       line-height: 1.65;
       overflow-x: hidden;
     }
 
     /* ── HEADER ── */
     header {
-      background: var(--header-bg);
-      padding: 1.5rem 2rem;
-      display: flex;
-      align-items: center;
-      gap: 1.1rem;
+      background: var(--forest);
+      position: relative;
+      overflow: hidden;
+      padding: 0;
     }
 
-    .header-logo {
-      width: 44px; height: 44px;
-      background: #d97706;
-      border-radius: 11px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.25rem; flex-shrink: 0;
-      box-shadow: 0 2px 10px rgba(217,119,6,0.45);
+    .header-inner {
+      display: flex; align-items: stretch;
+      position: relative; z-index: 2;
     }
 
-    .header-text h1 {
-      font-size: 1.5rem; font-weight: 800;
-      color: #ffffff; letter-spacing: -0.3px;
+    .header-left {
+      background: var(--gold);
+      padding: 1.6rem 2rem;
+      display: flex; flex-direction: column; justify-content: center;
+      clip-path: polygon(0 0, 100% 0, 88% 100%, 0 100%);
+      padding-right: 3.5rem;
+      min-width: 280px;
     }
 
-    .header-text span {
-      font-size: 0.71rem; font-weight: 700;
-      color: #fbbf24; letter-spacing: 2px;
-      text-transform: uppercase;
+    .header-eyebrow {
+      font-family: var(--body);
+      font-size: 0.62rem; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--forest2); margin-bottom: 0.3rem;
+    }
+
+    .header-title {
+      font-family: var(--display);
+      font-size: 1.9rem; font-weight: 900;
+      color: var(--forest);
+      line-height: 1.1; letter-spacing: -0.02em;
+    }
+
+    .header-title em {
+      font-style: italic; font-weight: 700;
+      color: var(--forest2);
+    }
+
+    .header-right {
+      flex: 1;
+      display: flex; align-items: center;
+      padding: 1.6rem 2rem 1.6rem 2.5rem;
+      gap: 2rem;
+    }
+
+    .header-stat {
+      display: flex; flex-direction: column; gap: 0.15rem;
+    }
+    .header-stat-num {
+      font-family: var(--display);
+      font-size: 1.6rem; font-weight: 700;
+      color: var(--gold-lt); line-height: 1;
+    }
+    .header-stat-label {
+      font-size: 0.62rem; font-weight: 500;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.08em; text-transform: uppercase;
+    }
+
+    .header-divider {
+      width: 1px; height: 40px;
+      background: rgba(255,255,255,0.1);
     }
 
     /* ── NAV ── */
     nav {
-      background: var(--nav-bg);
+      background: var(--forest2);
       position: sticky; top: 0; z-index: 100;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+      border-bottom: 2px solid var(--gold);
     }
 
     .tab-menu {
@@ -89,270 +119,307 @@
     .tab-menu::-webkit-scrollbar { display: none; }
 
     .tab-link {
-      appearance: none; -webkit-appearance: none;
-      border: none; background: transparent;
-      color: rgba(255,255,255,0.55);
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 0.88rem; font-weight: 600;
-      padding: 0.95rem 1.05rem;
+      appearance: none; border: none;
+      background: transparent;
+      font-family: var(--body); font-size: 0.8rem; font-weight: 600;
+      color: rgba(255,255,255,0.45);
+      padding: 0.9rem 1.1rem;
       cursor: pointer; white-space: nowrap;
       border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
       transition: color 0.15s, border-color 0.15s;
-      display: flex; align-items: center; gap: 0.4rem;
+      letter-spacing: 0.04em;
     }
-    .tab-link:hover { color: rgba(255,255,255,0.88); }
-    .tab-link.active { color: #fbbf24; border-bottom-color: #fbbf24; }
+    .tab-link:hover { color: rgba(255,255,255,0.8); }
+    .tab-link.active {
+      color: var(--gold-lt);
+      border-bottom-color: var(--gold-lt);
+    }
 
-    /* ── MAIN LAYOUT ── */
+    /* ── LAYOUT ── */
     .tab-content {
-      max-width: 1160px;
-      margin: 2rem auto;
-      padding: 0 1.5rem;
-      display: none;
-      animation: fadeUp 0.3s ease;
+      max-width: 1180px; margin: 2.5rem auto;
+      padding: 0 2rem;
+      display: none; animation: fadeUp 0.3s ease;
     }
     .tab-content.active { display: block; }
 
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(10px); }
+      from { opacity: 0; transform: translateY(12px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    #coverage .page-container {
-      display: flex; gap: 1.8rem; align-items: flex-start;
-    }
+    #coverage .page-container { display: flex; gap: 2rem; align-items: flex-start; }
     .main-content { flex: 1 1 0; min-width: 0; }
+
+    /* ── PAGE TITLE ── */
+    .page-title {
+      font-family: var(--display);
+      font-size: 2.2rem; font-weight: 900;
+      color: var(--forest); line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+    .page-title span {
+      display: block; font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.3rem;
+      font-family: var(--body);
+    }
 
     /* ── SIDEBAR ── */
     .sticky-sidebar {
-      width: 218px; flex: 0 0 218px;
-      position: -webkit-sticky; position: sticky;
-      top: 58px; align-self: flex-start;
+      width: 210px; flex: 0 0 210px;
+      position: sticky; top: 62px; align-self: flex-start;
     }
 
     .sidebar-label {
-      font-size: 0.68rem; font-weight: 800;
-      letter-spacing: 2px; text-transform: uppercase;
-      color: var(--text-dim); margin-bottom: 0.65rem; padding-left: 0.2rem;
+      font-family: var(--display);
+      font-size: 1rem; font-weight: 700; font-style: italic;
+      color: var(--forest);
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--forest);
     }
 
-    .steps-list { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
+    .steps-list { list-style: none; display: flex; flex-direction: column; gap: 0.3rem; }
 
     .steps-list li {
-      display: flex; align-items: center; gap: 0.7rem;
-      padding: 0.7rem 0.9rem;
-      border-radius: var(--radius-sm);
-      background: var(--card);
-      border: 1px solid var(--border);
-      font-size: 0.88rem; font-weight: 600;
+      display: flex; align-items: center; gap: 0.75rem;
+      padding: 0.65rem 0.85rem;
+      background: var(--white);
+      border: 1px solid var(--cream3);
+      border-left: 3px solid var(--cream3);
+      font-size: 0.83rem; font-weight: 500;
       color: var(--text-mid);
-      transition: all 0.15s; cursor: default;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      transition: all 0.18s; cursor: default;
+      border-radius: 2px;
     }
     .steps-list li:hover {
-      background: var(--blue-bg);
-      border-color: var(--blue-bdr);
-      color: var(--blue-dark);
+      border-left-color: var(--gold);
+      background: var(--cream);
+      color: var(--forest);
     }
 
     .step-dot {
-      width: 23px; height: 23px; border-radius: 50%;
-      background: var(--blue-dark);
-      color: white;
-      font-size: 0.72rem; font-weight: 800;
+      width: 24px; height: 24px; border-radius: 50%;
+      background: var(--forest);
+      color: var(--gold-lt);
+      font-size: 0.68rem; font-weight: 700;
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
+      font-family: var(--display);
     }
 
-    /* ── HEADINGS ── */
-    h2 {
-      font-size: 1.6rem; font-weight: 800;
-      color: var(--text); margin-bottom: 1.3rem;
-      display: flex; align-items: center; gap: 0.55rem;
-    }
-
+    /* ── SECTION HEADINGS ── */
     h3 {
-      font-size: 1.05rem; font-weight: 700;
-      color: var(--text); margin: 2rem 0 0.8rem;
+      font-family: var(--display);
+      font-size: 1.15rem; font-weight: 700; font-style: italic;
+      color: var(--forest); margin: 2.2rem 0 0.85rem;
       padding-bottom: 0.5rem;
-      border-bottom: 2px solid var(--border);
+      border-bottom: 1px solid var(--cream3);
     }
 
     /* ── STEP TITLES ── */
     .step-title {
-      display: flex; align-items: center; gap: 0.8rem;
+      display: flex; align-items: center; gap: 1rem;
       margin: 2.5rem 0 1rem;
-      padding: 0.85rem 1.1rem;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--blue);
-      border-radius: var(--radius-sm);
-      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      padding: 0.85rem 1.2rem;
+      background: var(--forest);
+      border-radius: 4px;
+      position: relative; overflow: hidden;
     }
-    .step-title.gold-step { border-left-color: var(--gold); }
-    .step-title.green-step { border-left-color: var(--green); }
+    .step-title::after {
+      content: '';
+      position: absolute; right: -20px; top: 0; bottom: 0;
+      width: 80px;
+      background: linear-gradient(90deg, transparent, rgba(201,147,58,0.08));
+    }
+    .step-title.gold-step  { background: var(--gold); }
+    .step-title.green-step { background: var(--forest3); }
 
     .step-num-lg {
-      width: 30px; height: 30px; border-radius: 50%;
-      background: var(--blue-dark); color: white;
-      font-size: 0.88rem; font-weight: 800;
+      width: 32px; height: 32px; border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--gold-lt);
+      font-size: 0.85rem; font-weight: 700;
       display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
+      flex-shrink: 0; font-family: var(--display);
     }
-    .step-num-lg.gold  { background: #c77b00; }
-    .step-num-lg.green { background: var(--green); }
+    .step-title.gold-step .step-num-lg {
+      background: rgba(13,43,30,0.15);
+      border-color: rgba(13,43,30,0.2);
+      color: var(--forest);
+    }
 
-    .step-title-text { font-size: 1.05rem; font-weight: 800; color: var(--text); }
+    .step-title-text {
+      font-family: var(--body); font-size: 0.92rem; font-weight: 600;
+      color: white; letter-spacing: 0.01em;
+    }
+    .step-title.gold-step .step-title-text { color: var(--forest); }
 
     /* ── SCRIPT BLOCKS ── */
     .script-block {
-      display: flex; gap: 0.9rem;
-      margin-bottom: 0.85rem;
-      padding: 1.05rem 1.15rem;
-      border-radius: var(--radius);
-      background: var(--card);
-      border: 1px solid var(--border);
-      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      display: flex; gap: 1rem;
+      margin-bottom: 4px;
+      padding: 1rem 1.15rem;
+      background: var(--white);
+      border: 1px solid var(--cream3);
+      border-left: 4px solid var(--cream3);
       align-items: flex-start;
-      transition: box-shadow 0.15s, transform 0.15s;
+      border-radius: 0 4px 4px 0;
+      transition: transform 0.15s, box-shadow 0.15s;
     }
     .script-block:hover {
-      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
       transform: translateX(3px);
+      box-shadow: 2px 4px 16px rgba(13,43,30,0.08);
     }
 
-    .script-block.agent    { border-left: 4px solid var(--blue); }
-    .script-block.customer { border-left: 4px solid var(--sky); background: var(--sky-bg); border-color: var(--sky-bdr); }
-    .script-block.warning  { border-left: 4px solid var(--gold); background: var(--gold-bg); border-color: var(--gold-bdr); }
-    .script-block.success  { border-left: 4px solid var(--green); background: var(--green-bg); border-color: var(--green-bdr); }
-    .script-block.sky-alt  { border-left: 4px solid var(--sky); background: var(--sky-bg); border-color: var(--sky-bdr); }
+    .script-block.agent    { border-left-color: var(--forest); }
+    .script-block.customer { border-left-color: var(--sage); background: #f0f6f2; border-color: var(--sage-lt); }
+    .script-block.warning  { border-left-color: var(--gold); background: #fdf6ec; border-color: #e8d4a8; }
+    .script-block.success  { border-left-color: var(--sage); background: #f0f6f2; border-color: var(--sage-lt); }
+    .script-block.sky-alt  { border-left-color: var(--forest3); background: #f0f5f2; border-color: #b8d0c0; }
 
     .script-avatar {
-      width: 36px; height: 36px; border-radius: 50%;
+      width: 34px; height: 34px; border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      font-weight: 800; font-size: 0.9rem; flex-shrink: 0; color: white;
+      font-weight: 700; font-size: 0.8rem; flex-shrink: 0;
+      font-family: var(--display);
     }
-    .agent    .script-avatar { background: var(--blue); }
-    .customer .script-avatar { background: var(--sky); }
-    .warning  .script-avatar { background: #c77b00; }
-    .success  .script-avatar { background: var(--green); }
-    .sky-alt  .script-avatar { background: var(--sky); }
+    .agent    .script-avatar { background: var(--forest); color: var(--gold-lt); }
+    .customer .script-avatar { background: var(--sage); color: white; }
+    .warning  .script-avatar { background: var(--gold); color: var(--forest); }
+    .success  .script-avatar { background: var(--sage); color: white; }
+    .sky-alt  .script-avatar { background: var(--forest3); color: var(--sage-lt); }
 
     .script-role {
-      font-size: 0.68rem; font-weight: 800;
-      letter-spacing: 1.4px; text-transform: uppercase;
+      font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
       margin-bottom: 0.3rem; display: block;
+      font-family: var(--body);
     }
-    .agent    .script-role { color: var(--blue); }
-    .customer .script-role { color: var(--sky); }
-    .warning  .script-role { color: #92580a; }
-    .success  .script-role { color: var(--green); }
-    .sky-alt  .script-role { color: var(--sky); }
+    .agent    .script-role { color: var(--forest); }
+    .customer .script-role { color: var(--sage); }
+    .warning  .script-role { color: var(--gold); }
+    .success  .script-role { color: var(--sage); }
+    .sky-alt  .script-role { color: var(--text-dim); }
 
-    .script-content {
-      flex: 1; font-size: 1rem;
-      color: var(--text-mid); line-height: 1.72;
-    }
-    .script-content strong { color: var(--text); font-weight: 700; }
+    .script-content { flex: 1; font-size: 0.93rem; color: var(--text-mid); line-height: 1.75; }
+    .script-content strong { color: var(--text-dark); font-weight: 600; }
     .script-content em { color: var(--text-dim); font-style: italic; }
 
     /* ── CALLOUTS ── */
     .callout {
-      padding: 1.15rem 1.4rem;
-      border-radius: var(--radius);
+      padding: 1.1rem 1.4rem;
       margin: 1.3rem 0;
-      border: 1px solid;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      border-radius: 4px;
+      border-left: 4px solid;
+      position: relative;
     }
-    .callout.gold  { background: var(--gold-bg); border-color: var(--gold-bdr); }
-    .callout.green { background: var(--green-bg); border-color: var(--green-bdr); }
-    .callout.blue  { background: var(--blue-bg); border-color: var(--blue-bdr); }
+    .callout.gold  { background: #fdf6ec; border-color: var(--gold); border: 1px solid #e8d4a8; border-left: 4px solid var(--gold); }
+    .callout.green { background: #f0f6f2; border-color: var(--sage); border: 1px solid var(--sage-lt); border-left: 4px solid var(--sage); }
+    .callout.blue  { background: #f0f4f8; border-color: #4a7aaf; border: 1px solid #b8cce0; border-left: 4px solid #4a7aaf; }
 
     .callout-title {
-      font-size: 0.72rem; font-weight: 800;
-      letter-spacing: 1.2px; text-transform: uppercase;
-      margin-bottom: 0.6rem;
-      display: flex; align-items: center; gap: 0.4rem;
+      font-family: var(--body);
+      font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      display: flex; align-items: center; gap: 0.35rem;
     }
-    .callout.gold  .callout-title { color: #92580a; }
-    .callout.green .callout-title { color: var(--green); }
-    .callout.blue  .callout-title { color: var(--blue); }
-
-    .callout p { font-size: 1rem; color: var(--text-mid); line-height: 1.7; }
-    .callout strong { color: var(--text); font-weight: 700; }
+    .callout.gold  .callout-title { color: var(--gold); }
+    .callout.green .callout-title { color: var(--sage); }
+    .callout.blue  .callout-title { color: #4a7aaf; }
+    .callout p { font-size: 0.93rem; color: var(--text-mid); line-height: 1.75; }
+    .callout strong { color: var(--text-dark); font-weight: 600; }
 
     /* ── OBJECTIONS ── */
     .objection-dropdown {
-      margin-bottom: 0.55rem;
-      border-radius: var(--radius);
+      margin-bottom: 5px;
+      border-radius: 4px;
       overflow: hidden;
-      border: 1px solid var(--border);
-      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      border: 1px solid var(--cream3);
+      transition: border-color 0.15s, box-shadow 0.15s;
     }
+    .objection-dropdown:hover { border-color: var(--cream2); box-shadow: 0 2px 8px rgba(13,43,30,0.06); }
+    .objection-dropdown.open  { border-color: var(--forest); box-shadow: 0 4px 20px rgba(13,43,30,0.1); }
 
     .objection-toggle {
       width: 100%; padding: 1rem 1.2rem;
-      background: var(--card); border: none; text-align: left;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 0.97rem; font-weight: 700;
-      color: var(--text);
-      cursor: pointer;
+      background: var(--white); border: none; text-align: left;
+      font-family: var(--body); font-size: 0.9rem; font-weight: 600;
+      color: var(--text-dark); cursor: pointer;
       display: flex; justify-content: space-between; align-items: center; gap: 1rem;
       transition: background 0.15s;
     }
-    .objection-toggle:hover { background: var(--blue-bg); }
-    .objection-dropdown.open .objection-toggle { background: var(--blue-dark); color: white; }
+    .objection-toggle:hover { background: var(--cream); }
+    .objection-dropdown.open .objection-toggle {
+      background: var(--forest); color: var(--cream);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
 
     .chevron {
-      display: inline-block; transition: transform 0.25s;
-      font-style: normal; flex-shrink: 0;
-      font-size: 0.8rem; color: var(--text-dim);
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--cream2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; color: var(--text-dim);
+      transition: transform 0.22s, background 0.15s;
+      flex-shrink: 0;
     }
-    .objection-dropdown.open .chevron { transform: rotate(180deg); color: white; }
+    .objection-dropdown.open .chevron {
+      transform: rotate(180deg);
+      background: rgba(255,255,255,0.12);
+      color: var(--gold-lt);
+    }
 
     .objection-response-dropdown {
       display: none;
-      padding: 1.15rem 1.5rem;
-      background: var(--surface);
-      font-size: 0.97rem; line-height: 1.75;
+      padding: 1.1rem 1.4rem;
+      background: #fafaf5;
+      font-size: 0.92rem; line-height: 1.82;
       color: var(--text-mid);
-      border-top: 1px solid var(--border);
+      border-top: 1px solid var(--cream3);
     }
+    .objection-response-dropdown strong { color: var(--text-dark); font-weight: 600; }
     .objection-dropdown.open .objection-response-dropdown { display: block; }
 
     /* ── RESOURCES ── */
     .resource-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(258px, 1fr));
-      gap: 0.6rem; margin-top: 0.5rem;
+      grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+      gap: 0.6rem; margin-top: 0.6rem;
     }
 
     .resource-item {
-      display: flex; align-items: center; gap: 0.85rem;
+      display: flex; align-items: center; gap: 0.9rem;
       padding: 0.85rem 1rem;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
+      background: var(--white);
+      border: 1px solid var(--cream3);
+      border-radius: 4px;
       text-decoration: none;
       color: var(--text-mid);
-      font-size: 0.95rem; font-weight: 600;
-      transition: all 0.15s;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      font-size: 0.88rem; font-weight: 500;
+      transition: all 0.18s;
     }
     .resource-item:hover {
-      background: var(--blue-bg);
-      border-color: var(--blue-bdr);
-      color: var(--blue-dark);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      background: var(--forest);
+      border-color: var(--forest);
+      color: var(--cream);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(13,43,30,0.18);
     }
+    .resource-item:hover .resource-icon { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.15); }
 
     .resource-icon {
       width: 32px; height: 32px;
-      background: var(--blue-bg);
-      border-radius: 8px;
+      background: var(--cream);
+      border: 1px solid var(--cream3);
+      border-radius: 6px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 0.9rem; flex-shrink: 0;
+      font-size: 0.85rem; flex-shrink: 0;
+      transition: all 0.18s;
     }
 
     /* ── TIPS ── */
@@ -361,76 +428,90 @@
     .tips-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 1.1rem;
-      max-width: 1160px; margin: 0 auto;
+      gap: 1rem;
+      max-width: 1180px; margin: 0 auto;
     }
 
     .tip-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-top: 4px solid var(--blue);
-      border-radius: var(--radius);
-      padding: 1.4rem 1.5rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-      transition: transform 0.15s, box-shadow 0.15s, border-top-color 0.2s;
+      background: var(--white);
+      border: 1px solid var(--cream3);
+      border-radius: 6px;
+      padding: 1.5rem 1.6rem;
+      transition: all 0.2s;
+      position: relative; overflow: hidden;
     }
-    .tip-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.11);
-      border-top-color: var(--gold);
+    .tip-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--forest);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s ease;
     }
+    .tip-card:hover { box-shadow: 0 8px 32px rgba(13,43,30,0.1); transform: translateY(-3px); }
+    .tip-card:hover::before { transform: scaleX(1); }
 
     .tip-card h3 {
-      margin: 0 0 0.9rem; font-size: 1rem;
-      color: var(--text);
-      display: flex; align-items: center; gap: 0.45rem;
+      margin: 0 0 1rem; font-size: 0.95rem;
+      color: var(--forest);
+      display: flex; align-items: center; gap: 0.5rem;
       border: none; padding: 0;
+      font-style: normal; font-weight: 700;
     }
 
     .tip-list { list-style: none; padding: 0; margin: 0; }
 
     .tip-list > li {
-      padding: 0.52rem 0 0.52rem 1.15rem;
+      padding: 0.5rem 0 0.5rem 1rem;
       position: relative;
-      font-size: 0.95rem; color: var(--text-mid);
-      border-bottom: 1px solid var(--border);
-      line-height: 1.55;
+      font-size: 0.9rem; color: var(--text-mid);
+      border-bottom: 1px solid var(--cream2);
+      line-height: 1.58;
     }
     .tip-list > li:last-child { border-bottom: none; }
     .tip-list > li::before {
-      content: '▸'; position: absolute; left: 0;
-      color: var(--blue); font-size: 0.75rem; top: 0.6rem;
+      content: '›'; position: absolute; left: 0;
+      color: var(--gold); font-size: 1rem; top: 0.42rem; font-weight: 700;
     }
-    .tip-list > li strong { color: var(--text); font-weight: 700; }
+    .tip-list > li strong { color: var(--text-dark); font-weight: 600; }
 
-    .tip-list ul { margin: 0.35rem 0 0.2rem 1rem; padding: 0; list-style: none; }
-    .tip-list ul li { font-size: 0.9rem; color: var(--text-dim); padding: 0.18rem 0; }
+    .tip-list ul { margin: 0.3rem 0 0.15rem 0.8rem; padding: 0; list-style: none; }
+    .tip-list ul li { font-size: 0.85rem; color: var(--text-dim); padding: 0.15rem 0; }
+    .tip-list ul li::before { content: '– '; }
 
-    /* ── WELCOME ── */
-    #welcome-text p { color: var(--text-mid); margin-bottom: 0.75rem; font-size: 1rem; }
-    #welcome-text strong { color: var(--text); font-weight: 700; }
+    /* ── WELCOME TEXT ── */
+    #welcome-text p { color: var(--text-mid); margin-bottom: 0.7rem; font-size: 0.93rem; }
+    #welcome-text strong { color: var(--text-dark); font-weight: 600; }
     #welcome-text h3 {
-      font-size: 0.72rem; font-weight: 800; letter-spacing: 1.6px;
+      font-family: var(--body);
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em;
       text-transform: uppercase; color: var(--gold);
-      margin: 1.8rem 0 0.75rem; padding-bottom: 0.45rem;
-      border-bottom: 2px solid var(--border);
+      margin: 1.8rem 0 0.7rem; padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--cream3);
+      font-style: normal;
     }
 
     /* ── CROSS SALE ── */
-    #crosssale ul { padding-left: 1.2rem; margin-bottom: 0.9rem; }
-    #crosssale ul li { font-size: 1rem; margin-bottom: 0.25rem; color: var(--text-mid); font-weight: 600; }
-    #crosssale > p { color: var(--text-mid); margin-bottom: 1.4rem; font-size: 1rem; }
+    #crosssale ul { padding-left: 1.1rem; margin-bottom: 0.85rem; }
+    #crosssale ul li { font-size: 0.93rem; margin-bottom: 0.25rem; color: var(--text-mid); font-weight: 600; }
+    #crosssale > p { color: var(--text-mid); margin-bottom: 1.2rem; font-size: 0.93rem; }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: var(--cream2); }
+    ::-webkit-scrollbar-thumb { background: var(--sage-lt); border-radius: 3px; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 960px) {
       #coverage .page-container { flex-direction: column; }
       .sticky-sidebar { position: static; width: 100%; }
       .tips-grid { grid-template-columns: 1fr; }
+      .header-left { min-width: 200px; }
     }
     @media (max-width: 640px) {
-      html { font-size: 15px; }
-      header { padding: 1.1rem 1rem; }
+      html { font-size: 14px; }
       .tab-content { padding: 0 1rem; }
+      .header-left { clip-path: none; padding-right: 1.5rem; }
+      .header-right { display: none; }
     }
 
     .main-content * { overflow-wrap: anywhere; word-break: break-word; }
@@ -439,10 +520,32 @@
 <body>
 
 <header>
-  <div class="header-logo">🛡️</div>
-  <div class="header-text">
-    <h1>Sales Training</h1>
-    <span>Allstate Insurance Agency</span>
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="header-eyebrow">Allstate Insurance Agency</div>
+      <div class="header-title">Sales<br><em>Training</em></div>
+    </div>
+    <div class="header-right">
+      <div class="header-stat">
+        <div class="header-stat-num">5</div>
+        <div class="header-stat-label">Call Steps</div>
+      </div>
+      <div class="header-divider"></div>
+      <div class="header-stat">
+        <div class="header-stat-num">9</div>
+        <div class="header-stat-label">Objection Scripts</div>
+      </div>
+      <div class="header-divider"></div>
+      <div class="header-stat">
+        <div class="header-stat-num">3</div>
+        <div class="header-stat-label">Cross-Sale Plays</div>
+      </div>
+      <div class="header-divider"></div>
+      <div class="header-stat">
+        <div class="header-stat-num">12</div>
+        <div class="header-stat-label">Resources</div>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -464,7 +567,10 @@
     <div class="page-container">
       <div class="main-content">
 
-        <h2>🛡️ Coverage Script</h2>
+        <div class="page-title">
+          <span>Module 01</span>
+          Coverage Script
+        </div>
 
         <div class="callout gold">
           <div class="callout-title">🤝 Rapport Reminder</div>
@@ -473,7 +579,7 @@
 
         <div class="step-title">
           <div class="step-num-lg">1</div>
-          <div class="step-title-text">Step 1: Introduction & Info Confirmation</div>
+          <div class="step-title-text">Introduction & Info Confirmation</div>
         </div>
         <div class="script-block agent">
           <div class="script-avatar">A</div>
@@ -487,7 +593,7 @@
 
         <div class="step-title">
           <div class="step-num-lg">2</div>
-          <div class="step-title-text">Step 2: Experience & Expectations</div>
+          <div class="step-title-text">Experience & Expectations</div>
         </div>
         <div class="script-block agent">
           <div class="script-avatar">A</div>
@@ -517,7 +623,7 @@
 
         <div class="step-title">
           <div class="step-num-lg">3</div>
-          <div class="step-title-text">Step 3: Explaining Coverages</div>
+          <div class="step-title-text">Explaining Coverages</div>
         </div>
         <div class="script-block agent">
           <div class="script-avatar">A</div>
@@ -535,8 +641,8 @@
         </div>
 
         <div class="step-title gold-step">
-          <div class="step-num-lg gold">⚠️</div>
-          <div class="step-title-text" style="color:var(--gold);">Property Damage Liability — Most Important Coverage</div>
+          <div class="step-num-lg">⚠️</div>
+          <div class="step-title-text" style="color:var(--forest);">Property Damage Liability — Most Important Coverage</div>
         </div>
 
         <div class="script-block warning">
@@ -572,48 +678,17 @@
 
         <div class="step-title">
           <div class="step-num-lg">4</div>
-          <div class="step-title-text">Step 4: Other Important Coverages</div>
+          <div class="step-title-text">Other Important Coverages</div>
         </div>
-        <div class="script-block agent">
-          <div class="script-avatar">A</div>
-          <div class="script-content">
-            <span class="script-role">Agent</span>
-            The next important coverage is Collision. Collision covers the damage to your own vehicle if you're in an accident, regardless of who's at fault—so whether you hit another car, a tree, or even a pole, this is the coverage that helps get your car repaired or replaced.<br><br>
-            For collision, I recommend a $1,000 deductible. (if they object you can say) here's why: A higher deductible means you'll be responsible for the first $1,000 of any damage, but it also lowers your monthly premium significantly. Most people don't get into accidents very often, so choosing a $1,000 deductible is a smart way to keep your insurance affordable while still protecting you from those big, unexpected repair bills.
-          </div>
-        </div>
-        <div class="script-block agent">
-          <div class="script-avatar">A</div>
-          <div class="script-content">
-            <span class="script-role">Agent</span>
-            Next is Comprehensive coverage. This protects your vehicle from things that aren't collision-related—like theft, vandalism, fire, hail, or even if a deer runs into your car. For comprehensive, I recommend a $250 deductible. Comprehensive claims are usually less expensive and more common—like if a rock cracks your windshield or a storm causes damage. A lower deductible means you'll pay less out of pocket if something like that happens.
-          </div>
-        </div>
-        <div class="script-block agent">
-          <div class="script-avatar">A</div>
-          <div class="script-content">
-            <span class="script-role">Agent</span>
-            Do you have roadside with your current company or do you use a third party like Triple A? If you ever have a flat tire, run out of gas, lock your keys in your car, or your battery dies, roadside assistance sends help right to you, 24/7. The biggest difference between Allstate's roadside program and any other insurance company is that Allstate goes off of the drivers rather than the vehicles, meaning no matter what car you're driving, you would have Allstate roadside covering you.
-          </div>
-        </div>
-        <div class="script-block agent">
-          <div class="script-avatar">A</div>
-          <div class="script-content">
-            <span class="script-role">Agent</span>
-            Next up is Rental Car coverage. If your car is ever in the shop because of a covered claim—like an accident—this coverage helps pay for a rental car so you can keep getting to work, school, or wherever you need to go. It's a great way to avoid being stranded or having to pay out of pocket for a rental while your car is being repaired.
-          </div>
-        </div>
-        <div class="script-block agent">
-          <div class="script-avatar">A</div>
-          <div class="script-content">
-            <span class="script-role">Agent</span>
-            Finally, there's Personal Injury Protection, or PIP. This coverage helps pay for medical expenses for you and your passengers after an accident, no matter who's at fault. It can also cover things like lost wages and essential services if you're unable to work or take care of yourself after an accident. PIP is really valuable because it kicks in quickly and helps cover those immediate costs when you need it most.
-          </div>
-        </div>
+        <div class="script-block agent"><div class="script-avatar">A</div><div class="script-content"><span class="script-role">Agent</span>The next important coverage is Collision. Collision covers the damage to your own vehicle if you're in an accident, regardless of who's at fault—so whether you hit another car, a tree, or even a pole, this is the coverage that helps get your car repaired or replaced.<br><br>For collision, I recommend a $1,000 deductible. Here's why: A higher deductible means you'll be responsible for the first $1,000 of any damage, but it also lowers your monthly premium significantly. Most people don't get into accidents very often, so choosing a $1,000 deductible is a smart way to keep your insurance affordable while still protecting you from those big, unexpected repair bills.</div></div>
+        <div class="script-block agent"><div class="script-avatar">A</div><div class="script-content"><span class="script-role">Agent</span>Next is Comprehensive coverage. This protects your vehicle from things that aren't collision-related—like theft, vandalism, fire, hail, or even if a deer runs into your car. For comprehensive, I recommend a $250 deductible. Comprehensive claims are usually less expensive and more common—like if a rock cracks your windshield or a storm causes damage. A lower deductible means you'll pay less out of pocket if something like that happens.</div></div>
+        <div class="script-block agent"><div class="script-avatar">A</div><div class="script-content"><span class="script-role">Agent</span>Do you have roadside with your current company or do you use a third party like Triple A? If you ever have a flat tire, run out of gas, lock your keys in your car, or your battery dies, roadside assistance sends help right to you, 24/7. The biggest difference between Allstate's roadside program and any other insurance company is that Allstate goes off of the drivers rather than the vehicles, meaning no matter what car you're driving, you would have Allstate roadside covering you.</div></div>
+        <div class="script-block agent"><div class="script-avatar">A</div><div class="script-content"><span class="script-role">Agent</span>Next up is Rental Car coverage. If your car is ever in the shop because of a covered claim—like an accident—this coverage helps pay for a rental car so you can keep getting to work, school, or wherever you need to go. It's a great way to avoid being stranded or having to pay out of pocket for a rental while your car is being repaired.</div></div>
+        <div class="script-block agent"><div class="script-avatar">A</div><div class="script-content"><span class="script-role">Agent</span>Finally, there's Personal Injury Protection, or PIP. This coverage helps pay for medical expenses for you and your passengers after an accident, no matter who's at fault. It can also cover things like lost wages and essential services if you're unable to work or take care of yourself after an accident. PIP is really valuable because it kicks in quickly and helps cover those immediate costs when you need it most.</div></div>
 
         <div class="step-title green-step">
-          <div class="step-num-lg green">5</div>
-          <div class="step-title-text" style="color:var(--green);">Step 5: Experience Recap Close</div>
+          <div class="step-num-lg">5</div>
+          <div class="step-title-text">Experience Recap Close</div>
         </div>
         <div class="script-block success">
           <div class="script-avatar">A</div>
@@ -633,72 +708,68 @@
           </div>
         </div>
 
-      </div><!-- end main-content -->
+      </div>
 
-      <!-- SIDEBAR -->
       <aside class="sticky-sidebar">
-        <div class="sidebar-label">Application Steps</div>
+        <div class="sidebar-label">Call Steps</div>
         <ul class="steps-list">
-          <li><span class="step-dot">1</span>Introduction & Info Confirmation</li>
+          <li><span class="step-dot">1</span>Intro & Info Confirmation</li>
           <li><span class="step-dot">2</span>Experience & Expectations</li>
           <li><span class="step-dot">3</span>Explaining Coverages</li>
           <li><span class="step-dot">4</span>Other Important Coverages</li>
           <li><span class="step-dot">5</span>Experience Recap Close</li>
         </ul>
       </aside>
-
     </div>
   </section>
 
   <!-- ══════════ OBJECTIONS ══════════ -->
   <section id="objections" class="tab-content">
-    <h2>💬 Objection Script</h2>
+    <div class="page-title"><span>Module 02</span>Objection Script</div>
     <div class="callout green">
-      <div class="callout-title">✅ Summary: Close Faster, Protect Better</div>
-      <p>Every objection gets redirected to this core truth:<br>
-      <strong>You don't have enough coverage right now — and we're fixing that.</strong><br>
-      The goal: minimize delays, eliminate follow-ups, and close confidently.</p>
+      <div class="callout-title">✅ Core Directive</div>
+      <p>Every objection gets redirected to this core truth: <strong>You don't have enough coverage right now — and we're fixing that.</strong> The goal: minimize delays, eliminate follow-ups, and close confidently.</p>
     </div>
 
     <div class="objection-dropdown">
-      <button class="objection-toggle">Objection 1: "I'll pay later / Call me back / Not ready yet" <span class="chevron">▾</span></button>
+      <button class="objection-toggle">Objection 1 — "I'll pay later / Call me back / Not ready yet" <span class="chevron">▾</span></button>
       <div class="objection-response-dropdown">"I totally understand. As we talked about, you told me you wanted to be protected right? Currently with (insurance company) you only have $15,000 in property damage which as we talked about is not enough — in the example we went over with that F-150, you would be stuck paying out of pocket, which you said you didn't want, right? Which is why we gave you the $300,000 to make sure you never have to pay out of pocket.<br><br>So let's make sure you never have to worry about that. What's the most convenient day for you to make that payment?"</div>
     </div>
     <div class="objection-dropdown">
-      <button class="objection-toggle">Objection 2: "It's more than I was paying" / "That's too expensive" <span class="chevron">▾</span></button>
+      <button class="objection-toggle">Objection 2 — "It's more than I was paying" / "That's too expensive" <span class="chevron">▾</span></button>
       <div class="objection-response-dropdown">"Totally fair - but let's break it down. You were paying less because you were getting less. $15,000 in coverage doesn't cut it. Most of my clients can find the extra ($20, $40, $60) but none of them have an extra $45,000 sitting around. That's why we're giving you $300,000 so you don't have to take a $45,000 hit after an accident. So let me ask you, what's the most convenient day for you to make that payment?"</div>
     </div>
     <div class="objection-dropdown">
-      <button class="objection-toggle">Objection 3: "I just made a payment" / "I want to wait until my renewal date" <span class="chevron">▾</span></button>
+      <button class="objection-toggle">Objection 3 — "I just made a payment" / "I want to wait until my renewal date" <span class="chevron">▾</span></button>
       <div class="objection-response-dropdown">"I totally understand — we have two options. Option one, which is what I recommend: let's get this policy started and then we can get you a refund of whatever premium you haven't used at your current company. If that doesn't work for you, option two is let's lock in this upgraded protection now and schedule the first payment for then. You don't pay anything today, and your rate is locked in for the renewal."<br><br>"Which option works better for you?"<br><br>(If they choose option two) "Which card would you like to use to hold the policy for that date?"</div>
     </div>
     <div class="objection-dropdown">
-      <button class="objection-toggle">Objection 4: "I want to shop around" <span class="chevron">▾</span></button>
+      <button class="objection-toggle">Objection 4 — "I want to shop around" <span class="chevron">▾</span></button>
       <div class="objection-response-dropdown">"Totally understandable - but as we talked about, you said you wanted to be protected and every other company is trying to get you the lowest rates which means they're going to give you the lowest coverages possible, which you said you didn't want. That's why over here we gave you the $300,000 to make sure you don't have to worry about paying anything out of pocket. So let me ask you, what would be the most convenient day for you to pay for the policy?"</div>
     </div>
     <div class="objection-dropdown">
-      <button class="objection-toggle">Objection 5: "I need to talk to my spouse/partner first" <span class="chevron">▾</span></button>
+      <button class="objection-toggle">Objection 5 — "I need to talk to my spouse/partner first" <span class="chevron">▾</span></button>
       <div class="objection-response-dropdown">"Of course - let me ask you, do you think they'd be more concerned about the price or the coverages?" (this response will many times get them to give up the real objection)<br><br>"Let's get this taken care of. If your partner has questions, we can make changes later - but waiting leaves you vulnerable. What card works best to secure the coverage now?"</div>
     </div>
     <div class="objection-dropdown">
-      <button class="objection-toggle">Objection 6: "Just email me the quote and I'll call you if I like it" <span class="chevron">▾</span></button>
+      <button class="objection-toggle">Objection 6 — "Just email me the quote and I'll call you if I like it" <span class="chevron">▾</span></button>
       <div class="objection-response-dropdown">"Absolutely, I can email it and text it to you now — but you told me you want your insurance to protect you fully, right? Currently you only have $15,000 in property damage which in the event we went over with the F-150 would leave you paying $45,000 out of pocket. Over here we gave you the $300,000 to make sure you don't have to worry about that. So let me ask you, what's the most convenient day for you to make that first payment?"</div>
     </div>
     <div class="objection-dropdown">
-      <button class="objection-toggle">Objection 7: "I've never had an accident / I'm a safe driver" <span class="chevron">▾</span></button>
+      <button class="objection-toggle">Objection 7 — "I've never had an accident / I'm a safe driver" <span class="chevron">▾</span></button>
       <div class="objection-response-dropdown">"That's great - but even the safest drivers make mistakes and that's why we have insurance. Let's set this up and keep you covered - what's the best card to use?"</div>
     </div>
     <div class="objection-dropdown">
-      <button class="objection-toggle">Objection 8: "I want to look at it / compare your quote to my current policy" <span class="chevron">▾</span></button>
+      <button class="objection-toggle">Objection 8 — "I want to look at it / compare your quote to my current policy" <span class="chevron">▾</span></button>
       <div class="objection-response-dropdown">"I completely understand, I just sent you a text with the quote in it. Do me a favor, click on the link and make sure it works correctly. Let's go through line by line to make sure you understand what we're giving you."</div>
     </div>
     <div class="objection-dropdown">
-      <button class="objection-toggle">Future Start Date (If They Insist on Waiting) <span class="chevron">▾</span></button>
+      <button class="objection-toggle">Future Start Date — If They Insist on Waiting <span class="chevron">▾</span></button>
       <div class="objection-response-dropdown">"No problem. I'll match your current schedule. You pay nothing today - but your better coverage is secured." <strong>GET THE PAYMENT INFORMATION.</strong></div>
     </div>
 
-    <div class="callout green" style="margin-top:1.6rem;">
-      <div class="callout-title">🎯 Closing the Sale</div>
+    <div class="callout green" style="margin-top:1.5rem;">
+      <div class="callout-title">🎯 The Close</div>
       <p>"You're going from minimum protection to full protection — and that's the whole point of insurance."<br>
       <strong>"What card works best to lock this in today?"</strong></p>
     </div>
@@ -706,48 +777,30 @@
 
   <!-- ══════════ CROSS SALE ══════════ -->
   <section id="crosssale" class="tab-content">
-    <h2>🔄 Cross Sale</h2>
+    <div class="page-title"><span>Module 03</span>Cross Sale</div>
     <ul>
       <li><strong>Auto → Home</strong></li>
       <li><strong>Home → Auto</strong></li>
       <li><strong>Auto → Renters</strong></li>
     </ul>
-    <p>The goal is to keep it natural, assume the customer will be interested, and link coverage value, not just price.</p>
+    <p style="margin-top:0.6rem;">The goal is to keep it natural, assume the customer will be interested, and link coverage value, not just price.</p>
 
-    <h3>🔹 1. Auto Quote → Home Quote</h3>
-    <div class="script-block agent">
-      <div class="script-avatar">A</div>
-      <div class="script-content"><span class="script-role">Agent</span>"Okay, great - so my system is going to include a home quote as well, when was the last time you had the roof replaced?"</div>
-    </div>
-    <div class="script-block sky-alt">
-      <div class="script-avatar">A</div>
-      <div class="script-content"><span class="script-role">Agent (if they hesitate)</span>"I totally get that, my system is going to make me run through it but I can remove it at the end — this way you can see what the rate would look like if you ever were to bundle it together. It also gives you the multiple policy discount which is the biggest discount you can get on the auto insurance."</div>
-    </div>
+    <h3>1 — Auto Quote → Home Quote</h3>
+    <div class="script-block agent"><div class="script-avatar">A</div><div class="script-content"><span class="script-role">Agent</span>"Okay, great - so my system is going to include a home quote as well, when was the last time you had the roof replaced?"</div></div>
+    <div class="script-block sky-alt"><div class="script-avatar">A</div><div class="script-content"><span class="script-role">Agent (if they hesitate)</span>"I totally get that, my system is going to make me run through it but I can remove it at the end — this way you can see what the rate would look like if you ever were to bundle it together. It also gives you the multiple policy discount which is the biggest discount you can get on the auto insurance."</div></div>
 
-    <h3>🔹 2. Home Quote → Auto Quote</h3>
-    <div class="script-block agent">
-      <div class="script-avatar">A</div>
-      <div class="script-content"><span class="script-role">Agent</span>"Now that we've got your homeowners policy squared away, I'm going to go ahead and pull up your auto insurance too so we can bundle them and unlock the multi-policy savings." (Smooth, confident — not asking for permission.)<br><br>"Who do you currently have your vehicles insured with?"</div>
-    </div>
-    <div class="script-block sky-alt">
-      <div class="script-avatar">A</div>
-      <div class="script-content"><span class="script-role">Agent (if happy with current)</span>"Totally understand — a lot of people say that, but when they see the bundle savings and realize they're often underinsured on their auto policy, it makes sense to take a look. Let's at least see what we can do for you. What vehicles do you currently drive?"</div>
-    </div>
+    <h3>2 — Home Quote → Auto Quote</h3>
+    <div class="script-block agent"><div class="script-avatar">A</div><div class="script-content"><span class="script-role">Agent</span>"Now that we've got your homeowners policy squared away, I'm going to go ahead and pull up your auto insurance too so we can bundle them and unlock the multi-policy savings."<br><br>"Who do you currently have your vehicles insured with?"</div></div>
+    <div class="script-block sky-alt"><div class="script-avatar">A</div><div class="script-content"><span class="script-role">Agent (if happy with current)</span>"Totally understand — a lot of people say that, but when they see the bundle savings and realize they're often underinsured on their auto policy, it makes sense to take a look. Let's at least see what we can do for you. What vehicles do you currently drive?"</div></div>
 
-    <h3>🔹 3. Auto Quote → Renters Quote</h3>
-    <div class="script-block agent">
-      <div class="script-avatar">A</div>
-      <div class="script-content"><span class="script-role">Agent</span>"Alright, we've got your auto quote looking solid. Since you're currently renting, I'm going to go ahead and add renters insurance so we can bundle that too and apply the multi-policy discount."</div>
-    </div>
-    <div class="script-block sky-alt">
-      <div class="script-avatar">A</div>
-      <div class="script-content"><span class="script-role">Agent (if hesitate)</span>"I totally get it — a lot of people assume their landlord's policy covers them, but it actually doesn't protect your stuff or liability. Renters coverage is super affordable — most people add it for around $15 and generally the discount it provides on the auto is higher than that, so it's actually saving you more money overall. It's a smart move."</div>
-    </div>
+    <h3>3 — Auto Quote → Renters Quote</h3>
+    <div class="script-block agent"><div class="script-avatar">A</div><div class="script-content"><span class="script-role">Agent</span>"Alright, we've got your auto quote looking solid. Since you're currently renting, I'm going to go ahead and add renters insurance so we can bundle that too and apply the multi-policy discount."</div></div>
+    <div class="script-block sky-alt"><div class="script-avatar">A</div><div class="script-content"><span class="script-role">Agent (if hesitate)</span>"I totally get it — a lot of people assume their landlord's policy covers them, but it actually doesn't protect your stuff or liability. Renters coverage is super affordable — most people add it for around $15 and generally the discount it provides on the auto is higher than that, so it's actually saving you more money overall. It's a smart move."</div></div>
   </section>
 
   <!-- ══════════ RESOURCES ══════════ -->
   <section id="resources" class="tab-content">
-    <h2>📖 Resources</h2>
+    <div class="page-title"><span>Module 04</span>Resources</div>
     <div class="resource-grid">
       <a href="https://agencygateway1.allstate.com/apstatic/welcome.html" target="_blank" class="resource-item"><span class="resource-icon">🏢</span> Allstate main page</a>
       <a href="https://app.ringcentral.com" target="_blank" class="resource-item"><span class="resource-icon">📞</span> Ring Central Web Browser</a>
@@ -755,18 +808,18 @@
       <a href="https://schmell.ricochet.me" target="_blank" class="resource-item"><span class="resource-icon">⚡</span> Ricochet</a>
       <a href="https://slack.com/signin#/signin/" target="_blank" class="resource-item"><span class="resource-icon">💬</span> Slack (for the telemarketers)</a>
       <a href="https://app.agencyzoom.com/login" target="_blank" class="resource-item"><span class="resource-icon">📈</span> Agency Zoom</a>
-      <a href="https://www.mycoverageinfo.com/agent" target="_blank" class="resource-item"><span class="resource-icon">🔍</span> MyCoverageInfo (home insurance lookup)</a>
-      <a href="https://www.edmunds.com/appraisal/" target="_blank" class="resource-item"><span class="resource-icon">🚗</span> Edmunds Appraisal (VIN lookup)</a>
-      <a href="https://www.homes.com/" target="_blank" class="resource-item"><span class="resource-icon">🏠</span> Homes.com (home details)</a>
-      <a href="https://sdat.dat.maryland.gov/RealProperty/Pages/default.aspx" target="_blank" class="resource-item"><span class="resource-icon">🏛️</span> Maryland Real Property (home ownership lookup)</a>
-      <a href="https://www.mersinc.org/homeowners/mers-servicerid" target="_blank" class="resource-item"><span class="resource-icon">📄</span> MERS ServicerID (Mortgage info)</a>
-      <a href="https://www.usecanopy.com/" target="_blank" class="resource-item"><span class="resource-icon">🌲</span> Canopy (declaration pages)</a>
+      <a href="https://www.mycoverageinfo.com/agent" target="_blank" class="resource-item"><span class="resource-icon">🔍</span> MyCoverageInfo</a>
+      <a href="https://www.edmunds.com/appraisal/" target="_blank" class="resource-item"><span class="resource-icon">🚗</span> Edmunds Appraisal</a>
+      <a href="https://www.homes.com/" target="_blank" class="resource-item"><span class="resource-icon">🏠</span> Homes.com</a>
+      <a href="https://sdat.dat.maryland.gov/RealProperty/Pages/default.aspx" target="_blank" class="resource-item"><span class="resource-icon">🏛️</span> Maryland Real Property</a>
+      <a href="https://www.mersinc.org/homeowners/mers-servicerid" target="_blank" class="resource-item"><span class="resource-icon">📄</span> MERS ServicerID</a>
+      <a href="https://www.usecanopy.com/" target="_blank" class="resource-item"><span class="resource-icon">🌲</span> Canopy</a>
     </div>
   </section>
 
   <!-- ══════════ TIPS ══════════ -->
   <section id="tips" class="tab-content">
-    <h2>💡 Tips & Tricks</h2>
+    <div class="page-title" style="max-width:1180px;margin-left:auto;margin-right:auto;padding:0 2rem;margin-bottom:1.5rem;"><span>Module 05</span>Tips & Tricks</div>
     <div class="tips-grid">
       <div class="tip-card">
         <h3>🧮 Quoting & Pricing</h3>
@@ -813,7 +866,7 @@
 
   <!-- ══════════ WELCOME TEXT ══════════ -->
   <section id="welcome-text" class="tab-content">
-    <h2>🤝 Welcome to Allstate!</h2>
+    <div class="page-title"><span>Module 06</span>Welcome Text</div>
     <p>For customer service, please call (410) 665-3602</p>
     <p>Please be on the look out for an email / text, asking you to log in/download the app to sign off on these policies, be sure to enroll in Ebill/Epolicy.</p>
     <h3>Auto</h3>

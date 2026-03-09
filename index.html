@@ -426,10 +426,15 @@
     .scripts-panel { display: none; animation: fadeUp 0.25s ease; }
     .scripts-panel.active { display: block; }
 
+    /* Script cards: wider, centered */
     .vm-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 1rem; margin-top: 0.5rem;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-top: 0.5rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .vm-card {
@@ -462,19 +467,10 @@
     .vm-card-tag { margin-left: auto; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.35); white-space: nowrap; }
     .vm-card-header.gold-header .vm-card-tag { color: rgba(13,43,30,0.4); }
 
-    .vm-card-body { padding: 1.1rem 1.2rem 1.3rem; }
-
-    .vm-tone-tag {
-      display: inline-flex; align-items: center; gap: 0.3rem;
-      font-size: 0.68rem; font-weight: 600;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--text-dim); background: var(--cream);
-      border: 1px solid var(--cream3); border-radius: 3px;
-      padding: 0.2rem 0.55rem; margin-bottom: 0.9rem;
-    }
+    .vm-card-body { padding: 1.5rem 1.8rem 1.8rem; }
 
     .vm-script-text {
-      font-size: 0.93rem; color: var(--text-mid); line-height: 1.82;
+      font-size: 1rem; color: var(--text-mid); line-height: 1.9;
     }
 
     .placeholder {
@@ -486,7 +482,7 @@
     }
 
     .vm-copy-btn {
-      margin-top: 1rem; width: 100%; padding: 0.55rem;
+      margin-top: 1.2rem; width: 100%; padding: 0.65rem;
       background: transparent; border: 1px solid var(--cream3); border-radius: 4px;
       font-family: var(--body); font-size: 0.78rem; font-weight: 600;
       color: var(--text-dim); cursor: pointer;
@@ -497,16 +493,12 @@
     .vm-copy-btn:hover { background: var(--forest); border-color: var(--forest); color: var(--gold-lt); }
     .vm-copy-btn.copied { background: var(--sage); border-color: var(--sage); color: white; }
 
-    .coming-soon-panel {
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      padding: 4rem 2rem; background: var(--white);
-      border: 2px dashed var(--cream3); border-radius: 6px;
-      text-align: center; gap: 0.75rem;
+    /* Callback tip callout centered to match card width */
+    .vm-tip-wrap {
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    .coming-soon-panel .cs-icon { font-size: 2.5rem; opacity: 0.35; }
-    .coming-soon-panel .cs-title { font-family: var(--display); font-size: 1.1rem; font-weight: 700; font-style: italic; color: var(--forest); }
-    .coming-soon-panel .cs-sub { font-size: 0.88rem; color: var(--text-dim); max-width: 320px; line-height: 1.65; }
 
     ::-webkit-scrollbar { width: 5px; height: 5px; }
     ::-webkit-scrollbar-track { background: var(--cream2); }
@@ -517,7 +509,6 @@
       .sticky-sidebar { position: static; width: 100%; }
       .tips-grid { grid-template-columns: 1fr; }
       .header-left { min-width: 200px; }
-      .vm-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 640px) {
       html { font-size: 14px; }
@@ -836,9 +827,10 @@
 <section id="callscripts" class="tab-content">
   <div class="page-title"><span>Module 07</span>Call Scripts</div>
 
-  <div class="callout gold">
-    <div class="callout-title">🎯 Purpose</div>
-    <p>Scripts for every stage of contact — whether you're dialing out, picking up an inbound, leaving a voicemail, or accepting a warm transfer from the TM team. Select a category below to get started.</p>
+  <div class="callout green">
+    <div class="callout-title">😊 Tone & Energy — Every Single Call</div>
+    <p>Your tone is the first thing a prospect reacts to — before your pitch, before your price, before anything else. <strong>Be friendly, be warm, and bring energy to every call.</strong> If you sound flat, rushed, or frustrated, they'll mirror it right back at you and the call is over.<br><br>
+    Prospects will not respond well to an aggressive or negative tone — they stay on the line with people who genuinely sound like they want to help. <strong>Smile before you dial, use their name, and treat every call like it's your first one of the day.</strong></p>
   </div>
 
   <div class="scripts-tab-bar">
@@ -850,14 +842,13 @@
 
   <!-- ── VOICEMAIL PANEL ── -->
   <div id="panel-vm" class="scripts-panel active">
-
-    <div class="callout green" style="margin-bottom:1.5rem;">
-      <div class="callout-title">📋 The Only Goal: Get the Callback</div>
-      <p>When calling internet leads who requested a quote, your voicemail has one job — to earn a callback. Keep it <strong>under 20 seconds</strong>, sound natural, and always remind them that <em>they</em> initiated the request. Bracketed text like <strong>[Agent Name]</strong> should be replaced with your own info before calling.</p>
+    <div class="vm-tip-wrap">
+      <div class="callout green" style="margin-bottom:1.5rem;">
+        <div class="callout-title">📋 The Only Goal: Get the Callback</div>
+        <p>When calling internet leads who requested a quote, your voicemail has one job — to earn a callback. Keep it <strong>under 20 seconds</strong>, sound natural, and always remind them that <em>they</em> initiated the request. Bracketed text like <strong>[Agent Name]</strong> should be replaced with your own info before calling.</p>
+      </div>
     </div>
-
-    <div class="vm-grid" style="grid-template-columns: 1fr; max-width: 620px;">
-
+    <div class="vm-grid">
       <div class="vm-card">
         <div class="vm-card-header gold-header">
           <span class="vm-badge">Voicemail Script</span>
@@ -868,16 +859,12 @@
           <button class="vm-copy-btn" onclick="copyScript('vm-text-1', this)">⎘ Copy Script</button>
         </div>
       </div>
-
     </div>
-
-
-
   </div>
 
   <!-- ── OUTBOUND PANEL ── -->
   <div id="panel-outbound" class="scripts-panel">
-    <div class="vm-grid" style="grid-template-columns: 1fr; max-width: 620px;">
+    <div class="vm-grid">
       <div class="vm-card">
         <div class="vm-card-header green-header">
           <span class="vm-badge">Outbound Script</span>
@@ -897,7 +884,7 @@
 
   <!-- ── INBOUND PANEL ── -->
   <div id="panel-inbound" class="scripts-panel">
-    <div class="vm-grid" style="grid-template-columns: 1fr; max-width: 620px;">
+    <div class="vm-grid">
       <div class="vm-card">
         <div class="vm-card-header">
           <span class="vm-badge">Inbound Script</span>
@@ -916,7 +903,7 @@
 
   <!-- ── TRANSFERS PANEL ── -->
   <div id="panel-transfers" class="scripts-panel">
-    <div class="vm-grid" style="grid-template-columns: 1fr; max-width: 620px;">
+    <div class="vm-grid">
       <div class="vm-card">
         <div class="vm-card-header gold-header">
           <span class="vm-badge">TM Transfer Script</span>

@@ -877,28 +877,60 @@
 
   <!-- ── OUTBOUND PANEL ── -->
   <div id="panel-outbound" class="scripts-panel">
-    <div class="coming-soon-panel">
-      <div class="cs-icon">📤</div>
-      <div class="cs-title">Outbound Call Scripts</div>
-      <div class="cs-sub">Scripts for cold outbound dials and follow-up calls will live here. Content coming soon.</div>
+    <div class="vm-grid" style="grid-template-columns: 1fr; max-width: 620px;">
+      <div class="vm-card">
+        <div class="vm-card-header green-header">
+          <span class="vm-badge">Outbound Script</span>
+          <span class="vm-card-title">Quote Follow-Up Call</span>
+        </div>
+        <div class="vm-card-body">
+          <div class="vm-script-text" id="outbound-text-1">
+            Hi <span class="placeholder">[First Name]</span>, this is <span class="placeholder">[Agent Name]</span> from your local insurance agency — how are you doing today?<br><br>
+            <em style="color:var(--text-dim);">(After they respond)</em><br><br>
+            Great! I'm giving you a call about the <span class="placeholder">[auto/home]</span> quote you requested. I have your address as <span class="placeholder">[123 Main Street]</span> and your date of birth as <span class="placeholder">[01/02/1964]</span> — is that correct?
+          </div>
+          <button class="vm-copy-btn" onclick="copyScript('outbound-text-1', this)">⎘ Copy Script</button>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- ── INBOUND PANEL ── -->
   <div id="panel-inbound" class="scripts-panel">
-    <div class="coming-soon-panel">
-      <div class="cs-icon">📥</div>
-      <div class="cs-title">Inbound Call Scripts</div>
-      <div class="cs-sub">Scripts for handling inbound quote requests and service calls will live here. Content coming soon.</div>
+    <div class="vm-grid" style="grid-template-columns: 1fr; max-width: 620px;">
+      <div class="vm-card">
+        <div class="vm-card-header">
+          <span class="vm-badge">Inbound Script</span>
+          <span class="vm-card-title">Inbound Quote Request</span>
+        </div>
+        <div class="vm-card-body">
+          <div class="vm-script-text" id="inbound-text-1">
+            Hi <span class="placeholder">[First Name]</span>, this is <span class="placeholder">[Agent Name]</span> from your local insurance agency. I'm looking at your request for a <span class="placeholder">[auto/home]</span> quote — and it looks like I have everything I need to get that taken care of for you.<br><br>
+            I have your address as <span class="placeholder">[123 Main Street]</span> and your date of birth as <span class="placeholder">[01/02/1964]</span> — is that correct?
+          </div>
+          <button class="vm-copy-btn" onclick="copyScript('inbound-text-1', this)">⎘ Copy Script</button>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- ── TRANSFERS PANEL ── -->
   <div id="panel-transfers" class="scripts-panel">
-    <div class="coming-soon-panel">
-      <div class="cs-icon">🔄</div>
-      <div class="cs-title">TM Transfer Scripts</div>
-      <div class="cs-sub">Scripts for accepting warm transfers from the telemarketing team will live here. Content coming soon.</div>
+    <div class="vm-grid" style="grid-template-columns: 1fr; max-width: 620px;">
+      <div class="vm-card">
+        <div class="vm-card-header gold-header">
+          <span class="vm-badge">TM Transfer Script</span>
+          <span class="vm-card-title">Warm Transfer from TM Team</span>
+        </div>
+        <div class="vm-card-body">
+          <div class="vm-script-text" id="transfers-text-1">
+            Good morning/afternoon <span class="placeholder">[First Name]</span>! Like she mentioned, my name is <span class="placeholder">[Agent Name]</span> and I'll be the licensed agent assisting you with that quote today.<br><br>
+            I know she already confirmed your information, but I'm going to run through it quickly to make sure I have all of your discounts applied correctly — just let me know if anything looks off.<br><br>
+            I have your address as <span class="placeholder">[123 Main Street]</span> and your date of birth as <span class="placeholder">[01/02/1964]</span> — is that correct?
+          </div>
+          <button class="vm-copy-btn" onclick="copyScript('transfers-text-1', this)">⎘ Copy Script</button>
+        </div>
+      </div>
     </div>
   </div>
 

@@ -531,7 +531,7 @@
     <div class="header-right">
       <div class="header-stat"><div class="header-stat-num">5</div><div class="header-stat-label">Call Steps</div></div>
       <div class="header-divider"></div>
-      <div class="header-stat"><div class="header-stat-num">9</div><div class="header-stat-label">Objection Scripts</div></div>
+      <div class="header-stat"><div class="header-stat-num">17</div><div class="header-stat-label">Objection Scripts</div></div>
       <div class="header-divider"></div>
       <div class="header-stat"><div class="header-stat-num">3</div><div class="header-stat-label">Cross-Sale Plays</div></div>
       <div class="header-divider"></div>
@@ -543,12 +543,13 @@
 <nav>
   <ul class="tab-menu">
     <li><button class="tab-link active" data-tab="coverage"     onclick="showTab('coverage')">🛡️ Coverage</button></li>
-    <li><button class="tab-link"        data-tab="objections"   onclick="showTab('objections')">💬 Objections</button></li>
+    <li><button class="tab-link"        data-tab="rapport"      onclick="showTab('rapport')">💬 Rapport Ideas</button></li>
+    <li><button class="tab-link"        data-tab="objections"   onclick="showTab('objections')">🗣️ Objections</button></li>
     <li><button class="tab-link"        data-tab="crosssale"    onclick="showTab('crosssale')">🔄 Cross Sale</button></li>
     <li><button class="tab-link"        data-tab="resources"    onclick="showTab('resources')">📖 Resources</button></li>
     <li><button class="tab-link"        data-tab="tips"         onclick="showTab('tips')">💡 Tips & Tricks</button></li>
-    <li><button class="tab-link"        data-tab="welcome-text" onclick="showTab('welcome-text')">🤝 Welcome Text</button></li>
     <li><button class="tab-link"        data-tab="callscripts"  onclick="showTab('callscripts')">📞 Call Scripts</button></li>
+    <li><button class="tab-link"        data-tab="welcome-text" onclick="showTab('welcome-text')">🤝 Welcome Text</button></li>
   </ul>
 </nav>
 
@@ -562,6 +563,7 @@
       <div class="callout gold">
         <div class="callout-title">🤝 Rapport Reminder</div>
         <p>Before you get into coverage details, be sure to build some rapport! Find a natural moment to connect—ask about their day, comment on something local, or just chat for a moment. Rapport helps set a positive tone for the entire call.</p>
+        <p style="margin-top:0.6rem;">Need ideas? <button onclick="showTab('rapport')" style="background:none;border:none;padding:0;font-family:inherit;font-size:inherit;font-weight:700;color:var(--gold);cursor:pointer;text-decoration:underline;text-underline-offset:2px;">Check out the Rapport Ideas tab →</button> for a full list of conversation starters.</p>
       </div>
 
       <div class="step-section" id="step-1">
@@ -650,11 +652,11 @@
           <span class="step-chevron">▼</span>
         </div>
         <div class="step-body">
-          <div class="script-block agent"><div class="script-avatar">A</div><div class="script-content"><span class="script-role">Agent</span>The next coverage is Collision. Collision covers your car if you hit something and its your fault. For the lowest rate possible, I recommend a $1,000 deductible however if $1000 is too much for you, we also offer $750 and $500. What would you prefer?</div></div>
-          <div class="script-block agent"><div class="script-avatar">A</div><div class="script-content"><span class="script-role">Agent</span>Next is Comprehensive coverage. This protects your vehicle from things that aren't collision-related—like theft, vandalism, fire, hail, or even if a deer runs into your car. For comprehensive, I recommend a $250 deductible. Comprehensive claims are usually smaller claims and unlike alot of other companies, Allstate wont raise your rate if you file a comprehensive claim.</div></div>
-          <div class="script-block agent"><div class="script-avatar">A</div><div class="script-content"><span class="script-role">Agent</span>Do you have roadside with your current company or do you use a third party like Triple A? (If they have it with their current policy) Great, so I'll add the Roadside for you. The difference between Allstate roadside and all the other insurance company roadside programs is that Allstate keeps the roadside separate from the auto insurance so if you file a roadside claim, it wont go against you as a claim which most other companies will use to raise your rates and we also follow the driver rather than the vehicle meaning no matter what car you're in, you're covered anywhere in the U.S. even if its not your caror a rental car. </div></div>
-          <div class="script-block agent"><div class="script-avatar">A</div><div class="script-content"><span class="script-role">Agent</span>Next up is Rental Car coverage. Do you currently have rental car onyour current policy? (If they do) Ok I'll add it on for you here as well.</div></div>
-          <div class="script-block agent"><div class="script-avatar">A</div><div class="script-content"><span class="script-role">Agent</span>Finally, there's Personal Injury Protection, or PIP which will give you and all of the passengers in the vehicle $2500 each in the event of an accident regardless of who is at fault. PIP is normally the first thing that pays out in an accident and can go towards things like medical bills or lost wages if you're out of work due to the accident. .</div></div>
+          <div class="script-block agent"><div class="script-avatar">A</div><div class="script-content"><span class="script-role">Agent</span>The next important coverage is Collision. Collision covers the damage to your own vehicle if you're in an accident, regardless of who's at fault—so whether you hit another car, a tree, or even a pole, this is the coverage that helps get your car repaired or replaced.<br><br>For collision, I recommend a $1,000 deductible. Here's why: A higher deductible means you'll be responsible for the first $1,000 of any damage, but it also lowers your monthly premium significantly. Most people don't get into accidents very often, so choosing a $1,000 deductible is a smart way to keep your insurance affordable while still protecting you from those big, unexpected repair bills.</div></div>
+          <div class="script-block agent"><div class="script-avatar">A</div><div class="script-content"><span class="script-role">Agent</span>Next is Comprehensive coverage. This protects your vehicle from things that aren't collision-related—like theft, vandalism, fire, hail, or even if a deer runs into your car. For comprehensive, I recommend a $250 deductible. Comprehensive claims are usually less expensive and more common—like if a rock cracks your windshield or a storm causes damage. A lower deductible means you'll pay less out of pocket if something like that happens.</div></div>
+          <div class="script-block agent"><div class="script-avatar">A</div><div class="script-content"><span class="script-role">Agent</span>Do you have roadside with your current company or do you use a third party like Triple A? If you ever have a flat tire, run out of gas, lock your keys in your car, or your battery dies, roadside assistance sends help right to you, 24/7. The biggest difference between Allstate's roadside program and any other insurance company is that Allstate goes off of the drivers rather than the vehicles, meaning no matter what car you're driving, you would have Allstate roadside covering you.</div></div>
+          <div class="script-block agent"><div class="script-avatar">A</div><div class="script-content"><span class="script-role">Agent</span>Next up is Rental Car coverage. If your car is ever in the shop because of a covered claim—like an accident—this coverage helps pay for a rental car so you can keep getting to work, school, or wherever you need to go. It's a great way to avoid being stranded or having to pay out of pocket for a rental while your car is being repaired.</div></div>
+          <div class="script-block agent"><div class="script-avatar">A</div><div class="script-content"><span class="script-role">Agent</span>Finally, there's Personal Injury Protection, or PIP. This coverage helps pay for medical expenses for you and your passengers after an accident, no matter who's at fault. It can also cover things like lost wages and essential services if you're unable to work or take care of yourself after an accident. PIP is really valuable because it kicks in quickly and helps cover those immediate costs when you need it most.</div></div>
         </div>
       </div>
 
@@ -788,6 +790,7 @@
         <li><strong>Revive ghosts:</strong> Go back through old texts from months ago and re-engage cold leads.</li>
         <li><strong>Daily cleanup:</strong> Check your Neglected folder every day for quoted leads.</li>
         <li><strong>Push for the real objection:</strong> Do not stop until the prospect gives the true reason they won't bind.</li>
+        <li><strong>Before hanging up on a non-competitive prospect:</strong> Always check for upcoming factors that could change the price — things like a renewal coming up, a claim that's about to fall off or age out, an upcoming birthday, or a new vehicle. Set a follow-up for when it matters.</li>
       </ul>
     </div>
     <div class="tip-card">
@@ -801,6 +804,125 @@
         <li><strong>DND during calls:</strong> Prevent split recordings by enabling Do Not Disturb.</li>
       </ul>
     </div>
+    <div class="tip-card" style="grid-column: 1 / -1;">
+      <h3>💬 Rapport-Building Questions</h3>
+      <p style="font-size:0.88rem;color:var(--text-dim);margin-bottom:0.85rem;line-height:1.6;">Use these open-ended questions (not insurance-related) to build a real connection. Drop one or two naturally during the call — especially while you're pulling up reports or waiting on a quote.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0;">
+        <ul class="tip-list">
+          <li>How do you like your car?</li>
+          <li>Where did you go to school?</li>
+          <li>What are your plans for this <strong>[upcoming holiday]</strong>?</li>
+          <li>What did you do this <strong>[last holiday]</strong>?</li>
+          <li>What did you do on your birthday that just passed?</li>
+          <li>What are you planning for your wife's upcoming birthday?</li>
+          <li>How long have you lived at that house?</li>
+        </ul>
+        <ul class="tip-list">
+          <li>How often do you take your boat / camping trailer out?</li>
+          <li>What kind of boat is that?</li>
+          <li>How do you like living right next to the <strong>[park/school/store]</strong>?</li>
+          <li>Do you haul anything with your truck?</li>
+          <li>How long have you worked there?</li>
+          <li>What kind of hours do you work?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ RAPPORT IDEAS ══════════ -->
+<section id="rapport" class="tab-content">
+  <div class="page-title"><span>Quick Reference</span>Rapport Ideas</div>
+
+  <div class="callout gold" style="max-width:780px;">
+    <div class="callout-title">💬 How to Use These</div>
+    <p>Drop one or two of these naturally during the call — especially while you're pulling up reports or waiting on a quote to load. The goal isn't to run through a list, it's to find <strong>one real thing to connect on</strong>. Listen for what they mention and follow up on it.</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem;margin-top:1.5rem;">
+
+    <div style="background:var(--white);border:1px solid var(--cream3);border-radius:6px;overflow:hidden;">
+      <div style="background:var(--forest);padding:0.75rem 1.1rem;display:flex;align-items:center;gap:0.6rem;">
+        <span style="font-size:1rem;">🚗</span>
+        <span style="font-family:var(--body);font-size:0.85rem;font-weight:700;color:white;">Their Vehicle</span>
+      </div>
+      <ul class="tip-list" style="padding:0.85rem 1.1rem 1rem;">
+        <li>How do you like your car?</li>
+        <li>Do you haul anything with your truck?</li>
+      </ul>
+    </div>
+
+    <div style="background:var(--white);border:1px solid var(--cream3);border-radius:6px;overflow:hidden;">
+      <div style="background:var(--forest);padding:0.75rem 1.1rem;display:flex;align-items:center;gap:0.6rem;">
+        <span style="font-size:1rem;">🏠</span>
+        <span style="font-family:var(--body);font-size:0.85rem;font-weight:700;color:white;">Their Home & Area</span>
+      </div>
+      <ul class="tip-list" style="padding:0.85rem 1.1rem 1rem;">
+        <li>How long have you lived at that house?</li>
+        <li>How do you like where you live?</li>
+        <li><em style="color:var(--text-dim);">If they haven't lived there long:</em> Were you living in MD previously, or did you move from out of state?</li>
+      </ul>
+    </div>
+
+    <div style="background:var(--white);border:1px solid var(--cream3);border-radius:6px;overflow:hidden;">
+      <div style="background:var(--forest);padding:0.75rem 1.1rem;display:flex;align-items:center;gap:0.6rem;">
+        <span style="font-size:1rem;">🎉</span>
+        <span style="font-family:var(--body);font-size:0.85rem;font-weight:700;color:white;">Holidays & Events</span>
+      </div>
+      <ul class="tip-list" style="padding:0.85rem 1.1rem 1rem;">
+        <li>What are your plans for this <strong>[upcoming holiday]</strong>?</li>
+        <li>What did you do this <strong>[last holiday]</strong>?</li>
+        <li>What did you do on your birthday that just passed?</li>
+        <li>What are you planning for your wife's upcoming birthday?</li>
+      </ul>
+    </div>
+
+    <div style="background:var(--white);border:1px solid var(--cream3);border-radius:6px;overflow:hidden;">
+      <div style="background:var(--forest);padding:0.75rem 1.1rem;display:flex;align-items:center;gap:0.6rem;">
+        <span style="font-size:1rem;">👨‍👩‍👧‍👦</span>
+        <span style="font-family:var(--body);font-size:0.85rem;font-weight:700;color:white;">Kids & Family</span>
+      </div>
+      <ul class="tip-list" style="padding:0.85rem 1.1rem 1rem;">
+        <li><em style="color:var(--text-dim);">If they mention kids:</em> How many kids do you have? How old are they?</li>
+        <li>Are they in school yet, or still little?</li>
+        <li>Are they into any sports or activities?</li>
+        <li>Do you have any family close by?</li>
+        <li>Are you guys planning any family trips coming up?</li>
+      </ul>
+    </div>
+
+    <div style="background:var(--white);border:1px solid var(--cream3);border-radius:6px;overflow:hidden;">
+      <div style="background:var(--forest);padding:0.75rem 1.1rem;display:flex;align-items:center;gap:0.6rem;">
+        <span style="font-size:1rem;">💼</span>
+        <span style="font-family:var(--body);font-size:0.85rem;font-weight:700;color:white;">Work & Background</span>
+      </div>
+      <ul class="tip-list" style="padding:0.85rem 1.1rem 1rem;">
+        <li>How long have you worked there?</li>
+        <li>What kind of hours do you work?</li>
+        <li>Where did you go to school?</li>
+        <li>Do you work from home or commute?</li>
+      </ul>
+    </div>
+
+    <div style="background:var(--white);border:1px solid var(--cream3);border-radius:6px;overflow:hidden;">
+      <div style="background:var(--forest);padding:0.75rem 1.1rem;display:flex;align-items:center;gap:0.6rem;">
+        <span style="font-size:1rem;">🐾</span>
+        <span style="font-family:var(--body);font-size:0.85rem;font-weight:700;color:white;">Pets & Hobbies</span>
+      </div>
+      <ul class="tip-list" style="padding:0.85rem 1.1rem 1rem;">
+        <li>Do you have any pets?</li>
+        <li><em style="color:var(--text-dim);">If yes:</em> What kind? How old? What's their name?</li>
+        <li>What do you like to do on your days off?</li>
+        <li>Are you into any sports — watching or playing?</li>
+        <li>Have you been anywhere fun recently, or have any trips planned?</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="callout green" style="margin-top:1.5rem;max-width:780px;">
+    <div class="callout-title">🎯 The Golden Rule</div>
+    <p>Rapport isn't a checklist — it's a genuine moment of human connection. Ask one question, <strong>actually listen</strong>, and follow up on what they say. That's what separates a good agent from a great one.</p>
   </div>
 </section>
 
@@ -834,10 +956,11 @@
   </div>
 
   <div class="scripts-tab-bar">
-    <button class="scripts-tab-btn active" onclick="showScriptsPanel('vm')"        id="btn-vm">📱 Voicemails</button>
-    <button class="scripts-tab-btn"        onclick="showScriptsPanel('outbound')"  id="btn-outbound">📤 Outbound Calls</button>
-    <button class="scripts-tab-btn"        onclick="showScriptsPanel('inbound')"   id="btn-inbound">📥 Inbound Calls</button>
-    <button class="scripts-tab-btn"        onclick="showScriptsPanel('transfers')" id="btn-transfers">🔄 TM Transfers</button>
+    <button class="scripts-tab-btn active" onclick="showScriptsPanel('vm')"          id="btn-vm">📱 Voicemails</button>
+    <button class="scripts-tab-btn"        onclick="showScriptsPanel('outbound')"    id="btn-outbound">📤 Outbound Calls</button>
+    <button class="scripts-tab-btn"        onclick="showScriptsPanel('inbound')"     id="btn-inbound">📥 Inbound Calls</button>
+    <button class="scripts-tab-btn"        onclick="showScriptsPanel('transfers')"   id="btn-transfers">🔄 TM Transfers</button>
+    <button class="scripts-tab-btn"        onclick="showScriptsPanel('objections2')" id="btn-objections2">🚧 Outbound Objections</button>
   </div>
 
   <!-- ── VOICEMAIL PANEL ── -->
@@ -919,6 +1042,65 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- ── OUTBOUND OBJECTIONS PANEL ── -->
+  <div id="panel-objections2" class="scripts-panel">
+    <div class="vm-tip-wrap">
+      <div class="callout gold" style="margin-bottom:1.5rem;">
+        <div class="callout-title">🔁 The Pattern That Always Works</div>
+        <p>Every response follows the same structure: <strong>Acknowledge/Agree → pivot back into the script with a question.</strong> Never argue, never push — just validate and redirect. Keep them talking and the quote moving forward.</p>
+      </div>
+    </div>
+
+    <div class="objection-dropdown"><button class="objection-toggle">"I'm really busy, don't have time to talk..." <span class="chevron">▾</span></button><div class="objection-response-dropdown"><strong>Acknowledge/Agree:</strong> Oh, I'm sorry to have caught you at a bad time. When is a better time to call you back — later this afternoon or tomorrow morning?<br><br>Perfect, I have you set for <span style="color:var(--gold);font-weight:600;">[Scheduled Time]</span>.<br><br>Really quick, before I let you go, I just wanted to confirm... <em>(Get back into the script and ask a question)</em></div></div>
+
+    <div class="objection-dropdown"><button class="objection-toggle">"Can you just email me the quote?" <span class="chevron">▾</span></button><div class="objection-response-dropdown"><strong>Acknowledge/Agree:</strong> I'd be happy to do that. Is your email address <span style="color:var(--gold);font-weight:600;">[Email Address]</span>?<br><br>To make sure I'm sending you the most accurate quote, I wanted to confirm... <em>(Get back into the script and ask a question)</em></div></div>
+
+    <div class="objection-dropdown"><button class="objection-toggle">"Who's this? Why are you calling me?" <span class="chevron">▾</span></button><div class="objection-response-dropdown">
+      <strong>Option 1 — Old Lead:</strong><br>
+      This is <span style="color:var(--gold);font-weight:600;">[Your Name]</span> from <span style="color:var(--gold);font-weight:600;">[Your Company]</span>. We gave you a quote a while back, and since our rates have recently changed, I wanted to email you the updated quote we have in the system. Is your email address <span style="color:var(--gold);font-weight:600;">[Email]</span>? And your home address is <span style="color:var(--gold);font-weight:600;">[Address]</span>, is that right? <em>(Get back into the script)</em><br><br>
+      <strong>Option 2 — New Internet Lead (Auto):</strong><br>
+      This is <span style="color:var(--gold);font-weight:600;">[Your Name]</span> from <span style="color:var(--gold);font-weight:600;">[Your Company]</span>. I see that you requested a car insurance quote for your <span style="color:var(--gold);font-weight:600;">[Make/Model]</span>. Is that the only car you need a quote for, or do you have other cars as well? <em>(Get back into the script)</em><br><br>
+      <strong>Option 2 — New Internet Lead (Home):</strong><br>
+      This is <span style="color:var(--gold);font-weight:600;">[Your Name]</span> from <span style="color:var(--gold);font-weight:600;">[Your Company]</span>. I see that you requested an insurance quote for your home on <span style="color:var(--gold);font-weight:600;">[Street Address]</span>. Do you live in that home, or are you in the process of buying it? <em>(Get back into the script)</em>
+    </div></div>
+
+    <div class="objection-dropdown"><button class="objection-toggle">"I didn't request a quote..." <span class="chevron">▾</span></button><div class="objection-response-dropdown">
+      <strong>Option 1 — Old Lead:</strong><br>
+      That's right, you didn't. I wanted to give you a call because we gave you a quote a while back, and since our rates have recently changed, I wanted to email you the updated quote we have in the system. Is your email <span style="color:var(--gold);font-weight:600;">[Email]</span>? And your address is <span style="color:var(--gold);font-weight:600;">[Address]</span>, is that right? <em>(Get back into the script)</em><br><br>
+      <strong>Option 2 — New Internet Lead:</strong><br>
+      Oh, I'm sorry — it could be that someone requested a quote under your name. Have you gotten other calls from other insurance companies? I can take you off our list, but I will warn you that you'll probably get calls from other companies.<br><br>
+      Since I have you on the line and a quote started, I can share how much it would cost to insure your <span style="color:var(--gold);font-weight:600;">[Car/Home]</span> with us. Do you drive the <span style="color:var(--gold);font-weight:600;">[Make/Model]</span>? Do you live at <span style="color:var(--gold);font-weight:600;">[Address]</span>? <em>(Get back into the script)</em>
+    </div></div>
+
+    <div class="objection-dropdown"><button class="objection-toggle">"I never worked with you..." <span class="chevron">▾</span></button><div class="objection-response-dropdown"><strong>Acknowledge/Agree:</strong> That's right! You and I have never talked before, but we gave you a quote a while back. Since our rates have recently changed, I wanted to email you the updated quote we have on file. Is your email address <span style="color:var(--gold);font-weight:600;">[Email]</span>? And your home address is <span style="color:var(--gold);font-weight:600;">[Address]</span>, is that right? <em>(Get back into the script)</em></div></div>
+
+    <div class="objection-dropdown"><button class="objection-toggle">"I'm not interested..." <span class="chevron">▾</span></button><div class="objection-response-dropdown"><strong>Acknowledge/Agree:</strong> I totally get it. Getting a quote can take forever when you have to answer a lot of questions from scratch. The good news is I have most of your information here and can share the price in just a moment — but first I want to see if I can apply any additional discounts the system may have missed. It looks like... <em>(Get back into the script)</em></div></div>
+
+    <div class="objection-dropdown"><button class="objection-toggle">"I already have insurance..." <span class="chevron">▾</span></button><div class="objection-response-dropdown"><strong>Acknowledge/Agree:</strong> That's right, you do! It looks like you're insured with <span style="color:var(--gold);font-weight:600;">[Current Insurer]</span>, is that right?<br><br>Well, since I have you on the phone and a quote started, I can share how much it would cost with our agency. If you like our price and coverage, we can help you switch — it's very easy and we handle it for you. It looks like... <em>(Get back into the script)</em></div></div>
+
+    <div class="objection-dropdown"><button class="objection-toggle">"I just renewed my policy..." / "I just paid for my insurance..." <span class="chevron">▾</span></button><div class="objection-response-dropdown"><strong>Acknowledge/Agree:</strong> Ah, got it. Did you pay in full or do you pay monthly?<br><br>Well, since I have your quote started, I can share how much it would cost with our agency. If you like our price, we can help you switch over — and <span style="color:var(--gold);font-weight:600;">[New Carrier]</span> will send you a refund for what you prepaid in advance. It's very easy, and I'll help you with that. It looks like... <em>(Get back into the script)</em></div></div>
+
+    <div class="objection-dropdown"><button class="objection-toggle">"I just signed up with a different company..." <span class="chevron">▾</span></button><div class="objection-response-dropdown"><strong>Acknowledge/Agree:</strong> Ah, got it. Who did you end up signing up with? How much are they going to charge you per month?<br><br>[Repeat price] Really? Wow, that's interesting — did that recently go up?<br><br>Well since I have your quote started, I can share what our agency would charge. If you like our price, we can switch you over and <span style="color:var(--gold);font-weight:600;">[New Carrier]</span> will refund the unearned premium. It's very easy, and I'll help. It looks like... <em>(Get back into the script)</em></div></div>
+
+    <div class="objection-dropdown"><button class="objection-toggle">"How do you have my information?" <span class="chevron">▾</span></button><div class="objection-response-dropdown">
+      <strong>First response:</strong><br>
+      That's a great question! We gave you a quote a while back, and since our rates have recently changed, I wanted to email you the updated quote we have on file. Is your email <span style="color:var(--gold);font-weight:600;">[Email]</span>? And your address is <span style="color:var(--gold);font-weight:600;">[Address]</span>? <em>(Get back into the script)</em><br><br>
+      <strong>If they want more clarity:</strong><br>
+      Licensed insurance agents are able to see what company you're insured with and the coverage you have. That's how I'm able to see your current policy information. <em>(Get back into the script)</em>
+    </div></div>
+
+    <div class="objection-dropdown"><button class="objection-toggle">"My spouse takes care of the bill..." <span class="chevron">▾</span></button><div class="objection-response-dropdown"><strong>Acknowledge/Agree:</strong> Oh, that's great — I'm sure it makes things easier for you! Well, I'm looking at the quote started for you, and I'll share the price so you can pass it along to <span style="color:var(--gold);font-weight:600;">[Spouse's Name]</span>. But first I want to see if I can apply any additional discounts the system may have missed. It looks like... <em>(Get back into the script)</em></div></div>
+
+    <div class="objection-dropdown"><button class="objection-toggle">"I've had a bad experience with your company..." <span class="chevron">▾</span></button><div class="objection-response-dropdown"><strong>Acknowledge/Agree:</strong> Oh, I'm so sorry to hear that! What happened?<br><br><em>(Politely intervene)</em><br><br>I'm so sorry — I know I wouldn't be happy if that happened to me. I want you to know that I'm calling from a completely different <span style="color:var(--gold);font-weight:600;">[Your Company]</span> office, and we do things very differently here. I can assure you your experience with us will never be anything short of amazing. That I can promise you. <em>(Get back into the script)</em></div></div>
+
+    <div class="objection-dropdown"><button class="objection-toggle">"Give me your price first..." <span class="chevron">▾</span></button><div class="objection-response-dropdown"><strong>Acknowledge/Agree:</strong> I'd be happy to do that! I'll share the price with you in just a moment, but first I want to see if I can apply any additional discounts the system may have missed. It looks like... <em>(Get back into the script)</em></div></div>
+
+    <div class="objection-dropdown"><button class="objection-toggle">"No one can beat my rate..." <span class="chevron">▾</span></button><div class="objection-response-dropdown"><strong>Acknowledge/Agree:</strong> That's great — you must have shopped around! How much is <span style="color:var(--gold);font-weight:600;">[Current Insurer]</span> charging you per month?<br><br>[Repeat price] Really? Wow, that is interesting. Did that recently go up?<br><br>Well I'm working on your quote right now. Before I share our final price, I want to confirm a few details to make sure you get the best price possible. It looks like... <em>(Get back into the script)</em></div></div>
+
+    <div class="objection-dropdown"><button class="objection-toggle">"You called the wrong number..." <span class="chevron">▾</span></button><div class="objection-response-dropdown"><strong>Acknowledge/Agree:</strong> Do you know who <span style="color:var(--gold);font-weight:600;">[Prospect's Name]</span> is? Does he/she live in your household?<br><br>• <strong>If YES:</strong> May I speak to him/her?<br>• <strong>If NO:</strong> Oh got it — it looks like they may have entered a wrong number by mistake. I'm sorry about that. I didn't catch your name — what is your name?</div></div>
+
   </div>
 
 </section>

@@ -500,6 +500,94 @@
       margin-right: auto;
     }
 
+    /* ── TEXT TEMPLATE CARDS ── */
+    .txt-card {
+      background: var(--white);
+      border: 1px solid var(--cream3);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .txt-card:hover { box-shadow: 0 8px 28px rgba(13,43,30,0.1); transform: translateY(-2px); }
+
+    .txt-card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 1.2rem;
+      background: var(--forest);
+      border-bottom: 3px solid var(--gold);
+    }
+    .txt-card-label {
+      font-family: var(--body);
+      font-size: 0.88rem; font-weight: 700;
+      color: white; letter-spacing: 0.01em;
+    }
+    .txt-card-tag {
+      font-size: 0.6rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold-lt);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 0.2rem 0.55rem; border-radius: 2px;
+    }
+
+    .txt-card-body {
+      padding: 1.3rem 1.4rem 1.4rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .txt-msg {
+      font-size: 0.93rem;
+      color: var(--text-mid);
+      line-height: 1.85;
+      background: var(--cream);
+      border: 1px solid var(--cream3);
+      border-left: 3px solid var(--sage);
+      border-radius: 0 6px 6px 0;
+      padding: 1rem 1.15rem;
+      flex: 1;
+    }
+
+    .txt-copy-btn {
+      width: 100%; padding: 0.6rem;
+      background: transparent;
+      border: 1px solid var(--cream3);
+      border-radius: 4px;
+      font-family: var(--body); font-size: 0.78rem; font-weight: 600;
+      color: var(--text-dim); cursor: pointer;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      transition: all 0.18s;
+      display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+    }
+    .txt-copy-btn:hover { background: var(--forest); border-color: var(--forest); color: var(--gold-lt); }
+    .txt-copy-btn.copied { background: var(--sage); border-color: var(--sage); color: white; }
+
+    .txt-empty-state {
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 4rem 2rem;
+      background: var(--white);
+      border: 2px dashed var(--cream3);
+      border-radius: 8px;
+      text-align: center; gap: 0.6rem;
+    }
+    .txt-empty-icon { font-size: 2.2rem; opacity: 0.3; }
+    .txt-empty-title {
+      font-family: var(--display);
+      font-size: 1.05rem; font-weight: 700; font-style: italic;
+      color: var(--forest);
+    }
+    .txt-empty-sub {
+      font-size: 0.88rem; color: var(--text-dim);
+      max-width: 340px; line-height: 1.6;
+    }
+
     ::-webkit-scrollbar { width: 5px; height: 5px; }
     ::-webkit-scrollbar-track { background: var(--cream2); }
     ::-webkit-scrollbar-thumb { background: var(--sage-lt); border-radius: 3px; }
@@ -549,7 +637,7 @@
     <li><button class="tab-link"        data-tab="resources"    onclick="showTab('resources')">📖 Resources</button></li>
     <li><button class="tab-link"        data-tab="tips"         onclick="showTab('tips')">💡 Tips & Tricks</button></li>
     <li><button class="tab-link"        data-tab="callscripts"  onclick="showTab('callscripts')">📞 Call Scripts</button></li>
-    <li><button class="tab-link"        data-tab="welcome-text" onclick="showTab('welcome-text')">🤝 Welcome Text</button></li>
+    <li><button class="tab-link"        data-tab="welcome-text" onclick="showTab('welcome-text')">💬 Text Templates</button></li>
   </ul>
 </nav>
 
@@ -804,6 +892,29 @@
         <li><strong>DND during calls:</strong> Prevent split recordings by enabling Do Not Disturb.</li>
       </ul>
     </div>
+    <div class="tip-card" style="grid-column: 1 / -1;">
+      <h3>💬 Rapport-Building Questions</h3>
+      <p style="font-size:0.88rem;color:var(--text-dim);margin-bottom:0.85rem;line-height:1.6;">Use these open-ended questions (not insurance-related) to build a real connection. Drop one or two naturally during the call — especially while you're pulling up reports or waiting on a quote.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0;">
+        <ul class="tip-list">
+          <li>How do you like your car?</li>
+          <li>Where did you go to school?</li>
+          <li>What are your plans for this <strong>[upcoming holiday]</strong>?</li>
+          <li>What did you do this <strong>[last holiday]</strong>?</li>
+          <li>What did you do on your birthday that just passed?</li>
+          <li>What are you planning for your wife's upcoming birthday?</li>
+          <li>How long have you lived at that house?</li>
+        </ul>
+        <ul class="tip-list">
+          <li>How often do you take your boat / camping trailer out?</li>
+          <li>What kind of boat is that?</li>
+          <li>How do you like living right next to the <strong>[park/school/store]</strong>?</li>
+          <li>Do you haul anything with your truck?</li>
+          <li>How long have you worked there?</li>
+          <li>What kind of hours do you work?</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -903,23 +1014,125 @@
   </div>
 </section>
 
-<!-- ══════════ WELCOME TEXT ══════════ -->
+<!-- ══════════ TEXT TEMPLATES ══════════ -->
 <section id="welcome-text" class="tab-content">
-  <div class="page-title"><span>Module 06</span>Welcome Text</div>
-  <p>For customer service, please call (410) 665-3602</p>
-  <p>Please be on the look out for an email / text, asking you to log in/download the app to sign off on these policies, be sure to enroll in Ebill/Epolicy.</p>
-  <h3>Auto</h3>
-  <p>Your policy number is "____". Each month going forward we have your payment set to come out of your bank. You can make changes at any time on the Allstate app or on Allstate.com.</p>
-  <p>Be sure to set up Drivewise. Drivewise is a wonderful discount which you get 10% discount now and at renewal anywhere from 10%-15% so please take advantage.</p>
-  <p><strong>ALL DRIVERS ON POLICY NEED TO PARTICIPATE TO BE ELIGIBLE TO EARN MAX DISCOUNT.</strong></p>
-  <p>Please send me a copy of registration — as car needs to be owned/co-owned.</p>
-  <p>Be sure to take advantage of our referral program! For every person you refer to me to get a quote, as long as they qualify for Allstate, you will receive a $20 Amazon gift card per person I quote regardless of if they purchase a policy or not!</p>
-  <h3>Renters</h3>
-  <p>Your policy number is "____" and each month moving forward we have your payment set up to come from your bank on the "date".</p>
-  <h3>Escrow Home</h3>
-  <p>Your policy number is "___". We are going to be sending the invoice to your mortgage company for them to pay. An inspector may come to make sure we are insuring your house properly, as well as to check on any liabilities that may need to be fixed.</p>
-  <h3>Self-Pay Home</h3>
-  <p>Your policy number is "___". An inspector may come to make sure we are insuring your house properly, as well as to check on any liabilities that may need to be fixed.</p>
+  <div class="page-title"><span>Module 06</span>Text Templates</div>
+
+  <div class="scripts-tab-bar">
+    <button class="scripts-tab-btn active" onclick="showTextPanel('welcome')"      id="tbtn-welcome">🤝 Welcome Text</button>
+    <button class="scripts-tab-btn"        onclick="showTextPanel('outbound-sms')" id="tbtn-outbound-sms">📤 Initial Outbound</button>
+    <button class="scripts-tab-btn"        onclick="showTextPanel('quote-follow')" id="tbtn-quote-follow">📋 Quote Follow-Up</button>
+    <button class="scripts-tab-btn"        onclick="showTextPanel('lead-follow')"  id="tbtn-lead-follow">🔁 Lead Follow-Up</button>
+    <button class="scripts-tab-btn"        onclick="showTextPanel('ghost')"        id="tbtn-ghost">👻 Ghost Texts</button>
+  </div>
+
+  <!-- ── WELCOME TEXT PANEL ── -->
+  <div id="tpanel-welcome" class="scripts-panel active">
+    <div class="callout green" style="margin-bottom:1.8rem;">
+      <div class="callout-title">📋 After the Sale</div>
+      <p>Send the relevant template immediately after binding the policy. Fill in all policy numbers and payment dates before sending.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(440px,1fr));gap:1.2rem;">
+
+      <div class="txt-card">
+        <div class="txt-card-head">
+          <div class="txt-card-label">Auto Policy</div>
+          <div class="txt-card-tag">Welcome Text</div>
+        </div>
+        <div class="txt-card-body">
+          <div class="txt-msg" id="wt-auto">For customer service, please call (410) 665-3602<br><br>Please be on the lookout for an email / text asking you to log in / download the app to sign off on these policies — be sure to enroll in Ebill/Epolicy.<br><br>Your policy number is "<span class="placeholder">[Policy #]</span>". Each month going forward we have your payment set to come out of your bank. You can make changes at any time on the Allstate app or on Allstate.com.<br><br>Be sure to set up Drivewise. Drivewise is a wonderful discount — you get 10% off now and at renewal anywhere from 10%–15%, so please take advantage. ALL DRIVERS ON POLICY NEED TO PARTICIPATE TO BE ELIGIBLE TO EARN MAX DISCOUNT.<br><br>Please send me a copy of registration — the car needs to be owned/co-owned.<br><br>Be sure to take advantage of our referral program! For every person you refer to get a quote, you will receive a $20 Amazon gift card — regardless of whether they purchase a policy!</div>
+          <button class="txt-copy-btn" onclick="copyScript('wt-auto', this)">⎘ Copy Text</button>
+        </div>
+      </div>
+
+      <div class="txt-card">
+        <div class="txt-card-head">
+          <div class="txt-card-label">Renters Policy</div>
+          <div class="txt-card-tag">Welcome Text</div>
+        </div>
+        <div class="txt-card-body">
+          <div class="txt-msg" id="wt-renters">For customer service, please call (410) 665-3602<br><br>Please be on the lookout for an email / text asking you to log in / download the app to sign off on these policies — be sure to enroll in Ebill/Epolicy.<br><br>Your policy number is "<span class="placeholder">[Policy #]</span>" and each month moving forward we have your payment set up to come from your bank on the <span class="placeholder">[date]</span>.</div>
+          <button class="txt-copy-btn" onclick="copyScript('wt-renters', this)">⎘ Copy Text</button>
+        </div>
+      </div>
+
+      <div class="txt-card">
+        <div class="txt-card-head">
+          <div class="txt-card-label">Escrow Home Policy</div>
+          <div class="txt-card-tag">Welcome Text</div>
+        </div>
+        <div class="txt-card-body">
+          <div class="txt-msg" id="wt-escrow">For customer service, please call (410) 665-3602<br><br>Please be on the lookout for an email / text asking you to log in / download the app to sign off on these policies — be sure to enroll in Ebill/Epolicy.<br><br>Your policy number is "<span class="placeholder">[Policy #]</span>". We are going to be sending the invoice to your mortgage company for them to pay. An inspector may come to make sure we are insuring your house properly, as well as to check on any liabilities that may need to be fixed.</div>
+          <button class="txt-copy-btn" onclick="copyScript('wt-escrow', this)">⎘ Copy Text</button>
+        </div>
+      </div>
+
+      <div class="txt-card">
+        <div class="txt-card-head">
+          <div class="txt-card-label">Self-Pay Home Policy</div>
+          <div class="txt-card-tag">Welcome Text</div>
+        </div>
+        <div class="txt-card-body">
+          <div class="txt-msg" id="wt-selfpay">For customer service, please call (410) 665-3602<br><br>Please be on the lookout for an email / text asking you to log in / download the app to sign off on these policies — be sure to enroll in Ebill/Epolicy.<br><br>Your policy number is "<span class="placeholder">[Policy #]</span>". An inspector may come to make sure we are insuring your house properly, as well as to check on any liabilities that may need to be fixed.</div>
+          <button class="txt-copy-btn" onclick="copyScript('wt-selfpay', this)">⎘ Copy Text</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── INITIAL OUTBOUND TEXT PANEL ── -->
+  <div id="tpanel-outbound-sms" class="scripts-panel">
+    <div class="callout gold" style="margin-bottom:1.8rem;">
+      <div class="callout-title">📤 First Touch</div>
+      <p>Send these when reaching out to a lead for the first time. Keep it short, friendly, and low-pressure — the goal is just to get a response.</p>
+    </div>
+    <div class="txt-empty-state">
+      <div class="txt-empty-icon">📤</div>
+      <div class="txt-empty-title">Coming Soon</div>
+      <div class="txt-empty-sub">Paste your initial outbound text templates here when you're ready.</div>
+    </div>
+  </div>
+
+  <!-- ── QUOTE FOLLOW-UP TEXT PANEL ── -->
+  <div id="tpanel-quote-follow" class="scripts-panel">
+    <div class="callout gold" style="margin-bottom:1.8rem;">
+      <div class="callout-title">📋 After Sending a Quote</div>
+      <p>Use these after you've already sent a quote and are following up to get a response.</p>
+    </div>
+    <div class="txt-empty-state">
+      <div class="txt-empty-icon">📋</div>
+      <div class="txt-empty-title">Coming Soon</div>
+      <div class="txt-empty-sub">Paste your quote follow-up text templates here when you're ready.</div>
+    </div>
+  </div>
+
+  <!-- ── LEAD FOLLOW-UP TEXT PANEL ── -->
+  <div id="tpanel-lead-follow" class="scripts-panel">
+    <div class="callout gold" style="margin-bottom:1.8rem;">
+      <div class="callout-title">🔁 Keeping Leads Warm</div>
+      <p>Use these to stay top of mind with leads who expressed interest but haven't moved forward yet.</p>
+    </div>
+    <div class="txt-empty-state">
+      <div class="txt-empty-icon">🔁</div>
+      <div class="txt-empty-title">Coming Soon</div>
+      <div class="txt-empty-sub">Paste your lead follow-up text templates here when you're ready.</div>
+    </div>
+  </div>
+
+  <!-- ── GHOST TEXTS PANEL ── -->
+  <div id="tpanel-ghost" class="scripts-panel">
+    <div class="callout gold" style="margin-bottom:1.8rem;">
+      <div class="callout-title">👻 Re-Engaging Cold Leads</div>
+      <p>Use these when someone has gone completely silent. The goal is one simple response — any response — to restart the conversation.</p>
+    </div>
+    <div class="txt-empty-state">
+      <div class="txt-empty-icon">👻</div>
+      <div class="txt-empty-title">Coming Soon</div>
+      <div class="txt-empty-sub">Paste your ghost text templates here when you're ready.</div>
+    </div>
+  </div>
+
 </section>
 
 <!-- ══════════ CALL SCRIPTS ══════════ -->
@@ -1106,6 +1319,16 @@
       if (btn)   btn.classList.add('active');
     }
     window.showScriptsPanel = showScriptsPanel;
+
+    function showTextPanel(panelId) {
+      document.querySelectorAll('#welcome-text .scripts-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('#welcome-text .scripts-tab-btn').forEach(b => b.classList.remove('active'));
+      const panel = document.getElementById('tpanel-' + panelId);
+      const btn   = document.getElementById('tbtn-' + panelId);
+      if (panel) panel.classList.add('active');
+      if (btn)   btn.classList.add('active');
+    }
+    window.showTextPanel = showTextPanel;
 
     function copyScript(elementId, btn) {
       const el = document.getElementById(elementId);

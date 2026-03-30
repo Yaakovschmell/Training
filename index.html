@@ -273,6 +273,7 @@
     .script-block.warning  { border-left-color: var(--gold); background: #fdf6ec; border-color: #e8d4a8; }
     .script-block.success  { border-left-color: var(--sage); background: #f0f6f2; border-color: var(--sage-lt); }
     .script-block.sky-alt  { border-left-color: var(--forest3); background: #f0f5f2; border-color: #b8d0c0; }
+    .script-block.pause    { border-left-color: var(--sage); background: #f0f6f2; border-color: var(--sage-lt); }
 
     .script-avatar {
       width: 34px; height: 34px; border-radius: 50%;
@@ -284,6 +285,7 @@
     .warning  .script-avatar { background: var(--gold); color: var(--forest); }
     .success  .script-avatar { background: var(--sage); color: white; }
     .sky-alt  .script-avatar { background: var(--forest3); color: var(--sage-lt); }
+    .pause    .script-avatar { background: var(--sage); color: white; }
 
     .script-role {
       font-size: 0.6rem; font-weight: 700;
@@ -295,6 +297,7 @@
     .warning  .script-role { color: var(--gold); }
     .success  .script-role { color: var(--sage); }
     .sky-alt  .script-role { color: var(--text-dim); }
+    .pause    .script-role { color: var(--sage); }
 
     .script-content { flex: 1; font-size: 0.93rem; color: var(--text-mid); line-height: 1.75; }
     .script-content strong { color: var(--text-dark); font-weight: 600; }
@@ -426,7 +429,6 @@
     .scripts-panel { display: none; animation: fadeUp 0.25s ease; }
     .scripts-panel.active { display: block; }
 
-    /* Script cards: wider, centered */
     .vm-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -493,7 +495,6 @@
     .vm-copy-btn:hover { background: var(--forest); border-color: var(--forest); color: var(--gold-lt); }
     .vm-copy-btn.copied { background: var(--sage); border-color: var(--sage); color: white; }
 
-    /* Callback tip callout centered to match card width */
     .vm-tip-wrap {
       max-width: 800px;
       margin-left: auto;
@@ -712,6 +713,18 @@
         <div class="step-body">
           <div class="script-block agent"><div class="script-avatar">A</div><div class="script-content"><span class="script-role">Agent</span>The first coverage is bodily injury liability. This covers how much your insurance will pay for the other person's medical bills if you get into an accident and are found at fault. Right now, you have 30/60, so I'm going to match that coverage the same way.</div></div>
           <div class="script-block agent"><div class="script-avatar">A</div><div class="script-content"><span class="script-role">Agent</span>The same would apply to your uninsured motorist coverage. This is what protects you and your passengers if you're ever in an accident and the person who hits you either doesn't have any insurance, doesn't have enough insurance, or if it's a hit-and-run situation. If you or someone in your vehicle is injured, your policy would step in and pay for your medical bills—again, up to the same limits you have for bodily injury: 30/60.</div></div>
+
+          <!-- ── PAUSE & CHECK IN ── -->
+          <div class="script-block pause">
+            <div class="script-avatar">⏸</div>
+            <div class="script-content">
+              <span class="script-role">Agent — Pause &amp; Check In</span>
+              Does that make sense so far? Any questions before I keep going?
+              <br><br>
+              <em>Wait for their response. Let them ask questions or confirm before moving on — don't rush this moment.</em>
+            </div>
+          </div>
+
           <div class="step-title gold-step" style="margin-top:4px;border-radius:0;" onclick="toggleStep(this)">
             <div class="step-num-lg">⚠️</div>
             <div class="step-title-text" style="color:var(--forest);">Property Damage Liability — Most Important Coverage</div>

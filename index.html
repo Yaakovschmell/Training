@@ -135,7 +135,7 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    #coverage .page-container { display: flex; gap: 2rem; align-items: flex-start; }
+    #coverage .page-container, #bulletscript .page-container { display: flex; gap: 2rem; align-items: flex-start; }
     .main-content { flex: 1 1 0; min-width: 0; }
 
     .page-title {
@@ -594,7 +594,7 @@
     ::-webkit-scrollbar-thumb { background: var(--sage-lt); border-radius: 3px; }
 
     @media (max-width: 960px) {
-      #coverage .page-container { flex-direction: column; }
+      #coverage .page-container, #bulletscript .page-container { flex-direction: column; }
       .sticky-sidebar { position: static; width: 100%; }
       .tips-grid { grid-template-columns: 1fr; }
       .header-left { min-width: 200px; }
@@ -632,6 +632,7 @@
 <nav>
   <ul class="tab-menu">
     <li><button class="tab-link active" data-tab="coverage"     onclick="showTab('coverage')">🛡️ Coverage</button></li>
+    <li><button class="tab-link"        data-tab="bulletscript" onclick="showTab('bulletscript')">📋 Bullet Point Script</button></li>
     <li><button class="tab-link"        data-tab="rapport"      onclick="showTab('rapport')">💬 Rapport Ideas</button></li>
     <li><button class="tab-link"        data-tab="objections"   onclick="showTab('objections')">🗣️ Objections</button></li>
     <li><button class="tab-link"        data-tab="crosssale"    onclick="showTab('crosssale')">🔄 Cross Sale</button></li>
@@ -714,7 +715,6 @@
           <div class="script-block agent"><div class="script-avatar">A</div><div class="script-content"><span class="script-role">Agent</span>The first coverage is bodily injury liability. This covers how much your insurance will pay for the other person's medical bills if you get into an accident and are found at fault. Right now, you have 30/60, so I'm going to match that coverage the same way.</div></div>
           <div class="script-block agent"><div class="script-avatar">A</div><div class="script-content"><span class="script-role">Agent</span>The same would apply to your uninsured motorist coverage. This is what protects you and your passengers if you're ever in an accident and the person who hits you either doesn't have any insurance, doesn't have enough insurance, or if it's a hit-and-run situation. If you or someone in your vehicle is injured, your policy would step in and pay for your medical bills—again, up to the same limits you have for bodily injury: 30/60.</div></div>
 
-          <!-- ── PAUSE & CHECK IN ── -->
           <div class="script-block pause">
             <div class="script-avatar">⏸</div>
             <div class="script-content">
@@ -759,7 +759,6 @@
           <div class="script-block agent"><div class="script-avatar">A</div><div class="script-content"><span class="script-role">Agent</span>Next up is Rental Car coverage. If your car is ever in the shop because of a covered claim—like an accident—this coverage helps pay for a rental car so you can keep getting to work, school, or wherever you need to go. It's a great way to avoid being stranded or having to pay out of pocket for a rental while your car is being repaired.</div></div>
           <div class="script-block agent"><div class="script-avatar">A</div><div class="script-content"><span class="script-role">Agent</span>Finally, there's Personal Injury Protection, or PIP. This coverage helps pay for medical expenses for you and your passengers after an accident, no matter who's at fault. It can also cover things like lost wages and essential services if you're unable to work or take care of yourself after an accident. PIP is really valuable because it kicks in quickly and helps cover those immediate costs when you need it most.</div></div>
 
-          <!-- ── ACCIDENT FORGIVENESS ── -->
           <div class="step-title gold-step" style="margin-top:4px;border-radius:0;" onclick="toggleStep(this)">
             <div class="step-num-lg">🛡️</div>
             <div class="step-title-text" style="color:var(--forest);">Accident Forgiveness</div>
@@ -814,6 +813,233 @@
         <li data-step="step-3" onclick="jumpToStep('step-3')"><span class="step-dot">3</span>Explaining Coverages</li>
         <li data-step="step-4" onclick="jumpToStep('step-4')"><span class="step-dot">4</span>Other Important Coverages</li>
         <li data-step="step-5" onclick="jumpToStep('step-5')"><span class="step-dot">5</span>Experience Recap Close</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<!-- ══════════ BULLET POINT SCRIPT ══════════ -->
+<section id="bulletscript" class="tab-content">
+  <div class="page-container">
+    <div class="main-content">
+      <div class="page-title"><span>Quick Reference</span>Bullet Point Script</div>
+
+      <div class="step-section" id="bs-step-1">
+        <div class="step-title" onclick="toggleStep(this)">
+          <div class="step-num-lg">1</div>
+          <div class="step-title-text">Open & Confirm</div>
+          <span class="step-chevron">▼</span>
+        </div>
+        <div class="step-body">
+          <div class="script-block agent">
+            <div class="script-avatar">A</div>
+            <div class="script-content">
+              <span class="script-role">Bullets</span>
+              <ul style="margin:0.2rem 0 0 1.1rem;padding:0;">
+                <li style="margin-bottom:0.4rem;">Greet by name, introduce yourself — <strong>make it warm, not rushed</strong></li>
+                <li style="margin-bottom:0.4rem;">Small talk: week, family, upcoming plans — build rapport before business</li>
+                <li><strong>Confirm</strong> (don't ask) their info: name, DOB, address, rent/own, marital status, drivers &amp; vehicles</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-section" id="bs-step-2">
+        <div class="step-title" onclick="toggleStep(this)">
+          <div class="step-num-lg">2</div>
+          <div class="step-title-text">Pull Reports & Dig on Current Carrier</div>
+          <span class="step-chevron">▼</span>
+        </div>
+        <div class="step-body">
+          <div class="script-block agent">
+            <div class="script-avatar">A</div>
+            <div class="script-content">
+              <span class="script-role">Bullets</span>
+              <ul style="margin:0.2rem 0 0 1.1rem;padding:0;">
+                <li style="margin-bottom:0.4rem;">"Pulling up your reports — accident/claims history and where you're currently insured."</li>
+                <li style="margin-bottom:0.4rem;">Name their carrier, then ask: <strong>"How's your experience been — rates, service, things like that?"</strong></li>
+                <li>Note every pain point: call center? Rate hikes? No policy reviews? <em>Use it later.</em></li>
+              </ul>
+            </div>
+          </div>
+          <div class="callout blue">
+            <div class="callout-title">🌱 Key Question — Plant the Seed</div>
+            <p><strong>"If you caused a large accident and were found at fault, how much would you expect your insurance to cover?"</strong><br><br>They'll say <strong>all of it.</strong> Remember it — you'll close with it.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-section" id="bs-step-3">
+        <div class="step-title" onclick="toggleStep(this)">
+          <div class="step-num-lg">3</div>
+          <div class="step-title-text">Coverage Walk-Through</div>
+          <span class="step-chevron">▼</span>
+        </div>
+        <div class="step-body">
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:4px;">
+            <div class="script-block agent" style="margin-bottom:0;">
+              <div class="script-avatar">A</div>
+              <div class="script-content">
+                <span class="script-role">Bodily Injury</span>
+                <ul style="margin:0.2rem 0 0 1.1rem;padding:0;">
+                  <li style="margin-bottom:0.3rem;">Pays other person's medical bills if you're at fault</li>
+                  <li>Matching their current limits</li>
+                </ul>
+              </div>
+            </div>
+            <div class="script-block agent" style="margin-bottom:0;">
+              <div class="script-avatar">A</div>
+              <div class="script-content">
+                <span class="script-role">Uninsured Motorist</span>
+                <ul style="margin:0.2rem 0 0 1.1rem;padding:0;">
+                  <li style="margin-bottom:0.3rem;">Covers you if other driver has no/not enough insurance, or hit-and-run</li>
+                  <li>Matching BI limits</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-title gold-step" style="margin-top:4px;border-radius:0;" onclick="toggleStep(this)">
+            <div class="step-num-lg">⚠️</div>
+            <div class="step-title-text" style="color:var(--forest);">Property Damage — The Big Gap</div>
+            <span class="step-chevron" style="color:rgba(13,43,30,0.45);">▼</span>
+          </div>
+          <div class="script-block warning">
+            <div class="script-avatar">A</div>
+            <div class="script-content">
+              <span class="script-role">Property Damage Liability</span>
+              <ul style="margin:0.2rem 0 0 1.1rem;padding:0;">
+                <li style="margin-bottom:0.4rem;">Pays for damage to the <strong>other person's</strong> vehicle/property when you're at fault</li>
+                <li style="margin-bottom:0.4rem;">They're at <strong>$15K state minimum</strong>. A Ford F-150 = ~$60K.</li>
+                <li style="margin-bottom:0.4rem;"><strong>"GEICO hands you $15K. How much are YOU paying out of pocket?" → MAKE THEM SAY $45,000.</strong></li>
+                <li style="margin-bottom:0.4rem;">"How does that sound?" → They say horrible → <strong>Upgrading to $300K.</strong></li>
+                <li>"Did anyone at [carrier] ever walk you through what happens when damage exceeds $15K?"</li>
+              </ul>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:4px;margin-bottom:4px;">
+            <div class="script-block agent" style="margin-bottom:0;">
+              <div class="script-avatar">A</div>
+              <div class="script-content">
+                <span class="script-role">Collision | $1,000 deductible</span>
+                <ul style="margin:0.2rem 0 0 1.1rem;padding:0;">
+                  <li style="margin-bottom:0.3rem;">Fixes YOUR car after accident — any fault</li>
+                  <li>$1K deductible keeps premium down; most people don't crash often</li>
+                </ul>
+              </div>
+            </div>
+            <div class="script-block agent" style="margin-bottom:0;">
+              <div class="script-avatar">A</div>
+              <div class="script-content">
+                <span class="script-role">Comprehensive | $250 deductible</span>
+                <ul style="margin:0.2rem 0 0 1.1rem;padding:0;">
+                  <li style="margin-bottom:0.3rem;">Theft, hail, deer, vandalism, fire</li>
+                  <li>$250 deductible — these claims are more frequent</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:4px;">
+            <div class="script-block agent" style="margin-bottom:0;">
+              <div class="script-avatar">A</div>
+              <div class="script-content">
+                <span class="script-role">Roadside Assistance</span>
+                <ul style="margin:0.2rem 0 0 1.1rem;padding:0;">
+                  <li style="margin-bottom:0.3rem;">Flat, gas, lockout, dead battery — 24/7</li>
+                  <li>Follows the <strong>driver</strong>, not the car</li>
+                </ul>
+              </div>
+            </div>
+            <div class="script-block agent" style="margin-bottom:0;">
+              <div class="script-avatar">A</div>
+              <div class="script-content">
+                <span class="script-role">Rental Car</span>
+                <ul style="margin:0.2rem 0 0 1.1rem;padding:0;">
+                  <li>Covers a rental while your car is repaired after a covered claim</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;">
+            <div class="script-block success" style="margin-bottom:0;">
+              <div class="script-avatar">A</div>
+              <div class="script-content">
+                <span class="script-role">PIP — Personal Injury Protection</span>
+                <ul style="margin:0.2rem 0 0 1.1rem;padding:0;">
+                  <li style="margin-bottom:0.3rem;">YOUR medical bills + lost wages regardless of fault</li>
+                  <li>Kicks in fast when you need it most</li>
+                </ul>
+              </div>
+            </div>
+            <div class="script-block warning" style="margin-bottom:0;">
+              <div class="script-avatar">A</div>
+              <div class="script-content">
+                <span class="script-role">Accident Forgiveness (optional)</span>
+                <ul style="margin:0.2rem 0 0 1.1rem;padding:0;">
+                  <li style="margin-bottom:0.3rem;">Stops double/triple rate hike after at-fault accident</li>
+                  <li>Ask: "Want this added?" — <em>remove later if price is an issue</em></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="step-section" id="bs-step-4">
+        <div class="step-title green-step" onclick="toggleStep(this)">
+          <div class="step-num-lg">4</div>
+          <div class="step-title-text">Value Pitch (while rate calculates)</div>
+          <span class="step-chevron">▼</span>
+        </div>
+        <div class="step-body">
+          <div class="script-block success">
+            <div class="script-avatar">A</div>
+            <div class="script-content">
+              <span class="script-role">Bullets</span>
+              <ul style="margin:0.2rem 0 0 1.1rem;padding:0;">
+                <li style="margin-bottom:0.4rem;"><strong>Local agency</strong> — same people every time. No call center, no hold music.</li>
+                <li style="margin-bottom:0.4rem;">Direct office number, email + personal cell for after-hours questions or emergencies.</li>
+                <li style="margin-bottom:0.4rem;"><strong>No teaser rates</strong> — underwriting already done, your rate is locked in from day one.</li>
+                <li>45 days before renewal, we call you to review your policy and make sure you're getting every discount.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-section" id="bs-step-5">
+        <div class="step-title green-step" onclick="toggleStep(this)">
+          <div class="step-num-lg">5</div>
+          <div class="step-title-text">Close</div>
+          <span class="step-chevron">▼</span>
+        </div>
+        <div class="step-body">
+          <div class="callout gold">
+            <div class="callout-title">🎯 The Close</div>
+            <p style="margin-bottom:0.6rem;">Loop back: <strong>"You said you wanted insurance to cover ALL of it — still true?"</strong></p>
+            <p style="margin-bottom:0.6rem;">Recap the gap: currently covered for $15K → <strong>$45K out of pocket</strong> on that F-150.</p>
+            <p style="margin-bottom:0.6rem;">"For [list <em>only</em> what you added — e.g. accident forgiveness, roadside, rental], it's only <strong>$X/month.</strong>"</p>
+            <p><strong>✓ Who is the vehicle financed through?&nbsp;&nbsp;&nbsp;✓ What card would you like to use for today's payment?</strong></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <aside class="sticky-sidebar">
+      <div class="sidebar-label">Quick Steps</div>
+      <ul class="steps-list">
+        <li data-step="bs-step-1" onclick="jumpToStep('bs-step-1')"><span class="step-dot">1</span>Open &amp; Confirm</li>
+        <li data-step="bs-step-2" onclick="jumpToStep('bs-step-2')"><span class="step-dot">2</span>Pull Reports</li>
+        <li data-step="bs-step-3" onclick="jumpToStep('bs-step-3')"><span class="step-dot">3</span>Coverage Walk-Through</li>
+        <li data-step="bs-step-4" onclick="jumpToStep('bs-step-4')"><span class="step-dot">4</span>Value Pitch</li>
+        <li data-step="bs-step-5" onclick="jumpToStep('bs-step-5')"><span class="step-dot">5</span>Close</li>
       </ul>
     </aside>
   </div>
@@ -1056,7 +1282,6 @@
     <button class="scripts-tab-btn"        onclick="showTextPanel('ghost')"        id="tbtn-ghost">👻 Ghost Texts</button>
   </div>
 
-  <!-- ── WELCOME TEXT PANEL ── -->
   <div id="tpanel-welcome" class="scripts-panel active">
     <div class="callout green" style="margin-bottom:1.8rem;">
       <div class="callout-title">📋 After the Sale</div>
@@ -1111,56 +1336,24 @@
     </div>
   </div>
 
-  <!-- ── INITIAL OUTBOUND TEXT PANEL ── -->
   <div id="tpanel-outbound-sms" class="scripts-panel">
-    <div class="callout gold" style="margin-bottom:1.8rem;">
-      <div class="callout-title">📤 First Touch</div>
-      <p>Send these when reaching out to a lead for the first time. Keep it short, friendly, and low-pressure — the goal is just to get a response.</p>
-    </div>
-    <div class="txt-empty-state">
-      <div class="txt-empty-icon">📤</div>
-      <div class="txt-empty-title">Coming Soon</div>
-      <div class="txt-empty-sub">Paste your initial outbound text templates here when you're ready.</div>
-    </div>
+    <div class="callout gold" style="margin-bottom:1.8rem;"><div class="callout-title">📤 First Touch</div><p>Send these when reaching out to a lead for the first time. Keep it short, friendly, and low-pressure — the goal is just to get a response.</p></div>
+    <div class="txt-empty-state"><div class="txt-empty-icon">📤</div><div class="txt-empty-title">Coming Soon</div><div class="txt-empty-sub">Paste your initial outbound text templates here when you're ready.</div></div>
   </div>
 
-  <!-- ── QUOTE FOLLOW-UP TEXT PANEL ── -->
   <div id="tpanel-quote-follow" class="scripts-panel">
-    <div class="callout gold" style="margin-bottom:1.8rem;">
-      <div class="callout-title">📋 After Sending a Quote</div>
-      <p>Use these after you've already sent a quote and are following up to get a response.</p>
-    </div>
-    <div class="txt-empty-state">
-      <div class="txt-empty-icon">📋</div>
-      <div class="txt-empty-title">Coming Soon</div>
-      <div class="txt-empty-sub">Paste your quote follow-up text templates here when you're ready.</div>
-    </div>
+    <div class="callout gold" style="margin-bottom:1.8rem;"><div class="callout-title">📋 After Sending a Quote</div><p>Use these after you've already sent a quote and are following up to get a response.</p></div>
+    <div class="txt-empty-state"><div class="txt-empty-icon">📋</div><div class="txt-empty-title">Coming Soon</div><div class="txt-empty-sub">Paste your quote follow-up text templates here when you're ready.</div></div>
   </div>
 
-  <!-- ── LEAD FOLLOW-UP TEXT PANEL ── -->
   <div id="tpanel-lead-follow" class="scripts-panel">
-    <div class="callout gold" style="margin-bottom:1.8rem;">
-      <div class="callout-title">🔁 Keeping Leads Warm</div>
-      <p>Use these to stay top of mind with leads who expressed interest but haven't moved forward yet.</p>
-    </div>
-    <div class="txt-empty-state">
-      <div class="txt-empty-icon">🔁</div>
-      <div class="txt-empty-title">Coming Soon</div>
-      <div class="txt-empty-sub">Paste your lead follow-up text templates here when you're ready.</div>
-    </div>
+    <div class="callout gold" style="margin-bottom:1.8rem;"><div class="callout-title">🔁 Keeping Leads Warm</div><p>Use these to stay top of mind with leads who expressed interest but haven't moved forward yet.</p></div>
+    <div class="txt-empty-state"><div class="txt-empty-icon">🔁</div><div class="txt-empty-title">Coming Soon</div><div class="txt-empty-sub">Paste your lead follow-up text templates here when you're ready.</div></div>
   </div>
 
-  <!-- ── GHOST TEXTS PANEL ── -->
   <div id="tpanel-ghost" class="scripts-panel">
-    <div class="callout gold" style="margin-bottom:1.8rem;">
-      <div class="callout-title">👻 Re-Engaging Cold Leads</div>
-      <p>Use these when someone has gone completely silent. The goal is one simple response — any response — to restart the conversation.</p>
-    </div>
-    <div class="txt-empty-state">
-      <div class="txt-empty-icon">👻</div>
-      <div class="txt-empty-title">Coming Soon</div>
-      <div class="txt-empty-sub">Paste your ghost text templates here when you're ready.</div>
-    </div>
+    <div class="callout gold" style="margin-bottom:1.8rem;"><div class="callout-title">👻 Re-Engaging Cold Leads</div><p>Use these when someone has gone completely silent. The goal is one simple response — any response — to restart the conversation.</p></div>
+    <div class="txt-empty-state"><div class="txt-empty-icon">👻</div><div class="txt-empty-title">Coming Soon</div><div class="txt-empty-sub">Paste your ghost text templates here when you're ready.</div></div>
   </div>
 
 </section>
@@ -1183,7 +1376,6 @@
     <button class="scripts-tab-btn"        onclick="showScriptsPanel('objections2')" id="btn-objections2">🚧 Outbound Objections</button>
   </div>
 
-  <!-- ── VOICEMAIL PANEL ── -->
   <div id="panel-vm" class="scripts-panel active">
     <div class="vm-tip-wrap">
       <div class="callout green" style="margin-bottom:1.5rem;">
@@ -1205,7 +1397,6 @@
     </div>
   </div>
 
-  <!-- ── OUTBOUND PANEL ── -->
   <div id="panel-outbound" class="scripts-panel">
     <div class="vm-grid">
       <div class="vm-card">
@@ -1225,7 +1416,6 @@
     </div>
   </div>
 
-  <!-- ── INBOUND PANEL ── -->
   <div id="panel-inbound" class="scripts-panel">
     <div class="vm-grid">
       <div class="vm-card">
@@ -1244,7 +1434,6 @@
     </div>
   </div>
 
-  <!-- ── TRANSFERS PANEL ── -->
   <div id="panel-transfers" class="scripts-panel">
     <div class="vm-grid">
       <div class="vm-card">
@@ -1264,7 +1453,6 @@
     </div>
   </div>
 
-  <!-- ── OUTBOUND OBJECTIONS PANEL ── -->
   <div id="panel-objections2" class="scripts-panel">
     <div class="vm-tip-wrap">
       <div class="callout gold" style="margin-bottom:1.5rem;">
@@ -1274,51 +1462,19 @@
     </div>
 
     <div class="objection-dropdown"><button class="objection-toggle">"I'm really busy, don't have time to talk..." <span class="chevron">▾</span></button><div class="objection-response-dropdown"><strong>Acknowledge/Agree:</strong> Oh, I'm sorry to have caught you at a bad time. When is a better time to call you back — later this afternoon or tomorrow morning?<br><br>Perfect, I have you set for <span style="color:var(--gold);font-weight:600;">[Scheduled Time]</span>.<br><br>Really quick, before I let you go, I just wanted to confirm... <em>(Get back into the script and ask a question)</em></div></div>
-
     <div class="objection-dropdown"><button class="objection-toggle">"Can you just email me the quote?" <span class="chevron">▾</span></button><div class="objection-response-dropdown"><strong>Acknowledge/Agree:</strong> I'd be happy to do that. Is your email address <span style="color:var(--gold);font-weight:600;">[Email Address]</span>?<br><br>To make sure I'm sending you the most accurate quote, I wanted to confirm... <em>(Get back into the script and ask a question)</em></div></div>
-
-    <div class="objection-dropdown"><button class="objection-toggle">"Who's this? Why are you calling me?" <span class="chevron">▾</span></button><div class="objection-response-dropdown">
-      <strong>Option 1 — Old Lead:</strong><br>
-      This is <span style="color:var(--gold);font-weight:600;">[Your Name]</span> from <span style="color:var(--gold);font-weight:600;">[Your Company]</span>. We gave you a quote a while back, and since our rates have recently changed, I wanted to email you the updated quote we have in the system. Is your email address <span style="color:var(--gold);font-weight:600;">[Email]</span>? And your home address is <span style="color:var(--gold);font-weight:600;">[Address]</span>, is that right? <em>(Get back into the script)</em><br><br>
-      <strong>Option 2 — New Internet Lead (Auto):</strong><br>
-      This is <span style="color:var(--gold);font-weight:600;">[Your Name]</span> from <span style="color:var(--gold);font-weight:600;">[Your Company]</span>. I see that you requested a car insurance quote for your <span style="color:var(--gold);font-weight:600;">[Make/Model]</span>. Is that the only car you need a quote for, or do you have other cars as well? <em>(Get back into the script)</em><br><br>
-      <strong>Option 2 — New Internet Lead (Home):</strong><br>
-      This is <span style="color:var(--gold);font-weight:600;">[Your Name]</span> from <span style="color:var(--gold);font-weight:600;">[Your Company]</span>. I see that you requested an insurance quote for your home on <span style="color:var(--gold);font-weight:600;">[Street Address]</span>. Do you live in that home, or are you in the process of buying it? <em>(Get back into the script)</em>
-    </div></div>
-
-    <div class="objection-dropdown"><button class="objection-toggle">"I didn't request a quote..." <span class="chevron">▾</span></button><div class="objection-response-dropdown">
-      <strong>Option 1 — Old Lead:</strong><br>
-      That's right, you didn't. I wanted to give you a call because we gave you a quote a while back, and since our rates have recently changed, I wanted to email you the updated quote we have on file. Is your email <span style="color:var(--gold);font-weight:600;">[Email]</span>? And your address is <span style="color:var(--gold);font-weight:600;">[Address]</span>, is that right? <em>(Get back into the script)</em><br><br>
-      <strong>Option 2 — New Internet Lead:</strong><br>
-      Oh, I'm sorry — it could be that someone requested a quote under your name. Have you gotten other calls from other insurance companies? I can take you off our list, but I will warn you that you'll probably get calls from other companies.<br><br>
-      Since I have you on the line and a quote started, I can share how much it would cost to insure your <span style="color:var(--gold);font-weight:600;">[Car/Home]</span> with us. Do you drive the <span style="color:var(--gold);font-weight:600;">[Make/Model]</span>? Do you live at <span style="color:var(--gold);font-weight:600;">[Address]</span>? <em>(Get back into the script)</em>
-    </div></div>
-
+    <div class="objection-dropdown"><button class="objection-toggle">"Who's this? Why are you calling me?" <span class="chevron">▾</span></button><div class="objection-response-dropdown"><strong>Option 1 — Old Lead:</strong><br>This is <span style="color:var(--gold);font-weight:600;">[Your Name]</span> from <span style="color:var(--gold);font-weight:600;">[Your Company]</span>. We gave you a quote a while back, and since our rates have recently changed, I wanted to email you the updated quote we have in the system. Is your email address <span style="color:var(--gold);font-weight:600;">[Email]</span>? And your home address is <span style="color:var(--gold);font-weight:600;">[Address]</span>, is that right? <em>(Get back into the script)</em><br><br><strong>Option 2 — New Internet Lead (Auto):</strong><br>This is <span style="color:var(--gold);font-weight:600;">[Your Name]</span> from <span style="color:var(--gold);font-weight:600;">[Your Company]</span>. I see that you requested a car insurance quote for your <span style="color:var(--gold);font-weight:600;">[Make/Model]</span>. Is that the only car you need a quote for, or do you have other cars as well? <em>(Get back into the script)</em><br><br><strong>Option 2 — New Internet Lead (Home):</strong><br>This is <span style="color:var(--gold);font-weight:600;">[Your Name]</span> from <span style="color:var(--gold);font-weight:600;">[Your Company]</span>. I see that you requested an insurance quote for your home on <span style="color:var(--gold);font-weight:600;">[Street Address]</span>. Do you live in that home, or are you in the process of buying it? <em>(Get back into the script)</em></div></div>
+    <div class="objection-dropdown"><button class="objection-toggle">"I didn't request a quote..." <span class="chevron">▾</span></button><div class="objection-response-dropdown"><strong>Option 1 — Old Lead:</strong><br>That's right, you didn't. I wanted to give you a call because we gave you a quote a while back, and since our rates have recently changed, I wanted to email you the updated quote we have on file. Is your email <span style="color:var(--gold);font-weight:600;">[Email]</span>? And your address is <span style="color:var(--gold);font-weight:600;">[Address]</span>, is that right? <em>(Get back into the script)</em><br><br><strong>Option 2 — New Internet Lead:</strong><br>Oh, I'm sorry — it could be that someone requested a quote under your name. Have you gotten other calls from other insurance companies? I can take you off our list, but I will warn you that you'll probably get calls from other companies.<br><br>Since I have you on the line and a quote started, I can share how much it would cost to insure your <span style="color:var(--gold);font-weight:600;">[Car/Home]</span> with us. Do you drive the <span style="color:var(--gold);font-weight:600;">[Make/Model]</span>? Do you live at <span style="color:var(--gold);font-weight:600;">[Address]</span>? <em>(Get back into the script)</em></div></div>
     <div class="objection-dropdown"><button class="objection-toggle">"I never worked with you..." <span class="chevron">▾</span></button><div class="objection-response-dropdown"><strong>Acknowledge/Agree:</strong> That's right! You and I have never talked before, but we gave you a quote a while back. Since our rates have recently changed, I wanted to email you the updated quote we have on file. Is your email address <span style="color:var(--gold);font-weight:600;">[Email]</span>? And your home address is <span style="color:var(--gold);font-weight:600;">[Address]</span>, is that right? <em>(Get back into the script)</em></div></div>
-
     <div class="objection-dropdown"><button class="objection-toggle">"I'm not interested..." <span class="chevron">▾</span></button><div class="objection-response-dropdown"><strong>Acknowledge/Agree:</strong> I totally get it. Getting a quote can take forever when you have to answer a lot of questions from scratch. The good news is I have most of your information here and can share the price in just a moment — but first I want to see if I can apply any additional discounts the system may have missed. It looks like... <em>(Get back into the script)</em></div></div>
-
     <div class="objection-dropdown"><button class="objection-toggle">"I already have insurance..." <span class="chevron">▾</span></button><div class="objection-response-dropdown"><strong>Acknowledge/Agree:</strong> That's right, you do! It looks like you're insured with <span style="color:var(--gold);font-weight:600;">[Current Insurer]</span>, is that right?<br><br>Well, since I have you on the phone and a quote started, I can share how much it would cost with our agency. If you like our price and coverage, we can help you switch — it's very easy and we handle it for you. It looks like... <em>(Get back into the script)</em></div></div>
-
     <div class="objection-dropdown"><button class="objection-toggle">"I just renewed my policy..." / "I just paid for my insurance..." <span class="chevron">▾</span></button><div class="objection-response-dropdown"><strong>Acknowledge/Agree:</strong> Ah, got it. Did you pay in full or do you pay monthly?<br><br>Well, since I have your quote started, I can share how much it would cost with our agency. If you like our price, we can help you switch over — and <span style="color:var(--gold);font-weight:600;">[New Carrier]</span> will send you a refund for what you prepaid in advance. It's very easy, and I'll help you with that. It looks like... <em>(Get back into the script)</em></div></div>
-
     <div class="objection-dropdown"><button class="objection-toggle">"I just signed up with a different company..." <span class="chevron">▾</span></button><div class="objection-response-dropdown"><strong>Acknowledge/Agree:</strong> Ah, got it. Who did you end up signing up with? How much are they going to charge you per month?<br><br>[Repeat price] Really? Wow, that's interesting — did that recently go up?<br><br>Well since I have your quote started, I can share what our agency would charge. If you like our price, we can switch you over and <span style="color:var(--gold);font-weight:600;">[New Carrier]</span> will refund the unearned premium. It's very easy, and I'll help. It looks like... <em>(Get back into the script)</em></div></div>
-
-    <div class="objection-dropdown"><button class="objection-toggle">"How do you have my information?" <span class="chevron">▾</span></button><div class="objection-response-dropdown">
-      <strong>First response:</strong><br>
-      That's a great question! We gave you a quote a while back, and since our rates have recently changed, I wanted to email you the updated quote we have on file. Is your email <span style="color:var(--gold);font-weight:600;">[Email]</span>? And your address is <span style="color:var(--gold);font-weight:600;">[Address]</span>? <em>(Get back into the script)</em><br><br>
-      <strong>If they want more clarity:</strong><br>
-      Licensed insurance agents are able to see what company you're insured with and the coverage you have. That's how I'm able to see your current policy information. <em>(Get back into the script)</em>
-    </div></div>
-
+    <div class="objection-dropdown"><button class="objection-toggle">"How do you have my information?" <span class="chevron">▾</span></button><div class="objection-response-dropdown"><strong>First response:</strong><br>That's a great question! We gave you a quote a while back, and since our rates have recently changed, I wanted to email you the updated quote we have on file. Is your email <span style="color:var(--gold);font-weight:600;">[Email]</span>? And your address is <span style="color:var(--gold);font-weight:600;">[Address]</span>? <em>(Get back into the script)</em><br><br><strong>If they want more clarity:</strong><br>Licensed insurance agents are able to see what company you're insured with and the coverage you have. That's how I'm able to see your current policy information. <em>(Get back into the script)</em></div></div>
     <div class="objection-dropdown"><button class="objection-toggle">"My spouse takes care of the bill..." <span class="chevron">▾</span></button><div class="objection-response-dropdown"><strong>Acknowledge/Agree:</strong> Oh, that's great — I'm sure it makes things easier for you! Well, I'm looking at the quote started for you, and I'll share the price so you can pass it along to <span style="color:var(--gold);font-weight:600;">[Spouse's Name]</span>. But first I want to see if I can apply any additional discounts the system may have missed. It looks like... <em>(Get back into the script)</em></div></div>
-
     <div class="objection-dropdown"><button class="objection-toggle">"I've had a bad experience with your company..." <span class="chevron">▾</span></button><div class="objection-response-dropdown"><strong>Acknowledge/Agree:</strong> Oh, I'm so sorry to hear that! What happened?<br><br><em>(Politely intervene)</em><br><br>I'm so sorry — I know I wouldn't be happy if that happened to me. I want you to know that I'm calling from a completely different <span style="color:var(--gold);font-weight:600;">[Your Company]</span> office, and we do things very differently here. I can assure you your experience with us will never be anything short of amazing. That I can promise you. <em>(Get back into the script)</em></div></div>
-
     <div class="objection-dropdown"><button class="objection-toggle">"Give me your price first..." <span class="chevron">▾</span></button><div class="objection-response-dropdown"><strong>Acknowledge/Agree:</strong> I'd be happy to do that! I'll share the price with you in just a moment, but first I want to see if I can apply any additional discounts the system may have missed. It looks like... <em>(Get back into the script)</em></div></div>
-
     <div class="objection-dropdown"><button class="objection-toggle">"No one can beat my rate..." <span class="chevron">▾</span></button><div class="objection-response-dropdown"><strong>Acknowledge/Agree:</strong> That's great — you must have shopped around! How much is <span style="color:var(--gold);font-weight:600;">[Current Insurer]</span> charging you per month?<br><br>[Repeat price] Really? Wow, that is interesting. Did that recently go up?<br><br>Well I'm working on your quote right now. Before I share our final price, I want to confirm a few details to make sure you get the best price possible. It looks like... <em>(Get back into the script)</em></div></div>
-
     <div class="objection-dropdown"><button class="objection-toggle">"You called the wrong number..." <span class="chevron">▾</span></button><div class="objection-response-dropdown"><strong>Acknowledge/Agree:</strong> Do you know who <span style="color:var(--gold);font-weight:600;">[Prospect's Name]</span> is? Does he/she live in your household?<br><br>• <strong>If YES:</strong> May I speak to him/her?<br>• <strong>If NO:</strong> Oh got it — it looks like they may have entered a wrong number by mistake. I'm sorry about that. I didn't catch your name — what is your name?</div></div>
 
   </div>

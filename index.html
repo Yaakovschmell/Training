@@ -1787,7 +1787,7 @@ function loadTracker() {
       if (tr.notesOpen === undefined) tr.notesOpen = true;
       tr.dayNotes = tr.dayNotes || [];
       // Sanitize: remove any notes whose text looks like code (corrupted data)
-      tr.dayNotes = tr.dayNotes.filter(n => n.text && !n.text.includes('function ') && !n.text.includes('STATE.dayNotes') && !n.text.includes('prompt(')));
+      tr.dayNotes = tr.dayNotes.filter(n => n.text && !n.text.includes('function ') && !n.text.includes('STATE.dayNotes') && !n.text.includes('prompt('));
     });
   }
   saveTracker();

@@ -1868,10 +1868,10 @@ function buildTraineeCard(tr) {
   card.className = 'trainee-card';
   card.id = 'tcard_' + tr.id;
   card.innerHTML = '<div class="trainee-card-header">' +
-    '<div class="trainee-name-display" onclick="editTraineeName('' + tr.id + '')" title="Click to rename">' + esc(tr.name) + '</div>' +
+    '<div class="trainee-name-display" onclick="editTraineeName(' + tr.id + ')" title="Click to rename">' + esc(tr.name) + '</div>' +
     '<div class="trainee-actions">' +
-    '<button class="icon-btn" onclick="editTraineeName('' + tr.id + '')">✎ Rename</button>' +
-    '<button class="icon-btn danger" onclick="deleteTrainee('' + tr.id + '')">✕</button>' +
+    '<button class="icon-btn" onclick="editTraineeName(' + tr.id + ')">✎ Rename</button>' +
+    '<button class="icon-btn danger" onclick="deleteTrainee(' + tr.id + ')">✕</button>' +
     '</div></div>';
   const body = document.createElement('div');
   body.className = 'trainee-card-body';
@@ -1895,12 +1895,12 @@ function buildTraineeCard(tr) {
     body.appendChild(cWrap);
   }
   const addRow = document.createElement('div'); addRow.className = 'add-task-row';
-  addRow.innerHTML = '<input class="add-task-input" id="newtask_' + tr.id + '" type="text" placeholder="Add a task..." /><button class="add-task-btn" onclick="addTask('' + tr.id + '')">Add</button>';
+  addRow.innerHTML = '<input class="add-task-input" id="newtask_' + tr.id + '" type="text" placeholder="Add a task..." /><button class="add-task-btn" onclick="addTask(' + tr.id + ')">Add</button>';
   body.appendChild(addRow);
   setTimeout(() => { const inp = document.getElementById('newtask_' + tr.id); if (inp) inp.addEventListener('keydown', e => { if (e.key === 'Enter') addTask(tr.id); }); }, 50);
   // Notes
   const ns = document.createElement('div'); ns.className = 'day-notes-section';
-  ns.innerHTML = '<div class="day-notes-header"><span class="day-notes-label">📝 Day Notes</span><button class="toggle-notes-btn" onclick="toggleNotes('' + tr.id + '')">' + (tr.notesOpen ? '▲ Hide' : '▼ Show') + '</button></div>';
+  ns.innerHTML = '<div class="day-notes-header"><span class="day-notes-label">📝 Day Notes</span><button class="toggle-notes-btn" onclick="toggleNotes(' + tr.id + ')">' + (tr.notesOpen ? '▲ Hide' : '▼ Show') + '</button></div>';
   const nl = document.createElement('div');
   nl.className = 'notes-list-wrap' + (tr.notesOpen ? ' open' : '');
   nl.id = 'noteslist_' + tr.id;

@@ -1814,10 +1814,10 @@ function buildTaskItem(traineeId, task) {
   const div = document.createElement('div');
   div.className = 'task-item' + (task.done ? ' done' : '');
   div.id = 'taskitem_' + task.id;
-  div.innerHTML = '<div class="task-cb" onclick="toggleTask(\' + traineeId + '\',\' + task.id + \')">' + (task.done ? '✓' : '') + '</div>' +
+  div.innerHTML = '<div class="task-cb" onclick="toggleTask(' + traineeId + ',' + task.id + ')">' + (task.done ? '✓' : '') + '</div>' +
     '<span class="task-text">' + esc(task.text) + '</span>' +
-    '<button class="task-edit-btn" onclick="editTask(\' + traineeId + '\',\' + task.id + \')">✎</button>' +
-    '<button class="task-del-btn" onclick="deleteTask(\' + traineeId + '\',\' + task.id + \')">✕</button>';
+    '<button class="task-edit-btn" onclick="editTask(' + traineeId + ',' + task.id + ')">✎</button>' +
+    '<button class="task-del-btn" onclick="deleteTask(' + traineeId + ',' + task.id + ')">✕</button>';
   return div;
 }
 
@@ -1838,8 +1838,8 @@ function buildNoteItem(traineeId, note) {
   }
   div.innerHTML = '<div class="day-note-date"><span>' + esc(note.date) + '</span>' +
     '<div class="note-actions">' +
-    '<button class="note-edit-btn" onclick="editNote(\' + traineeId + '\',\' + note.id + \')">✎ Edit</button>' +
-    '<button class="note-del-btn" onclick="deleteNote(\' + traineeId + '\',\' + note.id + \')">✕</button>' +
+    '<button class="note-edit-btn" onclick="editNote(' + traineeId + ',' + note.id + ')">✎ Edit</button>' +
+    '<button class="note-del-btn" onclick="deleteNote(' + traineeId + ',' + note.id + ')">✕</button>' +
     '</div></div>' +
     '<div class="day-note-text">' + esc(note.text) + '</div>' + linksHtml;
   return div;
@@ -1850,12 +1850,12 @@ function buildAddNoteFormHTML(traineeId) {
     '<input class="add-note-date-input" id="notedate_' + traineeId + '" type="text" placeholder="Date (e.g. Jun 9, 2026)" />' +
     '<textarea id="notebody_' + traineeId + '" placeholder="What happened today?"></textarea>' +
     '<div class="link-row" style="margin-top:0.5rem;"><span class="link-row-label">Link to:</span><div class="link-chips-wrap">' +
-    LINK_TYPES.map(lt => '<span class="link-chip" id="chip_' + traineeId + '_' + lt.id + '" onclick="toggleLinkChip(\' + traineeId + '\',\' + lt.id + \')">' + lt.icon + ' ' + lt.label + '</span>').join('') +
+    LINK_TYPES.map(lt => '<span class="link-chip" id="chip_' + traineeId + '_' + lt.id + '" onclick="toggleLinkChip(' + traineeId + ',' + lt.id + ')">' + lt.icon + ' ' + lt.label + '</span>').join('') +
     '</div></div>' +
     LINK_TYPES.map(lt => '<input class="link-url-input" id="linkurl_' + traineeId + '_' + lt.id + '" placeholder="Paste ' + lt.label + ' URL..." type="url" />').join('') +
     '<div class="add-note-form-btns">' +
-    '<button class="btn-save-note" onclick="saveNote(\' + traineeId + \')">Save Note</button>' +
-    '<button class="btn-cancel-note" onclick="closeAddNote(\' + traineeId + \')">Cancel</button>' +
+    '<button class="btn-save-note" onclick="saveNote(' + traineeId + ')">Save Note</button>' +
+    '<button class="btn-cancel-note" onclick="closeAddNote(' + traineeId + ')">Cancel</button>' +
     '</div>';
 }
 

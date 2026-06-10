@@ -608,7 +608,86 @@
     }
 
     .main-content * { overflow-wrap: anywhere; word-break: break-word; }
-  </style>
+  
+/* ── TRAINEE TRACKER ── */
+.tracker-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.2rem; margin-top: 1.5rem; }
+.trainee-card { background: var(--white); border: 1px solid var(--cream3); border-radius: 8px; overflow: hidden; transition: box-shadow 0.2s; }
+.trainee-card:hover { box-shadow: 0 6px 24px rgba(13,43,30,0.1); }
+.trainee-card-header { background: var(--forest); padding: 0.85rem 1.1rem; display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; }
+.trainee-name-display { font-family: var(--display); font-size: 1.05rem; font-weight: 700; color: white; letter-spacing: -0.01em; flex: 1; cursor: pointer; }
+.trainee-name-display:hover { text-decoration: underline; text-underline-offset: 2px; }
+.trainee-actions { display: flex; gap: 0.4rem; }
+.icon-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; color: var(--gold-lt); font-size: 0.75rem; padding: 0.25rem 0.55rem; cursor: pointer; font-family: var(--body); font-weight: 600; transition: all 0.15s; }
+.icon-btn:hover { background: rgba(255,255,255,0.2); }
+.icon-btn.danger:hover { background: #c23b2a; border-color: #c23b2a; color: white; }
+.trainee-card-body { padding: 1rem 1.1rem; }
+.trainee-progress { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.85rem; }
+.progress-bar-wrap { flex: 1; height: 6px; background: var(--cream2); border-radius: 3px; overflow: hidden; }
+.progress-bar-fill { height: 100%; background: var(--sage); border-radius: 3px; transition: width 0.4s ease; }
+.progress-label { font-size: 0.72rem; font-weight: 700; color: var(--text-dim); white-space: nowrap; }
+.task-section-title { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin: 0.75rem 0 0.35rem; display: flex; align-items: center; gap: 0.4rem; }
+.task-count-badge { background: var(--cream2); border-radius: 10px; padding: 0.05rem 0.45rem; color: var(--text-dim); font-size: 0.6rem; }
+.task-item { display: flex; align-items: flex-start; gap: 0.6rem; padding: 0.45rem 0; border-bottom: 1px solid var(--cream2); }
+.task-item:last-child { border-bottom: none; }
+.task-cb { width: 16px; height: 16px; border: 2px solid var(--cream3); border-radius: 3px; flex-shrink: 0; margin-top: 2px; display: flex; align-items: center; justify-content: center; transition: all 0.15s; font-size: 0.65rem; cursor: pointer; }
+.task-item.done .task-cb { background: var(--sage); border-color: var(--sage); color: white; }
+.task-text { font-size: 0.875rem; color: var(--text-mid); flex: 1; line-height: 1.45; word-break: break-word; }
+.task-item.done .task-text { text-decoration: line-through; color: var(--text-dim); }
+.task-edit-btn, .task-del-btn { opacity: 0; font-size: 0.7rem; color: var(--text-dim); background: none; border: none; cursor: pointer; padding: 0.1rem 0.3rem; border-radius: 3px; transition: opacity 0.15s, background 0.15s; white-space: nowrap; }
+.task-item:hover .task-edit-btn, .task-item:hover .task-del-btn { opacity: 1; }
+.task-edit-btn:hover { background: var(--cream2); color: var(--forest); }
+.task-del-btn:hover { background: #fde; color: #c23b2a; }
+.add-task-row { display: flex; gap: 0.5rem; margin-top: 0.7rem; }
+.add-task-input { flex: 1; padding: 0.45rem 0.75rem; border: 1px solid var(--cream3); border-radius: 4px; font-family: var(--body); font-size: 0.85rem; color: var(--text-dark); background: var(--cream); }
+.add-task-input:focus { outline: none; border-color: var(--forest); background: var(--white); }
+.add-task-btn { padding: 0.45rem 0.85rem; background: var(--forest); color: var(--gold-lt); border: none; border-radius: 4px; font-family: var(--body); font-size: 0.8rem; font-weight: 600; cursor: pointer; white-space: nowrap; }
+.day-notes-section { margin-top: 1rem; border-top: 1px solid var(--cream2); padding-top: 0.85rem; }
+.day-notes-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem; }
+.day-notes-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); }
+.toggle-notes-btn { font-size: 0.72rem; background: none; border: none; cursor: pointer; color: var(--text-dim); padding: 0.1rem 0.4rem; border-radius: 3px; }
+.toggle-notes-btn:hover { background: var(--cream2); color: var(--forest); }
+.day-note-item { background: var(--cream); border: 1px solid var(--cream3); border-radius: 5px; padding: 0.65rem 0.85rem; margin-bottom: 0.5rem; }
+.day-note-date { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
+.day-note-text { font-size: 0.88rem; color: var(--text-mid); line-height: 1.6; white-space: pre-wrap; }
+.day-note-links { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.45rem; }
+.day-note-link { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 3px; text-decoration: none; background: var(--forest); color: var(--gold-lt); border: 1px solid rgba(255,255,255,0.1); transition: opacity 0.15s; }
+.day-note-link:hover { opacity: 0.8; }
+.note-actions { display: flex; gap: 0.3rem; }
+.note-edit-btn, .note-del-btn { font-size: 0.68rem; background: none; border: none; cursor: pointer; padding: 0.1rem 0.35rem; border-radius: 3px; color: var(--text-dim); transition: all 0.15s; }
+.note-edit-btn:hover { background: var(--cream2); color: var(--forest); }
+.note-del-btn:hover { background: #fde; color: #c23b2a; }
+.add-note-form { background: var(--cream); border: 1px dashed var(--cream3); border-radius: 5px; padding: 0.75rem; margin-top: 0.5rem; display: none; }
+.add-note-form.open { display: block; }
+.add-note-form textarea { width: 100%; min-height: 70px; padding: 0.5rem; border: 1px solid var(--cream3); border-radius: 4px; font-family: var(--body); font-size: 0.85rem; color: var(--text-dark); background: var(--white); resize: vertical; box-sizing: border-box; }
+.add-note-form textarea:focus { outline: none; border-color: var(--forest); }
+.add-note-date-input { width: 100%; padding: 0.4rem 0.6rem; border: 1px solid var(--cream3); border-radius: 4px; font-family: var(--body); font-size: 0.85rem; color: var(--text-dark); background: var(--white); margin-bottom: 0.5rem; }
+.link-row { display: flex; gap: 0.4rem; margin-bottom: 0.5rem; flex-wrap: wrap; align-items: flex-start; }
+.link-row-label { font-size: 0.72rem; font-weight: 600; color: var(--text-dim); margin-right: 0.2rem; white-space: nowrap; padding-top: 0.2rem; }
+.link-chips-wrap { display: flex; gap: 0.4rem; flex-wrap: wrap; flex: 1; }
+.link-chip { display: inline-flex; align-items: center; gap: 0.25rem; padding: 0.25rem 0.55rem; border-radius: 3px; font-size: 0.72rem; font-weight: 600; border: 1px solid var(--cream3); background: var(--white); cursor: pointer; transition: all 0.15s; color: var(--text-mid); }
+.link-chip.selected { background: var(--forest); color: var(--gold-lt); border-color: var(--forest); }
+.link-url-input { width: 100%; padding: 0.35rem 0.6rem; border: 1px solid var(--cream3); border-radius: 4px; font-family: var(--body); font-size: 0.82rem; color: var(--text-dark); background: var(--white); margin-top: 0.35rem; margin-bottom: 0.35rem; display: none; }
+.link-url-input:focus { outline: none; border-color: var(--forest); }
+.add-note-form-btns { display: flex; gap: 0.5rem; margin-top: 0.5rem; }
+.btn-save-note { padding: 0.45rem 1rem; background: var(--forest); color: var(--gold-lt); border: none; border-radius: 4px; font-family: var(--body); font-size: 0.8rem; font-weight: 600; cursor: pointer; }
+.btn-cancel-note { padding: 0.45rem 0.75rem; background: transparent; color: var(--text-dim); border: 1px solid var(--cream3); border-radius: 4px; font-family: var(--body); font-size: 0.8rem; cursor: pointer; }
+.add-note-open-btn { width: 100%; padding: 0.4rem; background: transparent; border: 1px dashed var(--cream3); border-radius: 4px; font-family: var(--body); font-size: 0.78rem; font-weight: 600; color: var(--text-dim); cursor: pointer; transition: all 0.15s; margin-top: 0.4rem; }
+.add-note-open-btn:hover { background: var(--cream); border-color: var(--sage); color: var(--forest); }
+.tracker-top-bar { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.add-trainee-btn { padding: 0.55rem 1.25rem; background: var(--forest); color: var(--gold-lt); border: none; border-radius: 4px; font-family: var(--body); font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: opacity 0.15s; display: flex; align-items: center; gap: 0.5rem; }
+.add-trainee-btn:hover { opacity: 0.85; }
+.show-completed-toggle { display: flex; align-items: center; gap: 0.45rem; font-size: 0.82rem; color: var(--text-mid); cursor: pointer; user-select: none; margin-left: auto; }
+.toggle-switch { width: 34px; height: 18px; background: var(--cream2); border-radius: 9px; position: relative; transition: background 0.2s; flex-shrink: 0; }
+.toggle-switch::after { content: ''; width: 14px; height: 14px; border-radius: 50%; background: white; position: absolute; top: 2px; left: 2px; transition: left 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.15); }
+.toggle-switch.on { background: var(--sage); }
+.toggle-switch.on::after { left: 18px; }
+.completed-section-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-dim); margin: 0.6rem 0 0.3rem; }
+.completed-tasks-list { display: none; }
+.completed-tasks-list.visible { display: block; }
+.notes-list-wrap { display: none; }
+.notes-list-wrap.open { display: block; }
+
+</style>
 </head>
 <body>
 
@@ -641,6 +720,7 @@
     <li><button class="tab-link"        data-tab="tips"         onclick="showTab('tips')">💡 Tips & Tricks</button></li>
     <li><button class="tab-link"        data-tab="callscripts"  onclick="showTab('callscripts')">📞 Call Scripts</button></li>
     <li><button class="tab-link"        data-tab="welcome-text" onclick="showTab('welcome-text')">💬 Text Templates</button></li>
+<li><button class="tab-link" data-tab="tracker" onclick="showTab('tracker')">👥 Trainee Tracker</button></li>
   </ul>
 </nav>
 
@@ -1540,6 +1620,21 @@ Please send me a copy of the registration as the car needs to be owned or co-own
 
 </section>
 
+
+
+<!-- ══════════ TRAINEE TRACKER ══════════ -->
+<section id="tracker" class="tab-content">
+  <div class="page-title"><span>Module 08</span>Trainee Tracker</div>
+  <div class="tracker-top-bar">
+    <button class="add-trainee-btn" onclick="addTrainee()">+ Add Trainee</button>
+    <label class="show-completed-toggle">
+      Show completed tasks
+      <div class="toggle-switch" id="completed-toggle-switch" onclick="toggleShowCompleted()"></div>
+    </label>
+  </div>
+  <div class="tracker-grid" id="tracker-grid"></div>
+</section>
+
 </main>
 
 <script>
@@ -1637,6 +1732,211 @@ Please send me a copy of the registration as the car needs to be owned or co-own
     }, { passive: true });
 
   });
+
+
+
+// ── TRAINEE TRACKER ──────────────────────────────
+const TRACKER_KEY = 'salesTracker_v3';
+
+const DEFAULT_TASKS = [
+  'Memorize introduction & info confirmation',
+  'Practice experience & expectations segment',
+  'Learn property damage liability explanation',
+  'Master the F-150 analogy close',
+  'Objection handling — price objection',
+  'Objection handling — "I will pay later"',
+  'Objection handling — "I want to shop around"',
+  'Cross-sale auto → home pitch',
+  'Cross-sale auto → renters pitch',
+  'Complete first solo call (monitored)',
+  'Complete first solo call (unmonitored)',
+  'Achieve first policy sale'
+];
+
+const LINK_TYPES = [
+  { id: 'smtp', label: 'SMTP Recording', icon: '🎙️' },
+  { id: 'leadmanager', label: 'Lead Manager', icon: '📊' },
+  { id: 'ringcentral', label: 'Ring Central Report', icon: '📞' }
+];
+
+let STATE = { trainees: [], showCompleted: false };
+
+function loadTracker() {
+  try {
+    const saved = localStorage.getItem(TRACKER_KEY);
+    if (saved) STATE = JSON.parse(saved);
+  } catch(e) {}
+  if (!STATE.trainees || STATE.trainees.length === 0) {
+    STATE = {
+      showCompleted: false,
+      trainees: [{
+        id: 'trainee_joshua',
+        name: 'Joshua',
+        tasks: DEFAULT_TASKS.map((t, i) => ({ id: 'task_j_' + i, text: t, done: false })),
+        dayNotes: [{
+          id: 'note_j_1',
+          date: 'Jun 9, 2026',
+          text: 'Joshua showed great improvement on objection handling today. Worked through the price objection script.',
+          links: []
+        }],
+        notesOpen: true
+      }]
+    };
+  } else {
+    STATE.trainees.forEach(tr => {
+      if (tr.notesOpen === undefined) tr.notesOpen = true;
+      tr.dayNotes = tr.dayNotes || [];
+    });
+  }
+  saveTracker();
+}
+
+function saveTracker() {
+  localStorage.setItem(TRACKER_KEY, JSON.stringify(STATE));
+}
+
+function renderTracker() {
+  const grid = document.getElementById('tracker-grid');
+  if (!grid) return;
+  const sw = document.getElementById('completed-toggle-switch');
+  if (sw) sw.classList.toggle('on', !!STATE.showCompleted);
+  grid.innerHTML = '';
+  STATE.trainees.forEach(tr => grid.appendChild(buildTraineeCard(tr)));
+}
+
+function esc(s) {
+  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function buildTaskItem(traineeId, task) {
+  const div = document.createElement('div');
+  div.className = 'task-item' + (task.done ? ' done' : '');
+  div.id = 'taskitem_' + task.id;
+  div.innerHTML = '<div class="task-cb" onclick="toggleTask('' + traineeId + '','' + task.id + '')">' + (task.done ? '✓' : '') + '</div>' +
+    '<span class="task-text">' + esc(task.text) + '</span>' +
+    '<button class="task-edit-btn" onclick="editTask('' + traineeId + '','' + task.id + '')">✎</button>' +
+    '<button class="task-del-btn" onclick="deleteTask('' + traineeId + '','' + task.id + '')">✕</button>';
+  return div;
+}
+
+function buildNoteItem(traineeId, note) {
+  const div = document.createElement('div');
+  div.className = 'day-note-item';
+  div.id = 'note_' + note.id;
+  let linksHtml = '';
+  if (note.links && note.links.length > 0) {
+    linksHtml = '<div class="day-note-links">';
+    note.links.forEach(lnk => {
+      if (lnk.url) {
+        const lt = LINK_TYPES.find(x => x.id === lnk.type) || { icon: '🔗', label: lnk.type };
+        linksHtml += '<a href="' + esc(lnk.url) + '" target="_blank" rel="noopener" class="day-note-link">' + lt.icon + ' ' + esc(lt.label) + '</a>';
+      }
+    });
+    linksHtml += '</div>';
+  }
+  div.innerHTML = '<div class="day-note-date"><span>' + esc(note.date) + '</span>' +
+    '<div class="note-actions">' +
+    '<button class="note-edit-btn" onclick="editNote('' + traineeId + '','' + note.id + '')">✎ Edit</button>' +
+    '<button class="note-del-btn" onclick="deleteNote('' + traineeId + '','' + note.id + '')">✕</button>' +
+    '</div></div>' +
+    '<div class="day-note-text">' + esc(note.text) + '</div>' + linksHtml;
+  return div;
+}
+
+function buildAddNoteFormHTML(traineeId) {
+  return '<div style="font-size:0.72rem;font-weight:700;color:var(--text-dim);margin-bottom:0.4rem;">NEW DAY NOTE</div>' +
+    '<input class="add-note-date-input" id="notedate_' + traineeId + '" type="text" placeholder="Date (e.g. Jun 9, 2026)" />' +
+    '<textarea id="notebody_' + traineeId + '" placeholder="What happened today?"></textarea>' +
+    '<div class="link-row" style="margin-top:0.5rem;"><span class="link-row-label">Link to:</span><div class="link-chips-wrap">' +
+    LINK_TYPES.map(lt => '<span class="link-chip" id="chip_' + traineeId + '_' + lt.id + '" onclick="toggleLinkChip('' + traineeId + '','' + lt.id + '')">' + lt.icon + ' ' + lt.label + '</span>').join('') +
+    '</div></div>' +
+    LINK_TYPES.map(lt => '<input class="link-url-input" id="linkurl_' + traineeId + '_' + lt.id + '" placeholder="Paste ' + lt.label + ' URL..." type="url" />').join('') +
+    '<div class="add-note-form-btns">' +
+    '<button class="btn-save-note" onclick="saveNote('' + traineeId + '')">Save Note</button>' +
+    '<button class="btn-cancel-note" onclick="closeAddNote('' + traineeId + '')">Cancel</button>' +
+    '</div>';
+}
+
+function buildTraineeCard(tr) {
+  const done = tr.tasks.filter(t => t.done);
+  const pending = tr.tasks.filter(t => !t.done);
+  const total = tr.tasks.length;
+  const pct = total ? Math.round((done.length / total) * 100) : 0;
+  const card = document.createElement('div');
+  card.className = 'trainee-card';
+  card.id = 'tcard_' + tr.id;
+  card.innerHTML = '<div class="trainee-card-header">' +
+    '<div class="trainee-name-display" onclick="editTraineeName('' + tr.id + '')" title="Click to rename">' + esc(tr.name) + '</div>' +
+    '<div class="trainee-actions">' +
+    '<button class="icon-btn" onclick="editTraineeName('' + tr.id + '')">✎ Rename</button>' +
+    '<button class="icon-btn danger" onclick="deleteTrainee('' + tr.id + '')">✕</button>' +
+    '</div></div>';
+  const body = document.createElement('div');
+  body.className = 'trainee-card-body';
+  body.innerHTML = '<div class="trainee-progress"><div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:' + pct + '%"></div></div><span class="progress-label">' + done.length + '/' + total + ' (' + pct + '%)</span></div>';
+  if (pending.length > 0) {
+    const pl = document.createElement('div'); pl.className = 'task-section-title';
+    pl.innerHTML = 'Pending <span class="task-count-badge">' + pending.length + '</span>';
+    body.appendChild(pl);
+    const pWrap = document.createElement('div');
+    pending.forEach(t => pWrap.appendChild(buildTaskItem(tr.id, t)));
+    body.appendChild(pWrap);
+  }
+  if (done.length > 0) {
+    const cl = document.createElement('div'); cl.className = 'completed-section-label';
+    cl.textContent = 'Completed (' + done.length + ')';
+    body.appendChild(cl);
+    const cWrap = document.createElement('div');
+    cWrap.className = 'completed-tasks-list' + (STATE.showCompleted ? ' visible' : '');
+    cWrap.id = 'completed_' + tr.id;
+    done.forEach(t => cWrap.appendChild(buildTaskItem(tr.id, t)));
+    body.appendChild(cWrap);
+  }
+  const addRow = document.createElement('div'); addRow.className = 'add-task-row';
+  addRow.innerHTML = '<input class="add-task-input" id="newtask_' + tr.id + '" type="text" placeholder="Add a task..." /><button class="add-task-btn" onclick="addTask('' + tr.id + '')">Add</button>';
+  body.appendChild(addRow);
+  setTimeout(() => { const inp = document.getElementById('newtask_' + tr.id); if (inp) inp.addEventListener('keydown', e => { if (e.key === 'Enter') addTask(tr.id); }); }, 50);
+  // Notes
+  const ns = document.createElement('div'); ns.className = 'day-notes-section';
+  ns.innerHTML = '<div class="day-notes-header"><span class="day-notes-label">📝 Day Notes</span><button class="toggle-notes-btn" onclick="toggleNotes('' + tr.id + '')">' + (tr.notesOpen ? '▲ Hide' : '▼ Show') + '</button></div>';
+  const nl = document.createElement('div');
+  nl.className = 'notes-list-wrap' + (tr.notesOpen ? ' open' : '');
+  nl.id = 'noteslist_' + tr.id;
+  (tr.dayNotes || []).forEach(n => nl.appendChild(buildNoteItem(tr.id, n)));
+  const openBtn = document.createElement('button'); openBtn.className = 'add-note-open-btn';
+  openBtn.textContent = '+ Add Day Note'; openBtn.onclick = () => openAddNote(tr.id);
+  nl.appendChild(openBtn);
+  const form = document.createElement('div'); form.className = 'add-note-form'; form.id = 'addnoteform_' + tr.id;
+  form.innerHTML = buildAddNoteFormHTML(tr.id);
+  nl.appendChild(form);
+  ns.appendChild(nl);
+  body.appendChild(ns);
+  card.appendChild(body);
+  return card;
+}
+
+function toggleTask(tid, taskId) { const tr = STATE.trainees.find(t=>t.id===tid); if(!tr) return; const task=tr.tasks.find(t=>t.id===taskId); if(!task) return; task.done=!task.done; saveTracker(); renderTracker(); }
+function addTask(tid) { const inp=document.getElementById('newtask_'+tid); if(!inp) return; const text=inp.value.trim(); if(!text) return; const tr=STATE.trainees.find(t=>t.id===tid); if(!tr) return; tr.tasks.push({id:'task_'+Date.now(),text,done:false}); saveTracker(); renderTracker(); }
+function editTask(tid,taskId) { const tr=STATE.trainees.find(t=>t.id===tid); if(!tr) return; const task=tr.tasks.find(t=>t.id===taskId); if(!task) return; const u=prompt('Edit task:',task.text); if(u===null) return; task.text=u.trim(); saveTracker(); renderTracker(); }
+function deleteTask(tid,taskId) { const tr=STATE.trainees.find(t=>t.id===tid); if(!tr) return; if(!confirm('Delete this task?')) return; tr.tasks=tr.tasks.filter(t=>t.id!==taskId); saveTracker(); renderTracker(); }
+function addTrainee() { const name=prompt('Enter trainee name:'); if(!name||!name.trim()) return; STATE.trainees.push({id:'trainee_'+Date.now(),name:name.trim(),tasks:DEFAULT_TASKS.map((t,i)=>({id:'task_new_'+Date.now()+'_'+i,text:t,done:false})),dayNotes:[],notesOpen:true}); saveTracker(); renderTracker(); }
+function editTraineeName(tid) { const tr=STATE.trainees.find(t=>t.id===tid); if(!tr) return; const u=prompt('Edit trainee name:',tr.name); if(u===null) return; tr.name=u.trim(); saveTracker(); renderTracker(); }
+function deleteTrainee(tid) { const tr=STATE.trainees.find(t=>t.id===tid); if(!tr) return; if(!confirm('Delete '+tr.name+' and all their data?')) return; STATE.trainees=STATE.trainees.filter(t=>t.id!==tid); saveTracker(); renderTracker(); }
+function toggleShowCompleted() { STATE.showCompleted=!STATE.showCompleted; saveTracker(); renderTracker(); }
+function toggleNotes(tid) { const tr=STATE.trainees.find(t=>t.id===tid); if(!tr) return; tr.notesOpen=!tr.notesOpen; saveTracker(); renderTracker(); }
+function openAddNote(tid) { const form=document.getElementById('addnoteform_'+tid); if(!form) return; form.classList.add('open'); const prev=form.previousElementSibling; if(prev&&prev.classList.contains('add-note-open-btn')) prev.style.display='none'; const d=document.getElementById('notedate_'+tid); if(d) d.focus(); }
+function closeAddNote(tid) { const form=document.getElementById('addnoteform_'+tid); if(!form) return; form.classList.remove('open'); const d=form.querySelector('.add-note-date-input'); if(d) d.value=''; const ta=form.querySelector('textarea'); if(ta) ta.value=''; LINK_TYPES.forEach(lt=>{const c=document.getElementById('chip_'+tid+'_'+lt.id); if(c) c.classList.remove('selected'); const u=document.getElementById('linkurl_'+tid+'_'+lt.id); if(u){u.value='';u.style.display='none';}}); const btn=form.previousElementSibling; if(btn&&btn.classList.contains('add-note-open-btn')) btn.style.display=''; }
+function toggleLinkChip(tid,type) { const chip=document.getElementById('chip_'+tid+'_'+type); const urlInp=document.getElementById('linkurl_'+tid+'_'+type); if(!chip||!urlInp) return; const sel=chip.classList.toggle('selected'); urlInp.style.display=sel?'block':'none'; if(sel) urlInp.focus(); }
+function saveNote(tid) { const tr=STATE.trainees.find(t=>t.id===tid); if(!tr) return; const d=document.getElementById('notedate_'+tid); const ta=document.getElementById('notebody_'+tid); const dv=d?d.value.trim():''; const tv=ta?ta.value.trim():''; if(!tv){alert('Please enter a note.');return;} const links=[]; LINK_TYPES.forEach(lt=>{const c=document.getElementById('chip_'+tid+'_'+lt.id); const u=document.getElementById('linkurl_'+tid+'_'+lt.id); if(c&&c.classList.contains('selected')&&u&&u.value.trim()) links.push({type:lt.id,url:u.value.trim()});}); tr.dayNotes=tr.dayNotes||[]; tr.dayNotes.unshift({id:'note_'+Date.now(),date:dv||new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}),text:tv,links}); saveTracker(); renderTracker(); }
+function editNote(tid,noteId) { const tr=STATE.trainees.find(t=>t.id===tid); if(!tr) return; const note=(tr.dayNotes||[]).find(n=>n.id===noteId); if(!note) return; const ut=prompt('Edit note text:',note.text); if(ut===null) return; const ud=prompt('Edit date:',note.date); if(ud===null) return; note.text=ut.trim(); note.date=ud.trim(); saveTracker(); renderTracker(); }
+function deleteNote(tid,noteId) { const tr=STATE.trainees.find(t=>t.id===tid); if(!tr) return; if(!confirm('Delete this note?')) return; tr.dayNotes=(tr.dayNotes||[]).filter(n=>n.id!==noteId); saveTracker(); renderTracker(); }
+
+const _origShowTab2 = window.showTab;
+window.showTab = function(tabId) { _origShowTab2(tabId); if(tabId==='tracker') renderTracker(); };
+
+// Auto-load tracker
+loadTracker();
+
 </script>
 </body>
 </html>

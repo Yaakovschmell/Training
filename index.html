@@ -1736,7 +1736,7 @@ Please send me a copy of the registration as the car needs to be owned or co-own
 
 
 // ── TRAINEE TRACKER ──────────────────────────────
-const TRACKER_KEY = 'salesTracker_v3';
+const TRACKER_KEY = 'salesTracker_v4';
 
 const DEFAULT_TASKS = [
   'Memorize introduction & info confirmation',
@@ -1786,6 +1786,8 @@ function loadTracker() {
     STATE.trainees.forEach(tr => {
       if (tr.notesOpen === undefined) tr.notesOpen = true;
       tr.dayNotes = tr.dayNotes || [];
+      // Sanitize: remove any notes whose text looks like code (corrupted data)
+      tr.dayNotes = tr.dayNotes.filter(n => n.text && !n.text.includes('function ') && !n.text.includes('STATE.dayNotes') && !n.text.includes('prompt('));
     });
   }
   saveTracker();

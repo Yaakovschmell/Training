@@ -20,7 +20,7 @@
       --sage-lt:   #a8c9b4;
       --text-dark: #0d1a12;
       --text-mid:  #2d4a38;
-      --text-dim:  #6a8a74;h
+      --text-dim:  #6a8a74;
       --white:     #fdfaf5;
       --display:   'Fraunces', Georgia, serif;
       --body:      'DM Sans', system-ui, sans-serif;
@@ -1787,7 +1787,7 @@ function loadTracker() {
       if (tr.notesOpen === undefined) tr.notesOpen = true;
       tr.dayNotes = tr.dayNotes || [];
       // Sanitize: remove any notes whose text looks like code (corrupted data)
-      tr.dayNotes = tr.dayNotes.filter(n => n.text && !n.text.includes('function ') && !n.text.includes('STATE.dayNotes') && !n.text.includes('prompt('));
+      tr.dayNotes = tr.dayNotes.filter(n => n.text && !n.text.includes('function ') && !n.text.includes('STATE.dayNotes') && !n.text.includes('prompt(')));
     });
   }
   saveTracker();
